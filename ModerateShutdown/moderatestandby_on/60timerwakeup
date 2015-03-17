@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# Graterlia OS
+# homepage: http://graterlia.xunil.pl
+# e-mail: nbox@xunil.pl
+#
+# skrypt uruchamiający odbiornik jeżeli jest jakieś zaplanowane zadanie
+# @j00zek
+# wersja 2014-12-13
+
+doWakeup() {
+sleep $WakeupInSec
+if pidof wait4button>/dev/null ; then
+	killall wait4button
+	touch /tmp/timerwakeup
+else
+	[ -f /tmp/timerwakeup ] && rm -f /tmp/timerwakeup
+fi
+}
+
+CurrentTime=`date +%s`
+WakeupTime=0
+
+if grep -q '<timer begin' </etc/enigma2/timers.xml;then
+	for e2time in `grep '<timer begin' </etc/enigma2/timers.xml | sed 's/^.*begin="\([1234567890]*\)" end.*$/\1/' | sort -n`
+	do
+		if [ $e2time -gt $CurrentTime ]; then
+			if [ $WakeupTime -eq 0 ]; then
+				WakeupTime=$e2time
+			elif [ $e2time -lt $WakeupTime ]; then
+				WakeupTime=$e2time
+			fi
+		fi
+	done
+fi
+if [ $WakeupTime -gt 0 ]; then #wakeup when timer set
+	WakeupInSec=$(( $WakeupTime - $CurrentTime - 120 ))
+	echo "Wakeup after $WakeupInSec seconds" >/tmp/wakeup
+	doWakeup &
+fi

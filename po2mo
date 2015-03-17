@@ -1,0 +1,9 @@
+#!/bin/sh
+echo "To use locale in your plugin: from Components.LanguageGOS import gosgettext as _"
+echo
+echo "to compile locale: po2mo <path to *.po>"
+myPO=$1
+myMO=`echo $myPO | sed 's/\.po$/.mo/'`
+msgfmt -o $myMO $myPO
+
+

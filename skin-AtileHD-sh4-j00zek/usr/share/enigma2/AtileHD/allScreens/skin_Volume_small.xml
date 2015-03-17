@@ -1,0 +1,7 @@
+<skin>
+<!-- Volume -->
+	<screen name="Volume" position="320,30" size="645,60" title="Volume" zPosition="1" backgroundColor="transparent" flags="wfNoBorder">
+		<widget name="Volume" position="0,50" size="645,10" pixmap="AtileHD/menu/volume.png" transparent="1" />
+		<widget render="VVolumeText" source="global.CurrentTime" position="0,0" size="60,60" zPosition="5" font="Regular;27" halign="center" valign="center" foregroundColor="foreground" shadowColor="#40101010" shadowOffset="-2,-2" transparent="1" />
+	</screen>
+</skin>

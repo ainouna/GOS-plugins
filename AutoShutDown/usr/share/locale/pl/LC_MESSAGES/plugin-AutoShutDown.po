@@ -1,0 +1,95 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AutoShutDown for STB\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-08 14:28+0100\n"
+"PO-Revision-Date: 2012-12-17 08:47+0100\n"
+"Last-Translator: j00zek <zdzislaw22>\n"
+"Language-Team: plnick\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: cs\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Action for inactivity:"
+msgstr "Akcja przy braku aktywności:"
+
+msgid "AutoShutDown Setup"
+msgstr "Konfiguracja Auto-usypiania"
+
+msgid "AutoShutDown settings"
+msgstr "Ustawienia Auto-usypiania"
+
+msgid "AutoShutDown: %s ?"
+msgstr "Auto-usypianie:  %s  ?"
+
+msgid "Cancel"
+msgstr "Anuluj"
+
+msgid "Choose media file"
+msgstr "Wybierz plik mediów"
+
+msgid "Deepstandby"
+msgstr "Wyłączenie"
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Disable shutdown in EPGRefresh time span:"
+msgstr "Nie aktywuj w okresie pracy EPGRefresh:"
+
+msgid "Enable AutoShutDown:"
+msgstr "Aktywuj Auto-usypianie:"
+
+msgid "Enable action after inactivity:"
+msgstr "Akcja przy braku aktywności:"
+
+msgid "Exit"
+msgstr "Koniec"
+
+msgid "Go to standby"
+msgstr "Uśpij"
+
+msgid "Invalid Choice"
+msgstr "Zły wybór"
+
+msgid "Message timeout (sec):"
+msgstr "Czas wyświetlania informacji (s):"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Play media file before inactivity action:"
+msgstr "Odtórz plik mediów przed wykonaniem akcji:"
+
+msgid "Power off STB"
+msgstr "Wyłącz tuner"
+
+msgid "Really close without saving settings?"
+msgstr "Wyjść bez zapisywania zmian?"
+
+msgid "Reset AutoShutDown settings to defaults?"
+msgstr "Zresetować ustawienia wtyczki?"
+
+msgid "Select a media file for AutoShutDown"
+msgstr "Wybierz plik mediów do odtworzenia"
+
+msgid "Show in Extensions/Plugins:"
+msgstr "Wyświetl w menu rozszerzeń i wtyczek:"
+
+msgid "Show message before inactivity action:"
+msgstr "Wyświetl ostrzeżenie przed wykonaniem akcji:"
+
+msgid "Standby"
+msgstr "Uśpienie"
+
+msgid "Time for inactivity (min):"
+msgstr "Czas nieaktywności (min):"
+
+msgid "Time in standby for power off (min):"
+msgstr "Czas uśpienia po którym wyłączyć tuner (min):"
+
+msgid "configure automated power off / standby"
+msgstr "Konfiguracja automatycznego usypiania/wyłączania"

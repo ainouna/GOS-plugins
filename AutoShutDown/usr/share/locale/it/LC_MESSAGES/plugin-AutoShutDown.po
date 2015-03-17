@@ -1,0 +1,86 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AutoShutDown for STB\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-08 14:28+0100\n"
+"PO-Revision-Date: 2012-12-17 08:47+0100\n"
+"Last-Translator: miciomax\n"
+"Language-Team: plnick\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: cs\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Action for inactivity:"
+msgstr "Azione se inattivo:"
+
+msgid "AutoShutDown Setup"
+msgstr "Config. Autospegnimento"
+
+msgid "AutoShutDown settings"
+msgstr "Parametri Autospegnimento"
+
+msgid "AutoShutDown: %s ?"
+msgstr "Autospegnimento: %s ?"
+
+msgid "Choose media file"
+msgstr "Scegli file"
+
+msgid "Deepstandby"
+msgstr "Deepstandby"
+
+msgid "Default"
+msgstr "Default"
+
+msgid "Disable shutdown in EPGRefresh time span:"
+msgstr "Disabilita shutdown durante aggiornamento EPG"
+
+msgid "Enable AutoShutDown:"
+msgstr "Abilita Autospegnimento:"
+
+msgid "Enable action after inactivity:"
+msgstr "Abilita azioni dopo inattivita:"
+
+msgid "Go to standby"
+msgstr "Va in standby"
+
+msgid "Invalid Choice"
+msgstr "Scelta errata"
+
+msgid "Message timeout (sec):"
+msgstr "Persistenza messaggi (sec):"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Play media file before inactivity action:"
+msgstr "Eseguire file multimediale prima di disattivare:"
+
+msgid "Power off STB"
+msgstr "Spegni decoder"
+
+msgid "Really close without saving settings?"
+msgstr "Uscire senza salvare modifiche?"
+
+msgid "Reset AutoShutDown settings to defaults?"
+msgstr "Ripristina impostazioni di default per Autospegnimento"
+
+msgid "Select a media file for AutoShutDown"
+msgstr "Selezione file multimediale per Autospegnimento"
+
+msgid "Show in Extensions/Plugins:"
+msgstr "Mostra tra i plugin:"
+
+msgid "Show message before inactivity action:"
+msgstr "Mostra messaggio prima del processo di inattivita:"
+
+msgid "Time for inactivity (min):"
+msgstr "Tempo di inattivita (min)"
+
+msgid "Time in standby for power off (min):"
+msgstr "Tempo in standby per spegnimento (min)"
+
+msgid "configure automated power off / standby"
+msgstr "Configura lo spegnimento automatico"

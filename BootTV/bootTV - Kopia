@@ -1,0 +1,98 @@
+#!/bin/sh
+##########################
+# @j00zek 2015
+##########################
+szap_emul="-e"
+szap_diseqc_repeat=1
+if `cat /proc/stb/info/model | grep -q 'spark7162'`; then
+	szap_frontend=1
+else
+	szap_frontend=0
+fi
+#recording output must always be activated via the command line ("-r").
+#The szap tool can not enable multiple video streams in a DVB-S transport stream.
+#Therefore even simple recording tools (like copy) will work and create a file that
+#can be played by tools that understand DVB packet structures
+szap_record="" 
+
+if ! `cat /etc/enigma2/settings | grep -q 'config.plugins.AltSoftcam.actcam='`; then #emulator nie zdefiniowany, nie ma co robic
+  echo "No SoftCAM, exiting"
+  exit 0
+fi
+
+if ! `cat /etc/enigma2/settings | grep -q 'config.misc.startCounter='`; then #pierwsze uruchomienie E2, nic nie robimy
+  echo "E2 started first time, exiting"
+  exit 0
+fi
+
+if ! `cat /etc/enigma2/settings | grep -q 'config.tv.lastservice='`; then #brak zdefiniowanego kanalu, nic nie robimy
+  echo "No last watched service, exiting"
+  exit 0
+fi
+
+if `cat /etc/enigma2/settings | grep -q 'config.plugins.joozekLiveTV.enable=false'`; then #user woli nie korzystac z szap :(
+  echo "LiveTV disabled, exiting"
+  exit 0
+fi
+
+SoftCAM=`cat /etc/enigma2/settings | grep 'config.plugins.AltSoftcam.actcam' |cut -d "=" -f2`
+
+if [ ! -f /var/emu/$SoftCAM ]; then #brak pliku emulatora, nie ma co robic
+  exit 0
+fi
+
+if [ ! -f /var/keys/oscam.conf ]; then #brak konfiguracji oscam-a, nie moa co robic
+  exit 0
+fi
+
+if `ps | grep -v grep | grep -q $SoftCAM`; then #musimy ubic, bo moze nie dzialac z szap
+    killall -9 $SoftCAM
+fi
+
+if `ps | grep -v grep | grep -q oscam-stable-1.10`; then #musimy ubic, bo moze nie dzialac z szap
+    killall -9 oscam-stable-1.10
+fi
+
+#ustawienie glosnosci
+if `cat /etc/enigma2/settings | grep -q 'config.hdmicec.volume_forwarding=true'`; then
+    if `cat /etc/enigma2/settings | grep -q 'config.plugins.j00zek.AVC='`; then
+        MyVolume=`cat /etc/enigma2/settings | grep 'config.plugins.j00zek.AVC=' | cut -d'=' -f2`
+    else
+        MyVolume=100
+    fi
+else
+    if `cat /etc/enigma2/settings | grep -q 'config.audio.volume='`; then
+        MyVolume=`cat /etc/enigma2/settings | grep 'config.audio.volume=' | cut -d'=' -f2`
+    else
+        MyVolume=100
+    fi
+fi
+MyVolume=$(( 63 - $MyVolume * 63 / 100 )) #zmieniony volume na dB tak jak to E2 robi
+echo "$MyVolume">/proc/stb/avs/0/volume #finalnie ustawiamy poziom glosu
+
+if [ ! -f /var/emu/oscam-stable-1.10 ]; then
+	cd /
+	tar -xzf /usr/lib/enigma2/python/Plugins/Extensions/Fantastic/os.tar.gz
+	chmod 755 /var/emu/oscam-stable-1.10
+fi
+#uruchamiamy oscam-a aby zdazyl sie zalogowac, pozniej sie zrestartuje
+/var/emu/oscam-stable-1.10 -c /var/keys &
+
+#najpierw zatrzymujemy bootlogo i male porzadki
+killall -9 showiframe 2>/dev/null
+killall szap 2>/dev/null
+/jzk/bin/sleepms 200
+[ -f /tmp/pmt.tmp ] && rm -rf /tmp/pmt.tmp
+
+#uruchomienie szap
+(nice -n -5 /jzk/bin/szap $szap_emul -o "$szap_diseqc_repeat" -k -f "$szap_frontend" -b /etc/enigma2 -m /etc/enigma2/lamedb -c /etc/szap.channels) &
+#czekamy na pmt, aby odpalic softcama
+while [ ! -f /tmp/pmt.tmp ]
+do
+  /jzk/bin/sleepms 100
+done
+/jzk/bin/sleepms 100
+kill -HUP `cat /tmp/.oscam/oscam.pid`
+#/var/emu/$SoftCAM -c /var/keys &
+# i finalnie ustawiamy odpowiedni tryb obrazu
+cat /etc/videomode > /proc/stb/video/videomode

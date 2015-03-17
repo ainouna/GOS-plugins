@@ -1,0 +1,8 @@
+# -*- coding: utf-8 -*-
+# @j00zek 2014 dla Graterlia
+# this is simple e2 applet to run from menu, it can contains all e2 elements
+# it can contains all e2 elements as it is run in e2 environment
+#
+
+from enigma import quitMainloop
+quitMainloop(3)

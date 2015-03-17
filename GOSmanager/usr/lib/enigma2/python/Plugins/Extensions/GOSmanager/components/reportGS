@@ -1,0 +1,65 @@
+#!/bin/sh
+#czy mamy cokolwiek do zaraportowania? jesli nie exit
+if ! `ls /hdd/enigma2_crash_* 2>/dev/null | grep -q 'enigma2_crash_'`; then
+	echo "Nothing to report, exiting..."
+	exit 0
+fi
+
+if grep '^.*#.*src/gz[ \t]*graterlia-testing' /etc/opkg/opkg.conf; then
+	trunk='OPKGrelease'
+else
+	trunk='OPKGtesting'
+fi
+#echo $trunk
+
+echo "GSs found, starting reporting process..."
+#wykluczamy nie zwiazane z GOS
+list=`find /hdd/ -type f -name "enigma2_crash_[123456789]*.log" -size +2k -print 2>/dev/null`
+for i in $list
+do
+  if ! `grep -q '<contactemail>forum.xunil.pl' <$i`;then #interesuja nas tylko nasze GS-y :)
+      rm -f $i
+  elif `cat $i | grep -q '/usr/lib/enigma2/python/Plugins/Extensions/WebMedia/.*", line'`;then
+      rm -f $i
+  elif `cat $i | grep -q '/usr/lib/enigma2/python/Plugins/Extensions/HddManager/plugin.py", line'`;then
+      rm -f $i
+  elif `cat $i | grep -q '/usr/lib/enigma2/python/Plugins/Extensions/TSmedia/plugin.py", line'`;then
+      rm -f $i
+  elif `cat $i | grep -q '/usr/lib/enigma2/python/Plugins/Extensions/CuBiCPanel/.*py", line'`;then
+      rm -f $i
+  elif `cat $i | grep -q '/usr/lib/enigma2/python/Plugins/Extensions/nStreamVOD/plugin.py", line'`;then
+      rm -f $i
+  elif `cat $i | grep -q '/usr/lib/enigma2/python/Plugins/Extensions/chartsplayer/plugin.py", line'`;then
+      rm -f $i
+  elif `cat $i | grep -q '/usr/lib/enigma2/python/Plugins/Extensions/BBCiPlayer/plugin.py", line'`;then
+      rm -f $i
+  elif `cat $i | grep -q '/usr/lib/enigma2/python/Plugins/Extensions/rteplayer/plugin.py", line'`;then
+      rm -f $i
+  elif `cat $i | grep -q '/usr/lib/enigma2/python/Plugins/Extensions/mediaportal/plugin.py", line'`;then
+      rm -f $i
+  elif `cat $i | grep -q '/usr/lib/enigma2/python/Plugins/Extensions/AutoBouquets/plugin.py", line'`;then
+      rm -f $i
+  elif `cat $i | grep -q '/usr/lib/enigma2/python/Plugins/Extensions/EM-Panel/plugin.py", line'`;then
+      rm -f $i
+  elif `cat $i | grep -q '/usr/lib/enigma2/python/Plugins/Extensions/1channel/plugin.py", line '`;then
+      rm -f $i
+  elif `cat $i | grep -q 'File "resolvers/res_movreel.py", line'`;then
+      rm -f $i
+  elif `cat $i | grep -q 'LT6.HD/fonts/tpb.otf...FATAL'`;then
+      rm -f $i
+  elif `cat $i | grep -q 'LT6.HD/fonts/lt6-ps.ttf...FATAL'`;then
+      rm -f $i
+  else
+      sed -i "s/<branch>trunk/<branch>$trunk/" $i
+      /usr/bin/python /usr/lib/enigma2/python/Plugins/Extensions/GOSmanager/components/reportGS.pyo $i
+      #rm -f $i
+      mv -f $i reported.$i
+  fi
+done
+#wywalenie reszty(czyli malych) GS-ow one i tak nie maja zadnej uzytecznej informacji
+list=`find /hdd/ -type f -name "enigma2_crash_[123456789]*.log" -print 2>/dev/null`
+for i in $list
+do
+  #rm -f $i
+  echo $i>>/tmp/aqq
+done

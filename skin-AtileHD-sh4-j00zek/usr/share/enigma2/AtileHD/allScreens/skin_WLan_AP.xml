@@ -1,0 +1,36 @@
+<skin>
+	<!-- WirelessAccessPoint -->
+	<screen name="WirelessAccessPoint" position="0,0" size="1280,720" title="Wireless Access Point" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1" />
+		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
+		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="Title" render="Label" position="70,47" size="800,48" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
+		<widget name="config" zPosition="2" position="70,110" size="700,500" scrollbarMode="showOnDemand" transparent="1" enableWrapAround="1" />
+		<widget source="current_settings" render="Label" position="790,525" size="435,80" halign="center" font="Regular; 20" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
+		<widget source="IPAddress_text" render="Label" position="790,390" size="190,25" font="Regular; 20" backgroundColor="background" transparent="1" halign="right" />
+		<widget source="Netmask_text" render="Label" position="790,430" size="190,25" font="Regular; 20" backgroundColor="background" transparent="1" halign="right" />
+		<widget source="Gateway_text" render="Label" position="790,470" size="190,25" font="Regular; 20" backgroundColor="background" transparent="1" halign="right" />
+		<widget source="IPAddress" render="Label" position="985,390" size="240,25" font="Regular; 20" backgroundColor="background" transparent="1" />
+		<widget source="Netmask" render="Label" position="985,430" size="240,25" font="Regular; 20" backgroundColor="background" transparent="1" />
+		<widget source="Gateway" render="Label" position="985,470" size="240,25" font="Regular; 20" backgroundColor="background" transparent="1" />
+		<widget source="key_red" render="Label" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+		<widget source="key_green" render="Label" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
+		<widget source="key_yellow" render="Label" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
+		<widget source="key_blue" render="Label" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
+	</screen>
+ </skin>

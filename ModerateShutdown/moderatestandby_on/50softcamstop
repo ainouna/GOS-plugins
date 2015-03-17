@@ -1,0 +1,8 @@
+#!/bin/sh
+# Ten skrypt zostanie skasowany, na razie informacyjnie
+# jak uzytkownik chce oscam w trybie moderate to musi sobie ustawic oscam w GOS
+# jak ma ustawiony AlternativeSoftcamManager, to ten i tak zatrzymuje oscam-a przy wylaczaniu openpli
+
+exit 0
+
+#/etc/init.d/softcam stop

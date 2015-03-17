@@ -1,0 +1,98 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-07 12:54+0200\n"
+"PO-Revision-Date: 2015-01-07 13:33+0100\n"
+"Last-Translator: j00zek <nospam@email.pl>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+#Domain:plugin-BoardsReader
+
+msgid "Boards Reader"
+msgstr "Czytnik forum"
+
+msgid "BoardsReader v."
+msgstr "Czytnik forum w."
+
+msgid "Downloading list..."
+msgstr "Pobieram listę..."
+
+msgid "Action cancelled!"
+msgstr "Akcja przerwana!"
+
+msgid "BoardsReader configuration"
+msgstr "Konfiguracja czytnika forum"
+
+msgid "List"
+msgstr "Lista"
+
+msgid "Picons"
+msgstr "Ikony"
+
+msgid "Boards Reader settings"
+msgstr "Ustawienia czytnika forum"
+
+msgid "Forum selection style:"
+msgstr "Styl wyboru forum:"
+
+msgid "Display last posts on top:"
+msgstr "Wyświetl ostatnie posty na górze:"
+
+msgid "Show plugin on the Extensions menu?"
+msgstr "Wyświetl wtyczkę w menu rozszerzeń?"
+
+msgid "Show plugin in main menu?"
+msgstr "Wyświetl wtyczkę w menu głównym?"
+
+msgid "Configuration of %s"
+msgstr "Konfiguracja %s"
+
+msgid "Virtual Keyboard"
+msgstr "Wirtualna klawiatura"
+
+msgid "Select value"
+msgstr "Wybierz wartość"
+
+msgid "login:"
+msgstr "Konto:"
+
+msgid "password:"
+msgstr "Hasło:"
+
+msgid "Blocked subforums IDs:"
+msgstr "Ukryj podforum o numerze:"
+
+msgid "Error logging to %s forum!!!"
+msgstr "Błąd logowania do forum %s!!!"
+
+msgid "Check forum settings. ;)"
+msgstr "Sprawdź ustawienia forum. ;)"
+
+msgid "Current page"
+msgstr "Obecna strona"
+
+msgid "Next page"
+msgstr "Następna strona"
+
+msgid "First page"
+msgstr "Pierwsza strona"
+
+msgid "Last page"
+msgstr "Ostatnia strona"
+
+msgid "Previous page"
+msgstr "Poprzednia strona"
+
+msgid "Searching..."
+msgstr "Szukam..."
+
+msgid "Display unread threads"
+msgstr "Wyświetl nieprzeczytane wątki"
+
+msgid "Single page thread"
+msgstr "Wątek posiada 1 stronę"

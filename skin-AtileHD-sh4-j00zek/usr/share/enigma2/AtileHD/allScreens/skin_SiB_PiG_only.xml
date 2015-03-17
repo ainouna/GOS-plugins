@@ -1,0 +1,7 @@
+<skin>
+<!-- SecondInfoBar PiG only -->
+	<screen name="SecondInfoBar" position="0,0" size="1280,720" title="Infobar" backgroundColor="black" flags="wfNoBorder">
+		<widget source="session.VideoPicture" render="Pig" position="500,280" zPosition="3" size="284,160" backgroundColor="picture">
+		</widget>
+	</screen>
+</skin>

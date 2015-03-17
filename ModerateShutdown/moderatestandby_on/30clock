@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# Graterlia OS
+# homepage: http://graterlia.xunil.pl
+# e-mail: nbox@xunil.pl
+#
+# obsługa vfd
+# @j00zek
+# wersja 2014-12-15
+
+clockINmoderate=0
+
+. /var/grun/grcstype #załadowanie informacji o rodzaju odbiornika
+. /etc/sysctl.conf #ustawienia systemu
+
+[ $clockINmoderate -eq 0 ] && exit 0
+
+DOT=":"
+doCLOCK()
+{
+#czekamy na zakonczenie procesu uruchamiania moderate
+WaitingTime=10
+while [ "$WaitingTime" -gt 0 ]
+do
+	sleep 1
+	[ -f /var/etc/moderate_standby ] && WaitingTime=0 || WaitingTime=$(( $WaitingTime - 1 ))
+done
+#uruchamiamy zegarek
+while true
+do
+	sleep 1
+	[ -f /var/etc/moderate_standby ] || exit 0
+	echo `date "+%H$DOT%M"`>/dev/vfd
+	[ $DOT == ":" ] && DOT="." || DOT=":"
+done
+}
+
+doCLOCK &

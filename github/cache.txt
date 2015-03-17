@@ -1,0 +1,1 @@
+/DuckboxDisk/github/tufsbox/cross/bin/sh4-linux-strip --strip-unneeded /DuckboxDisk/github/apps/tools/wait4button/wait4button

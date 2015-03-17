@@ -1,0 +1,45 @@
+# PL translations for tuxbox-enigma package.
+# Copyright (C) 2005 THE tuxbox-enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the tuxbox-enigma package.
+# Automatically generated, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxbox-enigma 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-11-06 21:30+0100\n"
+"PO-Revision-Date: 2014-11-06 22:00+0100\n"
+"Last-Translator: mickey\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "HDMI CEC Configuration"
+msgstr "Konfiguracja HDMI CEC"
+
+msgid "HDMI CEC settings"
+msgstr "Ustawienia HDMI CEC"
+
+msgid "Activate CEC interface"
+msgstr "Interfejs aktywny"
+
+msgid "Active TV input"
+msgstr "Aktywne wejście TV"
+
+msgid "Turn off TV only when on active input"
+msgstr "Wyłącz TV tylko kiedy na aktywnym wejściu"
+
+msgid "Data send delay [ms]"
+msgstr "Opóźnienie wysłania danych [ms]"
+
+msgid "Repeat data sending"
+msgstr "Powtarzaj wysyłanie danych"
+
+msgid "Interval between repetitions [ms]"
+msgstr "Przerwa między powtórzeniami [ms]"
+
+msgid "Status check after reboot [s]"
+msgstr "Sprawdzanie stanu po restarcie [s]"
+

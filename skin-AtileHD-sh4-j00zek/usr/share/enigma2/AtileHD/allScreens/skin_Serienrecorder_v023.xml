@@ -1,0 +1,225 @@
+<skin>
+	<!-- Serienrecorder 2.1 -->
+	<screen name="serienRecMain" position="0,0" size="1280,720" title="Serien Recorder" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position=" 55,100" size="725,60" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position=" 55,165" size="725,450" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
+		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1" />
+		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget name="version" font="Regular; 35" position="70,47" size="950,43" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/> 
+		<widget name="title" font="Regular;24" position="55,100" size="725,30" foregroundColor="labeltext" backgroundColor="background" valign="center" halign="center" transparent="1" />
+		<widget name="headline" font="Regular;24" position="55,130" size="725,30" foregroundColor="labeltext" backgroundColor="background" valign="center" halign="center" transparent="1" />
+		<widget name="list" position="70,180" size="700,420" itemHeight="60" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="background" transparent="1" />
+		<widget name="cover" position="785,100" size="135,190" transparent="1" alphatest="blend" />
+		<widget name="popup_bg" position="785,350" size="445,315" backgroundColor="#00000000" transparent="0" zPosition="5" />
+		<widget name="popup" position="785,350" size="445,315" itemHeight="30" backgroundColor="background" zPosition="10" scrollbarMode="showOnDemand" transparent="1" />
+		<widget name="red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+		<widget name="green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
+		<widget name="yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
+		<widget name="blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
+	</screen>
+	<screen name="serienRecMainChannelEdit" position="0,0" size="1280,720" title="Serien Recorder" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
+		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget name="title" font="Regular; 35" position="70,47" size="950,43" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/> 
+		<widget name="list" position="60,105" size="700,480" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="background" transparent="1" />
+		<widget name="popup_bg" position="785,295" size="445,320" backgroundColor="background" transparent="0" zPosition="5" />
+		<widget name="popup_list" position="790,300" size="435,310" backgroundColor="background" zPosition="10" scrollbarMode="showOnDemand" transparent="1" />
+		<widget name="red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+		<widget name="green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
+	</screen>
+	<screen name="serienRecMarker" position="0,0" size="1280,720" title="Serien Recorder" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
+		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget name="title" font="Regular; 35" position="70,47" size="950,43" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/> 
+		<widget name="list" position="60,105" size="700,480" itemHeight="60" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="background" transparent="1" />
+		<widget name="cover" position="785,100" size="135,190" transparent="1" alphatest="blend" />
+		<widget name="popup_bg" position="785,295" size="445,320" backgroundColor="background" transparent="0" zPosition="5" />
+		<widget name="popup_list" position="790,300" size="435,310" backgroundColor="background" zPosition="10" scrollbarMode="showOnDemand" transparent="1" />
+		<widget name="red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+		<widget name="green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
+		<widget name="yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
+		<widget name="blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
+	</screen>
+	<screen name="serienRecAddSerie" position="0,0" size="1280,720" title="Serien Recorder" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
+		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+		</widget>
+		<ePixmap position="880,325" zPosition="-9" size="256,256" pixmap="AtileHD/menu/db.png" alphatest="blend" transparent="1" />
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget name="title" font="Regular; 35" position="70,47" size="950,43" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/> 
+		<widget name="list" position="60,105" size="700,480" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="background" transparent="1" />
+		<widget name="cover" position="785,100" size="135,190" transparent="1" alphatest="blend" />
+		<widget name="red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+	</screen>
+	<screen name="serienRecSendeTermine" position="0,0" size="1280,720" title="Serien Recorder" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
+		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget name="title" font="Regular; 35" position="70,47" size="950,43" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/> 
+		<widget name="termine" position="60,105" size="700,480" itemHeight="60" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="background" transparent="1" />
+		<widget name="cover" position="785,100" size="135,190" transparent="1" alphatest="blend" />
+		<widget name="red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+		<widget name="green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
+	</screen>
+
+	<screen name="serienRecTimer" position="0,0" size="1280,720" title="Serien Recorder" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
+		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget name="title" font="Regular; 35" position="70,47" size="950,43" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/> 
+		<widget name="list" position="60,105" size="700,480" itemHeight="60" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="background" transparent="1" />
+		<widget name="red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+	</screen>
+	
+	<screen name="serienRecSetup" position="0,0" size="1280,720" title="Serien Recorder" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position=" 55,100" size="865,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="925,295" size="305,320" zPosition="-10" backgroundColor="tile_menu1" />
+		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<ePixmap position="950,325" zPosition="-9" size="256,256" pixmap="AtileHD/menu/db.png" alphatest="blend" transparent="1" />
+		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget name="title" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
+		<widget name="config" position="70,115" size="840,480" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="background" transparent="1" />
+		<widget name="red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+		<widget name="green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
+	</screen>
+	<screen name="serienRecLogReader" position="0,0" size="1280,720" title="Serien Recorder" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position="55,100" size="1175,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget name="title" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />	
+		<widget name="list" position="65,110" size="1155,500" itemHeight="25" scrollbarMode="showOnDemand" backgroundColor="background" transparent="1" />
+		<widget name="red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+	</screen>
+	<screen name="serienRecReadLog" position="0,0" size="1280,720" title="Serien Recorder" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position="55,100" size="1175,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget name="title" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />	
+		<widget name="list" position="65,110" size="1155,500" itemHeight="25" scrollbarMode="showOnDemand" backgroundColor="background" transparent="1" />
+		<widget name="red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+	</screen>
+</skin>

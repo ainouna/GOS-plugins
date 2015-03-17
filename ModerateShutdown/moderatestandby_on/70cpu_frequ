@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# Graterlia OS
+# homepage: http://graterlia.xunil.pl
+# e-mail: nbox@xunil.pl
+#
+# skrypt zmieniający częstotliwość pracy procesora
+# @j00zek
+# wersja 2014-12-12
+
+. /etc/sysconfig/gfunctions #wczytanie funkcji wspólnych dla skryptów Graterlia
+. /var/grun/grcstype
+GOSdebug ">>>>>>>>>> $0"
+
+##### INICJALIZACJA #####
+if [ ! -f /lib/modules/cpu_frequ.ko ]; then
+	opkg update; opkg install kernel-modules-cpufreq-gos #potrzebujemy do obnizenia predkosci CPU
+fi
+
+if [ ! -f /proc/cpu_frequ/pll0_ndiv_mdiv ]; then
+	insmod /lib/modules/cpu_frequ.ko
+fi
+
+[ -f /tmp/CurrentSpeed ] && rm -f /tmp/CurrentSpeed
+
+if [ ! -f /proc/cpu_frequ/pll0_ndiv_mdiv ]; then
+	GOSdebug "cpu_frequ no loaded, exiting!"
+	exit 0
+fi
+
+CurrentSpeed=$((0x`cat /proc/cpu_frequ/pll0_ndiv_mdiv | grep CKGA_PLL0_CFG | awk '{print $3}' | tail -c 5`))
+##### MAIN #####
+if [ ! -z $CurrentSpeed ]; then
+	myFREQ=0
+	case $platform in
+		7100|7109) myFREQ=1027;; # 40MHz > $((40/[9dla7100|10reszta] * 256 + 3))
+		*) myFREQ=771;;
+	esac
+	GOSdebug "stm$platform $CurrentSpeed > $myFREQ"
+	if [ $myFREQ -gt 0 ];then
+		echo "$myFREQ">/proc/cpu_frequ/pll0_ndiv_mdiv
+		echo "$CurrentSpeed">/tmp/CurrentSpeed
+	fi
+else
+	GOSdebug "CurrentSpeed='$CurrentSpeed' ?!?!?"
+fi
+
+if [ $rcstype == "ADB5800" ]; then
+	if [ ! -f /etc/cron/minutely/ntpdate ]; then # najprostsze i najzgrabniejsze
+		cp -f /etc/cron/daily/ntpdate /etc/cron/minutely/ntpdate
+	fi
+fi
+GOSdebug "<<<<<<<<<< $0"

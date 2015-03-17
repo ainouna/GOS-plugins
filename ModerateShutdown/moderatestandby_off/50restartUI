@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Graterlia OS
+# homepage: http://graterlia.xunil.pl
+# e-mail: nbox@xunil.pl
+#
+# skrypt RestartUI
+# @j00zek
+# wersja 2014-12-14
+
+if [ ! -f /tmp/timerwakeup ]; then #flaga dla openpli, aby sie nie usypial
+	if ! `grep -q 'config.misc.RestartUI=' </etc/enigma2/settings`;then
+		echo 'config.misc.RestartUI=true'>>/etc/enigma2/settings # workarround openPLI going to standby when startup_2_standby set
+	fi
+fi
+
+if ! grep -lq 'config.misc.ModerateStandby=' </etc/enigma2/settings;then #flaga dla wtyczki cec, ze obudziliœmy sie z moderatewakeup
+	echo 'config.misc.ModerateStandby=true'>>/etc/enigma2/settings # info for CEC
+fi
+
+rm -f /tmp/timerwakeup #porzadki

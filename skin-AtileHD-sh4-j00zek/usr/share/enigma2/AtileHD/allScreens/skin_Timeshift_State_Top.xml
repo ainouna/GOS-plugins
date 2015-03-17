@@ -1,0 +1,41 @@
+<skin>
+	<!-- Timeshift state -->
+	<screen name="TimeshiftState" position="250,70" zPosition="2" size="800,60" backgroundColor="background" flags="wfNoBorder">
+		<eLabel position="0,0" size="800,60" zPosition="-10" backgroundColor="tile_epg0" />
+		<widget name="state" position="0,0" size="60,30" font="LCD;23" halign="center" valign="center" />
+		<widget source="session.CurrentService" render="Label" font="Regular; 22" position="370,30" size="60,30" zPosition="5" halign="center" valign="center" backgroundColor="background" transparent="1">
+			<convert type="ServicePosition">Remaining</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" font="Regular;22" halign="right" position="620,0" size="80,30" backgroundColor="background" transparent="1">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<eLabel font="Regular;22" halign="center" position="125,0" size="200,30" text="Timeshift aktiv" backgroundColor="background" transparent="1"/>
+		<widget source="session.CurrentService" font="Regular;22" halign="right" position="710,0" render="Label" size="80,30" backgroundColor="background" transparent="1">
+			<convert type="ServicePosition">Length</convert>
+		</widget>
+		<eLabel position="700,0" size="30,30" text=" / " font="Regular; 22" backgroundColor="background" transparent="1" />
+		<widget source="session.CurrentService" render="Progress" position="0,30" size="800,30" zPosition="3" foregroundColor="slider_col_1" transparent="1">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+	</screen>
+	<!-- Timeshift state -->
+	<screen name="PTSTimeshiftState" position="250,70" zPosition="2" size="800,60" backgroundColor="background" flags="wfNoBorder">
+		<eLabel position="0,0" size="800,60" zPosition="-10" backgroundColor="tile_epg0" />
+		<widget name="state" position="0,0" size="60,60" font="LCD;21" zPosition="5" halign="center" valign="center" />
+		<widget source="session.CurrentService" render="Label" font="Regular; 22" position="370,30" size="60,30" zPosition="5" halign="center" valign="center" backgroundColor="background" transparent="1">
+			<convert type="ServicePosition">Remaining</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" font="Regular;22" halign="right" position="620,30" size="80,30" zPosition="5" backgroundColor="background" transparent="1">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<eLabel text="PTS" font="Regular; 22" position="65,30" size="60,30" zPosition="5" backgroundColor="background" transparent="1" />
+		<widget name="eventname" font="Regular;20" position="60,0" size="740,30" zPosition="5" halign="center" backgroundColor="background" transparent="1" />
+		<widget source="session.CurrentService" font="Regular;22" halign="right" position="710,30" zPosition="5" render="Label" size="80,30" backgroundColor="background" transparent="1">
+			<convert type="ServicePosition">Length</convert>
+		</widget>
+		<eLabel text=" / " font="Regular; 22" position="700,30" size="30,30" zPosition="5" backgroundColor="background" transparent="1" />
+		<widget source="session.CurrentService" render="Progress" position="60,0" size="740,60" zPosition="3" foregroundColor="slider_col_1" transparent="1">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+	</screen>
+</skin>

@@ -1,0 +1,199 @@
+<skin>
+	<!-- FritzCall Version 842-->
+	<screen name="FritzCallSetup" position="0,0" size="1280,720" title="" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1" />
+		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
+		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<ePixmap position="880,325" zPosition="-9" size="256,256" pixmap="AtileHD/icons/fritz.png" alphatest="blend" transparent="1" />
+		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
+		<widget name="consideration" position="70,115" size="700,56" font="Regular;24" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<eLabel position="70,185" size="700,2" backgroundColor="diffline" />
+		<widget name="config" position="70,195" size="700,358" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="background" transparent="1" />
+		<eLabel position="70,560" size="700,2" backgroundColor="diffline" />
+		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
+		<widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
+		<widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
+	</screen>
+	<screen name="FritzDisplayCalls" position="0,0" size="1280,720" title="" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position=" 55,100" size="1175,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
+		<widget name="statusbar" position="70,115" size="700,28" font="Regular;24" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<eLabel position="70,155" size="1140,2" backgroundColor="diffline" />
+		<widget source="entries" render="Listbox" position="70, 163" size="1136, 450" zPosition="3" scrollbarMode="showOnDemand" backgroundColor="background" transparent="1">
+			<convert type="TemplatedMultiContent">
+						{"template": [
+						MultiContentEntryText(pos = (5,5),size = (120,24),flags = RT_HALIGN_LEFT,text = 1),# index 0 is the MenuText,
+						MultiContentEntryPixmapAlphaTest(pos = (150,5),size = (25,25),png = 2),# index 1 i direction pixmap
+						MultiContentEntryText(pos = (210,5),size = (400,24),flags = RT_HALIGN_LEFT,text = 3),# index 2 is remote name/number
+						MultiContentEntryText(pos = (700,5),size = (60,24),flags = RT_HALIGN_LEFT,text = 4),# index 3 is length of call
+						MultiContentEntryText(pos = (800,5),size = (230,24),flags = RT_HALIGN_CENTER,text = 5),# index 4 is my number/name for number
+					],
+						"fonts": [gFont("Regular",18)],
+						"itemHeight": 30
+						}
+			</convert>
+		</widget>
+		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
+		<widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
+		<widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
+	</screen>
+	<screen name="FritzDisplayPhonebook" position="0,0" size="1280,720" title="" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1" />
+		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
+		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<ePixmap position="880,325" zPosition="-9" size="256,256" pixmap="AtileHD/icons/fritz.png" alphatest="blend" transparent="1" />
+		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
+		<widget source="entries" render="Listbox" position="70,120" size="700,450" scrollbarMode="showOnDemand" transparent="1">
+			<convert type="TemplatedMultiContent">
+							{"template": [
+									MultiContentEntryText(pos = (5,5),size = (320,24),flags = RT_HALIGN_LEFT,text = 1),# index 0 is the name,index 1 is shortname
+									MultiContentEntryText(pos = (340,5),size = (360,24),flags = RT_HALIGN_LEFT,text = 2),# index 2 is number
+								],
+							"fonts": [gFont("Regular",22)],
+							"itemHeight": 35
+							}
+		</convert>
+		</widget>
+		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
+		<widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
+		<widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
+	</screen>
+	<screen name="AddScreen" position="0,0" size="1280,720" title="" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1" />
+		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
+		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<ePixmap position="880,325" zPosition="-9" size="256,256" pixmap="AtileHD/icons/fritz.png" alphatest="blend" transparent="1" />
+		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
+		<widget name="config" position="70,115" size="700,150" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="background" transparent="1" />
+		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
+	</screen>
+	<screen name="FritzMenu" position="0,0" size="1280,720" title="FRITZ!Box Fon Status" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position="55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1" />
+		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
+		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<ePixmap position="880,325" zPosition="-9" size="256,256" pixmap="AtileHD/icons/fritz.png" alphatest="blend" transparent="1" />
+		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+		</widget>
+		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
+		<widget name="FBFInfo" position="70,115" size="630,80" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
+		<widget name="FBFInternet" position="100,220" size="630,75" font="Regular;22" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="internet_inactive" position="70,220" size="30,30" pixmap="AtileHD/buttons/key_grey.png" alphatest="blend" />
+		<widget name="internet_active" position="70,220" size="30,30" pixmap="AtileHD/buttons/key_green.png" alphatest="blend" />
+		<widget name="FBFDsl" position="100,305" size="630,24" font="Regular;22" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="dsl_inactive" position="70,305" size="30,30" pixmap="AtileHD/buttons/key_grey.png" alphatest="blend" />
+		<widget name="dsl_active" position="70,305" size="30,30" pixmap="AtileHD/buttons/key_green.png" alphatest="blend" />
+		<widget name="FBFWlan" position="100,350" size="630,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="wlan_inactive" position="70,350" size="30,30" pixmap="AtileHD/buttons/key_grey.png" alphatest="blend" />
+		<widget name="wlan_active" position="70,350" size="30,30" pixmap="AtileHD/buttons/key_green.png" alphatest="blend" />
+		<widget name="FBFFax" position="100,395" size="630,24" font="Regular;22" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="fax_inactive" position="70,395" size="30,30" pixmap="AtileHD/buttons/key_grey.png" alphatest="blend" />
+		<widget name="fax_active" position="69,395" size="30,30" pixmap="AtileHD/buttons/key_green.png" alphatest="blend" />
+		<widget name="FBFRufuml" position="100,435" size="630,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="rufuml_inactive" position="70,435" size="30,30" pixmap="AtileHD/buttons/key_grey.png" alphatest="blend" />
+		<widget name="rufuml_active" position="70,435" size="30,30" pixmap="AtileHD/buttons/key_green.png" alphatest="blend" />
+		<widget name="FBFGast" position="100,475" size="630,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="gast_inactive" position="70,475" size="30,30" pixmap="AtileHD/buttons/key_grey.png" alphatest="blend" />
+		<widget name="gast_active" position="70,475" size="30,30" pixmap="AtileHD/buttons/key_green.png" alphatest="blend" />
+		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
+		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
+		<widget name="key_yellow" position="660,625" size="260,50" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
+	</screen>
+	<screen name="FritzAbout" position="0,0" size="1280,720" title="About FritzCall" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
+		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
+		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1" />
+		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
+		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
+		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
+		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
+		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
+		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
+		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
+		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
+		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
+		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
+		<ePixmap position="880,325" zPosition="-9" size="256,256" pixmap="AtileHD/icons/fritz.png" alphatest="blend" transparent="1" />
+		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget name="text" position="70,115" size="700,250" font="Regular;22" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="url" position="70,370" size="700,50" font="Regular;22" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<ePixmap position="700,425" size="175,175" zPosition="4" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/website.png" alphatest="on" transparent="1" />
+	</screen>
+	<screen name="MessageBoxPixmap" position="288,center" size="700,161" backgroundColor="tile_back" title="MessageBoxPixmap">
+		<widget name="text" position="115,30" size="570,100" font="Regular; 26" foregroundColor="foreground" backgroundColor="tile_back" />
+		<widget name="InfoPixmap" pixmap="AtileHD/icons/input_info.png" position="7,30" size="100,100" alphatest="blend" />
+	</screen>
+</skin>

@@ -1,0 +1,195 @@
+<skin>
+  <screen name="InfoBar" position="0,0" size="1280,720" title="Infobar" backgroundColor="transparent" flags="wfNoBorder">
+    <!-- Tiles Back -->
+    <eLabel position="135,480" size="1020,210" zPosition="-15" backgroundColor="tile_back" />
+    <eLabel position="145,490" size="60,60" zPosition="-10" backgroundColor="tile_info0" />
+    <eLabel position="210,490" size="155,60" zPosition="-10" backgroundColor="tile_info1" />
+    <eLabel position="370,490" size="450,60" zPosition="-10" backgroundColor="tile_prog" />
+    <eLabel position="825,490" size="60,60" zPosition="-10" backgroundColor="tile_info1" />
+    <eLabel position="890,490" size="60,60" zPosition="-10" backgroundColor="tile_info1" />
+    <eLabel position="955,490" size="60,60" zPosition="-10" backgroundColor="tile_info0" />
+    <eLabel position="1020,490" size="60,60" zPosition="-10" backgroundColor="tile_info0" />
+    <eLabel position="1085,490" size="60,60" zPosition="-10" backgroundColor="tile_info0" />
+    <eLabel position="370,555" size="515,60" zPosition="-10" backgroundColor="tile_epg0" />
+    <eLabel position="890,555" size="60,60" zPosition="-10" backgroundColor="tile_info1" />
+    <eLabel position="955,555" size="60,60" zPosition="-10" backgroundColor="tile_rec" />
+    <eLabel position="1020,555" size="60,60" zPosition="-10" backgroundColor="tile_info0" />
+    <eLabel position="1085,555" size="60,60" zPosition="-10" backgroundColor="tile_info0" />
+    <eLabel position="370,620" size="515,60" zPosition="-10" backgroundColor="tile_epg1" />
+    <eLabel position="890,620" size="255,60" zPosition="-10" backgroundColor="tile_info2" />
+    <!-- Weather Start -->
+    <widget render="VWeatherUpdater" source="global.CurrentTime" position="33,45" size="10,60" backgroundColor="transparent" foregroundColor="transparent" valign="center" halign="center" font="Regular; 1" zPosition="10" />
+    <widget source="session.CurrentService" render="Label" position="890,643" size="60,35" font="Meteo; 35" zPosition="10" halign="center" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" noWrap="1">
+      <convert type="VWeather">currentWeatherCode</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="890,623" size="30,20" font="Regular; 20" zPosition="10" halign="right" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" noWrap="1">
+      <convert type="VWeather">currentWeatherTemp</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="920,623" size="30,20" font="Regular; 20" zPosition="10" halign="left" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" noWrap="1">
+      <convert type="VWeather">CF</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="1045,620" size="60,60" font="Meteo; 40" zPosition="10" halign="center" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" noWrap="1">
+      <convert type="VWeather">forecastTomorrowCode</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="1080,620" size="60,25" font="Regular; 16" zPosition="10" halign="right" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" noWrap="1">
+      <convert type="VWeather">forecastTomorrowTempMax</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="1080,655" size="60,25" font="Regular; 16" zPosition="10" halign="right" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" noWrap="1">
+      <convert type="VWeather">forecastTomorrowTempMin</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="950,620" size="60,60" font="Meteo; 40" zPosition="10" halign="center" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" noWrap="1">
+      <convert type="VWeather">forecastTodayCode</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="985,620" size="60,26" font="Regular; 16" zPosition="10" halign="right" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" noWrap="1">
+      <convert type="VWeather">forecastTodayTempMax</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="985,655" size="60,25" font="Regular; 16" zPosition="10" halign="right" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" noWrap="1">
+      <convert type="VWeather">forecastTodayTempMin</convert>
+    </widget>
+    <!-- Weather End -->
+    <widget source="session.CurrentService" render="Label" position="145,490" size="60,60" font="Regular;40" halign="center" valign="center" noWrap="1" foregroundColor="foreground" backgroundColor="background" transparent="1">
+      <convert type="ExtendedServiceInfo">ServiceNumber</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="375,490" size="385,35" font="Regular;30" valign="center" noWrap="1" backgroundColor="backtop" transparent="1" foregroundColor="foreground" halign="left">
+      <convert type="ServiceName">Name</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="375,525" size="385,25" font="Regular; 20" valign="center" noWrap="1" backgroundColor="background" transparent="1" foregroundColor="foreground" halign="left">
+      <convert type="ServiceName">Provider</convert>
+    </widget>
+    <!-- Service Info Start -->
+    <widget source="session.RecordState" render="FixedLabel" text="REC" position="955,555" size="60,60" zPosition="2" font="Regular; 24" valign="center" halign="center" foregroundColor="foreground" backgroundColor="background" transparent="1">
+      <convert type="ConditionalShowHide" />
+    </widget>
+	<widget source="session.RecordState" render="FixedLabel" position="955,555" size="60,60" zPosition="3" valign="center" halign="center" text=" " backgroundColor="tile_rec">
+		<convert type="ConfigEntryTest">config.usage.blinking_rec_symbol_during_recording,True,CheckSourceBoolean</convert>
+		<convert type="ConditionalShowHide">Blink</convert>
+	</widget>
+    <widget source="session.CurrentService" render="Pixmap" pixmap="AtileHD/icons/ico_format_on.png" position="955,490" size="60,60" zPosition="2" alphatest="blend">
+      <convert type="ServiceInfo">IsWidescreen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" pixmap="AtileHD/icons/ico_txt_on.png" position="1020,490" size="60,60" zPosition="2" alphatest="blend">
+      <convert type="ServiceInfo">HasTelext</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" pixmap="AtileHD/icons/ico_hd_on.png" position="1085,490" size="60,60" zPosition="2" alphatest="blend">
+      <convert type="ServiceInfo">VideoWidth</convert>
+      <convert type="ValueRange">721,1980</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" pixmap="AtileHD/icons/ico_dolby_on.png" position="1020,555" size="60,60" zPosition="2" alphatest="blend">
+      <convert type="ServiceInfo">IsMultichannel</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="HbbtvApplication" render="Pixmap" pixmap="AtileHD/icons/ico_hbbtv_on.png" position="1085,555" size="60,60" zPosition="1" alphatest="blend">
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" render="FixedLabel" text="DVB-S" position="825,490" size="60,60" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1" halign="center" valign="center" zPosition="5">
+      <convert type="FrontendInfo">TYPE</convert>
+      <convert type="ValueRange">0,0</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" render="FixedLabel" text="DVB-C" position="825,490" size="60,60" font="Regular; 18" foregroundColor="foreground" backgroundColor="background" transparent="1" halign="center" valign="center" zPosition="5">
+      <convert type="FrontendInfo">TYPE</convert>
+      <convert type="ValueRange">1,1</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" render="FixedLabel" text="DVB-T" position="825,490" size="60,60" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1" halign="center" valign="center" zPosition="5">
+      <convert type="FrontendInfo">TYPE</convert>
+      <convert type="ValueRange">2,2</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.TunerInfo" zPosition="2" backgroundColor="tile_red" position="825,490" render="FixedLabel" size="30,30">
+      <convert type="TunerInfo">TunerUseMask</convert>
+      <convert type="ValueBitTest">1</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.TunerInfo" zPosition="2" backgroundColor="tile_red" position="855,490" render="FixedLabel" size="30,30">
+      <convert type="TunerInfo">TunerUseMask</convert>
+      <convert type="ValueBitTest">2</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.TunerInfo" zPosition="2" backgroundColor="tile_red" position="825,520" render="FixedLabel" size="30,30">
+      <convert type="TunerInfo">TunerUseMask</convert>
+      <convert type="ValueBitTest">4</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.TunerInfo" zPosition="2" backgroundColor="tile_red" position="855,520" render="FixedLabel" size="30,30">
+      <convert type="TunerInfo">TunerUseMask</convert>
+      <convert type="ValueBitTest">8</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" zPosition="3" backgroundColor="tile_green" position="826,490" render="FixedLabel" size="30,30">
+      <convert type="FrontendInfo">NUMBER</convert>
+      <convert type="ValueRange">0,0</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" zPosition="3" backgroundColor="tile_green" position="855,490" render="FixedLabel" size="30,30">
+      <convert type="FrontendInfo">NUMBER</convert>
+      <convert type="ValueRange">1,1</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" zPosition="3" backgroundColor="tile_green" position="825,520" render="FixedLabel" size="30,30">
+      <convert type="FrontendInfo">NUMBER</convert>
+      <convert type="ValueRange">2,2</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" zPosition="3" backgroundColor="tile_green" position="855,520" render="FixedLabel" size="30,30">
+      <convert type="FrontendInfo">NUMBER</convert>
+      <convert type="ValueRange">3,3</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <!-- TunerInfo End -->
+    <!-- Event Slider -->
+    <widget source="session.Event_Now" render="Progress" foregroundColor="slider_col_1" position="370,555" size="515,60" zPosition="1" transparent="1">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Picon" position="145,555" zPosition="4" size="220,132" transparent="1" alphatest="blend">
+      <convert type="ServiceName">Reference</convert>
+    </widget>
+    <widget source="session.Event_Now" render="Label" position="375,555" size="405,60" font="Regular; 25" halign="left" valign="top" backgroundColor="background" transparent="1" foregroundColor="foreground" zPosition="2">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget source="session.Event_Now" render="Label" position="785,555" size="100,60" font="Regular;20" halign="center" valign="center" backgroundColor="background" transparent="1" foregroundColor="foreground" zPosition="2">
+      <convert type="EventTime">Remaining</convert>
+      <convert type="RemainingToText">InMinutes</convert>
+    </widget>
+    <widget source="session.Event_Next" render="Label" position="375,620" size="405,60" font="Regular; 25" halign="left" valign="top" backgroundColor="background" foregroundColor="foreground" transparent="1">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget source="session.Event_Next" render="Label" position="785,620" size="100,60" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1">
+      <convert type="EventTime">Duration</convert>
+      <convert type="ClockToText">InMinutes</convert>
+    </widget>
+    <!-- Event End -->
+    <!-- SNR AGC Start -->
+    <widget source="session.FrontendStatus" render="Label" position="890,490" size="60,30" font="Regular;18" backgroundColor="background" foregroundColor="foreground" transparent="1" valign="center" halign="center" zPosition="2">
+      <convert type="FrontendInfo">SNR</convert>
+    </widget>
+    <widget source="session.FrontendStatus" render="Label" position="890,520" size="60,30" font="Regular;18" backgroundColor="background" foregroundColor="foreground" transparent="1" valign="center" halign="center" zPosition="2">
+      <convert type="FrontendInfo">AGC</convert>
+    </widget>
+    <widget source="session.FrontendStatus" render="Progress" position="890,490" size="60,30" zPosition="1" foregroundColor="slider_col_2" transparent="1">
+      <convert type="FrontendInfo">SNR</convert>
+    </widget>
+    <widget source="session.FrontendStatus" render="Progress" position="890,520" size="60,30" zPosition="1" foregroundColor="slider_col_3" transparent="1">
+      <convert type="FrontendInfo">AGC</convert>
+    </widget>
+    <!-- SNR AGC End -->
+    <!-- EMU Start -->
+    <widget source="global.CurrentTime" render="Label" position="210,490" size="155,30" font="Regular;25" valign="center" halign="center" foregroundColor="foreground" backgroundColor="background" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="210,520" size="155,30" font="Regular;22" valign="center" halign="center" foregroundColor="foreground" backgroundColor="background" transparent="1">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <!-- Fan and Temperature Start
+		<widget source="session.CurrentService" render="Label" font="Regular; 20" position="955,620" size="190,30" halign="center" backgroundColor="background" transparent="1" noWrap="1" foregroundColor="foreground" valign="center">
+			<convert type="VtiInfo">TempInfo</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" font="Regular; 20" position="955,650" size="190,30" halign="center" backgroundColor="background" transparent="1" noWrap="1" foregroundColor="foreground">
+			<convert type="VtiInfo">FanInfo</convert>
+		</widget>
+		Fan and Temperature End -->
+  </screen>
+</skin>

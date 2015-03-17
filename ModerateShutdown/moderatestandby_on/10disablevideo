@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# Graterlia OS
+# homepage: http://graterlia.xunil.pl
+# e-mail: nbox@xunil.pl
+#
+# skrypt wyłączający złącze HDMI
+# @j00zek
+# wersja 2014-12-11
+
+. /etc/sysconfig/gfunctions #wczytanie funkcji wspólnych dla skryptów Graterlia
+. /var/grun/grcstype #załadowanie informacji o rodzaju odbiornika
+GOSdebug ">>>>>>>>>> $0"
+
+if [ -e /etc/sysctl.gos ]; then
+	. /etc/sysctl.gos
+fi
+
+sleep 1
+fp_control -b 0
+echo "OFF" >/dev/vfd
+
+
+if [ "$rcstype" == "SPARK7162" ];then
+	/bin/fp_control -i 46 0
+	[ -z $iconINmoderate ] || /bin/fp_control -i $iconINmoderate 1
+else
+	/bin/vfdctl clearicons
+	[ -z $iconINmoderate ] || /bin/vfdctl "+$iconINmoderate"
+fi
+
+echo "scart">/proc/stb/avs/0/input
+stfbcontrol hd #disable HDMI

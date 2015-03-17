@@ -1,0 +1,103 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: UserSkin v0.1\n"
+"POT-Creation-Date: 2013-08-16 18:44+0100\n"
+"PO-Revision-Date: 2013-08-16 18:44+0100\n"
+"Last-Translator: plnick\n"
+"Language-Team: j00zek\n"
+"Language: DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+msgid "Setup - UserSkin"
+msgstr "Modyfikacja skórki"
+
+msgid "---Weather---"
+msgstr "---Pogoda---"
+
+msgid "About"
+msgstr "O wtyczce..."
+
+msgid "Cancel"
+msgstr "Anuluj"
+
+msgid "Celsius"
+msgstr "Celcjusz"
+
+msgid "Don't save settings?"
+msgstr "Nie zapisywać ustawień?"
+
+msgid "Enable skin personalization:"
+msgstr "Aktywuj personalizacje skórki:"
+
+msgid "Exit"
+msgstr "Koniec"
+
+msgid "Fahrenheit"
+msgstr "Farenheit"
+
+msgid "Font:"
+msgstr "Czcionka:"
+
+msgid "Location # (http://weather.yahoo.com/):"
+msgstr "Miejsce (http://weather.yahoo.com/):"
+
+msgid "Message"
+msgstr "Wiadomość"
+
+msgid "OK"
+msgstr "Ok"
+
+msgid "Personalize your Skin"
+msgstr "Personalizuj skórkę"
+
+msgid "Refresh interval in minutes:"
+msgstr "Aktualizacja co (min):"
+
+msgid "Restart necessary, restart GUI now?"
+msgstr "Zrestartować teraz, aby aktywować zmiany?"
+
+msgid "Style:"
+msgstr "Styl:"
+
+msgid "Temperature unit:"
+msgstr "Skala temperatury:"
+
+msgid "UserSkin Setup"
+msgstr "Ustawienia UserSkin"
+
+msgid "UserSkin additional screens"
+msgstr "Skórki użytkownika"
+
+msgid "off"
+msgstr "Wyłącz"
+
+msgid "on"
+msgstr "Włącz"
+
+msgid "User skins"
+msgstr "Skórki użytkownika"
+
+msgid "Enable PIG (not recommended for 1080p):"
+msgstr "Aktywuj PIG (nie polecane dla 1080p):"
+
+msgid "No User skins found"
+msgstr "Brak opjonalnych schematów dla tej skórki"
+
+msgid "Missing components found: %s\n\n"
+msgstr "Znaleziono brakujące komponenty: %s\n\n"
+
+msgid "Warning"
+msgstr "Ostrzeżenie"
+
+msgid "To see previews install package:\nenigma2-skin-infinityhd-nbox-tux-full-preview"
+msgstr "Aby mieć podgląd, zainstaluj paczkę:\nenigma2-skin-infinityhd-nbox-tux-full-preview"
+
+msgid "Install from OPKG"
+msgstr "Instalacja z OPKG"

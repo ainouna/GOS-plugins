@@ -1,0 +1,780 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: UserSkin v0.1\n"
+"POT-Creation-Date: 2013-08-16 18:44+0100\n"
+"PO-Revision-Date: 2015-02-16 16:44+0100\n"
+"Last-Translator: pppp\n"
+"Language-Team: j00zek/pppp 4 Graterlia\n"
+"Language: PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+msgid ""
+"\n"
+"Script finished\n"
+"use up/down arrows to scroll text\n"
+"OK closes window"
+msgstr ""
+"\n"
+"Skrypt wykonany\n"
+"Strzałka góra/dół przewija tekst\n"
+"OK zamyka okno"
+
+msgid "%s directory has been created."
+msgstr "Katalog %s został utworzony."
+
+msgid "%s executed!"
+msgstr "Wykonano %s !"
+
+msgid "%s mounted properly"
+msgstr "Zamontowano %s poprawnie"
+
+msgid "(now %sMHz)"
+msgstr "(aktualnie %sMHz)"
+
+msgid "--- Additional settings ---"
+msgstr "--- Ustawienia dodatkowe ---"
+
+msgid "--- Advanced settings ---"
+msgstr "--- Ustawienia zaawansowane ---"
+
+msgid "--- Channels List ---"
+msgstr "--- Lista kanałów ---"
+
+msgid "--- Remote control settings ---"
+msgstr "--- Konfiguracja pilota ---"
+
+msgid "--- Spark7162/Triplex/AA2 settings ---"
+msgstr "--- Ustawienia Spark7162/Triplex/AA2 ---"
+
+msgid "--- Standard settings ---"
+msgstr "--- Ustawienia standardowe ---"
+
+msgid "--- Standby/Wake up ---"
+msgstr "--- Czuwanie/Budzenie ---"
+
+msgid "2.PluginBrowser"
+msgstr "Przeglądarka wtyczek"
+
+msgid "Active OPKG branch: testing :)"
+msgstr "Aktualnie wykorzystywane drzewo OPKG: testing :)"
+
+msgid "Active keymap:"
+msgstr "Plik aktywnej mapy klawiszy"
+
+msgid ""
+"After changes in opkg, tuner has to be restarted.\n"
+" Restart now?"
+msgstr ""
+"System musi być zrestartowany po zmianach w OPKG.\n"
+" Zrestartować teraz?"
+
+msgid "Air head mode:"
+msgstr "Tryb głowicy naziemnej"
+
+msgid "Apply"
+msgstr "Zastosuj"
+
+msgid "Are you sure to install %s package with %s size?"
+msgstr "Na pewno zainstalować pakiet %s o wielkości %s?"
+
+msgid "Are you sure to install %s package?"
+msgstr "Na pewno zainstalować pakiet %s?"
+
+msgid "Are you sure to make partitions on %s?"
+msgstr "Na pewno utworzyć partycje na %s?"
+
+msgid "Are you sure, you want delete % package?"
+msgstr "Na pewno usunąć pakiet %s?"
+
+msgid "Are you sure, you want to switch opkg branch to %s?"
+msgstr "Na pewno przełączyć opkg na gałąź %s?"
+
+msgid "Automatic bootlogo downloader"
+msgstr "Automatyczne zmienianie tapety/bootlogo"
+
+msgid "Automatically share GS during boot?"
+msgstr "Automatyczne wysyłanie dzienników GS przy starcie"
+
+msgid "CPU speed %s:"
+msgstr "Prędkość procesora %s"
+
+msgid "Cancel"
+msgstr "Anuluj"
+
+msgid "Change mounting of /hdd from %s"
+msgstr "Zmień montowanie katalogu /hdd z %s"
+
+msgid "Channel list backup"
+msgstr "Kopia listy kanałów"
+
+msgid "Channel list restore"
+msgstr "Przywracanie listy kanałów"
+
+msgid "Check for updates availibility"
+msgstr "Sprawdzanie dostępności aktualizacji"
+
+msgid "Checking /dev/%s"
+msgstr "Sprawdzam /dev/%s"
+
+msgid "Checking file system during boot?"
+msgstr "Sprawdzać system plików przy starcie?"
+
+msgid "Checking partition"
+msgstr "Sprawdzanie spójności ..."
+
+msgid "Close system"
+msgstr "Zamknij system"
+
+msgid "Debug logs in:"
+msgstr "Zapisz dzienniki w"
+
+msgid "Delay (50-250, standard 20ms):"
+msgstr "Opóźnienie (50-250, standard 20ms)"
+
+msgid "Delete"
+msgstr "Usuń"
+
+msgid "Directory browser"
+msgstr "Wybór katalogu"
+
+msgid "Disable automatic info about updates"
+msgstr "Wył. powiadamianie o aktualizacjach"
+
+msgid "Disable donwload from random source"
+msgstr "Wyłącz pobieranie z losowo wybranego źródła"
+
+msgid "Disable download from Bing"
+msgstr "Wyłącz pobieranie z Bing"
+
+msgid "Disable download from National Geographic"
+msgstr "Wyłącz pobieranie z National Geographic"
+
+msgid "Disable using /hdd/picture/ folder"
+msgstr "Wyłącz korzystanie z katalogu /hdd/picture/"
+
+msgid "Do you confirm %s should be mounted on /hdd?"
+msgstr "Na pewno ustawić montowanie %s na /hdd?"
+
+msgid "Do you want to format %s partition?"
+msgstr "Na pewno sformatować partycję %s?"
+
+msgid "Do you want to run '%s'? (package size %s)"
+msgstr "Na pewno wykonać '%s'? (wielkość pakietu %s)"
+
+msgid "Do you want to upgrade %s package?"
+msgstr "Na pewno aktualizować pakiet %s?"
+
+msgid "Do you want to upgrade all packages?"
+msgstr "Na pewno aktualizować wszystkie pakiety?"
+
+msgid "Download from Bing"
+msgstr "Pobieranie z Bing"
+
+msgid "Download from National Geographic"
+msgstr "Pobieranie z National Geographic"
+
+msgid "Download from random source"
+msgstr "Pobieranie z losowo wybranego źródła"
+
+msgid "Download now from /hdd/picture"
+msgstr "Pobierz teraz z /hdd/picture"
+
+msgid "Download now from Bing"
+msgstr "Pobierz teraz z Bing"
+
+msgid "Download now from National Geographic"
+msgstr "Pobierz teraz z National Geographic"
+
+msgid "Download now randomly"
+msgstr "Pobierz teraz losowo"
+
+msgid "ERROR connecting to OPKG"
+msgstr "BŁĄD połączenia z OPKG"
+
+msgid "Emergency tuner restart"
+msgstr "Awaryjny restart tunera"
+
+msgid "Enable automatic info about updates"
+msgstr "Wł. powiadamianie o aktualizacjach"
+
+msgid "Enter name"
+msgstr "Wprowadź nazwę"
+
+msgid "Error creating %s directory."
+msgstr "Katalog %s nie może zostać utworzony."
+
+msgid "Error mounting partition"
+msgstr "Błąd montowania partycji"
+
+msgid "Error mounting partition, restart tuner to apply changes."
+msgstr ""
+"Błąd montowania partycji, zrestartuj tuner, aby zmiany zostały zastosowane."
+
+msgid "Execute %s?"
+msgstr "Na pewno wykonać %s?"
+
+msgid "Filesystem checking"
+msgstr "Sprawdzanie spójności partycji"
+
+msgid "Format ..."
+msgstr "Formatowanie ..."
+
+msgid "Format partition"
+msgstr "Formatowanie partycji"
+
+msgid "Formatting /dev/%s as %s"
+msgstr "Formatuję /dev/%s jako %s"
+
+msgid "GOShddmanager"
+msgstr "Tworzenie, sprawdzanie i montowanie partycji"
+
+msgid "GOSkeymap"
+msgstr "Konfiguracja pilota bezpośrednio w mapie klawiszy"
+
+msgid "GOSopkg"
+msgstr "Aktualizacja systemu i instalacja dodatkowych składników"
+
+msgid "GOSsettings"
+msgstr "Dodatkowe ustawienia systemowe"
+
+msgid "GOSuserscripts"
+msgstr "Skrypty użytkownika z /etc/sysconfig/user_scripts/"
+
+msgid "GUI restart"
+msgstr "Restart GUI"
+
+msgid "Graterlia OS manager"
+msgstr "Graterlia OS menadżer"
+
+msgid "Graterlia system settings configurator"
+msgstr "Konfigurator ustawień systemowych GOS"
+
+msgid "HDD/PEN manager"
+msgstr "Menadżer nośników danych"
+
+msgid "Install"
+msgstr "Instaluj"
+
+msgid "Install IPTVPlayer plugin through OPKG first"
+msgstr "Musisz zainstalować wtyczkę IPTVPlayer przez OPKG."
+
+msgid "Install Local package"
+msgstr "Instalacja lokalnego pakietu"
+
+msgid "Install UserSkin plugin through OPKG first"
+msgstr "Musisz zainstalować wtyczkę UserSkin przez OPKG."
+
+msgid "Install local packet"
+msgstr "Instalacja pakietu z USB"
+
+msgid "Keep old logs?"
+msgstr "Archiwizacja dzienników"
+
+msgid "Key P+:"
+msgstr "Klawisz P+"
+
+msgid "Key P-:"
+msgstr "Klawisz P-"
+
+msgid "Keymap configurator"
+msgstr "Konfigurator mapy klawiszy"
+
+msgid "Lircd codes"
+msgstr "kody Lircd"
+
+msgid "Lircd names"
+msgstr "nazwy Lircd"
+
+msgid "Lircd settings:"
+msgstr "Konfiguracja Lircd"
+
+msgid "Make backup"
+msgstr "Wykonaj kopię"
+
+msgid "Make partitions"
+msgstr "Partycjonowanie nośnika"
+
+msgid "Making partitions on /dev/%s"
+msgstr "Tworzę partycje na /dev/%s"
+
+msgid "Max. key press time (50-250, standard 130ms):"
+msgstr "Maks. czas klawisza (50-250, standard 130ms)"
+
+msgid "Medium:"
+msgstr "Nośnik"
+
+msgid "Menu not available"
+msgstr "Menu niedostępne"
+
+msgid "MenuInfo"
+msgstr "Dodatkowe informacje o systemie"
+
+msgid "MenuOScam"
+msgstr "Zarządzanie OScam"
+
+msgid "MenuSystemManager"
+msgstr "Zarządzanie systemem"
+
+msgid "MenuXlogo"
+msgstr "Automatyczne zmienianie tapety/bootlogo (wymaga ffmpeg)"
+
+msgid "Mount %s on %s?"
+msgstr "Na pewno zamontować %s na %s?"
+
+msgid "Mount ..."
+msgstr "Montowanie ..."
+
+msgid "Mount/umount partition temporarly"
+msgstr "Czasowe montowanie/odmontowanie partycji"
+
+msgid "Mounted successfully"
+msgstr "Zamontowano poprawnie"
+
+msgid "Neigther internet nor service is working :("
+msgstr "Połączenie z internetem lub serwis nie działa :("
+
+msgid "Network restart"
+msgstr "Restart sieci"
+
+msgid "New directory"
+msgstr "Nowy folder"
+
+msgid "No config file for %s"
+msgstr "Brak pliku konfiguracyjnego dla %s"
+
+msgid "OPKG branch:"
+msgstr "Drzewo OPKG"
+
+msgid "OPKG manager"
+msgstr "Menadżer składników GOS"
+
+msgid ""
+"Only %d MB left!!!\n"
+"At least 8MB is required to safely install and upgrade packages."
+msgstr ""
+"Pozostało tylko %d MB wolnej przestrzeni!!!\n"
+"Potrzeba najmniej 8 MB, aby bezpiecznie instalować lub aktualizować "
+"większość pakietów."
+
+msgid "Only ext[2|3|4] partitions can be checked."
+msgstr "Tylko partycje ext[2|3|4] mogą byś sprawdzone."
+
+msgid ""
+"OpenPLI has to be restarted after changes in keymap.\n"
+"Restart now?"
+msgstr ""
+"System musi być zrestartowany po zmianie w mapie klawiszy.\n"
+" Zrestartować teraz?"
+
+msgid "OpenpliSettings"
+msgstr "Dodatkowe ustawienia systemu"
+
+msgid "Package list update"
+msgstr "Aktualizacja listy pakietów"
+
+msgid "Partition 1 size:"
+msgstr "Wielkość partycji 1"
+
+msgid "Partition 2 size:"
+msgstr "Wielkość partycji 2"
+
+msgid "Partition 3 size:"
+msgstr "Wielkość partycji 4"
+
+msgid "Partition 4 size:"
+msgstr "Wielkość partycji 4"
+
+msgid "Partitions number:"
+msgstr "Liczba partycji"
+
+msgid "Permanent /hdd mount ..."
+msgstr "Stałe montowanie /hdd ..."
+
+msgid "Plugin not available yet"
+msgstr "Dodatek jeszcze niedostępny"
+
+msgid "Read"
+msgstr "Odczytaj"
+
+msgid "Recommended update installed packages"
+msgstr "Zalecana aktualizacja zainstalowanych pakietów"
+
+msgid "Refresh"
+msgstr "Odśwież"
+
+msgid "Refresh list"
+msgstr "Odśwież listę"
+
+msgid "Reinstall"
+msgstr "Reinstaluj"
+
+msgid "Restart RC"
+msgstr "Reset pilota"
+
+msgid "Restart system"
+msgstr "Restart systemu"
+
+msgid "Run"
+msgstr "Wykonaj"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Select directory"
+msgstr "Wybierz katalog"
+
+msgid "Select option"
+msgstr "Wybierz opcję"
+
+msgid "Select package"
+msgstr "Wybierz pakiet"
+
+msgid "SelectItem"
+msgstr "Wybierz opcję"
+
+msgid "Selected terminal:"
+msgstr "Typ terminala"
+
+msgid "Set mounting of /hdd directory"
+msgstr "Ustaw montowanie katalogu /hdd"
+
+msgid "Settings backup"
+msgstr "Kopia ustawień"
+
+msgid "Show all openPLI elements only"
+msgstr "OpenPLi"
+
+msgid "Show all packages"
+msgstr "Wszystkie pakiety"
+
+msgid "Show kernel modules only"
+msgstr "Kernel"
+
+msgid "Show openPLI plugins only"
+msgstr "Wtyczki"
+
+msgid "Show openPLI skins only"
+msgstr "Skórki"
+
+msgid "Shutdown type:"
+msgstr "Wyłączenie tunera"
+
+msgid "Standby mode after power outage?"
+msgstr "Czuwanie tunera po uruchomieniu"
+
+msgid "Standby mode when no activity?"
+msgstr "Czuwanie po bezczynności"
+
+msgid "System cleanup"
+msgstr "Czyszczenie systemu"
+
+msgid "System management"
+msgstr "Zarządzanie systemem"
+
+msgid "Time also on main VFD:"
+msgstr "Czas również na wyświetlaczu"
+
+msgid "Time synchronization:"
+msgstr "Synchronizacja czasu"
+
+msgid "Too many packages and too small free space for upgrade!!!"
+msgstr "Za dużo pakietów do aktualizacji i za mało miejsca!!!"
+
+msgid "Trying to download a new packetlist. Please wait..."
+msgstr "Próbuję pobrać nową listę pakietów. Proszę czekać..."
+
+msgid "Upgrade"
+msgstr "Aktualizuj"
+
+msgid "Upgrade packages"
+msgstr "Aktualizacja pakietów"
+
+msgid "Upgrading all packages..."
+msgstr "Aktualizacja wszystkich pakietów..."
+
+msgid "Upgrading all packages...."
+msgstr "Aktualizacja wszystkich pakietów..."
+
+msgid "Use /hdd/picture/ folder"
+msgstr "Pobieranie z katalogu /hdd/picture/"
+
+msgid "User scripts"
+msgstr "Skrypty użytkownika"
+
+msgid "Volume up/down step:"
+msgstr "Rozmiar kroku regulacji głośności"
+
+msgid "WARNING: return to release branch is not possible!!!"
+msgstr ""
+"Uwaga: powrót do gałęzi release jest możliwy wyłącznie przez reinstalację!!!"
+
+msgid "Wake up with key:"
+msgstr "Budzenie klawiszem"
+
+msgid "Write debug logs?"
+msgstr "DEBUG do plików[openPLI|gos].log?"
+
+msgid "Wrong directory name."
+msgstr "Nieprawidłowa nazwa katalogu."
+
+msgid "You will be later prompted for file selection."
+msgstr "Zostaniesz poproszony o wskazanie pliku."
+
+msgid "after pressing 5xPOWER quickly"
+msgstr "po szybkim naciśnięciu 5 razy POWER"
+
+msgid "after pressing key POWER 5 times"
+msgstr "po naciśnięciu 5 razy POWER"
+
+msgid "all"
+msgstr "wszystkie"
+
+msgid "all free"
+msgstr "cała dost."
+
+msgid "autoselection"
+msgstr "wybór automatyczny"
+
+msgid "deep"
+msgstr "całkowite zamknięcie"
+
+msgid "delete %s"
+msgstr "skasować %s"
+
+msgid "directory:"
+msgstr "katalogu"
+
+msgid "evremote2 mode:"
+msgstr "evremote2 obsługuje"
+
+msgid "from NTP server"
+msgstr "z serwera czasu NTP"
+
+msgid "from transponder"
+msgstr "z transpondera"
+
+msgid "install %s"
+msgstr "zainstalować %s"
+
+msgid "key left action"
+msgstr "akcja klawisza w lewo"
+
+msgid "key right action"
+msgstr "akcja klawisza w prawo"
+
+msgid "last"
+msgstr "ostatni"
+
+msgid "local files only"
+msgstr "Tylko pliki lokalne"
+
+msgid "moderate"
+msgstr "częściowe wyłączenie"
+
+msgid "next marker"
+msgstr "następny znacznik"
+
+msgid "off"
+msgstr "wył"
+
+msgid "on"
+msgstr "wł"
+
+msgid "on partition:"
+msgstr "na partycję"
+
+msgid "on system:"
+msgstr "na system"
+
+msgid "openPLI uses:"
+msgstr "OpenPLI wykorzystuje"
+
+msgid "partition:"
+msgstr "partycji"
+
+msgid "pluginIPTVPlayer"
+msgstr "Odtwarzacz plików wideo z serwisów internetowych"
+
+msgid "pluginUserSkin"
+msgstr "Dostosowanie skórek do potrzeb użytkownika"
+
+msgid "previous marker"
+msgstr "poprzedni znacznik"
+
+msgid "show Python modules only"
+msgstr "Python"
+
+msgid "show fonts only"
+msgstr "Czcionki"
+
+msgid "show language packets only"
+msgstr "Języki"
+
+msgid "show oscam packages only"
+msgstr "OScam"
+
+msgid "show system libraries only"
+msgstr "Biblioteki systemowe"
+
+msgid "sshd/telnet restart"
+msgstr "Restart sshd/telnet"
+
+msgid "standard"
+msgstr "standardowa"
+
+msgid "timestamp each item?"
+msgstr "Znacznik czasowy?"
+
+msgid "upgrade %s"
+msgstr "aktualizować %s"
+
+msgid "GOSMenuChannels"
+msgstr "Synchronizacja listy kanałów GOS"
+
+msgid "Graterlia channels list synchronization"
+msgstr "Synchronizacja listy kanałów GOS"
+
+msgid "Synchronize in background?"
+msgstr "Synchronizacja w tle"
+
+msgid "Get channels list from:"
+msgstr "Pobieranie listy kanałów z"
+
+msgid "Login as:"
+msgstr "Login"
+
+msgid "Password:"
+msgstr "Hasło"
+
+msgid "Blinking icon:"
+msgstr "Miganie diodą"
+
+msgid "Show clock:"
+msgstr "Pokaż zegar"
+
+msgid "Set icon:"
+msgstr "Dioda podczas wyłączenia"
+
+msgid "Max. key press time (90-250, standard 130ms):"
+msgstr "Maks. czas wciśnięcia przycisku (90-250, standard 130ms)"
+
+msgid "Synchronize"
+msgstr "Synchronizuj"
+
+msgid "OScam Menu"
+msgstr "Zarządzanie OScam"
+
+msgid "Informacja o wersji OScam"
+msgstr "Wersja OScam"
+
+msgid "EPG file:"
+msgstr "Plik EPG"
+
+msgid "Show IPTV plugins only"
+msgstr "IPTV"
+
+msgid "Display complete list of changes"
+msgstr "Wyświetl listę zmian"
+
+msgid "List upgradeable packages"
+msgstr "Lista pakietów do aktualizacji"
+
+msgid "Disable IPTV repository"
+msgstr "Wyłącz repozytorium IPTV"
+
+msgid "Enable IPTV repository"
+msgstr "Włącz repozytorium IPTV"
+
+msgid "Options"
+msgstr "Opcje"
+
+msgid "UserScripts"
+msgstr "Skrypty użytkownika"
+
+msgid "Plugin browser"
+msgstr "Przeglądarka wtyczek"
+
+msgid "myMenu"
+msgstr "Wybierz"
+
+msgid "Info about OScam version"
+msgstr "Informacja o OScam"
+
+msgid "Install OScam without WebIf"
+msgstr "Instalacja OScam bez WebIf"
+
+msgid "Install OScam with WebIf"
+msgstr "Instalacja OScam z WebIf"
+
+msgid "Configure to work without sat"
+msgstr "Konfiguracja do pracy bez anteny sat"
+
+msgid "uptime"
+msgstr "Czas działania"
+
+msgid "Memory usage"
+msgstr "Użycie pamięci"
+
+msgid "Started from..."
+msgstr "Uruchomienie z ..."
+
+msgid "Mounted devices"
+msgstr "Zamontowane urządzenia"
+
+msgid "Space on partitions"
+msgstr "Miejsce na partycjach"
+
+msgid "System processes"
+msgstr "Procesy systemowe"
+
+msgid "Network card(s)"
+msgstr "Karty sieciowe"
+
+msgid "Network state"
+msgstr "Stan sieci"
+
+msgid "Test network connection"
+msgstr "Test połączenia sieciowego"
+
+msgid "openPLIsetup"
+msgstr "Ustawienia systemu"
+
+msgid "GOS manager window style:"
+msgstr "Styl okien menadżera GOS"
+
+msgid "icons"
+msgstr "ikony"
+
+msgid "list"
+msgstr "lista"
+
+msgid "Fallback server enabled?"
+msgstr "Zapasowy serwer?"
+
+msgid "Fallback server URL (http://<url>:<port>):"
+msgstr "URL zapasowego serwera (http//<url>:<port>):"
+
+msgid "Configure to work with sat"
+msgstr "Konfiguracja do pracy z anteną sat"
+
+msgid "Configuring tuner to work without sat"
+msgstr "Konfigurowanie do pracy bez anteny sat"
+
+msgid "Configuring tuner to work with sat"
+msgstr "Konfigurowanie do pracy z anteną sat"
+
+msgid "Restart tuner to activate changes!!!"
+msgstr "Należy zrestartować tuner aby aktywować zmiany!"
+
+msgid "Enable OsCam test repository"
+msgstr "Włącz testowe repozytorium OScam"
+
+msgid "Disable OsCam test repository"
+msgstr "Wyłącz testowe repozytorium OScam"

@@ -1,0 +1,592 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: UserSkin v0.1\n"
+"POT-Creation-Date: 2013-08-16 18:44+0100\n"
+"PO-Revision-Date: 2014-11-05 19:22+0100\n"
+"Last-Translator: miciomax <miciomaxx@libero.it>\n"
+"Language-Team: j00zek 4 Graterlia\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.6\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+msgid "Graterlia OS manager"
+msgstr "Graterlia OS manager"
+
+msgid "No config file for %s"
+msgstr "Nessun file configurazione per %s"
+
+msgid "Menu not available"
+msgstr "Menu non disponibile"
+
+msgid "Install IPTVPlayer plugin through OPKG first"
+msgstr "Prima installa il plugin IPTVPlayer attraverso OPKG "
+
+msgid "Install UserSkin plugin through OPKG first"
+msgstr "Prima installa il plugin UserSkin attraverso OPKG"
+
+msgid "Plugin not available yet"
+msgstr "Plugin non ancora disponibile"
+
+msgid "SelectItem"
+msgstr "Seleziona elemento"
+
+msgid "2.PluginBrowser"
+msgstr "Lista plugin"
+
+msgid "GOShddmanager"
+msgstr "GOS manager HDD"
+
+msgid "GOSkeymap"
+msgstr "GOS keymap"
+
+msgid "GOSopkg"
+msgstr "GOS opkg"
+
+msgid "GOSsettings"
+msgstr "GOS impostazioni"
+
+msgid "GOSuserscripts"
+msgstr "GOS script utente (/etc/sysconfig/user_scripts/)"
+
+msgid "MenuInfo"
+msgstr "Menu informazioni"
+
+msgid "MenuOScam"
+msgstr "Menu Oscam"
+
+msgid "MenuSystemManager"
+msgstr "Menu gestione del sistema"
+
+msgid "MenuXlogo"
+msgstr "Menu Xlogo "
+
+msgid "OpenpliSettings"
+msgstr "Configurazioni openPLI"
+
+msgid "pluginIPTVPlayer"
+msgstr "pluginIPTVPlayer"
+
+msgid "pluginUserSkin"
+msgstr "plugin Skin utente"
+
+msgid "Refresh"
+msgstr "Aggiorna"
+
+msgid "New directory"
+msgstr "Nuova cartella"
+
+msgid "Apply"
+msgstr "Applica"
+
+msgid "%s directory has been created."
+msgstr "Cartell %s è stata creata."
+
+msgid "Error creating %s directory."
+msgstr "Errori creando la cartella %s."
+
+msgid "Enter name"
+msgstr "Inserisci il nome"
+
+msgid "Wrong directory name."
+msgstr "Nome della cartella errato."
+
+msgid "Directory browser"
+msgstr "Lista cartelle"
+
+msgid ""
+"\n"
+"Script finished\n"
+"use up/down arrows to scroll text\n"
+"OK closes window"
+msgstr ""
+"\n"
+"script terminato\n"
+"usa frecce su/giu per scorrere\n"
+"OK per chiudere la finestra"
+
+msgid "Set mounting of /hdd directory"
+msgstr "Impostare montaggio della cartella /hdd "
+
+msgid "Change mounting of /hdd from %s"
+msgstr "Cambia montaggio di /hdd da %s"
+
+msgid "Mount/umount partition temporarly"
+msgstr "Monta/smonta partizione temporaneamente"
+
+msgid "Filesystem checking"
+msgstr "Controllo Filesystem"
+
+msgid "Format partition"
+msgstr "Formatto partizione"
+
+msgid "Make partitions"
+msgstr "Creare partizioni"
+
+msgid "HDD/PEN manager"
+msgstr "Manager HDD/PEN "
+
+msgid "on partition:"
+msgstr "su partizione:"
+
+msgid "Do you confirm %s should be mounted on /hdd?"
+msgstr "Confermi che %s deve essere montata su /hdd?"
+
+msgid "%s mounted properly"
+msgstr "%s correttamente montata "
+
+msgid "Show all packages"
+msgstr "Mostra tutti i pacchetti"
+
+msgid "Show all openPLI elements only"
+msgstr "Mostra solo tutti gli elementi openPLI"
+
+msgid "Show openPLI plugins only"
+msgstr "Mostra solo i plugin openPLI"
+
+msgid "Show openPLI skins only"
+msgstr "Mostra solo le skins openPLI"
+
+msgid "Show kernel modules only"
+msgstr "Mostra solo moduli kernel "
+
+msgid "show Python modules only"
+msgstr "Mostra solo moduli Python modules "
+
+msgid "show oscam packages only"
+msgstr "Mostra solo pacchetti oscam"
+
+msgid "show system libraries only"
+msgstr "Mostra solo librerie di sistema"
+
+msgid "show fonts only"
+msgstr "Mostra solo fonts"
+
+msgid "Refresh list"
+msgstr "Aggiorna lista"
+
+msgid "Recommended update above packages"
+msgstr "Aggiornamento consigliato dei pacchetti sopra"
+
+msgid "Upgrading all packages...."
+msgstr "Sto aggiornando tutti i pacchetti...."
+
+msgid "Are you sure to install %s package with %s size?"
+msgstr "Sei sicuro di voler installare %s pacchetti di dimensione %s?"
+
+msgid "Do you want to upgrade %s package?"
+msgstr "Vuoi aggiornare %s pacchetti?"
+
+msgid "Are you sure, you want delete % package?"
+msgstr "Sei sicuro di voler cancellare %s pacchetti?"
+
+msgid "Do you want to run '%s'? (package size %s)"
+msgstr "Vuoi eseguire '%s'? (dimensione pacchetto %s)"
+
+msgid "Too many packages and too small free space for upgrade!!!"
+msgstr "Troppi pacchetti e troppo poco spazio libero per aggiornare!!!"
+
+msgid "Do you want to upgrade all packages?"
+msgstr "Vuoi aggiornare tutti i pacchetti?"
+
+msgid "Upgrading all packages..."
+msgstr "Sto aggiornando tutti i pacchetti..."
+
+msgid ""
+"After changes in opkg, tuner has to be restarted.\n"
+" Restart now?"
+msgstr ""
+"Dopo i cambiamenti fatti, il decoder deve essere riavviato.\n"
+" Riavviare ora?"
+
+msgid ""
+"Only %d MB left!!!\n"
+"At least 8MB is required to safely install and upgrade packages."
+msgstr ""
+"Rimasti solo %d MB!!!\n"
+"Almeno 8 MB sono necessari per installare e aggiornare in sicurezza i "
+"pacchetti."
+
+msgid "Delete"
+msgstr "Cancellare"
+
+msgid "delete %s"
+msgstr "cancellare %s"
+
+msgid "Reinstall"
+msgstr "Reinstallare"
+
+msgid "Install"
+msgstr "Installare"
+
+msgid "install %s"
+msgstr "installare %s"
+
+msgid "Upgrade"
+msgstr "Aggiornare"
+
+msgid "upgrade %s"
+msgstr "aggiornare %s"
+
+msgid "on"
+msgstr "su"
+
+msgid "off"
+msgstr "spento"
+
+msgid "standard"
+msgstr "standard"
+
+msgid "Error mounting partition, restart tuner to apply changes."
+msgstr ""
+"Errore in montaggio partizione, riavviare il decoder per applicare le "
+"modifiche."
+
+msgid "directory:"
+msgstr "cartella:"
+
+msgid "Mount %s on %s?"
+msgstr "Montare %s su %s?"
+
+msgid "Mounted successfully"
+msgstr "Montaggio avvenuto correttamente"
+
+msgid "Error mounting partition"
+msgstr "Errore in montaggio partizione"
+
+msgid "Select directory"
+msgstr "Seleziona cartella"
+
+msgid "partition:"
+msgstr "partizione:"
+
+msgid "Checking /dev/%s"
+msgstr "Sto controllando /dev/%s"
+
+msgid "Only ext[2|3|4] partitions can be checked."
+msgstr "Possono essere controllate solo partizioni in ext[2|3|4]."
+
+msgid "Run"
+msgstr "Avviare"
+
+msgid "on system:"
+msgstr "su sistema:"
+
+msgid "Do you want to format %s partition?"
+msgstr "Vuoi formattare partizione %s?"
+
+msgid "Formatting /dev/%s as %s"
+msgstr "Sto formattando /dev/%s come %s"
+
+msgid "all free"
+msgstr "tutto libero."
+
+msgid "Medium:"
+msgstr "Medio:"
+
+msgid "Partitions number:"
+msgstr "Partizione numero:"
+
+msgid "Partition 1 size:"
+msgstr "Dimensione partizione 1:"
+
+msgid "Partition 2 size:"
+msgstr "Dimensione partizione 2:"
+
+msgid "Partition 3 size:"
+msgstr "Dimensione partizione 3:"
+
+msgid "Partition 4 size:"
+msgstr "Dimensione partizione 4:"
+
+msgid "Are you sure to make partitions on %s?"
+msgstr "Sicuro di voler creare partizioni su %s?"
+
+msgid "Making partitions on /dev/%s"
+msgstr "Sto creando partizioni su  /dev/%s"
+
+msgid "previous marker"
+msgstr "marcatore precedente"
+
+msgid "next marker"
+msgstr "prossimo marcatore"
+
+msgid "key left action"
+msgstr "azione per freccia sinistra"
+
+msgid "key right action"
+msgstr "azione per freccia destra"
+
+msgid "Keymap configurator"
+msgstr "Configurazione keymap"
+
+msgid "Read"
+msgstr "Leggere"
+
+msgid "Make backup"
+msgstr "Eseguire backup"
+
+msgid "Active keymap:"
+msgstr "Kaymap attiva:"
+
+msgid "--- Channels List ---"
+msgstr "--- Lista canali ---"
+
+msgid "Key P+:"
+msgstr "Tasto P+:"
+
+msgid "Key P-:"
+msgstr "Tasto P-:"
+
+msgid "--- Standby/Wake up ---"
+msgstr "--- Standby/Wake up ---"
+
+msgid "Wake up with key:"
+msgstr "Wake up con chiave:"
+
+msgid ""
+"OpenPLI has to be restarted after changes in keymap.\n"
+"Restart now?"
+msgstr ""
+"OpenPLI deve essere riavviato dopo i cambiamenti in keymap.\n"
+"Riavvio adesso?"
+
+msgid "Execute %s?"
+msgstr "Eseguire %s?"
+
+msgid "%s executed!"
+msgstr "%s eseguito!"
+
+msgid "autoselection"
+msgstr "autoselezione"
+
+msgid "from transponder"
+msgstr "dal transponder"
+
+msgid "from NTP server"
+msgstr "dal server NTP "
+
+msgid "Lircd codes"
+msgstr "Codici Lircd"
+
+msgid "Lircd names"
+msgstr "Nomi Lircd"
+
+msgid "after pressing 5xPOWER quickly"
+msgstr "dopo aver premuto 5 volte POWER velocemente"
+
+msgid "after pressing key POWER 5 times"
+msgstr "dopo aver premuto 5 volte POWER "
+
+msgid "--- Standard settings ---"
+msgstr "--- Configurazione Standard ---"
+
+msgid "Selected terminal:"
+msgstr "Terminale selezionato:"
+
+msgid "Checking file system during boot?"
+msgstr "Controllo file system all'avvio?"
+
+msgid "OPKG branch:"
+msgstr "Sezione OPKG:"
+
+msgid "Active OPKG branch: testing :)"
+msgstr "Sezione OPKG attiva:    in fase di test :)"
+
+msgid "--- Spark7162/Triplex/AA2 settings ---"
+msgstr "--- Configurazione Spark7162/Triplex/AA2 ---"
+
+msgid "Air head mode:"
+msgstr "Modalità terrestre:"
+
+msgid "Time also on main VFD:"
+msgstr "Orario anche sul VFD:"
+
+msgid "--- Remote control settings ---"
+msgstr "--- Configurazione telecomando ---"
+
+msgid "Lircd settings:"
+msgstr "Setting Lircd:"
+
+msgid "evremote2 mode:"
+msgstr "modalità evremote2:"
+
+msgid "Max. key press time (50-250, standard 130ms):"
+msgstr "Tempo max. in tasto premuto (50-250, standard 130ms):"
+
+msgid "Delay (50-250, standard 20ms):"
+msgstr "Ritardo (50-250, standard 20ms):"
+
+msgid "--- Additional settings ---"
+msgstr "--- Configurazioni aggiuntive ---"
+
+msgid "Emergency tuner restart"
+msgstr "Riavvio d'emergenza decoder"
+
+msgid "Time synchronization:"
+msgstr "Sincronizzazione orario:"
+
+msgid "--- Advanced settings ---"
+msgstr "--- Configurazione avanzata ---"
+
+msgid "(now %sMHz)"
+msgstr "(attualmente %sMHz)"
+
+msgid "CPU speed %s:"
+msgstr "Velocità CPU %s:"
+
+msgid "Write debug logshdd?"
+msgstr "Registra log di debug su [openPLI|gos].log?"
+
+msgid "WARNING: return to release branch is not possible!!!"
+msgstr ""
+"ATTENZIONE: ritorno alla precedente release possibile solo reinstallando!!!"
+
+msgid "Graterlia system settings configurator"
+msgstr "Configurazione delle impostazioni di sistema di Graterlia"
+
+msgid "Restart RC"
+msgstr "Riavviare decoder"
+
+msgid "Are you sure, you want to switch opkg branch to UNSTABLE %s?"
+msgstr "Sicuro di voler passare la sezione opkg alla INSTABILE %s?"
+
+msgid "Standby mode after power outage?"
+msgstr "Modalità standby dopo un'interruzione di corrente?"
+
+msgid "Standby mode when no activity?"
+msgstr "Modalità standby in assenza di attività?"
+
+msgid "Volume up/down step:"
+msgstr "Fase di controllo del volume:"
+
+msgid "show language packets only"
+msgstr "Mostra solo i pacchetti linguaggio"
+
+msgid "openPLI uses:"
+msgstr "openPLI usa:"
+
+msgid "System management"
+msgstr "Gestione sistema"
+
+msgid "Check for updates availibility"
+msgstr "Controllo disponibilità aggiornamenti"
+
+msgid "GUI restart"
+msgstr "Riavvio GUI"
+
+msgid "Settings backup"
+msgstr "Backup impostazioni"
+
+msgid "Close system"
+msgstr "Chiudi sistema"
+
+msgid "Restart system"
+msgstr "Riavvia sistema"
+
+msgid "Disable automatic info about updates"
+msgstr "Disabilita info automatiche degli aggiornamenti"
+
+msgid "Enable automatic info about updates"
+msgstr "Abilita info automatiche degli aggiornamenti "
+
+msgid "Channel list backup"
+msgstr "Backup lista canali"
+
+msgid "Channel list restore"
+msgstr "Ripristino lista canali"
+
+msgid "Network restart"
+msgstr "Riavvio della rete"
+
+msgid "sshd/telnet restart"
+msgstr "Riavvio client sshd/telnet"
+
+msgid "OPKG manager"
+msgstr "Configurazione OPKG"
+
+msgid "Permanent /hdd mount ..."
+msgstr "Montaggio permanente /hdd"
+
+msgid "Mount ..."
+msgstr "Mount ..."
+
+msgid "Checking partition"
+msgstr "Controllo partizione"
+
+msgid "Format ..."
+msgstr "Formattazione ..."
+
+msgid "User scripts"
+msgstr "Script utente"
+
+msgid "Automatic bootlogo downloader"
+msgstr "Scarica automaticamente il bootlogo"
+
+msgid "Disable download from Bing"
+msgstr "Disabilita scarico da Bing"
+
+msgid "Download from Bing"
+msgstr "Scarica da Bing"
+
+msgid "Disable download from National Geographic"
+msgstr "Disabilita scarico da National Geographic"
+
+msgid "Download from National Geographic"
+msgstr "Scarica da National Geographic"
+
+msgid "Disable using /hdd/picture/ folder"
+msgstr "Disabilita uso della cartella /hdd/picture"
+
+msgid "Use /hdd/picture/ folder"
+msgstr "Usa cartella /hdd/picture"
+
+msgid "Disable donwload from random source"
+msgstr "Disabilita scarico da fonte casuale"
+
+msgid "Download from random source"
+msgstr "Scarica da fonte casuale"
+
+msgid "Download now from Bing"
+msgstr "Scarica adesso da Bing"
+
+msgid "Download now from National Geographic"
+msgstr "Scarica adesso da National Geographic"
+
+msgid "Download now from /hdd/picture"
+msgstr "Scarica adesso da /hdd/picture"
+
+msgid "Download now randomly"
+msgstr "Scarica adesso da fonte casuale"
+
+msgid "System cleanup"
+msgstr "Pulizia sistema"
+
+msgid "timestamp each item?"
+msgstr "orario su ogni elemento?"
+
+msgid "Debug logs in:"
+msgstr "Log di debug in:"
+
+msgid "Keep old logs?"
+msgstr "Mantieni vecchi log?"
+
+msgid "last"
+msgstr "ultimo"
+
+msgid "all"
+msgstr "tutto"
+
+msgid "Shutdown type:"
+msgstr "Tipo di shutdown:"
+
+msgid "moderate"
+msgstr "moderato"
+
+msgid "deep"
+msgstr "completo"

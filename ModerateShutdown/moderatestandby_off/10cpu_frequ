@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Graterlia OS
+# homepage: http://graterlia.xunil.pl
+# e-mail: nbox@xunil.pl
+#
+# skrypt przywracająy częstotliwość pracy procesora
+# @j00zek
+# wersja 2014-12-15
+
+. /etc/sysconfig/gfunctions #wczytanie funkcji wspólnych dla skryptów Graterlia
+GOSdebug ">>>>>>>>>> $0"
+
+##### MAIN #####
+echo "Init">/dev/vfd
+if [ -f /tmp/CurrentSpeed ]; then
+	CurrentSpeed=`cat /tmp/CurrentSpeed`
+	GOSdebug "Sending '$CurrentSpeed'>/proc/cpu_frequ/pll0_ndiv_mdiv"
+	echo "$CurrentSpeed">/proc/cpu_frequ/pll0_ndiv_mdiv
+	rm -f /tmp/CurrentSpeed
+fi
+GOSdebug "<<<<<<<<<< $0"

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Graterlia OS
+# homepage: http://graterlia.xunil.pl
+# e-mail: nbox@xunil.pl
+#
+# skrypt zatrzymujący wiatrak w trybie moderater
+# @sunfizz
+# wersja 2014-12-09
+
+. /etc/sysconfig/gfunctions #wczytanie funkcji wsplnych dla skryptw Graterlia
+. /var/grun/grcstype #załadowanie informacji o rodzaju odbiornika
+. /var/grun/gfronttype #załadowanie zmiennej vfd
+PATH=/sbin:/bin:/usr/sbin:/usr/bin #deklaracja ścieżek
+
+if lsmod | grep -q fan_ctrl; then
+	echo "0" > /proc/stb/fan/fan_ctrl
+fi

@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Graterlia OS
+# homepage: http://graterlia.xunil.pl
+# e-mail: nbox@xunil.pl
+#
+# skrypt uruchamiający złącze HDMI i vfd
+# @j00zek
+# wersja 2014-12-11
+
+. /var/grun/grcstype #załadowanie informacji o rodzaju odbiornika
+
+if [ -e /etc/sysctl.gos ]; then
+	. /etc/sysctl.gos
+fi
+
+echo "init">/dev/vfd
+
+if [ "$rcstype" == "SPARK7162" ];then
+	/bin/fp_control -i 46 0
+	[ -z $iconINmoderate ] || /bin/fp_control -i $iconINmoderate 0
+else
+	/bin/vfdctl clearicons
+	[ -z $iconINmoderate ] || /bin/vfdctl "-$iconINmoderate"
+fi
+
+[ -f /tmp/wakeup ] && rm -rf /tmp/wakeup
+
+stfbcontrol he #enable HDMI
+echo "encoder">/proc/stb/avs/0/input
+echo "0">/proc/progress
