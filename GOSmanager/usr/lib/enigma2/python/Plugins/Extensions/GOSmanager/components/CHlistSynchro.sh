@@ -105,8 +105,15 @@ rm -rf /etc/enigma2/userbouquet*
 mv -f $ChannelsListPath/etc/tuxbox/* /etc/tuxbox/
 mv -f $ChannelsListPath/etc/enigma2/* /etc/enigma2/
 ##### Jesli openPLI dzia³¹ to Prze³adowanie listy #####
-if ps | grep -lq enigma2; then 
-	wget -q -O - http://127.0.0.1/web/servicelistreload?mode=0  | grep e2statetext | cut -d ">" -f2 | cut -d "<" -f1 
+if pgrep enigma2*; then 
+	wget -q -O - http://127.0.0.1/web/servicelistreload?mode=0
+	if [ $? -gt 0 ]; then
+		GOSdebug "Reloading through openWebIF failed, restarting openPLI..."
+		sleep 10
+		/etc/init.d/gui restart
+	else
+		GOSdebug "Reload successfull"
+	fi
 fi
 ##### Sprzatanie #####
 rm -rf $ChannelsListPath
