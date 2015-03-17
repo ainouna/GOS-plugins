@@ -18,7 +18,8 @@ import Screens.Standby
 FirstTimeRun = True
 
 def standbyCounterChanged(configElement):
-    Console().ePopen('/bin/fp_control -i 46 0') #akcja przez evfd generuje GS przy wychodzeniu
+    if HardwareInfo().get_device_name() == 'spark7162':
+        Console().ePopen('/bin/fp_control -i 46 0') #akcja przez evfd generuje GS przy wychodzeniu
     evfd.getInstance().vfd_write_string("                ")
     print "standbyCounterChanged"
 
@@ -36,6 +37,7 @@ class VFDIcons:
         self.showicons = False
         self.standbyCounter = 0
         self.model = HardwareInfo().get_device_name()
+        print "[VFDIcons:%s]" % self.model
         
         config.misc.standbyCounter.addNotifier(standbyCounterChanged, initial_call = False)
         
