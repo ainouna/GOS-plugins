@@ -41,29 +41,44 @@ class VFDIcons:
         
         config.misc.standbyCounter.addNotifier(standbyCounterChanged, initial_call = False)
         
-        if self.model == 'spark':
-            self.textLenght = 4
-            self.showicons = False
-        elif self.model == 'spark7162':
-            self.textLenght = 8
-            self.showicons = True
-            self.VFDConsole.ePopen('/bin/fp_control -i 46 0') #akcja przez evfd generuje GS przy wychodzeniu
         self.session = session
         self.service = None
         self.onClose = [ ]
         self.LastVFDtext = ""
         self.LastVFDupdateTime = time.time()
         self.initialVFDupdates = 3
-        self.__event_tracker = ServiceEventTracker(screen=self,eventmap=
-            {
-                iPlayableService.evUpdatedInfo: self.__evUpdatedInfo,
-                iPlayableService.evUpdatedEventInfo: self.__evUpdatedEventInfo,
-                iPlayableService.evVideoSizeChanged: self.__evVideoSizeChanged,
-                iPlayableService.evSeekableStatusChanged: self.__evSeekableStatusChanged,
-                iPlayableService.evStart: self.__evStart,
-            })
+
+        if self.model == 'spark':
+            self.textLenght = 4
+            self.showicons = False
+            self.__event_tracker = ServiceEventTracker(screen=self,eventmap=
+                {
+                    iPlayableService.evUpdatedInfo: self.__evUpdatedInfo,
+                })
         
-        session.nav.record_event.append(self.gotRecordEvent)
+            session.nav.record_event.append(self.gotRecordEvent)
+        elif self.model == 'spark7162':
+            self.textLenght = 8
+            self.showicons = True
+            self.VFDConsole.ePopen('/bin/fp_control -i 46 0') #akcja przez evfd generuje GS przy wychodzeniu
+            self.__event_tracker = ServiceEventTracker(screen=self,eventmap=
+                {
+                    iPlayableService.evUpdatedInfo: self.__evUpdatedInfo,
+                    iPlayableService.evUpdatedEventInfo: self.__evUpdatedEventInfo,
+                    iPlayableService.evVideoSizeChanged: self.__evVideoSizeChanged,
+                    iPlayableService.evSeekableStatusChanged: self.__evSeekableStatusChanged,
+                    iPlayableService.evStart: self.__evStart,
+                })
+        
+            session.nav.record_event.append(self.gotRecordEvent)
+        elif self.model == 'arivalink200':
+            self.textLenght = 16
+            self.showicons = False
+            self.__event_tracker = ServiceEventTracker(screen=self,eventmap=
+                {
+                    iPlayableService.evUpdatedInfo: self.__evUpdatedInfo,
+                })
+          
         self.mp3Available = False
         self.dolbyAvailable = False
         self.currentVolume = 0
@@ -79,7 +94,7 @@ class VFDIcons:
         global FirstTimeRun
         if FirstTimeRun is True:
             FirstTimeRun = False
-            self.VFDConsole.ePopen('/bin/fp_control -dt 1') #nie musimy sprawdzac trunera bo fp_control sam wie co robic :)
+            self.VFDConsole.ePopen('/bin/fp_control -dt 1') #nie musimy sprawdzac tunera bo fp_control sam wie co robic :)
 
         print "[VFDIcons:__evUpdatedInfo]"
         try:
@@ -329,12 +344,15 @@ def Plugins(**kwargs):
 ########################### KONFIGURATOR ################################################
 config.plugins.VFD = ConfigSubsection()
 config.plugins.VFD.shows =  ConfigSelection(default = "name", choices = [("name", _("Channel name")), ("number", _("Channel number")), ("blank", _("nothing"))])
-config.plugins.VFD.icons =  ConfigSelection(default = "rec", choices = [("rec", _("REC only")), ("all", _("All")), ("nothing", _("nothing"))])
+if HardwareInfo().get_device_name() == 'arivalink200':
+    config.plugins.VFD.icons =  ConfigSelection(default = "nothing", choices = [("nothing", _("nothing"))])
+else:
+    config.plugins.VFD.icons =  ConfigSelection(default = "rec", choices = [("rec", _("REC only")), ("all", _("All")), ("nothing", _("nothing"))])
 
 class VFDSetupMenu(Screen, ConfigListScreen):
 
     skin = """
-    <screen name="VFDSetupMenu" position="center,center" size="540,240" title="" backgroundColor="#31000000" >
+    <screen name="VFDSetupMenu" position="center,center" size="540,240" title="VFD" backgroundColor="#31000000" >
 
             <widget name="config" position="10,10" size="520,195" zPosition="1" transparent="0" backgroundColor="#31000000" scrollbarMode="showOnDemand" />
             <widget name="key_green" position="0,205" zPosition="2" size="250,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="green" />
@@ -348,7 +366,7 @@ class VFDSetupMenu(Screen, ConfigListScreen):
         self.onChangedEntry = [ ]
         self.list = [ ]
         ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
-        self.setup_title = _("VFD settings configurator")
+        #self.setup_title = _("VFD settings configurator")
         self["actions"] = ActionMap(["SetupActions", "ColorActions"],
             {
                 "cancel": self.keyCancel,
@@ -364,13 +382,14 @@ class VFDSetupMenu(Screen, ConfigListScreen):
         self.onLayoutFinish.append(self.layoutFinished)
 
     def layoutFinished(self):
-        #self.setTitle(_("VFD settings configurator"))
+        self.setTitle(_("VFD settings configurator"))
         self.runSetup()
         
     def runSetup(self):
 
         self.list.append(getConfigListEntry(_("VFD displays:"), config.plugins.VFD.shows))
-        self.list.append(getConfigListEntry(_("Displayed icons on VFD:"), config.plugins.VFD.icons))
+        if HardwareInfo().get_device_name() != 'arivalink200':
+            self.list.append(getConfigListEntry(_("Displayed icons on VFD:"), config.plugins.VFD.icons))
         
         self["config"].list = self.list
         self["config"].setList(self.list)
