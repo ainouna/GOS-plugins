@@ -1,12 +1,12 @@
 diff -Naur neutrino-mp-cst-next.org/src/driver/vfd.cpp neutrino-mp-cst-next/src/driver/vfd.cpp
 --- neutrino-mp-cst-next.org/src/driver/vfd.cpp	2015-03-22 09:05:07.000000000 +0100
 +++ neutrino-mp-cst-next/src/driver/vfd.cpp	2015-03-21 13:17:00.663677808 +0100
-@@ -151,11 +151,15 @@
+@@ -162,11 +162,15 @@
  		return;
  	}
  
 +#if 0 //Let's always start from begining, like in openPLI
- 	if (strlen(str)<VFDLENGTH)
+ 	if (strlen(str) < VFDLENGTH && VFDLENGTH > 7) // do not center on small displays
  		ws = (VFDLENGTH-strlen(str))/2;
  	else
  		ws = 0;
@@ -18,3 +18,16 @@ diff -Naur neutrino-mp-cst-next.org/src/driver/vfd.cpp neutrino-mp-cst-next/src/
  	if (!fromScrollThread)
  	{
  		memcpy (data.data+ws, str, VFDLENGTH-ws);
+diff -Naur neutrino-mp-next.org/src/gui/channellist.cpp neutrino-mp-next/src/gui/channellist.cpp
+--- neutrino-mp-next.org/src/gui/channellist.cpp	2015-03-22 09:05:07.636513398 +0100
++++ neutrino-mp-next/src/gui/channellist.cpp	2015-03-21 13:01:37.000000000 +0100
+@@ -1972,7 +2003,9 @@
+ 	if (curr == selected) {
+ 		color   = COL_MENUCONTENTSELECTED_TEXT;
+ 		bgcolor = COL_MENUCONTENTSELECTED_PLUS_0;
++/* disable silly vertical bar on channel list
+ 		paintItem2DetailsLine (pos);
++*/
+ 		paintDetails(curr);
+ 		c_rad_small = RADIUS_LARGE;
+ 		paintbuttons = true;

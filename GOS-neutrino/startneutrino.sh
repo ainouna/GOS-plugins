@@ -21,8 +21,8 @@ fi
 export LD_LIBRARY_PATH=/usr/ntrino/lib/:$LD_LIBRARY_PATH #tu trzymamy biblioteki specyficzne dla neutrino
 
 [ -e /dev/input/nevis_ir ] || ln -sf /dev/input/event0 /dev/input/nevis_ir #obsluga pilota dla spark7162 ma byc event1
-[ -e /usr/local/bin ] || ln -sf /etc/ntrino/bin /usr/local/bin #w razie czego
-[ -e /.version ] || ln -sf /etc/ntrino/version /.version #info o wersji wyswietlane w neutrino
+#[ -e /usr/local/bin ] || ln -sf /usr/ntrino/bin /usr/local/bin #w razie czego
+[ -e /.version ] || ln -sf /usr/ntrino/version /.version #info o wersji wyswietlane w neutrino
 #[ -e /etc/cron/hourly/GetWeather ] || ln -sf /etc/ntrino/plugins/Weather/GetWeather /etc/cron/hourly/GetWeather #pogoda na infobarze
 /etc/init.d/gbootlogo stop
 
