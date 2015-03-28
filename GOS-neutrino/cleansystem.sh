@@ -17,3 +17,4 @@ fi
 [ -e /etc/cron/hourly/GetWeather ] && rm -rf /etc/cron/hourly/GetWeather #pogoda na infobarze
 #[ -e /usr/local/bin ] && rm -rf /usr/local/bin #w razie czego
 [ -e /.version ] && rm -rf /.version #info o wersji wyswietlane w neutrino
+[ -e /usr/local/share/tuxbox ] && rm -rf /usr/local/share/tuxbox

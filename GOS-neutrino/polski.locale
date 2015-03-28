@@ -2199,7 +2199,7 @@ webtv.head WebTV
 webtv.xml WebTV XML file
 window_size Window size in %
 wizard.initial_settings Znaleziono standardowe ustawienia
-wizard.install_settings Chcesz zaistalować kanały Astry 19.2Â°E?
+wizard.install_settings Czy chcesz je zainstalować?
 wizard.setup First installation
 wizard.setup_advanced Zaawansowane
 wizard.setup_easy Łatwe
