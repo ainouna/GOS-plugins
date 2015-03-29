@@ -1628,7 +1628,7 @@ networkmenu.setuponstartup Aktywne po uruchomieniu
 networkmenu.show Bieżące ustawienia
 networkmenu.ssid SSID
 networkmenu.test Test ustawień
-neutrino_starting Uruchamianie Neutrino...
+neutrino_starting Start Neutrino...
 nfs.alreadymounted Zasób jest już podłączony.
 nfs.automount Podłącz przy uruchamianiu
 nfs.dir Zasób udostępniony
