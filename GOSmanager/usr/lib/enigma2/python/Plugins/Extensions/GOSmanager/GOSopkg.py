@@ -272,7 +272,7 @@ class GOSopkg(Screen):
 
     def doActionFullUpdate(self, ret):
         if ret is True:
-            self.session.openWithCallback(self.post_doAction_check_TMPUPDsh ,GOSconsole, title = _("Upgrading all packages...", "plugin-GOSmanager"), cmdlist = [ 'opkg  --cache %s upgrade' % self.CacheDir ])
+            self.session.openWithCallback(self.post_doAction_check_TMPUPDsh ,GOSconsole, title = _("Upgrading all packages...", "plugin-GOSmanager"), cmdlist = [ 'opkg  --cache %s upgrade' % self.CacheDir , 'rm -f %s/*.ipk' % self.CacheDir ])
             self.keyGreenAction = ''
             self.changed = True
         return
@@ -439,6 +439,7 @@ class GOSopkg(Screen):
             if self.IPTVfullInstalled == False:
                 self.list.append((_("Show IPTV plugins only", "plugin-GOSmanager") , '' , '', 'enigma2-plugin-iptvplayer-', LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/icons/opkg_iptv.png')), self.divpng))
             self.list.append((_("Show all openPLI elements only", "plugin-GOSmanager") , '' , '', 'enigma2-', LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/icons/opkg_pli.png')), self.divpng))
+            self.list.append((_("Show all Neutrino elements only", "plugin-GOSmanager") , '' , '', 'neutrino-', LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/icons/opkg_neutrino.png')), self.divpng))
             self.list.append((_("show oscam packages only", "plugin-GOSmanager") , '' , '', 'oscam', LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/icons/opkg_softcam.png')), self.divpng))
             self.list.append((_("show fonts only", "plugin-GOSmanager") , '' , '', 'font-', LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/icons/opkg_fonts.png')), self.divpng))
             self.list.append((_("show language packets only", "plugin-GOSmanager") , '' , '', 'enigma2-i18n', LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/icons/opkg_lang.png')), self.divpng))
