@@ -20,7 +20,7 @@ fi
 
 export LD_LIBRARY_PATH=/usr/ntrino/lib/:$LD_LIBRARY_PATH #tu trzymamy biblioteki specyficzne dla neutrino
 
-#[ -e /dev/input/nevis_ir ] || ln -sf /dev/input/event0 /dev/input/nevis_ir #obsluga pilota dla spark7162 ma byc event1
+[ -e /dev/input/nevis_ir ] || ln -sf /dev/input/event0 /dev/input/nevis_ir #obsluga pilota dla spark7162 ma byc event1
 [ -e /.version ] || ln -sf /usr/ntrino/version /.version #info o wersji wyswietlane w neutrino
 [ -e /usr/local/share/tuxbox ] || ln -sf /usr/share/tuxbox/ /usr/local/share/tuxbox
 [ -e /var/tuxbox/config/neutrino.conf ] || cp -rf /var/tuxbox/config/initial/neutrino.conf /var/tuxbox/config/
@@ -35,6 +35,8 @@ doStartupActions(){
 	#czy logowac?
 	if [ "$oPLIdbg" == "on" ]; then
 		DebugPlace=' -v 3 >>$oPLIdbgFolder/neutrino.log 2>&1'
+		HAL_DEBUG=255
+		export HAL_DEBUG
 	else
 		DebugPlace=' -v 0 >>/dev/null 2>&1'
 	fi
