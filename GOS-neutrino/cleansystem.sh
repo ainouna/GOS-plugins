@@ -18,3 +18,5 @@ fi
 #[ -e /usr/local/bin ] && rm -rf /usr/local/bin #w razie czego
 [ -e /.version ] && rm -rf /.version #info o wersji wyswietlane w neutrino
 [ -e /usr/local/share/tuxbox ] && rm -rf /usr/local/share/tuxbox
+[ -e /var/tuxbox ] && rm -rf /var/tuxbox
+[ -e /usr/ntrino ] && rm -rf /usr/ntrino
