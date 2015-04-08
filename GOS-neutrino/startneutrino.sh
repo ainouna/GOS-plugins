@@ -8,6 +8,7 @@
 # wersja 2015-03-23
 
 . /etc/sysconfig/gfunctions #wczytanie funkcji wspólnych dla skryptów Graterlia
+. /var/grun/grcstype #wczytania informacji o rodzaju odbiornika
 # zaladowanie informacji o konfiguracji o ile istnieje
 if [ -e /etc/sysctl.gos ]; then
 	. /etc/sysctl.gos
@@ -20,7 +21,13 @@ fi
 
 export LD_LIBRARY_PATH=/usr/ntrino/lib/:$LD_LIBRARY_PATH #tu trzymamy biblioteki specyficzne dla neutrino
 
-[ -e /dev/input/nevis_ir ] || ln -sf /dev/input/event0 /dev/input/nevis_ir #obsluga pilota dla spark7162 ma byc event1
+if [ ! -e /dev/input/nevis_ir ]; then
+	if [ $rcstype == ADB2850 ] || [ $rcstype == SPARK7162 ]; then
+		ln -sf /dev/input/event1 /dev/input/nevis_ir
+	else
+		ln -sf /dev/input/event0 /dev/input/nevis_ir
+	fi
+fi
 [ -e /.version ] || ln -sf /usr/ntrino/version /.version #info o wersji wyswietlane w neutrino
 [ -e /usr/local/share/tuxbox ] || ln -sf /usr/share/tuxbox/ /usr/local/share/tuxbox
 [ -e /var/tuxbox/config/neutrino.conf ] || cp -rf /var/tuxbox/config/initial/neutrino.conf /var/tuxbox/config/
