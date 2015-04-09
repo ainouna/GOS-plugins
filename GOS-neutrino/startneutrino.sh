@@ -21,13 +21,13 @@ fi
 
 export LD_LIBRARY_PATH=/usr/ntrino/lib/:$LD_LIBRARY_PATH #tu trzymamy biblioteki specyficzne dla neutrino
 
-if [ ! -e /dev/input/nevis_ir ]; then
+#if [ ! -e /dev/input/nevis_ir ]; then
 	if [ $rcstype == ADB2850 ] || [ $rcstype == SPARK7162 ]; then
 		ln -sf /dev/input/event1 /dev/input/nevis_ir
 	else
 		ln -sf /dev/input/event0 /dev/input/nevis_ir
 	fi
-fi
+#fi
 [ -e /.version ] || ln -sf /usr/ntrino/version /.version #info o wersji wyswietlane w neutrino
 [ -e /usr/local/share/tuxbox ] || ln -sf /usr/share/tuxbox/ /usr/local/share/tuxbox
 [ -e /var/tuxbox/config/neutrino.conf ] || cp -rf /var/tuxbox/config/initial/neutrino.conf /var/tuxbox/config/
