@@ -175,6 +175,7 @@ class GOSopkg(Screen):
         if localIPKfile:
             self.LocalFileName = localIPKfile
             print self.LocalFileName
+            self.BlockedInput = False
             self.keyGreenAction = 'opkg install "%s"' % localIPKfile
             self.doAction()
         else:
@@ -188,7 +189,7 @@ class GOSopkg(Screen):
 
     def doAction(self):
         printDEBUG( "doAction" , "self.keyGreenAction = '%s'" % self.keyGreenAction )
-        if self.BlockedInput == True:
+        if self.BlockedInput == True and self.keyGreenAction != 'LocalPackage':
             printDEBUG( "doAction" , "self.BlockedInput == True" )
             return
         with open("/proc/sys/vm/drop_caches", "w") as f: f.write("1\n")
