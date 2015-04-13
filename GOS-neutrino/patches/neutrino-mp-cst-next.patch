@@ -1,6 +1,6 @@
 diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/driver/fbaccel.cpp neutrino-mp-cst-next/src/driver/fbaccel.cpp
 --- neutrino-mp-cst-next.org/src/driver/fbaccel.cpp	2015-03-30 15:53:23.844069482 +0200
-+++ neutrino-mp-cst-next/src/driver/fbaccel.cpp	2015-04-07 13:26:52.497351145 +0200
++++ neutrino-mp-cst-next/src/driver/fbaccel.cpp	2015-04-10 18:59:02.626600179 +0200
 @@ -221,11 +221,32 @@
  	}
  	backbuf_sz = 1280 * 720 * sizeof(fb_pixel_t);
@@ -34,33 +34,9 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/driver/fbaccel.cpp ne
  	bpa_data.mem_size = backbuf_sz;
  	int res;
  	res = ioctl(bpafd, BPAMEMIO_ALLOCMEM, &bpa_data);
-diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/driver/rcinput.cpp neutrino-mp-cst-next/src/driver/rcinput.cpp
---- neutrino-mp-cst-next.org/src/driver/rcinput.cpp	2015-04-04 05:25:15.074998871 +0200
-+++ neutrino-mp-cst-next/src/driver/rcinput.cpp	2015-04-04 05:25:24.290998676 +0200
-@@ -65,7 +65,7 @@
- #include <gui/cec_setup.h>
- #endif
- 
--//#define RCDEBUG
-+#define RCDEBUG //j00zek 4 debug
- 
- #define ENABLE_REPEAT_CHECK
- 
-diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/driver/simple_display.cpp neutrino-mp-cst-next/src/driver/simple_display.cpp
---- neutrino-mp-cst-next.org/src/driver/simple_display.cpp	2015-03-30 15:53:23.856069482 +0200
-+++ neutrino-mp-cst-next/src/driver/simple_display.cpp	2015-04-08 07:34:38.599542109 +0200
-@@ -166,6 +166,8 @@
- 		/* hack, just if we missed the blit() somewhere
- 		 * this will update the framebuffer once per second */
-+		fprintf(stderr, "[neutrino] %s SPARK_NOBLIT check\n", __func__); //j00zek 4 debug
- 		if (getenv("SPARK_NOBLIT") == NULL) {
-+			fprintf(stderr, "[neutrino] %s SPARK_NOBLIT\n", __func__); //j00zek 4 debug
- 			CFrameBuffer *fb = CFrameBuffer::getInstance();
- 			/* plugin start locks the framebuffer... */
- 			if (!fb->Locked())
 diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/driver/vfd.cpp neutrino-mp-cst-next/src/driver/vfd.cpp
 --- neutrino-mp-cst-next.org/src/driver/vfd.cpp	2015-03-30 15:53:23.856069482 +0200
-+++ neutrino-mp-cst-next/src/driver/vfd.cpp	2015-04-08 16:29:27.042685134 +0200
++++ neutrino-mp-cst-next/src/driver/vfd.cpp	2015-04-10 18:59:02.730600180 +0200
 @@ -52,6 +52,7 @@
  #include <stropts.h>
  #define VFD_DEVICE "/dev/vfd"
@@ -159,18 +135,28 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/driver/vfd.cpp neutri
  #endif
  }
 diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/channellist.cpp neutrino-mp-cst-next/src/gui/channellist.cpp
---- neutrino-mp-cst-next.org/src/gui/channellist.cpp	2015-03-30 15:53:23.888069482 +0200
-+++ neutrino-mp-cst-next/src/gui/channellist.cpp	2015-04-04 05:25:24.298998676 +0200
-@@ -91,6 +91,8 @@
+--- neutrino-mp-cst-next.org/src/gui/channellist.cpp	2015-04-08 19:26:11.209089590 +0200
++++ neutrino-mp-cst-next/src/gui/channellist.cpp	2015-04-13 08:08:33.142234413 +0200
+@@ -91,6 +91,9 @@
  
  static CComponentsFrmClock *headerClock = NULL;
  static int headerClockWidth = 0;
-+static int PIGwidth = 435;
-+static int PIGheight = 245;
++static int PIGwidth = 480; //435;
++static int PIGheight = 270; //245;
++static int NextEventsHeight = 0; //j00zek, contains where info about next events should start
  extern bool timeset;
  
  CChannelList::CChannelList(const char * const pName, bool phistoryMode, bool _vlist)
-@@ -469,7 +471,7 @@
+@@ -437,7 +440,7 @@
+ int CChannelList::exec()
+ {
+ 	displayNext = 0; // always start with current events
+-	displayList = 1; // always start with event list
++	displayList = 0; //j00zek oways with EPG 1; // always start with event list
+ 	int nNewChannel = show();
+ 	if ( nNewChannel > -1 && nNewChannel < (int) (*chanlist).size()) {
+ 		if(this->historyMode && (*chanlist)[nNewChannel]) {
+@@ -469,7 +472,7 @@
  	full_width = pig_on_win ? (frameBuffer->getScreenWidth()-2*ConnectLineBox_Width) : frameBuffer->getScreenWidthRel();
  
  	if (g_settings.channellist_additional)
@@ -179,15 +165,7 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/channellist.cpp n
  	else
  	{
  		/* don't use 100% of screen if additional info / minitv is not used */
-@@ -482,6 +484,6 @@
- 	info_height = 2*fheight + fdescrheight + 10;
- 	if (g_settings.channellist_additional != 0)
- 		if (g_settings.channellist_foot != 0)
--			info_height = 2*fheight + 10; 
-+			info_height = 4*fheight + 10; //j00zek
- 	height = pig_on_win ?  frameBuffer->getScreenHeight(): frameBuffer->getScreenHeightRel();
- 	height = height - info_height;
-@@ -506,10 +508,11 @@
+@@ -504,10 +510,11 @@
  	y = getScreenStartY(height + info_height);
  
  	// calculate width/height of right info_zone and pip-box
@@ -197,65 +175,43 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/channellist.cpp n
  	pig_width = infozone_width;
  	if ( pig_on_win /* with miniTV */ )
 -		pig_height = (pig_width * 9) / 16;
-+		pig_height = PIGheight; //(pig_width * 9 + 16 - 1) / 16; //j00zek rounding to closer int, not down only, should prevent freezes
++		pig_height = PIGheight; //(pig_width * 9) / 16; j00zek, let's use fixed (working size)
  	else
  		pig_height = 0;
  	infozone_height = height - theight - pig_height - footerHeight;
-@@ -1615,8 +1618,8 @@
- 		if (!(text2.empty())) {
- 			while ( text2.find_first_of("[ -.+*#?=!$%&/]+") == 0 )
- 				text2 = text2.substr( 1 );
--			text2 = text2.substr( 0, text2.find('\n') );
- #if 0 //FIXME: to discuss, eat too much cpu time if string long enough
-+			text2 = text2.substr( 0, text2.find('\n') );
- 			int pos = 0;
- 			while ( ( pos != -1 ) && (g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST]->getRenderWidth(text2) > (full_width - 30 - noch_len) ) ) {
- 				pos = text2.find_last_of(" ");
-@@ -1625,10 +1628,40 @@
- 					text2 = text2.substr( 0, pos );
- 				}
- 			}
--#endif
--			g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST_DESCR]->RenderString(x+ xstart, y+ height+ 5+ fdescrheight+ fheight, full_width- xstart- 30- noch_len, text2, colored_event_C ? COL_COLORED_EVENTS_TEXT : COL_MENUCONTENTDARK_TEXT);
--		}
-+#else
-+			std::string text2_2= text2;
-+			std::string space_char = " ";
-+
-+			//j00zek: NOTE: We remove newlines instead of cutting text
-+			int pos = 0;
-+			int lastpos = 0;
-+			int text2_max_width = (full_width - xstart - 10)*4 + 50 ;
-+
-+			if ( g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST]->getRenderWidth(text2, true) > text2_max_width )
-+				text2 = text2.substr( 0, text2_max_width / (g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST]->getRenderWidth(text2, true) / text2.length()) );
-+
-+			while ( text2.find("\n") != std::string::npos )
-+				text2 = text2.replace( text2.find("\n"), 1, " " );
-+			
-+			text2 = text2.substr( 0, text2.find('\n') );
-+			
-+			printf("#j00zek> %s: text2:\n%s\n",__func__,text2.c_str());
- 
-+			while ( ( pos != -1 ) && (g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST]->getRenderWidth(text2, true) > (full_width- xstart- 10) ) ) {
-+				pos = text2.find_last_of(" ");
-+
-+				if ( pos!=-1 ) {
-+					text2 = text2.substr( 0, pos );
-+					lastpos = pos;
-+				}
+@@ -735,7 +742,7 @@
+ 		}
+ 		else if (!empty && (msg == CRCInput::RC_up || (int) msg == g_settings.key_pageup))
+ 		{
+-			displayList = 1;
++			// j00zek displayList = 1;
+ 			int step = ((int) msg == g_settings.key_pageup) ? listmaxshow : 1;  // browse or step 1
+ 			int new_selected = selected - step;
+ 			if (new_selected < 0) {
+@@ -748,7 +755,7 @@
+ 		}
+ 		else if (!empty && (msg == CRCInput::RC_down || (int) msg == g_settings.key_pagedown))
+ 		{
+-			displayList = 1;
++			// j00zek displayList = 1;
+ 			int step =  ((int) msg == g_settings.key_pagedown) ? listmaxshow : 1;  // browse or step 1
+ 			int new_selected = selected + step;
+ 			if (new_selected >= (int) (*chanlist).size()) {
+@@ -1565,7 +1565,12 @@
+			if (displayList)
+				paint_events(index);
+-			else
++			else {
+			      showdescription(selected);
++				//printf("# j00zek, disabled footer, NextEventsHeight=%d\n",NextEventsHeight);
++				frameBuffer->paintBoxRel(x+ width,y+ theight+pig_height+NextEventsHeight+1, infozone_width, 2,COL_MENUCONTENT_PLUS_3);//j00zek, kolor slidera
++				NextEventsHeight += 4;
++				paint_events(index);
 +			}
-+			text2_2 = text2_2.substr( lastpos );
-+			printf("#j00zek> %s: text2_2:\n%s\n",__func__,text2_2.c_str());
-+#endif
-+			g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST_DESCR]->RenderString(x+ xstart, y+ height+ 5+ fdescrheight+ fheight, full_width- xstart- 10, text2, colored_event_C ? COL_COLORED_EVENTS_TEXT : COL_MENUCONTENTDARK_TEXT, 0, true);
-+			if ( text2_2 != text2 )
-+				g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST_DESCR]->RenderString(x+ xstart, y+ height+ 5+ fdescrheight*2 + fheight, full_width- xstart- 10, text2_2, colored_event_C ? COL_COLORED_EVENTS_TEXT : COL_MENUCONTENTDARK_TEXT, 0, true);
-+ 		}
- 		g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST]->RenderString(x+ 10, y+ height+ 5+ fheight, full_width - 30 - seit_len, text1, colored_event_C ? COL_COLORED_EVENTS_TEXT : COL_MENUCONTENTDARK_TEXT);
- 		g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST_DESCR]->RenderString(x+ full_width- 10- seit_len, y+ height+ 5+    fheight, seit_len, cSeit, colored_event_C ? COL_COLORED_EVENTS_TEXT : COL_MENUCONTENTDARK_TEXT);
- 		g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST_DESCR]->RenderString(x+ full_width- 10- noch_len, y+ height+ 5+ fdescrheight+ fheight, noch_len, cNoch, colored_event_C ? COL_COLORED_EVENTS_TEXT : COL_MENUCONTENTDARK_TEXT);
-@@ -1680,6 +1713,7 @@
+		}
+		return;
+	}
+@@ -1674,6 +1702,7 @@
  
  void CChannelList::paintItem2DetailsLine (int pos)
  {
@@ -263,17 +219,7 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/channellist.cpp n
  	int xpos  = x - ConnectLineBox_Width;
  	int ypos1 = y + theight + pos*fheight + (fheight/2)-2;
  	int ypos2 = y + height + (info_height/2)-2;
-@@ -1869,7 +1903,8 @@
- 	if (curr == selected) {
- 		color   = COL_MENUCONTENTSELECTED_TEXT;
- 		bgcolor = COL_MENUCONTENTSELECTED_PLUS_0;
--		paintItem2DetailsLine (pos);
-+		// j00zek disable silly vertical bar on channel list
-+		//paintItem2DetailsLine (pos);
- 		paintDetails(curr);
- 		c_rad_small = RADIUS_LARGE;
- 		paintbuttons = true;
-@@ -1931,12 +1966,12 @@
+@@ -1925,12 +1955,12 @@
  		frameBuffer->getIconSize(icon, &s_icon_w, &s_icon_h);
  		r_icon_w = ChannelList_Rec;
  		int r_icon_x = icon_x;
@@ -288,9 +234,67 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/channellist.cpp n
  		//paint HD Icon
  		if(chan->isHD() && g_settings.channellist_hdicon) {
  			frameBuffer->getIconSize(NEUTRINO_ICON_RESOLUTION_HD, &h_icon_w, &s_icon_h);
+@@ -2263,7 +2293,12 @@
+ {
+ 	ffheight = g_Font[eventFont]->getHeight();
+ 	readEvents((*chanlist)[index]->channel_id);
+-	frameBuffer->paintBoxRel(x+ width,y+ theight+pig_height, infozone_width, infozone_height,COL_MENUCONTENT_PLUS_0);
++	int myY=(1-displayList) * NextEventsHeight;//j00zek przesuniecie w trybie epg z programami
++	
++	if (infozone_width-myY < ffheight)
++		return;
++	
++	frameBuffer->paintBoxRel(x+ width,y+ theight+pig_height+myY, infozone_width, infozone_height - myY,COL_MENUCONTENT_PLUS_0); //j00zek
+ 
+ 	char startTime[10];
+ 	int eventStartTimeWidth = 4 * g_Font[eventFont]->getMaxDigitWidth() + g_Font[eventFont]->getRenderWidth(":") + 5; // use a fixed value
+@@ -2302,21 +2337,27 @@
+ 			break;
+ 
+ 		//Display the remaining events
+-		if ((y+ theight+ pig_height + i*ffheight) < (y+ theight+ pig_height + infozone_height))
++		if ((y+ theight+ pig_height + i*ffheight) < (y+ theight+ pig_height + infozone_height - myY + (1-displayList) * ffheight)) //j00zek w trybie epg wyswietlamy pierwsza pozycje przed epg, dopiero reszta jest po
+ 		{
++			bool first = (i == 1);
+ 			fb_pixel_t color = COL_MENUCONTENTDARK_TEXT;
+ 			if (e->eventID)
+ 			{
+-				bool first = (i == 1);
+ 				if ((first && g_settings.colored_events_channellist == 1 /* current */) || (!first && g_settings.colored_events_channellist == 2 /* next */))
+ 					color = COL_COLORED_EVENTS_TEXT;
+ 				struct tm *tmStartZeit = localtime(&e->startTime);
+ 				strftime(startTime, sizeof(startTime), "%H:%M", tmStartZeit );
+ 				//printf("%s %s\n", startTime, e->description.c_str());
+ 				startTimeWidth = eventStartTimeWidth;
+-				g_Font[eventFont]->RenderString(x+ width+5, y+ theight+ pig_height + i*ffheight, startTimeWidth, startTime, color);
++				if (first)
++					g_Font[eventFont]->RenderString(x+ width+5, y+ theight + pig_height + i*ffheight, startTimeWidth, startTime, color);
++				else
++					g_Font[eventFont]->RenderString(x+ width+5, y+ theight + pig_height + myY - (1-displayList) * ffheight + i*ffheight, startTimeWidth, startTime, color);
+ 			}
+-			g_Font[eventFont]->RenderString(x+ width+5+startTimeWidth, y+ theight+ pig_height + i*ffheight, infozone_width - startTimeWidth - 20, e->description, color);
++			if (first)
++				g_Font[eventFont]->RenderString(x+ width+5+startTimeWidth, y+ theight+ pig_height + i*ffheight, infozone_width - startTimeWidth - 20, e->description, color);
++			else
++				g_Font[eventFont]->RenderString(x+ width+5+startTimeWidth, y+ theight+ pig_height + myY - (1-displayList) * ffheight + i*ffheight, infozone_width - startTimeWidth - 20, e->description, color);
+ 		}
+ 		else
+ 		{
+@@ -2365,8 +2406,10 @@
+ 		processTextToArray(g_Locale->getText(LOCALE_EPGVIEWER_NODETAILED));
+ 
+ 	frameBuffer->paintBoxRel(x+ width,y+ theight+pig_height, infozone_width, infozone_height,COL_MENUCONTENT_PLUS_0);
+-	for (int i = 1; (i < (int)epgText.size()+1) && ((y+ theight+ pig_height + i*ffheight) < (y+ theight+ pig_height + infozone_height)); i++)
++	for (int i = 2; (i < (int)epgText.size()+1) && ((y+ theight+ pig_height + i*ffheight) < (y+ theight+ pig_height + infozone_height - 2*ffheight)); i++) {
+ 		g_Font[eventFont]->RenderString(x+ width+5, y+ theight+ pig_height + i*ffheight, infozone_width - 20, epgText[i-1].first, COL_MENUCONTENTDARK_TEXT);
++		NextEventsHeight = i*ffheight;
++	}
+ }
+ 
+ void CChannelList::addTextToArray(const std::string & text, int screening) // UTF-8
 diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/opkg_manager.cpp neutrino-mp-cst-next/src/gui/opkg_manager.cpp
 --- neutrino-mp-cst-next.org/src/gui/opkg_manager.cpp	2015-03-30 15:53:23.916069483 +0200
-+++ neutrino-mp-cst-next/src/gui/opkg_manager.cpp	2015-04-04 05:25:24.298998676 +0200
++++ neutrino-mp-cst-next/src/gui/opkg_manager.cpp	2015-04-10 18:59:02.894600181 +0200
 @@ -269,7 +269,7 @@
  
  bool COPKGManager::hasOpkgSupport()
@@ -300,42 +304,9 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/opkg_manager.cpp 
  
  	if (find_executable(OPKG_CL).empty()) {
  		dprintf(DEBUG_INFO, "[neutrino opkg] did not find " OPKG_CL " executable\n");
-diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/osdlang_setup.cpp neutrino-mp-cst-next/src/gui/osdlang_setup.cpp
---- neutrino-mp-cst-next.org/src/gui/osdlang_setup.cpp	2015-03-30 15:53:23.916069483 +0200
-+++ neutrino-mp-cst-next/src/gui/osdlang_setup.cpp	2015-04-08 17:50:20.721217931 +0200
-@@ -72,16 +72,28 @@
- {
- 	dprintf(DEBUG_DEBUG, "init international setup\n");
- 	if(parent != NULL)
-+	{
-+		dprintf(DEBUG_DEBUG, "j00zek parent != NULL\n");
- 		parent->hide();
--
-+	}
-+	
- 	if (!actionKey.empty()) {
-+		dprintf(DEBUG_DEBUG, "j00zek parent g_settings.language\n");
- 		g_settings.language = actionKey;
-+		
-+		dprintf(DEBUG_DEBUG, "j00zek parent g_PluginList->loadPlugins();\n");
- 		g_PluginList->loadPlugins();
-+		
-+		dprintf(DEBUG_DEBUG, "j00zek parent g_Locale->loadLocale(g_settings.language.c_str());\n");
- 		g_Locale->loadLocale(g_settings.language.c_str());
-+		
-+		dprintf(DEBUG_DEBUG, "j00zek parent return menu_return::RETURN_EXIT;\n");
- 		return menu_return::RETURN_EXIT;
- 	}
- 
-+	dprintf(DEBUG_DEBUG, "j00zek res = showLocalSetup()\n");
- 	int res = showLocalSetup();
-+	dprintf(DEBUG_DEBUG, "j00zek res = %d\n",res );
- 
- 	return res;
- }
 diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/neutrino.cpp neutrino-mp-cst-next/src/neutrino.cpp
---- neutrino-mp-cst-next.org/src/neutrino.cpp	2015-04-04 05:25:15.094998871 +0200
-+++ neutrino-mp-cst-next/src/neutrino.cpp	2015-04-08 17:57:16.341208655 +0200
+--- neutrino-mp-cst-next.org/src/neutrino.cpp	2015-04-08 19:26:11.213089590 +0200
++++ neutrino-mp-cst-next/src/neutrino.cpp	2015-04-11 01:34:20.654823884 +0200
 @@ -496,7 +496,7 @@
  	g_settings.backlight_tv = configfile.getInt32( "backlight_tv", 1);
  	g_settings.backlight_standby = configfile.getInt32( "backlight_standby", 0);
@@ -375,3 +346,12 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/neutrino.cpp neutrino
  
  #ifdef ENABLE_GRAPHLCD
  	g_settings.glcd_enable = configfile.getInt32("glcd_enable", 0);
+@@ -781,7 +781,7 @@
+ 	g_settings.eventlist_additional = configfile.getInt32("eventlist_additional", 0);
+ 	g_settings.channellist_epgtext_align_right	= configfile.getBool("channellist_epgtext_align_right"          , false);
+ 	g_settings.channellist_progressbar_design = configfile.getInt32("channellist_progressbar_design", g_settings.progressbar_design);
+-	g_settings.channellist_foot	= configfile.getInt32("channellist_foot"          , 1);//default next Event
++	g_settings.channellist_foot	= configfile.getInt32("channellist_foot"          , 2);//j00zek, default off
+ 	g_settings.channellist_new_zap_mode = configfile.getInt32("channellist_new_zap_mode", 1);
+ 	g_settings.channellist_hdicon = configfile.getInt32("channellist_hdicon", 0); //default off
+ 	g_settings.channellist_sort_mode  = configfile.getInt32("channellist_sort_mode", 0);//sort mode: alpha, freq, sat

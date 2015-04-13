@@ -39,6 +39,7 @@ export LD_LIBRARY_PATH=/usr/ntrino/lib/:$LD_LIBRARY_PATH #tu trzymamy biblioteki
 doStartupActions(){
 	[ -z "$oPLIdbgFolder" ] && oPLIdbgFolder='/hdd'
 	echo $oPLIdbgFolder
+	[ -e $oPLIdbgFolder/neutrino.log ] && mv -f $oPLIdbgFolder/neutrino.log $oPLIdbgFolder/neutrino.log.prev
 	#czy logowac?
 	if [ "$oPLIdbg" == "on" ]; then
 		DebugPlace=' -v 3 >>$oPLIdbgFolder/neutrino.log 2>&1'
