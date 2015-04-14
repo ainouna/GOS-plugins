@@ -251,8 +251,8 @@ channellist.make_newlist Twórz listę z nowymi kanałami
 channellist.make_removedlist Twórz listę usuniętych kanałów
 channellist.make_webtvlist Twórz listę kanałów WebTV
 channellist.new_zap_mode Szybkie przełączanie w liście
-channellist.new_zap_mode_active aktywne
-channellist.new_zap_mode_allow dozwolone
+channellist.new_zap_mode_active Automatycznie
+channellist.new_zap_mode_allow 2xOK
 channellist.new_zap_mode_off wył.
 channellist.nonefound Brak listy kanałów! Uruchom\nwyszukiwanie kanałów (Menu główne -> Usługi)
 channellist.numeric_adjust Dostosuj przełączanie numeryczne
@@ -835,7 +835,7 @@ ipsetup.hint_2 OK - zapis, Exit - anuluj
 kerneloptions.apply Apply
 kerneloptions.disabled wyłączone
 kerneloptions.enabled włączone
-kerneloptions.head Ustawienia j00zka
+kerneloptions.head Ustawienia modułów
 kerneloptions.hint.disabled_loaded Moduł kernela jest ciągle załadowany.
 kerneloptions.hint.disabled_not_loaded Moduł kernela nie jest załadowany.
 kerneloptions.hint.enabled_loaded Moduł kernela jest załadowany i może być użyty.
@@ -1209,9 +1209,9 @@ menu.hint_network IP address, gateway, DNS, Time sync\nNetwork shares and servic
 menu.hint_new_zap_mode Allow channel switch while browsing\n(toggle mode with 'mute' in channel list)
 menu.hint_numeric_adjust Adjust channel list mode on numeric zap
 menu.hint_osd Colors, fonts, screen size\nGUI look and feel options
-menu.hint_osd_language Select OSD language
+menu.hint_osd_language Wybór języka interfejsu
 menu.hint_osd_preset Pre-configured screen margins for CRT and LCD TV
-menu.hint_parentallock_changepin Change PIN code
+menu.hint_parentallock_changepin Zmiana kodu PIN
 menu.hint_parentallock_lockage Select age allowed to watch
 menu.hint_parentallock_menu Lock menus with pin code
 menu.hint_parentallock_prompt Configure when Neutrino-HD will ask you\nfor PIN code
@@ -1219,7 +1219,7 @@ menu.hint_personalize Enable, disable or Protect menu items\nConfigure color-but
 menu.hint_pictureviewer_defdir Default picture viewer directory
 menu.hint_pictureviewer_scaling Picture scaling algorithm
 menu.hint_pictureviewer_slide_time Slideshow interval, in seconds
-menu.hint_picview View pictures
+menu.hint_picview Oglądanie zdjęć
 menu.hint_plugins_hdd_dir Select directory to load\nplugins from
 menu.hint_power_leds Configure power-button LEDs behavior
 menu.hint_pref_lang Select preferred audio and EPG language\nselect 'none' to disable
@@ -1845,9 +1845,9 @@ parentallock.defaultlocked zablokowany
 parentallock.defaultunlocked odblokowany
 parentallock.head Blokada rodzicielska
 parentallock.lockage Blokowane programy
-parentallock.lockage12 od dwunastu lat
-parentallock.lockage16 od szesnastu lat
-parentallock.lockage18 od osiemnastu lat
+parentallock.lockage12 od 12 lat
+parentallock.lockage16 od 16 lat
+parentallock.lockage18 od 18 lat
 parentallock.lockedchannel Kanał zablokowany...
 parentallock.lockedprogram Program zablokowany (od lat %d)
 parentallock.menu Menu Security
@@ -1914,7 +1914,7 @@ pictureviewer.help35 poprzedni tytuł
 pictureviewer.help4 Wyłączenie skalowania 
 pictureviewer.help5 Funkcje przycisków w menu
 pictureviewer.help6 Poprzedni obraz
-pictureviewer.help7 Nastepny obraz
+pictureviewer.help7 Następny obraz
 pictureviewer.help8 exit
 pictureviewer.help9 Tryb pokazu
 pictureviewer.resize.color_average zaawansowane

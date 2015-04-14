@@ -135,8 +135,8 @@ msgstr "Zamknij system"
 msgid "Debug logs in:"
 msgstr "Zapisz dzienniki w"
 
-msgid "Delay (50-250, standard 20ms):"
-msgstr "Opóźnienie (50-250, standard 20ms)"
+msgid "Delay (10-100, standard 20ms):"
+msgstr "Opóźnienie (10-100, standard 20ms)"
 
 msgid "Delete"
 msgstr "Usuń"

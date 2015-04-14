@@ -419,8 +419,8 @@ msgstr "modalità evremote2:"
 msgid "Max. key press time (50-250, standard 130ms):"
 msgstr "Tempo max. in tasto premuto (50-250, standard 130ms):"
 
-msgid "Delay (50-250, standard 20ms):"
-msgstr "Ritardo (50-250, standard 20ms):"
+msgid "Delay (10-100, standard 20ms):"
+msgstr "Ritardo (10-100, standard 20ms):"
 
 msgid "--- Additional settings ---"
 msgstr "--- Configurazioni aggiuntive ---"

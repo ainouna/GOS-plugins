@@ -97,10 +97,10 @@ GOSsettings_list.append((config.GOSsettings.activeOpenPLI,"activeOpenPLI","CONFI
 config.GOSsettings.useLircdName = NoSave(ConfigSelection(default = "0", choices = [("off", _("Lircd codes")), ("0", _("Lircd names"))]))
 GOSsettings_list.append((config.GOSsettings.useLircdName,"useLircdName","CONFIG"))
 
-config.GOSsettings.usePeriod = NoSave(ConfigInteger(130, (20,250)))
+config.GOSsettings.usePeriod = NoSave(ConfigInteger(130, (90,250)))
 GOSsettings_list.append((config.GOSsettings.usePeriod,"usePeriod","CONFIG"))
 
-config.GOSsettings.useDelay = NoSave(ConfigInteger(20, (10,250)))
+config.GOSsettings.useDelay = NoSave(ConfigInteger(20, (10,100)))
 GOSsettings_list.append((config.GOSsettings.useDelay,"useDelay","CONFIG"))
 
 if GOSHardwareInfo().get_rcstype() == 'SPARK7162':
@@ -220,7 +220,7 @@ class GOSsetupMenu(Screen, ConfigListScreen):
         #if config.GOSsettings.useLircdName.value == "on":
         self.list.append(getConfigListEntry(_("Blinking icon:"), config.GOSsettings.blinkingIcon))
         self.list.append(getConfigListEntry(_("Max. key press time (90-250, standard 130ms):"), config.GOSsettings.usePeriod)) # zapisywane w /etc/sysctl.gos
-        self.list.append(getConfigListEntry(_("Delay (50-250, standard 20ms):"), config.GOSsettings.useDelay)) # zapisywane w /etc/sysctl.gos
+        self.list.append(getConfigListEntry(_("Delay (10-100, standard 20ms):"), config.GOSsettings.useDelay)) # zapisywane w /etc/sysctl.gos
         #Advanced settings
         self.list.append(getConfigListEntry(" ", config.GOSsettings.separator))
         self.list.append(getConfigListEntry(_("--- Advanced settings ---"), config.GOSsettings.separator))
