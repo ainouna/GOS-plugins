@@ -1,3 +1,4 @@
 #!/bin/sh
 #script run when tuner go from deepstandby, mainly during start
-echo "deepstandby.off"
+
+/var/tuxbox/plugins/softcam/restart_oscam.sh

@@ -265,6 +265,7 @@ channellist.sats Satelity
 channellist.show_channellogo logo kanału
 channellist.show_channelnumber numer kanału
 channellist.show_empty_favs Wyświetl puste bukiety ulubionych
+channellist.show_infobox Wyświetl dolne okno informacyjne
 channellist.since od
 channellist.start początek
 ci.clock Zegar CI (Mhz)
@@ -817,7 +818,7 @@ infoclock.with_seconds Wyświetl sekundy
 infoviewer.epgnotload Informacje nie zostały jeszcze odczytane...
 infoviewer.epgwait Trwa odczytywanie informacji EPG...
 infoviewer.eventlist Informacje
-infoviewer.languages Dźwięki
+infoviewer.languages Jezyki
 infoviewer.motor_moving Ustawienie anteny
 infoviewer.next Później
 infoviewer.nocurrent Brak informacji o bieżącym programie
@@ -2260,7 +2261,7 @@ timerlist.repeatcount Powtórzenia
 timerlist.repeatcount.help1 Wprowadź ilość.
 timerlist.repeatcount.help2 0 - bez limitu.
 timerlist.save Zapisz
-timerlist.standby Przełącz
+timerlist.standby Akcja
 timerlist.standby.off ze stanu gotowości
 timerlist.standby.on w stan gotowości
 timerlist.stoptime Czas zakończenia
