@@ -17,7 +17,10 @@ from Components.ActionMap import ActionMap
 from Components.config import *
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
-from Components.LanguageGOS import gosgettext as _
+try:
+    from Components.LanguageGOS import gosgettext as _
+except:
+    pass
 from Components.Pixmap import Pixmap
 from Components.Sources.List import List
 from Components.Sources.StaticText import StaticText
@@ -34,6 +37,17 @@ from os import listdir, remove, rename, system, path, symlink, chdir
 import shutil
 import re
 
+myDEBUG = True #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+def printDEBUG( myText ):
+    if myDEBUG:
+        print ("[UserSkin] %s" % myText)
+        try:
+            f = open('/tmp/UserSkin.log', 'a')
+            f.write('[UserSkin] ' + myText + '\n')
+            f.close
+        except:
+            pass
 # Atile/UserSkin
 config.plugins.UserSkin = ConfigSubsection()
 config.plugins.UserSkin.refreshInterval = ConfigNumber(default=30) #in minutes
@@ -53,7 +67,7 @@ def menu(menuid, **kwargs):
     return []
 
 def main(session, **kwargs):
-    print "[UserSkin]: Config ..."
+    printDEBUG("Config ...")
     session.open(UserSkin_Config)
 
 class UserSkin_Config(Screen, ConfigListScreen):
@@ -85,8 +99,8 @@ class UserSkin_Config(Screen, ConfigListScreen):
         self.skin_base_dir = resolveFilename(SCOPE_SKIN, config.skin.primary_skin.value.replace('skin.xml', ''))
         if not self.skin_base_dir.endswith('/'):
             self.skin_base_dir = self.skin_base_dir + '/'
-        print "[UserSkin] self.skin_base_dir=%s, skin=%s" % (self.skin_base_dir, config.skin.primary_skin.value)
         self.currentSkin = config.skin.primary_skin.value.replace('skin.xml', '').replace('/', '')
+        printDEBUG("self.skin_base_dir=%s, skin=%s, currentSkin=%s" % (self.skin_base_dir, config.skin.primary_skin.value, self.currentSkin))
         if self.currentSkin != '':
                 self.currentSkin = '_' + self.currentSkin # default_skin = '', others '_skinname', used later
 
@@ -193,9 +207,9 @@ class UserSkin_Config(Screen, ConfigListScreen):
 
     def cancelConfirm(self, result):
         if result is None or result is False:
-            print "[UserSkin]: Cancel confirmed."
+            printDEBUG("Cancel confirmed.")
         else:
-            print "[UserSkin]: Cancel confirmed. Config changes will be lost."
+            printDEBUG("Cancel confirmed. Config changes will be lost.")
             for x in self["config"].list:
                 x[1].cancel()
             self.close()
@@ -334,7 +348,7 @@ class UserSkin_Config(Screen, ConfigListScreen):
     def restartGUI(self):
         myMessage = ''
         if self.BrakPlikuInfo != '':
-            print"[UserSkin] missing components: %s" % self.BrakPlikuInfo
+            printDEBUG("missing components: %s" % self.BrakPlikuInfo)
             myMessage += _("Missing components found: %s\n\n") % self.BrakPlikuInfo
         myMessage += _("Restart necessary, restart GUI now?")
         restartbox = self.session.openWithCallback(self.restartGUIcb,MessageBox, myMessage, MessageBox.TYPE_YESNO)
@@ -356,7 +370,7 @@ class UserSkin_Config(Screen, ConfigListScreen):
         if path.exists(user_skin_file):
             remove(user_skin_file)
         if self.myUserSkin_active.value:
-            print "[UserSkin} update_user_skin.self.myUserSkin_active.value"
+            printDEBUG("update_user_skin.self.myUserSkin_active.value")
             user_skin = ""
             if path.exists(self.skin_base_dir + 'skin_user_header.xml'):
                 user_skin = user_skin + self.readXMLfile(self.skin_base_dir + 'skin_user_header.xml' , 'fonts')
@@ -369,7 +383,7 @@ class UserSkin_Config(Screen, ConfigListScreen):
                 user_skin = "<skin>\n" + user_skin
                 user_skin = user_skin + "</skin>\n"
                 with open (user_skin_file, "w") as myFile:
-                    print "[UserSkin} update_user_skin.self.myUserSkin_active.value write myFile"
+                    printDEBUG("update_user_skin.self.myUserSkin_active.value write myFile")
                     myFile.write(user_skin)
                     myFile.flush()
                     myFile.close()
@@ -423,17 +437,17 @@ class UserSkin_Config(Screen, ConfigListScreen):
             if not path.exists(TempDir):
                 return
             for f in listdir(TempDir):
-                print f
+                printDEBUG( 'Found template: ' + f)
                 if f.endswith('.xml'):
-                    if f.startswith('colors_' + self.currentSkin):
+                    if f.startswith('colors_' + self.currentSkin) or f.startswith('colors' + self.currentSkin):
                         shutil.copy(TempDir + f, self.skin_base_dir + "allColors/") 
-                    elif f.startswith('font_' + self.currentSkin):
+                    elif f.startswith('font_' + self.currentSkin) or f.startswith('font' + self.currentSkin):
                         shutil.copy(TempDir + f, self.skin_base_dir + "allFonts/") 
-                    elif f.startswith('skin_' + self.currentSkin):
-                        shutil.copy(TempDir + f, self.skin_base_dir + "allScreens/") 
+                    elif f.startswith('skin_' + self.currentSkin) or f.startswith('skin' + self.currentSkin):
+                        shutil.copy(TempDir + f, self.skin_base_dir + "allScreens/" + f.replace(self.currentSkin, "")) 
                 elif f.endswith('.png'):
-                    if f.startswith('preview_' + self.currentSkin):
-                        shutil.copy(TempDir + f, self.skin_base_dir + "preview/") 
+                    if f.startswith('preview_skin_' + self.currentSkin) or f.startswith('preview_skin' + self.currentSkin):
+                        shutil.copy(TempDir + f, self.skin_base_dir + "preview/" + f.replace(self.currentSkin, "")) 
                 elif f.endswith('.py') or f.endswith('.pyo'):
                     if f.startswith('Converter_' + self.currentSkin):
                         shutil.copy(TempDir + f, self.skin_base_dir + "Converter/") 
@@ -515,7 +529,7 @@ class UserSkinScreens(Screen):
         try:
             self["title"]=StaticText(self.title)
         except:
-            print 'self["title"] was not found in skin'
+            printDEBUG('self["title"] was not found in skin')
         
         self["key_red"] = StaticText(_("Exit"))
         self["key_green"] = StaticText(_("on"))
@@ -545,13 +559,13 @@ class UserSkinScreens(Screen):
         self.enabled_pic = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/UserSkin/pic/install.png"))
         #check if we have preview files
         isPreview=0
-        for xpreview in os.listdir(self.skin_base_dir + "preview/"):
+        for xpreview in listdir(self.skin_base_dir + "preview/"):
             if len(xpreview) > 4 and  xpreview[-4:] == ".png":
                 isPreview += 1
             if isPreview >= 2:
                 break
         if self.currentSkin == "infinityHD-nbox-tux-full" and isPreview < 2:
-            print "[UserSkin] no preview files :("
+            printDEBUG("no preview files :(")
             self.disabled_pic = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/UserSkin/pic/opkg.png"))
             self['key_blue'].setText(_('Install from OPKG'))
         else:
@@ -581,6 +595,7 @@ class UserSkinScreens(Screen):
     def createMenuList(self):
         chdir(self.skin_base_dir)
         f_list = []
+        printDEBUG('createMenuList> listing ' + self.skin_base_dir + self.screen_dir)
         list_dir = sorted(listdir(self.skin_base_dir + self.screen_dir), key=str.lower)
         for f in list_dir:
             if config.plugins.UserSkin.PIG_active.value == False:

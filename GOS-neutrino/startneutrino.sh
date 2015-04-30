@@ -35,6 +35,7 @@ export LD_LIBRARY_PATH=/usr/ntrino/lib/:$LD_LIBRARY_PATH #tu trzymamy biblioteki
 #[ -e /etc/cron/hourly/GetWeather ] || ln -sf /etc/ntrino/plugins/Weather/GetWeather /etc/cron/hourly/GetWeather #pogoda na infobarze
 
 /etc/init.d/gbootlogo stop
+[ -e /tmp/xupnpd-feeds ] || mkdir -p /tmp/xupnpd-feeds
 
 doStartupActions(){
 	[ -z "$oPLIdbgFolder" ] && oPLIdbgFolder='/hdd'
@@ -58,7 +59,9 @@ doStartupActions(){
 
 until false
 do
+	pkill xupnpd 2>/dev/null 
 	doStartupActions
+	(sleep 10; XUPNPDROOTDIR=/share/xupnpd /bin/xupnpd) &
 	eval "/usr/ntrino/bin/neutrino ${DebugPlace}"
 	rtv=$?
     echo "Neutrino ended <- RTV: " $rtv
