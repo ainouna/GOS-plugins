@@ -778,3 +778,6 @@ msgstr "Włącz testowe repozytorium OScam"
 
 msgid "Disable OsCam test repository"
 msgstr "Wyłącz testowe repozytorium OScam"
+
+msgid "Enable skins-HD support"
+msgstr "Wsparcie dla skórek HD"

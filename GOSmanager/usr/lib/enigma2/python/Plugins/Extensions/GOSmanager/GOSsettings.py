@@ -142,8 +142,11 @@ GOSsettings_list.append((config.GOSsettings.opkg,"opkg","DEF"))
 
 config.GOSsettings.POWERx5 = NoSave(ConfigSelection(default = "NA", choices = [("NA", _("after pressing 5xPOWER quickly")), ("POWERx5", _("after pressing key POWER 5 times"))]))
 GOSsettings_list.append((config.GOSsettings.POWERx5,"POWERx5","DEF"))
-##############################################################
+######################## Obsluga skorek HD ######################################
+config.GOSsettings.EnableSkinHD = NoSave(ConfigSelection(default = "0", choices = [("0", _("no")), ("on", _("yes"))]))
+GOSsettings_list.append((config.GOSsettings.EnableSkinHD,"EnableSkinHD","CONFIG"))
 
+##############################################################
 class GOSsetupMenu(Screen, ConfigListScreen):
 
     skin = """
@@ -202,6 +205,7 @@ class GOSsetupMenu(Screen, ConfigListScreen):
         ###### ADDITIONAL SETTINGS #####
         self.list.append(getConfigListEntry(" ", config.GOSsettings.separator))
         self.list.append(getConfigListEntry(_("--- Additional settings ---"), config.GOSsettings.separator))
+        self.list.append(getConfigListEntry(_("Enable skins-HD support"), config.GOSsettings.EnableSkinHD)) 
         self.list.append(getConfigListEntry(_("Emergency tuner restart"), config.GOSsettings.POWERx5)) # własna procedura nie wykonywana, bo to tak tylko informacyjnie
         self.list.append(getConfigListEntry(_("Time synchronization:"), config.GOSsettings.useTransponderTime)) # zapisywane w /etc/sysctl.gos
         self.list.append(getConfigListEntry(_("Shutdown type:"), config.GOSsettings.ModerateShutDown)) # moderate gdzie nie ma deep

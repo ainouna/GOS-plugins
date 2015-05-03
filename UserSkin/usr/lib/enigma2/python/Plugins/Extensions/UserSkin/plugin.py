@@ -13,14 +13,22 @@
 #This means you also have to distribute
 #source code of your modifications.
 
+myDEBUG = True #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+def printDEBUG( myText ):
+    if myDEBUG:
+        print ("[UserSkin] %s" % myText)
+        try:
+            f = open('/tmp/UserSkin.log', 'a')
+            f.write('[UserSkin] ' + myText + '\n')
+            f.close
+        except:
+            pass
+
 from Components.ActionMap import ActionMap
 from Components.config import *
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
-try:
-    from Components.LanguageGOS import gosgettext as _
-except:
-    pass
 from Components.Pixmap import Pixmap
 from Components.Sources.List import List
 from Components.Sources.StaticText import StaticText
@@ -36,18 +44,24 @@ from Tools import Notifications
 from os import listdir, remove, rename, system, path, symlink, chdir
 import shutil
 import re
-
-myDEBUG = True #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-def printDEBUG( myText ):
-    if myDEBUG:
-        print ("[UserSkin] %s" % myText)
-        try:
-            f = open('/tmp/UserSkin.log', 'a')
-            f.write('[UserSkin] ' + myText + '\n')
-            f.close
-        except:
-            pass
+#Translations part
+try:
+    from Components.LanguageGOS import gosgettext as _
+    printDEBUG('LanguageGOS detected')
+except:
+    printDEBUG('LanguageGOS not detected, using local _')
+    import gettext
+    from Components.Language import language
+    PluginLanguageDomain = "plugin-UserSkin"
+    def localeInit():
+        gettext.bindtextdomain(PluginLanguageDomain, resolveFilename(SCOPE_PLUGINS, "Extensions/UserSkin/locale"))
+    def _(txt):
+        t = gettext.dgettext(PluginLanguageDomain, txt)
+        if t == txt:
+            t = gettext.gettext(txt)
+        return t
+    localeInit()
+    language.addCallback(localeInit)
 # Atile/UserSkin
 config.plugins.UserSkin = ConfigSubsection()
 config.plugins.UserSkin.refreshInterval = ConfigNumber(default=30) #in minutes
@@ -67,7 +81,7 @@ def menu(menuid, **kwargs):
     return []
 
 def main(session, **kwargs):
-    printDEBUG("Config ...")
+    printDEBUG("Opening config ...")
     session.open(UserSkin_Config)
 
 class UserSkin_Config(Screen, ConfigListScreen):
@@ -122,7 +136,7 @@ class UserSkin_Config(Screen, ConfigListScreen):
         self.font_file = "skin_user_header.xml"
         current_color = self.getCurrentColor()[0]
         current_font = self.getCurrentFont()[0]
-        myUserSkin_active = self.getmyAtileState()
+        myUserSkin_active = self.getmySkinState()
         self.myUserSkin_active = NoSave(ConfigYesNo(default=myUserSkin_active))
         self.myTuner = HardwareInfo().get_device_name()
         self.myUserSkin_font = NoSave(ConfigSelection(default=current_font, choices = self.getPossibleFont()))
@@ -153,6 +167,10 @@ class UserSkin_Config(Screen, ConfigListScreen):
             self["config"].onSelectionChanged.append(self.selectionChanged)
         
         self.createConfigList()
+        self.onLayoutFinish.append(self.layoutFinished)
+        
+    def layoutFinished(self):
+        self.setTitle(_("UserSkin Setup"))
 
     def createConfigList(self):
         self.set_color = getConfigListEntry(_("Style:"), self.myUserSkin_style)
@@ -164,10 +182,11 @@ class UserSkin_Config(Screen, ConfigListScreen):
         self.list.append(self.set_font)
         #if HardwareInfo().get_device_name().lower().find("adb") < 0: # PIG is dangerous in adb boxes
         #    self.list.append(getConfigListEntry(_("Enable PIG (not recommended for 1080p):"), config.plugins.UserSkin.PIG_active))
-        self.list.append(getConfigListEntry(_("---Weather---"), self.myUserSkin_fake_entry))
-        self.list.append(getConfigListEntry(_("Refresh interval in minutes:"), config.plugins.UserSkin.refreshInterval))
-        self.list.append(getConfigListEntry(_("Location # (http://weather.yahoo.com/):"), config.plugins.UserSkin.woeid))
-        self.list.append(getConfigListEntry(_("Temperature unit:"), config.plugins.UserSkin.tempUnit))
+        if not self.currentSkin.endswith('BlackHarmony'):
+            self.list.append(getConfigListEntry(_("---Yahoo Weather---"), self.myUserSkin_fake_entry))
+            self.list.append(getConfigListEntry(_("Refresh interval in minutes:"), config.plugins.UserSkin.refreshInterval))
+            self.list.append(getConfigListEntry(_("Location # (http://weather.yahoo.com/):"), config.plugins.UserSkin.woeid))
+            self.list.append(getConfigListEntry(_("Temperature unit:"), config.plugins.UserSkin.tempUnit))
         self["config"].list = self.list
         self["config"].l.setList(self.list)
         if self.myUserSkin_active.value:
@@ -238,7 +257,7 @@ class UserSkin_Config(Screen, ConfigListScreen):
                 font_list.append((f, friendly_name))
         return font_list
 
-    def getmyAtileState(self):
+    def getmySkinState(self):
         chdir(self.skin_base_dir)
         if path.exists("mySkin"):
             return True
