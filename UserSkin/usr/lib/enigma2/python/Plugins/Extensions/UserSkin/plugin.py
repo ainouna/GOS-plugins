@@ -32,6 +32,7 @@ from Components.Label import Label
 from Components.Pixmap import Pixmap
 from Components.Sources.List import List
 from Components.Sources.StaticText import StaticText
+from enigma import ePicLoad
 from Plugins.Plugin import PluginDescriptor
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
@@ -84,6 +85,30 @@ def main(session, **kwargs):
     printDEBUG("Opening config ...")
     session.open(UserSkin_Config)
 
+class myCover(Pixmap):
+    def __init__(self):
+        Pixmap.__init__(self)
+        self.picload = ePicLoad()
+        self.picload.PictureData.get().append(self.paintIconPixmapCB)
+        self.paramsSet = False
+
+    def onShow(self):
+        Pixmap.onShow(self)
+
+    def paintIconPixmapCB(self, picInfo=None):
+        t = currentThread()
+        ptr = self.picload.getData()
+        if ptr != None:
+            self.instance.setPixmap(ptr)
+            self.show()
+
+    def updateIcon(self, filename):
+        t = currentThread()
+        if not self.paramsSet:
+            self.picload.setPara((self.instance.size().width(), self.instance.size().height(), 1, 1, False, 1, "#00000000"))
+            self.paramsSet = True
+        self.picload.startDecode(filename)
+
 class UserSkin_Config(Screen, ConfigListScreen):
     skin = """
   <screen name="UserSkin_Config" position="82,124" size="1101,376" title="UserSkin Setup" backgroundColor="transparent" flags="wfNoBorder">
@@ -118,22 +143,31 @@ class UserSkin_Config(Screen, ConfigListScreen):
         if self.currentSkin != '':
                 self.currentSkin = '_' + self.currentSkin # default_skin = '', others '_skinname', used later
 
-        self.default_font_file = _("using standard fonts")
-        self.default_color_file = _("using standard colors")
+        self.defaultOption = "default"
+        self.defaults = (self.defaultOption, _("Default"))
         
         if path.exists(self.skin_base_dir):
-            if path.exists(self.skin_base_dir + "allFonts/font_atile_Roboto.xml"):
+            if path.exists(self.skin_base_dir + "allFonts/font_atile_Roboto.xml") or path.exists(self.skin_base_dir + "font_atile_Roboto.xml"):
                 self.default_font_file = "font_atile_Roboto.xml"
+            else:
+                self.default_font_file = self.defaultOption
+                
             if not path.exists(self.skin_base_dir + "allFonts/"):
                 mkdir(self.skin_base_dir + "allFonts/")
 
-            if path.exists(self.skin_base_dir + "allColors/colors_atile_Grey_transparent.xml"):
+            if path.exists(self.skin_base_dir + "allColors/colors_atile_Grey_transparent.xml") or path.exists(self.skin_base_dir + "colors_atile_Grey_transparent.xml"):
                 self.default_color_file = "colors_atile_Grey_transparent.xml"
+            else:
+                self.default_color_file = self.defaultOption
+                
             if not path.exists(self.skin_base_dir + "allColors/"):
                 mkdir(self.skin_base_dir + "allColors/")
           
-        self.color_file = "skin_user_colors.xml"
-        self.font_file = "skin_user_header.xml"
+            if not path.exists(self.skin_base_dir + "preview/"):
+                mkdir(self.skin_base_dir + "preview/")
+
+        self.color_file = self.default_color_file
+        self.font_file = self.default_font_file
         current_color = self.getCurrentColor()[0]
         current_font = self.getCurrentFont()[0]
         myUserSkin_active = self.getmySkinState()
@@ -162,6 +196,7 @@ class UserSkin_Config(Screen, ConfigListScreen):
             }, -2)
             
         self["Picture"] = Pixmap()
+        #self["Picture"] = myCover()
         
         if not self.selectionChanged in self["config"].onSelectionChanged:
             self["config"].onSelectionChanged.append(self.selectionChanged)
@@ -235,26 +270,48 @@ class UserSkin_Config(Screen, ConfigListScreen):
 
     def getPossibleColor(self):
         color_list = []
+        color_list.append(self.defaults)
+        
         if not path.exists(self.skin_base_dir + "allColors/"):
             return color_list
+        
         for f in sorted(listdir(self.skin_base_dir + "allColors/"), key=str.lower):
             if f.endswith('.xml') and f.startswith('colors_'):
                 friendly_name = f.replace("colors_atile_", "").replace("colors_", "")
                 friendly_name = friendly_name.replace(".xml", "")
                 friendly_name = friendly_name.replace("_", " ")
                 color_list.append((f, friendly_name))
+        
+        for f in sorted(listdir(self.skin_base_dir), key=str.lower):
+            if f.endswith('.xml') and f.startswith('colors_'):
+                friendly_name = f.replace("colors_atile_", "").replace("colors_", "")
+                friendly_name = friendly_name.replace(".xml", "")
+                friendly_name = friendly_name.replace("_", " ")
+                color_list.append((f, friendly_name))
+
         return color_list
 
     def getPossibleFont(self):
         font_list = []
+        font_list.append(self.defaults)
+        
         if not path.exists(self.skin_base_dir + "allFonts/"):
             return font_list
+        
         for f in sorted(listdir(self.skin_base_dir + "allFonts/"), key=str.lower):
             if f.endswith('.xml') and f.startswith('font_'):
                 friendly_name = f.replace("font_atile_", "").replace("font_", "")
                 friendly_name = friendly_name.replace(".xml", "")
                 friendly_name = friendly_name.replace("_", " ")
                 font_list.append((f, friendly_name))
+
+        for f in sorted(listdir(self.skin_base_dir), key=str.lower):
+            if f.endswith('.xml') and f.startswith('font_'):
+                friendly_name = f.replace("font_atile_", "").replace("font_", "")
+                friendly_name = friendly_name.replace(".xml", "")
+                friendly_name = friendly_name.replace("_", " ")
+                font_list.append((f, friendly_name))
+
         return font_list
 
     def getmySkinState(self):
@@ -305,6 +362,7 @@ class UserSkin_Config(Screen, ConfigListScreen):
             mkdir(preview)
         preview = preview + "preview_" + pic
         if path.exists(preview):
+            self["Picture"].instance.setScale(1)
             self["Picture"].instance.setPixmapFromFile(preview)
             self["Picture"].show()
         else:
@@ -331,14 +389,22 @@ class UserSkin_Config(Screen, ConfigListScreen):
                 remove(self.font_file)
             elif path.islink(self.font_file):
                 remove(self.font_file)
+            
             if path.exists('allFonts/' + self.myUserSkin_font.value):
                 symlink('allFonts/' + self.myUserSkin_font.value, self.font_file)
+            elif path.exists(self.myUserSkin_font.value): #if fonts definition is in skin root folder
+                symlink(self.myUserSkin_font.value, self.font_file)
+            
             if path.exists(self.color_file):
                 remove(self.color_file)
             elif path.islink(self.color_file):
                 remove(self.color_file)
+            
             if path.exists("allColors/" + self.myUserSkin_style.value):
                 symlink("allColors/" + self.myUserSkin_style.value, self.color_file)
+            elif path.exists(self.myUserSkin_style.value): #if colors definition is in skin root folder
+                symlink(self.myUserSkin_style.value, self.color_file)
+            
             if self.myUserSkin_active.value:
                 if not path.exists("mySkin") and path.exists("mySkin_off"):
                         symlink("mySkin_off","mySkin")
@@ -456,17 +522,21 @@ class UserSkin_Config(Screen, ConfigListScreen):
             if not path.exists(TempDir):
                 return
             for f in listdir(TempDir):
-                printDEBUG( 'Found template: ' + f)
+                f_dest = f.replace(self.currentSkin, "")
+                printDEBUG( 'Found template: ' + f + '(' + f_dest + '}')
                 if f.endswith('.xml'):
-                    if f.startswith('colors_' + self.currentSkin) or f.startswith('colors' + self.currentSkin):
-                        shutil.copy(TempDir + f, self.skin_base_dir + "allColors/") 
-                    elif f.startswith('font_' + self.currentSkin) or f.startswith('font' + self.currentSkin):
-                        shutil.copy(TempDir + f, self.skin_base_dir + "allFonts/") 
-                    elif f.startswith('skin_' + self.currentSkin) or f.startswith('skin' + self.currentSkin):
-                        shutil.copy(TempDir + f, self.skin_base_dir + "allScreens/" + f.replace(self.currentSkin, "")) 
+                    if f.startswith('colors' + self.currentSkin) and not path.exists(self.skin_base_dir + "allColors/" + f_dest):
+                        if path.exists(self.skin_base_dir + "allColors/"):
+                            shutil.copy(TempDir + f, self.skin_base_dir + "allColors/" + f_dest) 
+                    elif f.startswith('font' + self.currentSkin):
+                        if path.exists(self.skin_base_dir + "allFonts/"):
+                            shutil.copy(TempDir + f, self.skin_base_dir + "allFonts/" + f_dest) 
+                    elif f.startswith('skin' + self.currentSkin) and not path.exists(self.skin_base_dir + "allScreens/" + f_dest):
+                        if path.exists(self.skin_base_dir + "allScreens/"):
+                            shutil.copy(TempDir + f, self.skin_base_dir + "allScreens/" + f_dest) 
                 elif f.endswith('.png'):
                     if f.startswith('preview_skin_' + self.currentSkin) or f.startswith('preview_skin' + self.currentSkin):
-                        shutil.copy(TempDir + f, self.skin_base_dir + "preview/" + f.replace(self.currentSkin, "")) 
+                        shutil.copy(TempDir + f, self.skin_base_dir + "preview/" + f_dest) 
                 elif f.endswith('.py') or f.endswith('.pyo'):
                     if f.startswith('Converter_' + self.currentSkin):
                         shutil.copy(TempDir + f, self.skin_base_dir + "Converter/") 
@@ -481,7 +551,7 @@ class UserSkin_Config(Screen, ConfigListScreen):
 class UserSkin_About(Screen):
     skin = """
   <screen name="UserSkin_About" position="center,center" size="370,120" title="UserSkin v0.1">
-    <eLabel text="(c)2014 by j00zek" position="0,15" size="370,50" font="Regular;28" halign="center" />
+    <eLabel text="(c)2014/2015 by j00zek" position="0,15" size="370,50" font="Regular;28" halign="center" />
     <eLabel text="Based on AtileHD skin by schomi / plugin by VTi" position="0,55" size="370,30" font="Regular;18" halign="center" />
     <eLabel text="http://forum.xunil.pl" position="0,90" size="370,30" font="Regular;24" halign="center" />
   </screen>
@@ -647,9 +717,11 @@ class UserSkinScreens(Screen):
         pic = f.replace(".xml", ".png")
         #preview = self.skin_base_dir + "preview/preview_" + pic
         if path.exists(self.skin_base_dir + "preview/preview_" + pic):
+            self["Picture"].instance.setScale(1)
             self["Picture"].instance.setPixmapFromFile(self.skin_base_dir + "preview/preview_" + pic)
             self["Picture"].show()
         elif path.exists(self.skin_base_dir + "preview/" + pic):
+            self["Picture"].instance.setScale(1)
             self["Picture"].instance.setPixmapFromFile(self.skin_base_dir + "preview/" + pic)
             self["Picture"].show()
         else:
