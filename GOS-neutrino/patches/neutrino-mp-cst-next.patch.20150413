@@ -1,0 +1,282 @@
+diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/driver/fbaccel.cpp neutrino-mp-cst-next/src/driver/fbaccel.cpp
+--- neutrino-mp-cst-next.org/src/driver/fbaccel.cpp	2015-03-30 15:53:23.844069482 +0200
++++ neutrino-mp-cst-next/src/driver/fbaccel.cpp	2015-04-07 13:26:52.497351145 +0200
+@@ -221,11 +221,32 @@
+ 	}
+ 	backbuf_sz = 1280 * 720 * sizeof(fb_pixel_t);
+ 	BPAMemAllocMemData bpa_data;
++		char buf[64];
++	
++	//j00zek dynmiczna definicja partcji bpa
++	int len = -1;
++	int fd = open("/proc/stb/info/model", O_RDONLY);
++	bpa_data.bpa_part = (char *)"LMI_VID";
++	if (fd != -1) {
++		len = read(fd, buf, sizeof(buf) - 1);
++		close(fd);
++	}
++	if (len > 0) {
++		buf[len] = 0;
++		if  (/*(!strncmp(buf, "arivalink200", 12)) || */
++			(!strncmp(buf, "cuberevo", 8)) ||
++			(!strncmp(buf, "octagon1008", 11)) ||
++			(!strncmp(buf, "ipbox", 5))
++		) 
++			bpa_data.bpa_part = (char *)"LMI_SYS";
++	}
++#if 0
+ #if BOXMODEL_OCTAGON1008 || BOXMODEL_FORTIS_HDBOX || BOXMODEL_CUBEREVO || BOXMODEL_CUBEREVO_MINI || BOXMODEL_CUBEREVO_MINI2 || BOXMODEL_CUBEREVO_250HD || BOXMODEL_CUBEREVO_2000HD || BOXMODEL_IPBOX9900 || BOXMODEL_IPBOX99 || BOXMODEL_IPBOX55 || BOXMODEL_TF7700
+ 	bpa_data.bpa_part = (char *)"LMI_SYS";
+ #else
+ 	bpa_data.bpa_part = (char *)"LMI_VID";
+ #endif
++#endif
+ 	bpa_data.mem_size = backbuf_sz;
+ 	int res;
+ 	res = ioctl(bpafd, BPAMEMIO_ALLOCMEM, &bpa_data);
+diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/driver/rcinput.cpp neutrino-mp-cst-next/src/driver/rcinput.cpp
+--- neutrino-mp-cst-next.org/src/driver/rcinput.cpp	2015-04-04 05:25:15.074998871 +0200
++++ neutrino-mp-cst-next/src/driver/rcinput.cpp	2015-04-04 05:25:24.290998676 +0200
+@@ -65,7 +65,7 @@
+ #include <gui/cec_setup.h>
+ #endif
+ 
+-//#define RCDEBUG
++#define RCDEBUG //j00zek 4 debug
+ 
+ #define ENABLE_REPEAT_CHECK
+ 
+diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/driver/simple_display.cpp neutrino-mp-cst-next/src/driver/simple_display.cpp
+--- neutrino-mp-cst-next.org/src/driver/simple_display.cpp	2015-03-30 15:53:23.856069482 +0200
++++ neutrino-mp-cst-next/src/driver/simple_display.cpp	2015-04-08 07:34:38.599542109 +0200
+@@ -166,6 +166,8 @@
+ 		/* hack, just if we missed the blit() somewhere
+ 		 * this will update the framebuffer once per second */
++		fprintf(stderr, "[neutrino] %s SPARK_NOBLIT check\n", __func__); //j00zek 4 debug
+ 		if (getenv("SPARK_NOBLIT") == NULL) {
++			fprintf(stderr, "[neutrino] %s SPARK_NOBLIT\n", __func__); //j00zek 4 debug
+ 			CFrameBuffer *fb = CFrameBuffer::getInstance();
+ 			/* plugin start locks the framebuffer... */
+ 			if (!fb->Locked())
+diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/driver/vfd.cpp neutrino-mp-cst-next/src/driver/vfd.cpp
+--- neutrino-mp-cst-next.org/src/driver/vfd.cpp	2015-03-30 15:53:23.856069482 +0200
++++ neutrino-mp-cst-next/src/driver/vfd.cpp	2015-04-08 16:29:27.042685134 +0200
+@@ -52,6 +52,7 @@
+ #include <stropts.h>
+ #define VFD_DEVICE "/dev/vfd"
+ 
++#if 0
+ #if defined (BOXMODEL_OCTAGON1008) || defined (BOXMODEL_TF7700)
+ #define VFDLENGTH 8
+ #elif defined (BOXMODEL_FORTIS_HDBOX) || defined (BOXMODEL_ATEVIO7500)
+@@ -65,6 +66,9 @@
+ #else
+ #define VFDLENGTH 16
+ #endif
++#else
++static int VFDLENGTH = 99; //99 as init value and trigger to check
++#endif
+ 
+ #define SCROLL_TIME 100000
+ 
+@@ -82,8 +86,40 @@
+ 	unsigned char length;
+ };
+ 
++static int get_vfd_length()
++{
++	char buf[64];
++	int len = -1;
++	int fd = open("/var/grun/grcstype", O_RDONLY);
++	if (fd != -1) {
++		len = read(fd, buf, sizeof(buf) - 1);
++		close(fd);
++	}
++	if (len > 0) {
++		dprintf(4,"[grcstype] read file:\n%s\n", buf);
++		buf[len] = 0;
++		char *p = strstr(buf, "vfdsize=");
++		int h0;
++		if (p && sscanf(p, "vfdsize=%d", &h0) == 1) {
++			printf("FOUND vfdsize=%d\n", h0);
++			return h0;
++		}
++		else 
++			return 4;
++	}
++	else {
++		printf ("[grcstype] file not read");
++		return 4;
++	}
++}
++
+ static void write_to_vfd(unsigned int DevType, struct vfd_ioctl_data * data, bool force = false)
+ {
++	if ( VFDLENGTH == 99 )
++		VFDLENGTH = get_vfd_length();
++	else if ( VFDLENGTH == 0 )
++		return;
++
+ 	int file_closed = 0;
+ 	if (blocked) {
+ 		if (file_vfd > -1) {
+@@ -137,6 +173,11 @@
+ 
+ static void ShowNormalText(char * str, bool fromScrollThread = false)
+ {
++	if (VFDLENGTH == 0)
++	{
++		printf("[CVFD] ShowNormalText:VFDLENGTH=0 exiting\n");
++		return;
++	}
+ 	if (blocked)
+ 	{
+ 		printf("[CVFD] - blocked\n");
+@@ -162,11 +203,15 @@
+ 		return;
+ 	}
+ 
++#if 0 //Let's always start from begining, like in openPLI
+ 	if (strlen(str) < VFDLENGTH && VFDLENGTH > 7) // do not center on small displays
+ 		ws = (VFDLENGTH-strlen(str))/2;
+ 	else
+ 		ws = 0;
+-	memset(data.data, ' ', 63);
++#else
++		ws = 0;
++#endif		
++		memset(data.data, ' ', 63);
+ 	if (!fromScrollThread)
+ 	{
+ 		memcpy (data.data+ws, str, VFDLENGTH-ws);
+@@ -1202,6 +1247,8 @@
+ 	ShowText("              ");
+ #elif !defined (BOXMODEL_HS7110)
+ 	ShowText("                ");
++#else
++	ShowText("                ");
+ #endif
+ #endif
+ }
+diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/channellist.cpp neutrino-mp-cst-next/src/gui/channellist.cpp
+--- neutrino-mp-cst-next.org/src/gui/channellist.cpp	2015-03-30 15:53:23.888069482 +0200
++++ neutrino-mp-cst-next/src/gui/channellist.cpp	2015-04-04 05:25:24.298998676 +0200
+@@ -91,6 +91,8 @@
+ 
+ static CComponentsFrmClock *headerClock = NULL;
+ static int headerClockWidth = 0;
++static int PIGwidth = 435;
++static int PIGheight = 245;
+ extern bool timeset;
+ 
+ CChannelList::CChannelList(const char * const pName, bool phistoryMode, bool _vlist)
+@@ -469,7 +471,7 @@
+ 	full_width = pig_on_win ? (frameBuffer->getScreenWidth()-2*ConnectLineBox_Width) : frameBuffer->getScreenWidthRel();
+ 
+ 	if (g_settings.channellist_additional)
+-		width = full_width / 3 * 2;
++		width = full_width - PIGwidth; // j00zek / 3 * 2;
+ 	else
+ 	{
+ 		/* don't use 100% of screen if additional info / minitv is not used */
+@@ -506,10 +508,11 @@
+ 	y = getScreenStartY(height + info_height);
+ 
+ 	// calculate width/height of right info_zone and pip-box
+-	infozone_width = full_width - width;
++	//infozone_width = full_width - width;
++	infozone_width = PIGwidth;
+ 	pig_width = infozone_width;
+ 	if ( pig_on_win /* with miniTV */ )
+-		pig_height = (pig_width * 9) / 16;
++		pig_height = PIGheight; //(pig_width * 9) / 16; j00zek, let's use fixed (working size)
+ 	else
+ 		pig_height = 0;
+ 	infozone_height = height - theight - pig_height - footerHeight;
+@@ -1680,6 +1713,7 @@
+ 
+ void CChannelList::paintItem2DetailsLine (int pos)
+ {
++	return;
+ 	int xpos  = x - ConnectLineBox_Width;
+ 	int ypos1 = y + theight + pos*fheight + (fheight/2)-2;
+ 	int ypos2 = y + height + (info_height/2)-2;
+@@ -1869,7 +1903,8 @@
+ 	if (curr == selected) {
+ 		color   = COL_MENUCONTENTSELECTED_TEXT;
+ 		bgcolor = COL_MENUCONTENTSELECTED_PLUS_0;
+-		paintItem2DetailsLine (pos);
++		// j00zek disable silly vertical bar on channel list
++		//paintItem2DetailsLine (pos);
+ 		paintDetails(curr);
+ 		c_rad_small = RADIUS_LARGE;
+ 		paintbuttons = true;
+@@ -1931,12 +1966,12 @@
+ 		frameBuffer->getIconSize(icon, &s_icon_w, &s_icon_h);
+ 		r_icon_w = ChannelList_Rec;
+ 		int r_icon_x = icon_x;
+-
++/* j00zek we don't paint scrambled icons
+ 		//paint icon
+ 		if(chan->scrambled || isWebTV)
+ 			if (frameBuffer->paintIcon(icon, icon_x - s_icon_w, ypos, fheight))//ypos + (fheight - 16)/2);
+ 				r_icon_x = r_icon_x - s_icon_w;
+-
++*/
+ 		//paint HD Icon
+ 		if(chan->isHD() && g_settings.channellist_hdicon) {
+ 			frameBuffer->getIconSize(NEUTRINO_ICON_RESOLUTION_HD, &h_icon_w, &s_icon_h);
+diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/opkg_manager.cpp neutrino-mp-cst-next/src/gui/opkg_manager.cpp
+--- neutrino-mp-cst-next.org/src/gui/opkg_manager.cpp	2015-03-30 15:53:23.916069483 +0200
++++ neutrino-mp-cst-next/src/gui/opkg_manager.cpp	2015-04-04 05:25:24.298998676 +0200
+@@ -269,7 +269,7 @@
+ 
+ bool COPKGManager::hasOpkgSupport()
+ {
+-	string deps[] = {"/etc/opkg/opkg.conf", "/var/lib/opkg", ""};
++	string deps[] = {"/etc/opkg/opkg.conf", "/var/opkg", ""};
+ 
+ 	if (find_executable(OPKG_CL).empty()) {
+ 		dprintf(DEBUG_INFO, "[neutrino opkg] did not find " OPKG_CL " executable\n");
+diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/neutrino.cpp neutrino-mp-cst-next/src/neutrino.cpp
+--- neutrino-mp-cst-next.org/src/neutrino.cpp	2015-04-04 05:25:15.094998871 +0200
++++ neutrino-mp-cst-next/src/neutrino.cpp	2015-04-08 17:57:16.341208655 +0200
+@@ -496,7 +496,7 @@
+ 	g_settings.backlight_tv = configfile.getInt32( "backlight_tv", 1);
+ 	g_settings.backlight_standby = configfile.getInt32( "backlight_standby", 0);
+ 	g_settings.backlight_deepstandby = configfile.getInt32( "backlight_deepstandby", 0);
+-	g_settings.lcd_scroll = configfile.getInt32( "lcd_scroll", 1);
++	g_settings.lcd_scroll = configfile.getInt32( "lcd_scroll", 0);
+ 
+ 	g_settings.hdd_fs = configfile.getInt32( "hdd_fs", 0);
+ 	g_settings.hdd_sleep = configfile.getInt32( "hdd_sleep", 0);
+@@ -576,11 +576,11 @@
+ 	g_settings.epg_extendedcache    = configfile.getInt32("epg_extendedcache_time", 360);
+ 	g_settings.epg_old_events       = configfile.getInt32("epg_old_events", 1);
+ 	g_settings.epg_max_events       = configfile.getInt32("epg_max_events", 30000);
+-	g_settings.epg_dir              = configfile.getString("epg_dir", "/media/sda1/epg");
++	g_settings.epg_dir              = configfile.getString("epg_dir", "/hdd/epg");
+ 	// NTP-Server for sectionsd
+ 	g_settings.network_ntpserver    = configfile.getString("network_ntpserver", "time.fu-berlin.de");
+ 	g_settings.network_ntprefresh   = configfile.getString("network_ntprefresh", "30" );
+-	g_settings.network_ntpenable    = configfile.getBool("network_ntpenable", false);
++	g_settings.network_ntpenable    = configfile.getBool("network_ntpenable", true);
+ 
+ 	g_settings.ifname = configfile.getString("ifname", "eth0");
+ 
+@@ -597,12 +597,12 @@
+ 	}
+ 	g_settings.epg_save_mode = configfile.getInt32("epg_save_mode", 0);
+ 	//widget settings
+-	g_settings.widget_fade = false;
+-	g_settings.widget_fade           = configfile.getBool("widget_fade"          , false );
++	g_settings.widget_fade = true;
++	g_settings.widget_fade           = configfile.getBool("widget_fade"          , true );
+ 
+ 	CThemes::getTheme(configfile);
+ 
+-	g_settings.gradiant = (configfile.getBool( "gradiant", false ))? 1 : 0;
++	g_settings.gradiant = (configfile.getBool( "gradiant", true ))? 1 : 0;
+ 
+ #ifdef ENABLE_GRAPHLCD
+ 	g_settings.glcd_enable = configfile.getInt32("glcd_enable", 0);

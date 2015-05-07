@@ -281,7 +281,7 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/channellist.cpp n
  			if (e->eventID)
  			{
 -				bool first = (i == 1);
- 				if ((first && g_settings.colored_events_channellist == 1 /* current */) || (!first && g_settings.colored_events_channellist == 2 /* next */))
+ 				if ((first && g_settings.theme.colored_events_channellist == 1 /* current */) || (!first && g_settings.theme.colored_events_channellist == 2 /* next */))
  					color = COL_COLORED_EVENTS_TEXT;
  				struct tm *tmStartZeit = localtime(&e->startTime);
  				strftime(startTime, sizeof(startTime), "%H:%M", tmStartZeit );
@@ -328,7 +328,7 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/opkg_manager.cpp 
 diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/neutrino.cpp neutrino-mp-cst-next/src/neutrino.cpp
 --- neutrino-mp-cst-next.org/src/neutrino.cpp	2015-04-24 06:50:43.519868655 +0200
 +++ neutrino-mp-cst-next/src/neutrino.cpp	2015-04-24 11:38:02.943580451 +0200
-@@ -499,7 +499,7 @@
+@@ -500,7 +500,7 @@
  	g_settings.backlight_tv = configfile.getInt32( "backlight_tv", 1);
  	g_settings.backlight_standby = configfile.getInt32( "backlight_standby", 0);
  	g_settings.backlight_deepstandby = configfile.getInt32( "backlight_deepstandby", 0);
@@ -337,7 +337,7 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/neutrino.cpp neutrino
  
  	g_settings.hdd_fs = configfile.getInt32( "hdd_fs", 0);
  	g_settings.hdd_sleep = configfile.getInt32( "hdd_sleep", 0);
-@@ -579,11 +579,11 @@
+@@ -581,11 +581,11 @@
  	g_settings.epg_extendedcache    = configfile.getInt32("epg_extendedcache_time", 360);
  	g_settings.epg_old_events       = configfile.getInt32("epg_old_events", 1);
  	g_settings.epg_max_events       = configfile.getInt32("epg_max_events", 30000);
@@ -351,23 +351,7 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/neutrino.cpp neutrino
  
  	g_settings.ifname = configfile.getString("ifname", "eth0");
  
-@@ -600,12 +600,12 @@
- 	}
- 	g_settings.epg_save_mode = configfile.getInt32("epg_save_mode", 0);
- 	//widget settings
--	g_settings.widget_fade = false;
--	g_settings.widget_fade           = configfile.getBool("widget_fade"          , false );
-+	g_settings.widget_fade = true;
-+	g_settings.widget_fade           = configfile.getBool("widget_fade"          , true );
- 
- 	CThemes::getTheme(configfile);
- 
--	g_settings.gradiant = (configfile.getBool( "gradiant", false ))? 1 : 0;
-+	g_settings.gradiant = (configfile.getBool( "gradiant", true ))? 1 : 0;
- 
- #ifdef ENABLE_GRAPHLCD
- 	g_settings.glcd_enable = configfile.getInt32("glcd_enable", 0);
-@@ -784,13 +784,13 @@
+@@ -783,13 +783,13 @@
  	g_settings.eventlist_additional = configfile.getInt32("eventlist_additional", 0);
  	g_settings.channellist_epgtext_align_right	= configfile.getBool("channellist_epgtext_align_right"          , false);
  	g_settings.channellist_progressbar_design = configfile.getInt32("channellist_progressbar_design", g_settings.progressbar_design);

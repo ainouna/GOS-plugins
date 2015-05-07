@@ -1,0 +1,108 @@
+diff -Naur neutrino-mp-next.org/src/driver/vfd.cpp neutrino-mp-next/src/driver/vfd.cpp
+--- neutrino-mp-next.org/src/driver/vfd.cpp	2015-03-22 09:05:07.000000000 +0100
++++ neutrino-mp-next/src/driver/vfd.cpp	2015-03-21 13:17:00.663677808 +0100
+@@ -151,11 +151,15 @@
+ 		return;
+ 	}
+ 
++#if 0 //Let's always start from begining, like in openPLI
+ 	if (strlen(str)<VFDLENGTH)
+ 		ws = (VFDLENGTH-strlen(str))/2;
+ 	else
+ 		ws = 0;
+-	memset(data.data, ' ', 63);
++#else
++		ws = 0;
++#endif		
++		memset(data.data, ' ', 63);
+ 	if (!fromScrollThread)
+ 	{
+ 		memcpy (data.data+ws, str, VFDLENGTH-ws);
+diff -Naur neutrino-mp-next.org/src/gui/channellist.cpp neutrino-mp-next/src/gui/channellist.cpp
+--- neutrino-mp-next.org/src/gui/channellist.cpp	2015-03-22 09:05:07.636513398 +0100
++++ neutrino-mp-next/src/gui/channellist.cpp	2015-03-21 13:01:37.000000000 +0100
+@@ -566,7 +566,7 @@
+ #if HAVE_SPARK_HARDWARE || HAVE_DUCKBOX_HARDWARE
+ 	if (g_settings.channellist_additional != 0)
+ 		if (g_settings.channellist_foot != 0)
+-			info_height = 2*fheight + 10; 
++			info_height = 3*fheight + 10; 
+ #endif
+ 	height = pig_on_win ?  frameBuffer->getScreenHeight(): frameBuffer->getScreenHeightRel();
+ 	height = height - info_height;
+@@ -1747,8 +1747,8 @@
+ 		if (!(text2.empty())) {
+ 			while ( text2.find_first_of("[ -.+*#?=!$%&/]+") == 0 )
+ 				text2 = text2.substr( 1 );
+-			text2 = text2.substr( 0, text2.find('\n') );
+ #if 0 //FIXME: to discuss, eat too much cpu time if string long enough
++			text2 = text2.substr( 0, text2.find('\n') );
+ 			int pos = 0;
+ 			while ( ( pos != -1 ) && (g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST]->getRenderWidth(text2) > (full_width - 30 - noch_len) ) ) {
+ 				pos = text2.find_last_of(" ");
+@@ -1757,8 +1757,39 @@
+ 					text2 = text2.substr( 0, pos );
+ 				}
+ 			}
++#else
++			std::string text2_2= text2;
++			std::string space_char = " ";
++
++			//j00zek: NOTE: We remove newlines instead of cutting text
++			int pos = 0;
++			int lastpos = 0;
++			int text2_max_width = (full_width - xstart - 10)*2 + 50 ;
++
++			if ( g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST]->getRenderWidth(text2, true) > text2_max_width )
++				text2 = text2.substr( 0, text2_max_width / (g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST]->getRenderWidth(text2, true) / text2.length()) );
++
++			while ( text2.find("\n") != std::string::npos )
++				text2 = text2.replace( text2.find("\n"), 1, " " );
++			
++			text2 = text2.substr( 0, text2.find('\n') );
++			
++			printf("#j00zek> %s: text2:\n%s\n",__func__,text2.c_str());
++
++			while ( ( pos != -1 ) && (g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST]->getRenderWidth(text2, true) > (full_width- xstart- 10) ) ) {
++				pos = text2.find_last_of(" ");
++
++				if ( pos!=-1 ) {
++					text2 = text2.substr( 0, pos );
++					lastpos = pos;
++				}
++			}
++			text2_2 = text2_2.substr( lastpos );
++		printf("#j00zek> %s: text2_2:\n%s\n",__func__,text2_2.c_str());
+ #endif
+-			g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST_DESCR]->RenderString(x+ xstart, y+ height+ 5+ fdescrheight+ fheight, full_width- xstart- 30- noch_len, text2, colored_event_C ? COL_COLORED_EVENTS_TEXT : COL_MENUCONTENTDARK_TEXT);
++			g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST_DESCR]->RenderString(x+ xstart, y+ height+ 5+ fdescrheight+ fheight, full_width- xstart- 10, text2, colored_event_C ? COL_COLORED_EVENTS_TEXT : COL_MENUCONTENTDARK_TEXT, 0, true);
++			if ( text2_2 != text2 )
++				g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST_DESCR]->RenderString(x+ xstart, y+ height+ 5+ fdescrheight*2 + fheight, full_width- xstart- 10, text2_2, colored_event_C ? COL_COLORED_EVENTS_TEXT : COL_MENUCONTENTDARK_TEXT, 0, true);
+ 		}
+ 
+ 		g_Font[SNeutrinoSettings::FONT_TYPE_CHANNELLIST]->RenderString(x+ 10, y+ height+ 5+ fheight, full_width - 30 - seit_len, text1, colored_event_C ? COL_COLORED_EVENTS_TEXT : COL_MENUCONTENTDARK_TEXT);
+@@ -1972,7 +2003,9 @@
+ 	if (curr == selected) {
+ 		color   = COL_MENUCONTENTSELECTED_TEXT;
+ 		bgcolor = COL_MENUCONTENTSELECTED_PLUS_0;
++/* disable silly vertical bar on channel list
+ 		paintItem2DetailsLine (pos);
++*/
+ 		paintDetails(curr);
+ 		c_rad_small = RADIUS_LARGE;
+ 		paintbuttons = true;
+@@ -2069,12 +2102,12 @@
+ 		int r_icon_x = icon_x;
+ 
+ 		//paint scramble icon
+-		if(chan->scrambled) {
++/*		if(chan->scrambled) {
+ 			frameBuffer->getIconSize(NEUTRINO_ICON_SCRAMBLED, &s_icon_w, &s_icon_h);
+ 			if (frameBuffer->paintIcon(NEUTRINO_ICON_SCRAMBLED, icon_x - s_icon_w, ypos, fheight))//ypos + (fheight - 16)/2);
+ 				r_icon_x = r_icon_x - s_icon_w;
+ 		}
+-
++*/
+ 		//paint HD Icon
+ 		if(chan->isHD() && g_settings.channellist_hdicon) {
+ 			frameBuffer->getIconSize(NEUTRINO_ICON_RESOLUTION_HD, &h_icon_w, &s_icon_h);
