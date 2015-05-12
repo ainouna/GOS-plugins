@@ -3,6 +3,9 @@
 #######################################################################
 # maintainer: <schomi@vuplus-support.org> 
 # THX @einfall and @markusw for parts of this code
+# modified by j0zek:
+# - selection of description language
+# - downloading also from filmweb.pl to get covers for Polish moview
 #This plugin is free software, you are allowed to
 #modify it (if you keep the license),
 #but you are not allowed to distribute/publish
