@@ -145,29 +145,34 @@ class UserSkin_Config(Screen, ConfigListScreen):
 
         self.defaultOption = "default"
         self.defaults = (self.defaultOption, _("Default"))
+        self.color_file = "skin_user_colors.xml"
+        self.font_file = "skin_user_header.xml"
         
         if path.exists(self.skin_base_dir):
-            if path.exists(self.skin_base_dir + "allFonts/font_atile_Roboto.xml") or path.exists(self.skin_base_dir + "font_atile_Roboto.xml"):
-                self.default_font_file = "font_atile_Roboto.xml"
+            #FONTS
+            if path.exists(self.skin_base_dir + self.font_file):
+                self.default_font_file = path.basename(path.realpath(self.skin_base_dir + self.font_file))
+                printDEBUG("self.default_font_file = " + self.default_font_file )
             else:
                 self.default_font_file = self.defaultOption
-                
             if not path.exists(self.skin_base_dir + "allFonts/"):
                 mkdir(self.skin_base_dir + "allFonts/")
-
-            if path.exists(self.skin_base_dir + "allColors/colors_atile_Grey_transparent.xml") or path.exists(self.skin_base_dir + "colors_atile_Grey_transparent.xml"):
-                self.default_color_file = "colors_atile_Grey_transparent.xml"
+            #COLORS
+            if path.exists(self.skin_base_dir + self.color_file):
+                self.default_color_file = path.basename(path.realpath(self.skin_base_dir + self.color_file))
+                printDEBUG("self.default_color_file = " + self.default_color_file )
             else:
                 self.default_color_file = self.defaultOption
                 
             if not path.exists(self.skin_base_dir + "allColors/"):
                 mkdir(self.skin_base_dir + "allColors/")
-          
-            if not path.exists(self.skin_base_dir + "preview/"):
+            #PREVIEW
+            if not path.exists(self.skin_base_dir + ""):
                 mkdir(self.skin_base_dir + "preview/")
+            #SELECTOR
+            if not path.exists(self.skin_base_dir + "allBars"):
+                mkdir(self.skin_base_dir + "allBars/")
 
-        self.color_file = self.default_color_file
-        self.font_file = self.default_font_file
         current_color = self.getCurrentColor()[0]
         current_font = self.getCurrentFont()[0]
         myUserSkin_active = self.getmySkinState()
@@ -215,8 +220,6 @@ class UserSkin_Config(Screen, ConfigListScreen):
         self.list.append(self.set_myatile)
         self.list.append(self.set_color)
         self.list.append(self.set_font)
-        #if HardwareInfo().get_device_name().lower().find("adb") < 0: # PIG is dangerous in adb boxes
-        #    self.list.append(getConfigListEntry(_("Enable PIG (not recommended for 1080p):"), config.plugins.UserSkin.PIG_active))
         if not self.currentSkin.endswith('BlackHarmony'):
             self.list.append(getConfigListEntry(_("---Yahoo Weather---"), self.myUserSkin_fake_entry))
             self.list.append(getConfigListEntry(_("Refresh interval in minutes:"), config.plugins.UserSkin.refreshInterval))
@@ -381,9 +384,12 @@ class UserSkin_Config(Screen, ConfigListScreen):
 
     def keyOk(self):
         if self["config"].isChanged():
+            printDEBUG("self.myUserSkin_font.value=" + self.myUserSkin_font.value)
+            printDEBUG("self.myUserSkin_style.value=" + self.myUserSkin_style.value)
             for x in self["config"].list:
                 x[1].save()
             configfile.save()
+            #Zmieniamy katalog na ten wtyczki
             chdir(self.skin_base_dir)
             if path.exists(self.font_file):
                 remove(self.font_file)
@@ -392,8 +398,6 @@ class UserSkin_Config(Screen, ConfigListScreen):
             
             if path.exists('allFonts/' + self.myUserSkin_font.value):
                 symlink('allFonts/' + self.myUserSkin_font.value, self.font_file)
-            elif path.exists(self.myUserSkin_font.value): #if fonts definition is in skin root folder
-                symlink(self.myUserSkin_font.value, self.font_file)
             
             if path.exists(self.color_file):
                 remove(self.color_file)
@@ -402,8 +406,6 @@ class UserSkin_Config(Screen, ConfigListScreen):
             
             if path.exists("allColors/" + self.myUserSkin_style.value):
                 symlink("allColors/" + self.myUserSkin_style.value, self.color_file)
-            elif path.exists(self.myUserSkin_style.value): #if colors definition is in skin root folder
-                symlink(self.myUserSkin_style.value, self.color_file)
             
             if self.myUserSkin_active.value:
                 if not path.exists("mySkin") and path.exists("mySkin_off"):

@@ -8,6 +8,7 @@ sed -i 's/\(widget name="list".*\)font="[a-zA-Z_]*; [0-9]*"/\1/' $SkinName
 sed -i 's/\(widget name="[a-zA-Z_]*list".*\)font="[a-zA-Z_]*; [0-9]*"/\1/' $SkinName
 sed -i 's/\(render="Listbox".*\)font="[a-zA-Z_]*; [0-9]*"/\1/' $SkinName
 sed -i 's/\(widget name="config".*\)font="[a-zA-Z_]*; [0-9]*"/\1/' $SkinName
+sed -i 's/\(widget name="menu".*\)font="[a-zA-Z_]*; [0-9]*"/\1/' $SkinName
 #skinselector
 sed -i 's/\(widget name="SkinList".*\)font="[a-zA-Z_]*; [0-9]*"/\1/' $SkinName
 }
