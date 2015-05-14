@@ -272,6 +272,7 @@ class CoverFindScreen(Screen):
                 self.descr=''
             self.isDirectory = False
 
+        with open("/proc/sys/vm/drop_caches", "w") as f: f.write("1\n")
         printDEBUG('isDirectory=' + str(self.isDirectory), 'init') #DEBUG
         printDEBUG('path=' + path) #DEBUG
         printDEBUG('self.dir=' + str(self.dir), 'init') #DEBUG
