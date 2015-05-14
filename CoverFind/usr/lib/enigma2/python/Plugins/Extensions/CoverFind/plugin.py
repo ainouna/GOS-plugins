@@ -260,7 +260,10 @@ class CoverFindScreen(Screen):
             self.text = self.baseName(path)
             self.isDirectory = True
         else:
-            self.text = cleanFile(info.getName(service))
+            try:
+                self.text = cleanFile(info.getName(service))
+            except:
+                self.text = _('NOT VIDEO!!!')
             self.descr = ''
             self.orgTitle = ''
             self.UseOrgTitle = False

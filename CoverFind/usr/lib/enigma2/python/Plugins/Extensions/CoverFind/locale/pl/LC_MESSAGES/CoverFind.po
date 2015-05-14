@@ -117,3 +117,6 @@ msgstr "Szukaj też na filmweb.pl:"
 
 msgid "Try to find %s in webfilm.pl ..."
 msgstr "Szukanie na filmweb.pl..."
+
+msgid "WRONG file type"
+msgstr "ZLY typ pliku"
