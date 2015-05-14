@@ -47,7 +47,7 @@ from os import path as os_path, listdir
 from Components.MenuList import MenuList
 from Components.Harddisk import harddiskmanager
 from Tools.Directories import SCOPE_CURRENT_SKIN, resolveFilename, fileExists
-from enigma import RT_HALIGN_LEFT, eListboxPythonMultiContent, eServiceReference, eServiceCenter, gFont, iServiceInformation, eServiceEvent
+from enigma import RT_HALIGN_LEFT, eListboxPythonMultiContent, eServiceReference, eServiceCenter, gFont
 from Tools.LoadPixmap import LoadPixmap
 #
 from Screens.Screen import Screen
@@ -269,6 +269,7 @@ class CoverFindScreen(Screen):
                 if self.descr.find(' oryginalny:') > 1:
                     self.orgTitle = re.findall('Tytu. oryginalny:(.*);', self.descr, flags=re.I)[0].strip()
                     self.UseOrgTitle = True
+                self.descr=''
             self.isDirectory = False
 
         printDEBUG('isDirectory=' + str(self.isDirectory), 'init') #DEBUG
@@ -276,7 +277,7 @@ class CoverFindScreen(Screen):
         printDEBUG('self.dir=' + str(self.dir), 'init') #DEBUG
         printDEBUG('self.file=' + str(self.file), 'init') #DEBUG   
         printDEBUG('self.text=' + str(self.text), 'init') #DEBUG
-        printDEBUG('self.descr=' + str(self.descr), 'init') #DEBUG
+        #printDEBUG('self.descr=' + str(self.descr), 'init') #DEBUG
         printDEBUG('self.orgTitle=' + str(self.orgTitle), 'init') #DEBUG
 
         self.buttonChoice = 0
