@@ -249,7 +249,7 @@ class gExtraInfo(Converter, object):
 
 
 	def getStreamInfo(self, ltype):
-		print "============> getText PROV_CA_ID"
+#		print "============> getText PROV_CA_ID"
 		try:
 			file = open ( "/tmp/ecm.info", "r" )
 		except:
@@ -286,7 +286,7 @@ class gExtraInfo(Converter, object):
 		return ""
 	
 	def getSourceInfo(self, ltype):
-		print "============> getText NETCARD_INFO"
+#		print "============> getText NETCARD_INFO"
 		try:
 			file = open ( "/tmp/ecm.info", "r" )
 		except:
