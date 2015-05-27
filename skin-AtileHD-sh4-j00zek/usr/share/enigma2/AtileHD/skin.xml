@@ -1765,8 +1765,9 @@
 			<convert type="TemplatedMultiContent">
 				{"template":
 					[
-						MultiContentEntryPixmapAlphaTest(pos = (2, 2), size = (54, 54), png = 2),
-						MultiContentEntryText(pos = (60, 2), size = (500, 54), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
+						MultiContentEntryPixmapAlphaTest(pos = (2, 2), size = (54, 54), png = 3),
+						MultiContentEntryText(pos = (60, 2), size = (500, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
+                                              MultiContentEntryText(pos = (60, 2), size = (500, 34), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 2),
 					],
 					"fonts": [gFont("Regular", 22),gFont("Regular", 16)],
 					"itemHeight": 60
