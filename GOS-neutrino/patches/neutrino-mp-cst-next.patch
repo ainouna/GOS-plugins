@@ -1,6 +1,6 @@
 diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/driver/fbaccel.cpp neutrino-mp-cst-next/src/driver/fbaccel.cpp
 --- neutrino-mp-cst-next.org/src/driver/fbaccel.cpp	2015-04-24 06:50:43.495868656 +0200
-+++ neutrino-mp-cst-next/src/driver/fbaccel.cpp	2015-04-24 08:09:29.227789652 +0200
++++ neutrino-mp-cst-next/src/driver/fbaccel.cpp	2015-05-07 23:02:04.473629993 +0200
 @@ -210,11 +210,32 @@
  	}
  	backbuf_sz = 1280 * 720 * sizeof(fb_pixel_t);
@@ -36,7 +36,7 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/driver/fbaccel.cpp ne
  	res = ioctl(bpafd, BPAMEMIO_ALLOCMEM, &bpa_data);
 diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/driver/vfd.cpp neutrino-mp-cst-next/src/driver/vfd.cpp
 --- neutrino-mp-cst-next.org/src/driver/vfd.cpp	2015-04-13 08:51:01.554177537 +0200
-+++ neutrino-mp-cst-next/src/driver/vfd.cpp	2015-04-24 08:09:29.235789652 +0200
++++ neutrino-mp-cst-next/src/driver/vfd.cpp	2015-05-07 23:02:04.593629995 +0200
 @@ -52,6 +52,7 @@
  #include <stropts.h>
  #define VFD_DEVICE "/dev/vfd"
@@ -135,8 +135,8 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/driver/vfd.cpp neutri
  #endif
  }
 diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/channellist.cpp neutrino-mp-cst-next/src/gui/channellist.cpp
---- neutrino-mp-cst-next.org/src/gui/channellist.cpp	2015-04-24 06:50:43.511868655 +0200
-+++ neutrino-mp-cst-next/src/gui/channellist.cpp	2015-04-24 09:43:26.779695405 +0200
+--- neutrino-mp-cst-next.org/src/gui/channellist.cpp	2015-05-07 07:00:05.284835386 +0200
++++ neutrino-mp-cst-next/src/gui/channellist.cpp	2015-05-07 23:02:04.597629995 +0200
 @@ -91,6 +91,9 @@
  
  static CComponentsFrmClock *headerClock = NULL;
@@ -218,7 +218,7 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/channellist.cpp n
  				}
  			}
  		}
-@@ -1689,8 +1703,15 @@
+@@ -1685,8 +1699,15 @@
  	{
  		if (displayList)
  			paint_events(index);
@@ -235,7 +235,7 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/channellist.cpp n
  	}
  }
  
-@@ -1928,12 +1949,12 @@
+@@ -1931,12 +1952,12 @@
  		frameBuffer->getIconSize(icon, &s_icon_w, &s_icon_h);
  		r_icon_w = ChannelList_Rec;
  		int r_icon_x = icon_x;
@@ -250,7 +250,7 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/channellist.cpp n
  		//paint HD Icon
  		if(chan->isHD() && g_settings.channellist_hdicon) {
  			frameBuffer->getIconSize(NEUTRINO_ICON_RESOLUTION_HD, &h_icon_w, &s_icon_h);
-@@ -2266,7 +2287,17 @@
+@@ -2269,7 +2290,17 @@
  {
  	ffheight = g_Font[eventFont]->getHeight();
  	readEvents((*chanlist)[index]->channel_id);
@@ -269,7 +269,7 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/channellist.cpp n
  
  	char startTime[10];
  	int eventStartTimeWidth = 4 * g_Font[eventFont]->getMaxDigitWidth() + g_Font[eventFont]->getRenderWidth(":") + 5; // use a fixed value
-@@ -2305,21 +2336,27 @@
+@@ -2308,21 +2339,27 @@
  			break;
  
  		//Display the remaining events
@@ -301,7 +301,7 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/channellist.cpp n
  		}
  		else
  		{
-@@ -2368,8 +2405,10 @@
+@@ -2371,8 +2408,10 @@
  		processTextToArray(g_Locale->getText(LOCALE_EPGVIEWER_NODETAILED));
  
  	frameBuffer->paintBoxRel(x+ width,y+ theight+pig_height, infozone_width, infozone_height,COL_MENUCONTENT_PLUS_0);
@@ -314,9 +314,9 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/channellist.cpp n
  
  void CChannelList::addTextToArray(const std::string & text, int screening) // UTF-8
 diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/opkg_manager.cpp neutrino-mp-cst-next/src/gui/opkg_manager.cpp
---- neutrino-mp-cst-next.org/src/gui/opkg_manager.cpp	2015-03-30 15:53:23.916069483 +0200
-+++ neutrino-mp-cst-next/src/gui/opkg_manager.cpp	2015-04-24 08:09:29.239789652 +0200
-@@ -269,7 +269,7 @@
+--- neutrino-mp-cst-next.org/src/gui/opkg_manager.cpp	2015-05-07 07:00:05.288835386 +0200
++++ neutrino-mp-cst-next/src/gui/opkg_manager.cpp	2015-05-07 23:02:04.601629995 +0200
+@@ -311,7 +311,7 @@
  
  bool COPKGManager::hasOpkgSupport()
  {
@@ -326,8 +326,8 @@ diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/gui/opkg_manager.cpp 
  	if (find_executable(OPKG_CL).empty()) {
  		dprintf(DEBUG_INFO, "[neutrino opkg] did not find " OPKG_CL " executable\n");
 diff -Naur -X ../exclude.pats neutrino-mp-cst-next.org/src/neutrino.cpp neutrino-mp-cst-next/src/neutrino.cpp
---- neutrino-mp-cst-next.org/src/neutrino.cpp	2015-04-24 06:50:43.519868655 +0200
-+++ neutrino-mp-cst-next/src/neutrino.cpp	2015-04-24 11:38:02.943580451 +0200
+--- neutrino-mp-cst-next.org/src/neutrino.cpp	2015-05-07 07:00:05.292835386 +0200
++++ neutrino-mp-cst-next/src/neutrino.cpp	2015-05-07 23:02:04.613629995 +0200
 @@ -500,7 +500,7 @@
  	g_settings.backlight_tv = configfile.getInt32( "backlight_tv", 1);
  	g_settings.backlight_standby = configfile.getInt32( "backlight_standby", 0);
