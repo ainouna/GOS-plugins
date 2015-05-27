@@ -68,9 +68,30 @@ from twisted.web import client, error as weberror
 from twisted.internet import reactor
 from twisted.internet import defer
 from urllib import urlencode
-from __init__ import _
 from Tools.MovieInfoParser import getExtendedMovieDescription 
 
+try:
+    from Components.LanguageGOS import gosgettext as _
+    printDEBUG('[CoverFind] LanguageGOS detected')
+except:
+    printDEBUG('LanguageGOS not detected, using local _')
+    from Components.Language import language
+    from Tools.Directories import SCOPE_PLUGINS
+    import gettext
+    PluginLanguageDomain = "CoverFind"
+    PluginLanguagePath = "Extensions/CoverFind/locale"
+    def localeInit():
+        lang = language.getLanguage()[:2]
+        os.environ["LANGUAGE"] = lang
+        gettext.bindtextdomain(PluginLanguageDomain, resolveFilename(SCOPE_PLUGINS, PluginLanguagePath))
+    def _(txt):
+        t = gettext.dgettext(PluginLanguageDomain, txt)
+        if t == txt:
+            t = gettext.gettext(txt)
+        return t
+    localeInit()
+    language.addCallback(localeInit)
+    
 pname = _("CoverFind")
 pdesc = _("Find Cover ... function for Movielist")
 pversion = "0.7-r3"
