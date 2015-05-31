@@ -58,6 +58,7 @@ if CEC_Module == 'old_cec':
     config.plugins.CEC.ActiveSource = ConfigSelection(default = "11", choices = [("11","HDMI1"),("21","HDMI2"),("31","HDMI3"),("41","HDMI4")])
 elif CEC_Module == 'new_cec':
     config.plugins.CEC.ActiveSource = ConfigSelection(default = "Auto", choices = [("Auto","Auto"),("11","HDMI1"),("21","HDMI2"),("31","HDMI3"),("41","HDMI4")])
+config.plugins.CEC.MiniEnable = ConfigYesNo(default = True)
 
 class CECSetup(ConfigListScreen, Screen):
     skin = """
@@ -90,6 +91,7 @@ class CECSetup(ConfigListScreen, Screen):
         self.list.append(getConfigListEntry(_("Active TV input"), config.plugins.CEC.ActiveSource))
         if CEC_Module == 'new_cec':
             self.list.append(getConfigListEntry(_("Turn off TV only when on active input"), config.plugins.CEC.CheckInput))
+            self.list.append(getConfigListEntry(_("Use alternative mode"), config.plugins.CEC.MiniEnable))
         self.list.append(getConfigListEntry(_("Data send delay [ms]"), config.plugins.CEC.Delay))
         self.list.append(getConfigListEntry(_("Repeat data sending"), config.plugins.CEC.Counter))
         self.list.append(getConfigListEntry(_("Interval between repetitions [ms]"), config.plugins.CEC.DelayCounter))
@@ -304,6 +306,14 @@ class CECControl():
 
     def leaveStandby(self):
         printDEBUG( "leaveStandby" , "CEC Box status: Left Standby, CEC_ActiveHDMI: %s" % (self.CEC_ActiveHDMI) )
+        
+        if config.plugins.CEC.MiniEnable.value == True:
+            printDEBUG( "standbyCounterChanged" , "MiniMode enabled" )
+            from Components.Console import Console
+            myConsole = Console()
+            with open("/proc/sys/vm/drop_caches", "w") as f: f.write("1\n")
+            myConsole.ePopen("/etc/cron/moderatestandby_off/40cec")
+            return
 
         if config.plugins.CEC.Enable.value == True:
             if self.standby==0:
@@ -326,6 +336,14 @@ class CECControl():
         from Screens.Standby import inStandby
         inStandby.onClose.append(self.leaveStandby)
 
+        if config.plugins.CEC.MiniEnable.value == True:
+            printDEBUG( "standbyCounterChanged" , "MiniMode enabled" )
+            from Components.Console import Console
+            myConsole = Console()
+            with open("/proc/sys/vm/drop_caches", "w") as f: f.write("1\n")
+            myConsole.ePopen("/etc/cron/moderatestandby_on/20cec")
+            return
+            
         if config.plugins.CEC.Enable.value == True:
             if self.standby==1:
                 self.standby = 0
