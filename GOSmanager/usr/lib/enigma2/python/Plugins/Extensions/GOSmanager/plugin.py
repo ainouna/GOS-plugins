@@ -152,8 +152,8 @@ class GOSmanagerWidget(Screen):
                     self.session.openWithCallback(self.prepareListForSelector, MessageBox,_("Install IPTVPlayer plugin through OPKG first","plugin-GOSmanager"),  type = MessageBox.TYPE_INFO)
             elif ret[0] == "pluginUserSkin":
                 if pathExists(self.myExtensions + "/UserSkin") is True:
-                    from Plugins.Extensions.UserSkin.plugin import UserSkin_Config
-                    self.session.openWithCallback(self.CloseMe, UserSkin_Config)
+                    from Plugins.Extensions.UserSkin.plugin import UserSkin_Menu
+                    self.session.openWithCallback(self.CloseMe, UserSkin_Menu)
                 else:
                     self.session.openWithCallback(self.prepareListForSelector, MessageBox,_("Install UserSkin plugin through OPKG first","plugin-GOSmanager"),  type = MessageBox.TYPE_INFO)
             elif ret[0].lower().find("pluginbrowser") > -1:
