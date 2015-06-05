@@ -61,6 +61,7 @@ class GOSopkg(Screen):
         self.session = session
         
         self.list = []
+        self.SelectedIndex = None
         self.packages = []
         self.installedpackages = []
         self.upgradeablepackages = []
@@ -188,6 +189,7 @@ class GOSopkg(Screen):
         return
 
     def doAction(self):
+        self.SelectedIndex = self["list"].getIndex()
         printDEBUG( "doAction" , "self.keyGreenAction = '%s'" % self.keyGreenAction )
         if self.BlockedInput == True and self.keyGreenAction != 'LocalPackage':
             printDEBUG( "doAction" , "self.BlockedInput == True" )
@@ -410,7 +412,12 @@ class GOSopkg(Screen):
         else:
             self.refreshListsmain()
             
-
+    def setCurrentIndex(self):
+        if self.SelectedIndex is not None and len(self["list"].list) > self.SelectedIndex:
+            self["list"].setIndex(self.SelectedIndex)
+        else:
+            self["list"].setIndex(0)
+            
 #>>>>>  refreshListsmain run when all above tests went correctly
     def refreshListsmain(self):
         printDEBUG( "refreshListsmain" , "enter" )
@@ -450,6 +457,7 @@ class GOSopkg(Screen):
             self.list.append((_("Show all packages", "plugin-GOSmanager") , '' , '', '', LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/icons/opkg_all.png')), self.divpng))
             self.list.append((_("Install local packet", "plugin-GOSmanager") , " ", _("You will be later prompted for file selection.", "plugin-GOSmanager"), 'InstallLocal', self.gousbpng, self.divpng))
             self['list'].setList(self.list)
+            self.setCurrentIndex()
             self.BlockedInput = False
         def build_UpgradeMenu( result, retval, extra_args = None):
             printDEBUG( "build_UpgradeMenu" , "..." )
@@ -540,6 +548,7 @@ class GOSopkg(Screen):
                         self.list.append(self.buildEntryComponent(package[0].strip(), package[1].strip(), package[2].strip(), 'installable'))
         printDEBUG( "refreshLists" , "calling final self['list'].setList(self.list)" )
         self['list'].setList(self.list)
+        self.setCurrentIndex()
         self.BlockedInput = False
       
     def getOPKGlist(self, SameNazwy = False , lista = '' ):
