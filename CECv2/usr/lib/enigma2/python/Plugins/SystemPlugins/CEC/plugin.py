@@ -58,7 +58,8 @@ if CEC_Module == 'old_cec':
     config.plugins.CEC.ActiveSource = ConfigSelection(default = "11", choices = [("11","HDMI1"),("21","HDMI2"),("31","HDMI3"),("41","HDMI4")])
 elif CEC_Module == 'new_cec':
     config.plugins.CEC.ActiveSource = ConfigSelection(default = "Auto", choices = [("Auto","Auto"),("11","HDMI1"),("21","HDMI2"),("31","HDMI3"),("41","HDMI4")])
-config.plugins.CEC.MiniEnable = ConfigYesNo(default = True)
+
+config.plugins.CEC.MiniEnable = ConfigYesNo(default = False)
 
 class CECSetup(ConfigListScreen, Screen):
     skin = """
