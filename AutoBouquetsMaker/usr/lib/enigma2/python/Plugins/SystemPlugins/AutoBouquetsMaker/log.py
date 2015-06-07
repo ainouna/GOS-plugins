@@ -12,23 +12,29 @@ logfile = StringIO()
 mutex = threading.Lock()
 
 def write(data):
-	mutex.acquire()
-	try:
-		if logfile.tell() > 8000:
-			# Do a sort of 8k round robin
-			logfile.reset()
-		logfile.write(data)
-	finally:
-		mutex.release()
-	sys.stdout.write(data)
+    mutex.acquire()
+    try:
+        if logfile.tell() > 8000:
+            # Do a sort of 8k round robin
+            logfile.reset()
+        logfile.write(data)
+    finally:
+        mutex.release()
+    sys.stdout.write(data)
 
 def getvalue():
-	mutex.acquire()
-	try:
-		pos = logfile.tell()
-		head = logfile.read()
-		logfile.reset()
-		tail = logfile.read(pos)
-	finally:
-		mutex.release()
-	return head + tail
+    mutex.acquire()
+    try:
+        pos = logfile.tell()
+        head = logfile.read()
+        logfile.reset()
+        tail = logfile.read(pos)
+    finally:
+        mutex.release()
+    try:
+        f = open('/tmp/ABM.log', 'w')
+        f.write(head + tail)
+        f.close()
+    except:
+        pass
+    return head + tail
