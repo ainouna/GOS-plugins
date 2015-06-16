@@ -1,0 +1,359 @@
+<!-- UWAGA - Bez polskich liter !!! -->
+<custom>
+	<include>yes</include>
+	<lcnlist>
+		<!--section number="1">Informacja</section-->
+		<configuration lcn="2" channelnumber="15821" description="TVN HD"></configuration>
+		<configuration lcn="3" channelnumber="15827" description="TVN 7 HD"></configuration>
+		<configuration lcn="4" channelnumber="15822" description="TVN STYLE HD"></configuration>
+		<configuration lcn="5" channelnumber="15824" description="TVN TURBO HD"></configuration>
+		<configuration lcn="4311" channelnumber="4311" description="TVN"></configuration>
+		<configuration lcn="4312" channelnumber="4312" description="TVN 24"></configuration>
+		<configuration lcn="4313" channelnumber="4313" description="TVN 7"></configuration>
+		
+		<!--section number="30">Canal+</section-->
+		<configuration lcn="31" channelnumber="3504" description="AXN SPIN HD"></configuration>
+		<configuration lcn="32" channelnumber="4801" description="CANAL+"></configuration>
+		<configuration lcn="33" channelnumber="4802" description="CANAL+ Film"></configuration>
+		<configuration lcn="34" channelnumber="14209" description="Ale kino+ HD"></configuration>
+		<configuration lcn="35" channelnumber="14210" description="CANAL+ Seriale HD"></configuration>
+		
+		<!--section number="50">HBO,Cinemax</section-->
+		<configuration lcn="51" channelnumber="3593" description="HBO2 HD"></configuration>
+		<configuration lcn="52" channelnumber="3594" description="HBO COMEDY HD"></configuration>
+		
+		<!--section number="60">Film</section-->
+		<configuration lcn="61" channelnumber="29" description="Paramount Channel HD"></configuration>
+		<configuration lcn="62" channelnumber="15904" description="Universal Channel HD"></configuration>
+		<configuration lcn="1" channelnumber="1" description="UNIVERSAL CH."></configuration>
+		<configuration lcn="2" channelnumber="2" description="SCI FI CHANNEL"></configuration>
+		<configuration lcn="3" channelnumber="3" description="13 Ulica"></configuration>
+		<configuration lcn="1201" channelnumber="1201" description="COMEDY CENTRAL HD"></configuration>
+		<configuration lcn="3504" channelnumber="3504" description="AXN SPIN HD"></configuration>
+		
+		<!--section number="80">Kultura, natura, swiat</section-->
+		<configuration lcn="81" channelnumber="14206" description="Planete+ HD"></configuration>
+		<configuration lcn="3524" channelnumber="3524" description="TVP HISTORIA"></configuration>
+		<configuration lcn="3590" channelnumber="3590" description="BBC HD"></configuration>
+		<configuration lcn="3592" channelnumber="3592" description="BBC Earth HD"></configuration>
+		
+		<!--section number="100">Dzieci</section-->
+		<configuration lcn="101" channelnumber="30" description="Nick Jr."></configuration>
+		<configuration lcn="102" channelnumber="31" description="Nickelodeon HD"></configuration>
+		
+		<!--section number="120">Sport i motoryzacja</section-->
+		<configuration lcn="121" channelnumber="3505" description="TVP SPORT HD"></configuration>
+		<!--section number="140">Rozrywka, muzyka</section-->
+		<configuration lcn="141" channelnumber="14207" description="Kuchnia+ HD"></configuration>
+		<configuration lcn="142" channelnumber="14208" description="Domo+ HD"></configuration>
+		<configuration lcn="143" channelnumber="3502" description="Kino Polska Muzyka"></configuration>
+		<configuration lcn="144" channelnumber="7" description="VH1"></configuration>
+		<configuration lcn="145" channelnumber="22" description="MTV Polska"></configuration>
+		<configuration lcn="25" channelnumber="25" description="VIVA Polska"></configuration>
+		<configuration lcn="2006" channelnumber="2006" description="BBC Brit HD"></configuration>
+		<configuration lcn="2205" channelnumber="2205" description="4 FUN.tv"></configuration>
+		<configuration lcn="3001" channelnumber="3001" description="Fashion TV"></configuration>
+		<configuration lcn="3506" channelnumber="3506" description="Discovery Historia"></configuration>
+		<!--section number="170">Filmbox</section-->
+		<configuration lcn="171" channelnumber="13025" description="FILMBOX HD"></configuration>
+		<configuration lcn="172" channelnumber="15712" description="FILMBOX EXTRA"></configuration>
+		<configuration lcn="173" channelnumber="15714" description="FILMBOX FAMILY"></configuration>
+		<configuration lcn="174" channelnumber="15717" description="FILMBOX ACTION"></configuration>
+		<configuration lcn="175" channelnumber="15713" description="FILMBOX"></configuration>
+		<!--section number="200">Inne</section-->
+	</lcnlist>
+</custom>
+		<configuration lcn="4314" channelnumber="4314" description="POLO TV"></configuration>
+		<configuration lcn="4315" channelnumber="4315" description="ESKA TV"></configuration>
+		<configuration lcn="4316" channelnumber="4316" description="MANGO 24"></configuration>
+		<configuration lcn="4317" channelnumber="4317" description="TTV"></configuration>
+		<configuration lcn="4318" channelnumber="4318" description="TVN Meteo Active"></configuration>
+		<configuration lcn="4321" channelnumber="4321" description="FOKUS TV"></configuration>
+		<configuration lcn="4322" channelnumber="4322" description="TVN24 Biznes i Swiat"></configuration>
+		<configuration lcn="4344" channelnumber="4344" description="POLO TV"></configuration>
+		<configuration lcn="4348" channelnumber="4348" description="MANGO 24"></configuration>
+		<configuration lcn="4404" channelnumber="4404" description="TEST"></configuration>
+		<configuration lcn="4406" channelnumber="4406" description="Planete+"></configuration>
+		<configuration lcn="4407" channelnumber="4407" description="MiniMini+"></configuration>
+		<configuration lcn="4408" channelnumber="4408" description="nSport+"></configuration>
+		<configuration lcn="4409" channelnumber="4409" description="HISTORY"></configuration>
+		<configuration lcn="4413" channelnumber="4413" description="CANAL+ 1"></configuration>
+		<configuration lcn="4414" channelnumber="4414" description="CANAL+ FAMILY"></configuration>
+		<configuration lcn="4423" channelnumber="4423" description=" CANAL+ 1"></configuration>
+		<configuration lcn="4429" channelnumber="4429" description="HBO"></configuration>
+		<configuration lcn="4431" channelnumber="4431" description="HBO2"></configuration>
+		<configuration lcn="4432" channelnumber="4432" description="HBO COMEDY"></configuration>
+		<configuration lcn="4435" channelnumber="4435" description="ESP"></configuration>
+		<configuration lcn="4446" channelnumber="4446" description=" "></configuration>
+		<configuration lcn="4451" channelnumber="4451" description="Planete+"></configuration>
+		<configuration lcn="4452" channelnumber="4452" description="MiniMini+"></configuration>
+		<configuration lcn="4458" channelnumber="4458" description="nSport+"></configuration>
+		<configuration lcn="4476" channelnumber="4476" description="DTV CABLE PL"></configuration>
+		<configuration lcn="4477" channelnumber="4477" description="DTV CABLE MI"></configuration>
+		<configuration lcn="4481" channelnumber="4481" description="STREFA ABONENTA nc+"></configuration>
+		<configuration lcn="4495" channelnumber="4495" description="DATA"></configuration>
+		<configuration lcn="4701" channelnumber="4701" description="Pro TV International"></configuration>
+		<configuration lcn="4703" channelnumber="4703" description="Mohabat"></configuration>
+		<configuration lcn="4705" channelnumber="4705" description="Gali Kurdistan TV"></configuration>
+		<configuration lcn="4708" channelnumber="4708" description="CBC TV"></configuration>
+		<configuration lcn="4709" channelnumber="4709" description="Az TV"></configuration>
+		<configuration lcn="4711" channelnumber="4711" description="God TV"></configuration>
+		<configuration lcn="4715" channelnumber="4715" description="SBN International"></configuration>
+		<configuration lcn="4762" channelnumber="4762" description="Universal Somali TV"></configuration>
+		<configuration lcn="4769" channelnumber="4769" description="WORLD FASHION"></configuration>
+		<configuration lcn="4771" channelnumber="4771" description="7 Kazakhstan"></configuration>
+		<configuration lcn="4772" channelnumber="4772" description="Ictimai TV"></configuration>
+		<configuration lcn="4801" channelnumber="4801" description="CANAL+"></configuration>
+		<configuration lcn="4802" channelnumber="4802" description="CANAL+ Film"></configuration>
+		<configuration lcn="4803" channelnumber="4803" description="CANAL+ Seriale"></configuration>
+		<configuration lcn="4804" channelnumber="4804" description="Kuchnia+"></configuration>
+		<configuration lcn="4805" channelnumber="4805" description="Ale kino+"></configuration>
+		<configuration lcn="4806" channelnumber="4806" description="teleTOON+"></configuration>
+		<configuration lcn="4807" channelnumber="4807" description="TVP 1"></configuration>
+		<configuration lcn="4808" channelnumber="4808" description="TVP 2"></configuration>
+		<configuration lcn="4809" channelnumber="4809" description="CANAL+ Sport"></configuration>
+		<configuration lcn="4811" channelnumber="4811" description="Domo+"></configuration>
+		<configuration lcn="4830" channelnumber="4830" description="H test 1"></configuration>
+		<configuration lcn="4831" channelnumber="4831" description="H test 2"></configuration>
+		<configuration lcn="4832" channelnumber="4832" description="H test 3"></configuration>
+		<configuration lcn="4848" channelnumber="4848" description=" "></configuration>
+		<configuration lcn="4849" channelnumber="4849" description=" "></configuration>
+		<configuration lcn="4905" channelnumber="4905" description="Channel One"></configuration>
+		<configuration lcn="4907" channelnumber="4907" description="TVP POLONIA"></configuration>
+		<configuration lcn="4908" channelnumber="4908" description="TV ROMANIA"></configuration>
+		<configuration lcn="4910" channelnumber="4910" description="Tele Padre Pio"></configuration>
+		<configuration lcn="4914" channelnumber="4914" description="Punto Sat"></configuration>
+		<configuration lcn="4922" channelnumber="4922" description="Cancao Nova"></configuration>
+		<configuration lcn="4923" channelnumber="4923" description="CTV"></configuration>
+		<configuration lcn="4960" channelnumber="4960" description="Private TV"></configuration>
+		<configuration lcn="4961" channelnumber="4961" description="Private TV"></configuration>
+		<configuration lcn="4976" channelnumber="4976" description="i TV ITALIA"></configuration>
+		<configuration lcn="5102" channelnumber="5102" description="TVS"></configuration>
+		<configuration lcn="5104" channelnumber="5104" description="KINO POLSKA"></configuration>
+		<configuration lcn="5105" channelnumber="5105" description="Trace Urban"></configuration>
+		<configuration lcn="5110" channelnumber="5110" description="TVP INFO"></configuration>
+		<configuration lcn="5112" channelnumber="5112" description="TV PULS"></configuration>
+		<configuration lcn="5113" channelnumber="5113" description="TVP Kultura"></configuration>
+		<configuration lcn="5115" channelnumber="5115" description="TVP Regionalna"></configuration>
+		<configuration lcn="5122" channelnumber="5122" description="Discovery Life"></configuration>
+		<configuration lcn="5126" channelnumber="5126" description="CBS Drama"></configuration>
+		<configuration lcn="5127" channelnumber="5127" description="CBS REALITY"></configuration>
+		<configuration lcn="5142" channelnumber="5142" description="TV PULS"></configuration>
+		<configuration lcn="5148" channelnumber="5148" description=" "></configuration>
+		<configuration lcn="5149" channelnumber="5149" description=" "></configuration>
+		<configuration lcn="7001" channelnumber="7001" description="Roma Uno"></configuration>
+		<configuration lcn="7202" channelnumber="7202" description="Tunisie Nationale"></configuration>
+		<configuration lcn="7220" channelnumber="7220" description="Kazakh TV"></configuration>
+		<configuration lcn="7222" channelnumber="7222" description="LIDER TV AZE"></configuration>
+		<configuration lcn="7224" channelnumber="7224" description="CCTV 4"></configuration>
+		<configuration lcn="7253" channelnumber="7253" description="SMtv San Marino"></configuration>
+		<configuration lcn="7256" channelnumber="7256" description="People TV"></configuration>
+		<configuration lcn="7257" channelnumber="7257" description="CNC World English"></configuration>
+		<configuration lcn="7259" channelnumber="7259" description="Bahrain Int."></configuration>
+		<configuration lcn="7275" channelnumber="7275" description="BBC Persian"></configuration>
+		<configuration lcn="7277" channelnumber="7277" description="Kurdistan TV"></configuration>
+		<configuration lcn="7302" channelnumber="7302" description="BLOOMBERG Eng"></configuration>
+		<configuration lcn="7310" channelnumber="7310" description="Hope Channel"></configuration>
+		<configuration lcn="7315" channelnumber="7315" description="ESTV"></configuration>
+		<configuration lcn="7321" channelnumber="7321" description="TV 5 Monde FBS"></configuration>
+		<configuration lcn="7322" channelnumber="7322" description="TV5MONDE Europe"></configuration>
+		<configuration lcn="7324" channelnumber="7324" description="CI Polsat"></configuration>
+		<configuration lcn="7327" channelnumber="7327" description="NHK World TV"></configuration>
+		<configuration lcn="7333" channelnumber="7333" description="GEM TV"></configuration>
+		<configuration lcn="7402" channelnumber="7402" description="Noursat"></configuration>
+		<configuration lcn="7456" channelnumber="7456" description="Al Hiwar TV"></configuration>
+		<configuration lcn="7459" channelnumber="7459" description="Dhammakaya"></configuration>
+		<configuration lcn="7460" channelnumber="7460" description="Miracle"></configuration>
+		<configuration lcn="7463" channelnumber="7463" description="Al Forat"></configuration>
+		<configuration lcn="7467" channelnumber="7467" description="CARTOON Network"></configuration>
+		<configuration lcn="7468" channelnumber="7468" description="TCM"></configuration>
+		<configuration lcn="7470" channelnumber="7470" description="Sat 7 Pars"></configuration>
+		<configuration lcn="8011" channelnumber="8011" description="ZDF"></configuration>
+		<configuration lcn="8020" channelnumber="8020" description="nex1"></configuration>
+		<configuration lcn="8027" channelnumber="8027" description="Persian Movie"></configuration>
+		<configuration lcn="8030" channelnumber="8030" description="Iran Beauty"></configuration>
+		<configuration lcn="8031" channelnumber="8031" description="ICC"></configuration>
+		<configuration lcn="8032" channelnumber="8032" description="TMTV"></configuration>
+		<configuration lcn="8039" channelnumber="8039" description="Merci TV"></configuration>
+		<configuration lcn="8204" channelnumber="8204" description="BBC World News"></configuration>
+		<configuration lcn="8208" channelnumber="8208" description="Channel 1 Russia"></configuration>
+		<configuration lcn="8209" channelnumber="8209" description="CNN"></configuration>
+		<configuration lcn="8211" channelnumber="8211" description="EURONEWS"></configuration>
+		<configuration lcn="8342" channelnumber="8342" description="RBC-TV"></configuration>
+		<configuration lcn="8511" channelnumber="8511" description="Rai1"></configuration>
+		<configuration lcn="8512" channelnumber="8512" description="Rai2"></configuration>
+		<configuration lcn="8513" channelnumber="8513" description="Rai3"></configuration>
+		<configuration lcn="8516" channelnumber="8516" description="Rai News"></configuration>
+		<configuration lcn="9016" channelnumber="9016" description="Armenia 1"></configuration>
+		<configuration lcn="9017" channelnumber="9017" description="Armenia TV"></configuration>
+		<configuration lcn="9307" channelnumber="9307" description="Canale Italia 83"></configuration>
+		<configuration lcn="9308" channelnumber="9308" description="Canale Italia 84"></configuration>
+		<configuration lcn="9310" channelnumber="9310" description="UnireSat by Teleippica"></configuration>
+		<configuration lcn="9321" channelnumber="9321" description="THAQALLYN TV"></configuration>
+		<configuration lcn="9323" channelnumber="9323" description="HODHOD Arabic"></configuration>
+		<configuration lcn="9345" channelnumber="9345" description="HADI TV1"></configuration>
+		<configuration lcn="9346" channelnumber="9346" description="HADI TV3"></configuration>
+		<configuration lcn="9347" channelnumber="9347" description="HADI TV4"></configuration>
+		<configuration lcn="9360" channelnumber="9360" description="Baraem Arab"></configuration>
+		<configuration lcn="9362" channelnumber="9362" description="Jeem+"></configuration>
+		<configuration lcn="9501" channelnumber="9501" description="Dubai TV"></configuration>
+		<configuration lcn="9502" channelnumber="9502" description="Dubai Sports 3"></configuration>
+		<configuration lcn="9503" channelnumber="9503" description="Sama Dubai"></configuration>
+		<configuration lcn="9507" channelnumber="9507" description="Abu Dhabi Sport"></configuration>
+		<configuration lcn="9508" channelnumber="9508" description="YAS Sports"></configuration>
+		<configuration lcn="9510" channelnumber="9510" description="AL SHARQIYA"></configuration>
+		<configuration lcn="9513" channelnumber="9513" description="Al-Arabiya"></configuration>
+		<configuration lcn="9516" channelnumber="9516" description="Sky News Arabia"></configuration>
+		<configuration lcn="10608" channelnumber="10608" description="Newroz"></configuration>
+		<configuration lcn="10704" channelnumber="10704" description="RTL 102.5"></configuration>
+		<configuration lcn="10706" channelnumber="10706" description="ITALIA CHANNEL"></configuration>
+		<configuration lcn="10708" channelnumber="10708" description="Carisma TV"></configuration>
+		<configuration lcn="10712" channelnumber="10712" description="UKRAINE TODAY"></configuration>
+		<configuration lcn="10715" channelnumber="10715" description="Arirang World"></configuration>
+		<configuration lcn="10725" channelnumber="10725" description="MEZZO"></configuration>
+		<configuration lcn="12203" channelnumber="12203" description="Automoto TV (Italy)"></configuration>
+		<configuration lcn="12205" channelnumber="12205" description="Telereporter"></configuration>
+		<configuration lcn="12206" channelnumber="12206" description="Lazio Channel"></configuration>
+		<configuration lcn="12207" channelnumber="12207" description="TeleMontegiove"></configuration>
+		<configuration lcn="12208" channelnumber="12208" description="Lombardia Sat"></configuration>
+		<configuration lcn="13020" channelnumber="13020" description="CANAL+ HD"></configuration>
+		<configuration lcn="13022" channelnumber="13022" description="CANAL+ Sport HD"></configuration>
+		<configuration lcn="13023" channelnumber="13023" description="NATIONAL GEO HD"></configuration>
+		<configuration lcn="13024" channelnumber="13024" description="MiniMini+ HD"></configuration>
+		<configuration lcn="13025" channelnumber="13025" description="FILMBOX HD"></configuration>
+		<configuration lcn="13040" channelnumber="13040" description="CANAL+ HD"></configuration>
+		<configuration lcn="13048" channelnumber="13048" description=" "></configuration>
+		<configuration lcn="13049" channelnumber="13049" description=" "></configuration>
+		<configuration lcn="13052" channelnumber="13052" description="CANAL+ SPORT HD"></configuration>
+		<configuration lcn="13054" channelnumber="13054" description="MiniMini+ HD"></configuration>
+		<configuration lcn="13098" channelnumber="13098" description=" "></configuration>
+		<configuration lcn="13099" channelnumber="13099" description=" "></configuration>
+		<configuration lcn="13501" channelnumber="13501" description="Belarus 24"></configuration>
+		<configuration lcn="13504" channelnumber="13504" description="Daystar TV"></configuration>
+		<configuration lcn="13506" channelnumber="13506" description="Ariana TNI"></configuration>
+		<configuration lcn="13514" channelnumber="13514" description="EWTN"></configuration>
+		<configuration lcn="13518" channelnumber="13518" description="RIK Sat"></configuration>
+		<configuration lcn="13522" channelnumber="13522" description="1+1 Int."></configuration>
+		<configuration lcn="13737" channelnumber="13737" description="TELESUR"></configuration>
+		<configuration lcn="13849" channelnumber="13849" description="FRANCE 24 Fra"></configuration>
+		<configuration lcn="13850" channelnumber="13850" description="FRANCE 24 Eng"></configuration>
+		<configuration lcn="13878" channelnumber="13878" description="EUROSPORT 2"></configuration>
+		<configuration lcn="13920" channelnumber="13920" description="Shant TV"></configuration>
+		<configuration lcn="13940" channelnumber="13940" description="Algerie 3"></configuration>
+		<configuration lcn="13950" channelnumber="13950" description="Canal Algerie"></configuration>
+		<configuration lcn="14000" channelnumber="14000" description="Zagros TV"></configuration>
+		<configuration lcn="14201" channelnumber="14201" description="CANAL+ Film HD"></configuration>
+		<configuration lcn="14202" channelnumber="14202" description="CANAL+ 1 HD"></configuration>
+		<configuration lcn="14203" channelnumber="14203" description="CANAL+ Family HD"></configuration>
+		<configuration lcn="14205" channelnumber="14205" description="teleTOON+ HD"></configuration>
+		<configuration lcn="14206" channelnumber="14206" description="Planete+ HD"></configuration>
+		<configuration lcn="14207" channelnumber="14207" description="Kuchnia+ HD"></configuration>
+		<configuration lcn="14208" channelnumber="14208" description="Domo+ HD"></configuration>
+		<configuration lcn="14209" channelnumber="14209" description="Ale kino+ HD"></configuration>
+		<configuration lcn="14210" channelnumber="14210" description="CANAL+ Seriale HD"></configuration>
+		<configuration lcn="14235" channelnumber="14235" description="teleTOON+ HD"></configuration>
+		<configuration lcn="14236" channelnumber="14236" description="Planete+ HD"></configuration>
+		<configuration lcn="14237" channelnumber="14237" description="Kuchnia+ HD"></configuration>
+		<configuration lcn="14238" channelnumber="14238" description="Domo+ HD"></configuration>
+		<configuration lcn="14239" channelnumber="14239" description="Ale kino+ HD"></configuration>
+		<configuration lcn="14248" channelnumber="14248" description=" "></configuration>
+		<configuration lcn="14249" channelnumber="14249" description=" "></configuration>
+		<configuration lcn="14280" channelnumber="14280" description="SERWISY INT."></configuration>
+		<configuration lcn="14299" channelnumber="14299" description=" "></configuration>
+		<configuration lcn="14604" channelnumber="14604" description="BBC Lifestyle"></configuration>
+		<configuration lcn="14605" channelnumber="14605" description="Cbeebies"></configuration>
+		<configuration lcn="14607" channelnumber="14607" description="R1"></configuration>
+		<configuration lcn="14610" channelnumber="14610" description="CNBC"></configuration>
+		<configuration lcn="14613" channelnumber="14613" description="TLC"></configuration>
+		<configuration lcn="14616" channelnumber="14616" description="BBC Arabic"></configuration>
+		<configuration lcn="14859" channelnumber="14859" description="TG NORBA 24 "></configuration>
+		<configuration lcn="14860" channelnumber="14860" description="RADIONORBA TV"></configuration>
+		<configuration lcn="15001" channelnumber="15001" description="CANAL+ Discovery HD"></configuration>
+		<configuration lcn="15003" channelnumber="15003" description="ID HD"></configuration>
+		<configuration lcn="15004" channelnumber="15004" description="Discovery Turbo Xtra HD"></configuration>
+		<configuration lcn="15031" channelnumber="15031" description="MGM HD"></configuration>
+		<configuration lcn="15032" channelnumber="15032" description="Discovery HD"></configuration>
+		<configuration lcn="15033" channelnumber="15033" description="nSport+ HD"></configuration>
+		<configuration lcn="15037" channelnumber="15037" description="TVP 1 HD"></configuration>
+		<configuration lcn="15038" channelnumber="15038" description="Romance TV HD"></configuration>
+		<configuration lcn="15073" channelnumber="15073" description="nSport+ HD"></configuration>
+		<configuration lcn="15202" channelnumber="15202" description="TVP HD "></configuration>
+		<configuration lcn="15203" channelnumber="15203" description="EUROSPORT 2 HD"></configuration>
+		<configuration lcn="15205" channelnumber="15205" description="NAT GEO WILD HD"></configuration>
+		<configuration lcn="15206" channelnumber="15206" description="ANIMAL PLANET HD"></configuration>
+		<configuration lcn="15207" channelnumber="15207" description="CINEMAX HD"></configuration>
+		<configuration lcn="15210" channelnumber="15210" description="CANAL+ Sport 2 HD"></configuration>
+		<configuration lcn="15211" channelnumber="15211" description="38"></configuration>
+		<configuration lcn="15260" channelnumber="15260" description="CANAL+ Sport 2 HD"></configuration>
+		<configuration lcn="15283" channelnumber="15283" description="EUROSPORT 2 HD"></configuration>
+		<configuration lcn="15285" channelnumber="15285" description="NAT GEO WILD HD"></configuration>
+		<configuration lcn="15701" channelnumber="15701" description="D. SCIENCE"></configuration>
+		<configuration lcn="15708" channelnumber="15708" description="TVP Seriale"></configuration>
+		<configuration lcn="15710" channelnumber="15710" description="NATIONAL GEO"></configuration>
+		<configuration lcn="15711" channelnumber="15711" description="Orange Sport"></configuration>
+		<configuration lcn="15712" channelnumber="15712" description="FILMBOX EXTRA"></configuration>
+		<configuration lcn="15713" channelnumber="15713" description="FILMBOX"></configuration>
+		<configuration lcn="15714" channelnumber="15714" description="FILMBOX FAMILY"></configuration>
+		<configuration lcn="15717" channelnumber="15717" description="FILMBOX ACTION"></configuration>
+		<configuration lcn="15790" channelnumber="15790" description="TV RACHUNEK"></configuration>
+		<configuration lcn="15813" channelnumber="15813" description="Puls2"></configuration>
+		<configuration lcn="15814" channelnumber="15814" description="VOX MUSIC TV"></configuration>
+		<configuration lcn="15815" channelnumber="15815" description="POWER TV"></configuration>
+		<configuration lcn="15821" channelnumber="15821" description="TVN HD"></configuration>
+		<configuration lcn="15822" channelnumber="15822" description="TVN STYLE HD"></configuration>
+		<configuration lcn="15823" channelnumber="15823" description="TVN STYLE HD"></configuration>
+		<configuration lcn="15824" channelnumber="15824" description="TVN TURBO HD"></configuration>
+		<configuration lcn="15825" channelnumber="15825" description="TVN TURBO HD"></configuration>
+		<configuration lcn="15826" channelnumber="15826" description="TVN 24 HD"></configuration>
+		<configuration lcn="15827" channelnumber="15827" description="TVN 7 HD"></configuration>
+		<configuration lcn="15828" channelnumber="15828" description="Adventure HD"></configuration>
+		<configuration lcn="15830" channelnumber="15830" description="TVN Fabula HD"></configuration>
+		<configuration lcn="15845" channelnumber="15845" description="POWER TV"></configuration>
+		<configuration lcn="15901" channelnumber="15901" description="Sundance HD"></configuration>
+		<configuration lcn="15902" channelnumber="15902" description="Polsat Film HD"></configuration>
+		<configuration lcn="15903" channelnumber="15903" description="STARS.TV"></configuration>
+		<configuration lcn="15904" channelnumber="15904" description="Universal Channel HD"></configuration>
+		<configuration lcn="15905" channelnumber="15905" description="TLC HD"></configuration>
+		<configuration lcn="15906" channelnumber="15906" description="H2 HD"></configuration>
+		<configuration lcn="15907" channelnumber="15907" description="Polsat News HD"></configuration>
+		<configuration lcn="15909" channelnumber="15909" description="EUROSPORT HD"></configuration>
+		<configuration lcn="15911" channelnumber="15911" description="Lifetime HD"></configuration>
+		<configuration lcn="16918" channelnumber="16918" description="Free channel"></configuration>
+		<configuration lcn="16932" channelnumber="16932" description="Redlight HD"></configuration>
+		<configuration lcn="16933" channelnumber="16933" description="Hustler HD"></configuration>
+		<configuration lcn="16955" channelnumber="16955" description="TELE 5"></configuration>
+		<configuration lcn="16956" channelnumber="16956" description="POLONIA 1"></configuration>
+		<configuration lcn="16965" channelnumber="16965" description="Antichita Chiossone"></configuration>
+		<configuration lcn="16970" channelnumber="16970" description="ACM Channel"></configuration>
+		<configuration lcn="16980" channelnumber="16980" description="RETECONOMY"></configuration>
+		<configuration lcn="17017" channelnumber="17017" description="Muzo.TV"></configuration>
+		<configuration lcn="17019" channelnumber="17019" description="Stopklatka TV"></configuration>
+		<configuration lcn="17023" channelnumber="17023" description="E!Entertainment"></configuration>
+		<configuration lcn="17024" channelnumber="17024" description="Da Vinci"></configuration>
+		<configuration lcn="17026" channelnumber="17026" description="CBS Action"></configuration>
+		<configuration lcn="17032" channelnumber="17032" description="TVP Rozrywka"></configuration>
+		<configuration lcn="17033" channelnumber="17033" description="TV Republika"></configuration>
+		<configuration lcn="17308" channelnumber="17308" description="VOTV"></configuration>
+		<configuration lcn="17309" channelnumber="17309" description="Baby TV"></configuration>
+		<configuration lcn="17310" channelnumber="17310" description="3ABN International"></configuration>
+		<configuration lcn="17311" channelnumber="17311" description="BVN TV"></configuration>
+		<configuration lcn="17312" channelnumber="17312" description="CNL Russia"></configuration>
+		<configuration lcn="17313" channelnumber="17313" description="Soyuz"></configuration>
+		<configuration lcn="17314" channelnumber="17314" description="24.TV"></configuration>
+		<configuration lcn="17315" channelnumber="17315" description="Fashion Television"></configuration>
+		<configuration lcn="17316" channelnumber="17316" description="Music Box Russia"></configuration>
+		<configuration lcn="17318" channelnumber="17318" description="KurdSat"></configuration>
+		<configuration lcn="17319" channelnumber="17319" description="Mktv"></configuration>
+		<configuration lcn="17320" channelnumber="17320" description="Thai TGN"></configuration>
+		<configuration lcn="17321" channelnumber="17321" description="VTV4"></configuration>
+		<configuration lcn="17322" channelnumber="17322" description="Rojhelat TV"></configuration>
+		<configuration lcn="17370" channelnumber="17370" description="HCTV"></configuration>
+		<configuration lcn="17373" channelnumber="17373" description="The Word Network"></configuration>
+		<configuration lcn="17376" channelnumber="17376" description="NetViet"></configuration>
+		<configuration lcn="17377" channelnumber="17377" description="Kentron TV"></configuration>
+		<configuration lcn="17626" channelnumber="17626" description="Wesal Al Haq"></configuration>
+		<configuration lcn="17627" channelnumber="17627" description="Rudaw"></configuration>
+		<configuration lcn="17629" channelnumber="17629" description="Russia Today"></configuration>
+		<configuration lcn="17632" channelnumber="17632" description="RT Arab"></configuration>
+		<configuration lcn="17639" channelnumber="17639" description="Al Hayat"></configuration>
+		<configuration lcn="17650" channelnumber="17650" description="Family 1"></configuration> 
