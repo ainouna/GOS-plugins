@@ -25,6 +25,8 @@ config.plugins.GOS.chlistServerIP = ConfigText(default = "192.168.1.5", fixed_si
 config.plugins.GOS.chlistServerLogin = ConfigText(default = "root", fixed_size = False)
 config.plugins.GOS.chlistServerPass = ConfigText(default = "root", fixed_size = False)
 config.plugins.GOS.chlistServerHidden = ConfigYesNo(default = False)
+config.plugins.GOS.j00zekBouquetsID = ConfigSelection(default = "NA", choices = [("NA", _("Not selected")), ("49186", "NC+ HotBird & Astra"), ("49188", "NC+ HotBird")])
+config.plugins.GOS.j00zekBouquetsClearLameDB = ConfigYesNo(default = False)
 ##############################################################
 
 class GOSMenuChannels(Screen, ConfigListScreen):
@@ -33,9 +35,10 @@ class GOSMenuChannels(Screen, ConfigListScreen):
     <screen name="GOSMenuChannels" position="center,center" size="640,500" title="GOSMenuChannels" >
 
             <widget name="config" position="10,10" size="620,450" zPosition="1" transparent="0" scrollbarMode="showOnDemand" />
-            <widget name="key_green" position="0,465" zPosition="2" size="200,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="green" />
-            <widget name="key_red" position="220,465" zPosition="2" size="200,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="red" />
-            <widget name="key_blue" position="440,465" zPosition="2" size="200,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="blue" />
+            <widget name="key_red" position="0,465" zPosition="2" size="140,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="red" />
+            <widget name="key_green" position="160,465" zPosition="2" size="140,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="green" />
+            <widget name="key_yellow" position="320,465" zPosition="2" size="140,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="blue" />
+            <widget name="key_blue" position="500,465" zPosition="2" size="140,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="blue" />
 
     </screen>"""
 
@@ -52,11 +55,13 @@ class GOSMenuChannels(Screen, ConfigListScreen):
                 "ok": self.keySave,
                 "red": self.keyCancel,
                 "blue": self.keyBlue,
+                "yellow": self.keyYellow,
             }, -2)
 
         self["key_green"] = Label(_("Save"))
         self["key_red"] = Label(_("Cancel"))
         self["key_blue"] = Label(_("Synchronize"))
+        self["key_yellow"] = Label(_("Update bouquet"))
         
         self.onLayoutFinish.append(self.layoutFinished)
 
@@ -70,12 +75,22 @@ class GOSMenuChannels(Screen, ConfigListScreen):
         self.list.append(getConfigListEntry(_("Get channels list from:"), config.plugins.GOS.chlistServerIP))
         self.list.append(getConfigListEntry(_("Login as:"), config.plugins.GOS.chlistServerLogin))
         self.list.append(getConfigListEntry(_("Password:"), config.plugins.GOS.chlistServerPass))
+        self.list.append(getConfigListEntry(_("Quickly update bouquet for:"), config.plugins.GOS.j00zekBouquetsID))
+        self.list.append(getConfigListEntry(_("Clear lamedb:"), config.plugins.GOS.j00zekBouquetsClearLameDB))
         self["config"].list = self.list
         self["config"].setList(self.list)
     
     def changedEntry(self):
         for x in self.onChangedEntry:
             x()
+
+    def keyYellow(self):
+        if config.plugins.GOS.j00zekBouquetsID.value != 'NA':
+            from GOSconsole import GOSconsole
+            j00zekBouquets = "%s %s %s" % (resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/j00zekBouquets'), \
+                config.plugins.GOS.j00zekBouquetsID.value, config.plugins.GOS.j00zekBouquetsClearLameDB.value)
+                
+            self.session.openWithCallback(self.GOSconsoleEndRun ,GOSconsole, title = "j00zekBouquets...", cmdlist = [ ('%s' % j00zekBouquets ) ])
 
     def keyBlue(self):
         self.session.openWithCallback(self.keyBlueYESNO ,MessageBox,_("Synchronize with %s now?") % config.plugins.GOS.chlistServerIP.value, MessageBox.TYPE_YESNO)
