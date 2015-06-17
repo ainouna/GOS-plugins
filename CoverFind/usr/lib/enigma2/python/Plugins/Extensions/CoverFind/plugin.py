@@ -289,7 +289,7 @@ class CoverFindScreen(Screen):
             self.orgTitle = ''
             self.UseOrgTitle = False
             if fileExists(self.dir + self.file.replace('.ts','.eit')): 
-                self.descr = open(self.dir + self.file.replace('.ts','.eit'), 'r').read()
+                self.descr = open(self.dir + self.file.replace('.ts','.eit'), 'r').read(2048)
                 if self.descr.find(' oryginalny:') > 1:
                     self.orgTitle = re.findall('Tytu. oryginalny:(.*);', self.descr, flags=re.I)[0].strip()
                     self.UseOrgTitle = True
