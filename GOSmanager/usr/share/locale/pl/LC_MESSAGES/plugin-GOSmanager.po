@@ -781,3 +781,72 @@ msgstr "Wyłącz testowe repozytorium OScam"
 
 msgid "Enable skins-HD support"
 msgstr "Wsparcie dla skórek HD"
+
+msgid "Not selected"
+msgstr "Nie wybrano"
+
+msgid "Create bouquet with provider order and update ABM CustomLCN"
+msgstr "Tworzenie bukietu z układem dostawcy i aktualizacja CustomLCN dla ABM"
+
+msgid "Update ABM CustomLCN definition"
+msgstr "Aktualizacja definicji CustomLCN dla ABM"
+
+msgid "Refresh 1st bouquet on the list"
+msgstr "Aktualizacja pierwszego bukietu na liście"
+
+msgid "Create bouquet with provider order"
+msgstr "Tworzenie bukietu z układem dostawcy"
+
+msgid "Quickly update bouquet for:"
+msgstr "Szybka aktualizacja bukietów dla"
+
+msgid "Clear lamedb:"
+msgstr "Czyszczenie lamedb"
+
+msgid "Action:"
+msgstr "Akcja"
+
+msgid "Bouquets reloaded successfully."
+msgstr "Bukiety przeładowane poprawnie."
+
+msgid "Reloading Bouquets, Please Wait..."
+msgstr "Przeładowywanie bukietów, czekaj..."
+
+msgid "Updating 1st bouquet on the list:"
+msgstr "Aktualizacja pierwszego butietu na liście:"
+
+msgid "Creating files"
+msgstr "Tworzenie plików"
+
+msgid "Creating file"
+msgstr "Tworzenie pliku"
+
+msgid "Syncing services in lamedb..."
+msgstr "Synchronizacja serwisów w lamedb..."
+
+msgid "Reading SDT..."
+msgstr "Czytanie SDT..."
+
+msgid "Syncing transponders in lamedb..."
+msgstr "Synchronizacja transponderów w lamedb"
+
+msgid "Reading Bouquet Association Table..."
+msgstr "Czytanie BAT..."
+
+msgid "Dumping dvb stream, for 15 seconds..."
+msgstr "Pobieranie danych dvb z satelity..."
+
+msgid "Collecting transponders data..."
+msgstr "Zbieranie danych o transponderach"
+
+msgid "lamedb initated properly"
+msgstr "lamedb zainicjowana poprawnie"
+
+msgid "Error during lamedb creation. Exiting"
+msgstr "Błąd tworzenia lamedb!!!"
+
+msgid "System is misconfigured!!!"
+msgstr "System jest rozkonfigurowany!!!"
+
+msgid "j00zekBouquets works in Graterlia only!!!"
+msgstr "j00zekBouquets działa tylko w systemie Graterlia!!!"

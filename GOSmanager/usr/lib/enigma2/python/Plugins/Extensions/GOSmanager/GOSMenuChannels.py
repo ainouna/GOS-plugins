@@ -2,7 +2,7 @@
 #######################################################################
 #
 #    Plugin for GOS
-#    Coded by j00zek (c)2014
+#    Coded by j00zek (c)2014/2015
 #
 #######################################################################
 
@@ -27,6 +27,11 @@ config.plugins.GOS.chlistServerPass = ConfigText(default = "root", fixed_size = 
 config.plugins.GOS.chlistServerHidden = ConfigYesNo(default = False)
 config.plugins.GOS.j00zekBouquetsID = ConfigSelection(default = "NA", choices = [("NA", _("Not selected")), ("49186", "NC+ HotBird & Astra"), ("49188", "NC+ HotBird")])
 config.plugins.GOS.j00zekBouquetsClearLameDB = ConfigYesNo(default = False)
+if pathExists(resolveFilename(SCOPE_PLUGINS, 'SystemPlugins/AutoBouquetsMaker')) is True:
+    config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "all", choices = [("all", _("Create bouquet with provider order and update ABM CustomLCN")), ("CustomLCN", _("Update ABM CustomLCN definition")), ("1st", _("Refresh 1st bouquet on the list"))])
+else:
+    config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "all", choices = [("all", _("Create bouquet with provider order")), ("1st", _("Refresh 1st bouquet on the list"))])
+
 ##############################################################
 
 class GOSMenuChannels(Screen, ConfigListScreen):
@@ -77,6 +82,7 @@ class GOSMenuChannels(Screen, ConfigListScreen):
         self.list.append(getConfigListEntry(_("Password:"), config.plugins.GOS.chlistServerPass))
         self.list.append(getConfigListEntry(_("Quickly update bouquet for:"), config.plugins.GOS.j00zekBouquetsID))
         self.list.append(getConfigListEntry(_("Clear lamedb:"), config.plugins.GOS.j00zekBouquetsClearLameDB))
+        self.list.append(getConfigListEntry(_("Action:"), config.plugins.GOS.j00zekBouquetsAction))
         self["config"].list = self.list
         self["config"].setList(self.list)
     
@@ -87,8 +93,9 @@ class GOSMenuChannels(Screen, ConfigListScreen):
     def keyYellow(self):
         if config.plugins.GOS.j00zekBouquetsID.value != 'NA':
             from GOSconsole import GOSconsole
-            j00zekBouquets = "%s %s %s" % (resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/j00zekBouquets'), \
-                config.plugins.GOS.j00zekBouquetsID.value, config.plugins.GOS.j00zekBouquetsClearLameDB.value)
+            j00zekBouquets = "%s %s %s %s" % (resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/j00zekBouquets'), \
+                config.plugins.GOS.j00zekBouquetsID.value, config.plugins.GOS.j00zekBouquetsClearLameDB.value, \
+                config.plugins.GOS.j00zekBouquetsAction.value)
                 
             self.session.openWithCallback(self.GOSconsoleEndRun ,GOSconsole, title = "j00zekBouquets...", cmdlist = [ ('%s' % j00zekBouquets ) ])
 

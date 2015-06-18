@@ -4,6 +4,28 @@ from Components.ActionMap import ActionMap
 from Components.ScrollLabel import ScrollLabel
 from Components.LanguageGOS import gosgettext as _
 
+def substring_2_translate(text):
+    to_translate = text.split('_(', 2)
+    text = to_translate[1]
+    to_translate = text.split(')', 2)
+    text = to_translate[0]
+    return text
+    
+def __(txt):
+    if txt.find('_(') == -1:
+        txt = _(txt)
+    else:
+        index = 0
+        while txt.find('_(') != -1:
+            tmptxt = substring_2_translate(txt)
+            translated_tmptxt = _(tmptxt)
+            txt = txt.replace('_(' + tmptxt + ')', translated_tmptxt)
+            index += 1
+            if index == 10:
+                break
+
+    return txt
+
 class GOSconsole(Screen):
     #TODO move this to skin.xml
     skin = """
@@ -74,6 +96,6 @@ class GOSconsole(Screen):
 
     def dataAvail(self, str):
         lastpage = self["text"].isAtLastPage()
-        self["text"].setText(self["text"].getText() + str)
+        self["text"].setText(self["text"].getText() + __(str))
         if lastpage:
             self["text"].lastPage()
