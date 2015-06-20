@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- BlackHarmony Skin for VTI Image by Crash  -->
+<!--  DONT REMOVE THIS DISCLAIMER -->
+<!-- All skin Parts created by Crash - You can change this skin for PERSONAL USE ONLY -->
+<skin>
+  <!-- sh4 additional screens -->
+  <screen name="menu_mainmenu" position="70,75" size="710,950" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap position="0,0" zPosition="-10" size="710,950" pixmap="BlackHarmony/bg_design/menubg.png" />
+    <widget source="global.CurrentTime" render="Label" position="55,50" size="80,30" font="Roboto_HD; 27" backgroundColor="black" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="142,50" size="360,30" font="Roboto_HD; 27" foregroundColor="lemon" backgroundColor="black" transparent="1">
+      <convert type="ClockToText">Format:%A %d.%m.%Y</convert>
+    </widget>
+    <widget source="menu" render="Listbox" position="70,227" size="565,450" selectionPixmap="BlackHarmony/menu/menusel.png" scrollbarMode="showNever" enableWrapAround="1" transparent="0">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15,5),size = (565,35),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0) ],
+				"fonts": [gFont("Roboto_HD",31)],
+				"itemHeight": 45
+				}
+			</convert>
+    </widget>
+    <widget source="title" render="Label" position="85,140" size="370,40" font="HD_Thin; 36" halign="left" foregroundColor="light_yellow" backgroundColor="black" transparent="1" />
+    <widget alphatest="blend" render="MSNWeatherPixmap" position="70,723" size="135,135" source="session.MSNWeather" transparent="1" zPosition="5">
+      <convert type="MSNWeather">weathericon,current</convert>
+    </widget>
+    <widget noWrap="1" backgroundColor="background" font="HD_Thin; 24" render="Label" position="215,735" size="110,30" source="session.MSNWeather" zPosition="3" halign="center" transparent="1" foregroundColor="lemon">
+      <convert type="MSNWeather">temperature_current</convert>
+    </widget>
+    <widget noWrap="1" backgroundColor="background" font="HD_Thin; 24" render="Label" position="240,801" size="400,32" source="session.MSNWeather" zPosition="3" halign="left" transparent="1">
+      <convert type="MSNWeather">temperature_text,current</convert>
+    </widget>
+    <eLabel name="new eLabel" position="335,735" size="80,30" font="HD_Thin; 24" foregroundColor="white" backgroundColor="black" transparent="1" halign="left" text="maks." />
+    <widget noWrap="1" backgroundColor="black" font="HD_Thin; 24" render="Label" position="409,735" size="70,30" source="session.MSNWeather" zPosition="3" halign="left" transparent="1" foregroundColor="yellow">
+      <convert type="MSNWeather">temperature_high,day1</convert>
+    </widget>
+    <eLabel name="new eLabel" position="495,735" size="63,30" font="HD_Thin; 24" foregroundColor="white" backgroundColor="black" transparent="1" halign="left" text="min." />
+    <widget noWrap="1" backgroundColor="black" font="HD_Thin; 24" render="Label" position="553,735" size="70,30" source="session.MSNWeather" zPosition="3" halign="left" transparent="1" foregroundColor="blue">
+      <convert type="MSNWeather">temperature_low,day1</convert>
+    </widget>
+  </screen>
+  <screen name="menu_setup" position="70,75" size="710,950" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap position="0,0" zPosition="-10" size="710,950" pixmap="BlackHarmony/bg_design/menubg.png" />
+    <widget source="global.CurrentTime" render="Label" position="55,50" size="80,30" font="Roboto_HD; 27" backgroundColor="black" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="142,50" size="360,30" font="Roboto_HD; 27" foregroundColor="lemon" backgroundColor="black" transparent="1">
+      <convert type="ClockToText">Format:%A %d.%m.%Y</convert>
+    </widget>
+    <widget source="menu" render="Listbox" position="70,227" size="565,450" selectionPixmap="BlackHarmony/menu/menusel.png" scrollbarMode="showNever" enableWrapAround="1" transparent="0">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15,5),size = (565,35),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0) ],
+				"fonts": [gFont("Roboto_HD",31)],
+				"itemHeight": 45
+				}
+			</convert>
+    </widget>
+    <widget source="title" render="Label" position="85,140" size="370,40" font="HD_Thin; 36" halign="left" foregroundColor="light_yellow" backgroundColor="black" transparent="1" />
+    <widget alphatest="blend" render="MSNWeatherPixmap" position="70,723" size="135,135" source="session.MSNWeather" transparent="1" zPosition="5">
+      <convert type="MSNWeather">weathericon,current</convert>
+    </widget>
+    <widget noWrap="1" backgroundColor="background" font="HD_Thin; 24" render="Label" position="215,735" size="110,30" source="session.MSNWeather" zPosition="3" halign="center" transparent="1" foregroundColor="lemon">
+      <convert type="MSNWeather">temperature_current</convert>
+    </widget>
+    <widget noWrap="1" backgroundColor="background" font="HD_Thin; 24" render="Label" position="240,801" size="400,32" source="session.MSNWeather" zPosition="3" halign="left" transparent="1">
+      <convert type="MSNWeather">temperature_text,current</convert>
+    </widget>
+    <eLabel name="new eLabel" position="335,735" size="80,30" font="HD_Thin; 24" foregroundColor="white" backgroundColor="black" transparent="1" halign="left" text="maks." />
+    <widget noWrap="1" backgroundColor="black" font="HD_Thin; 24" render="Label" position="409,735" size="70,30" source="session.MSNWeather" zPosition="3" halign="left" transparent="1" foregroundColor="yellow">
+      <convert type="MSNWeather">temperature_high,day1</convert>
+    </widget>
+    <eLabel name="new eLabel" position="495,735" size="63,30" font="HD_Thin; 24" foregroundColor="white" backgroundColor="black" transparent="1" halign="left" text="min." />
+    <widget noWrap="1" backgroundColor="black" font="HD_Thin; 24" render="Label" position="553,735" size="70,30" source="session.MSNWeather" zPosition="3" halign="left" transparent="1" foregroundColor="blue">
+      <convert type="MSNWeather">temperature_low,day1</convert>
+    </widget>
+  </screen>
+  <screen name="menu_system" position="70,75" size="710,950" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap position="0,0" zPosition="-10" size="710,950" pixmap="BlackHarmony/bg_design/menubg.png" />
+    <widget source="global.CurrentTime" render="Label" position="55,50" size="80,30" font="Roboto_HD; 27" backgroundColor="black" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="142,50" size="360,30" font="Roboto_HD; 27" foregroundColor="lemon" backgroundColor="black" transparent="1">
+      <convert type="ClockToText">Format:%A %d.%m.%Y</convert>
+    </widget>
+    <widget source="menu" render="Listbox" position="70,227" size="565,450" selectionPixmap="BlackHarmony/menu/menusel.png" scrollbarMode="showNever" enableWrapAround="1" transparent="0">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15,5),size = (565,35),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0) ],
+				"fonts": [gFont("Roboto_HD",31)],
+				"itemHeight": 45
+				}
+			</convert>
+    </widget>
+    <widget source="title" render="Label" position="85,140" size="370,40" font="HD_Thin; 36" halign="left" foregroundColor="light_yellow" backgroundColor="black" transparent="1" />
+    <widget alphatest="blend" render="MSNWeatherPixmap" position="70,723" size="135,135" source="session.MSNWeather" transparent="1" zPosition="5">
+      <convert type="MSNWeather">weathericon,current</convert>
+    </widget>
+    <widget noWrap="1" backgroundColor="background" font="HD_Thin; 24" render="Label" position="215,735" size="110,30" source="session.MSNWeather" zPosition="3" halign="center" transparent="1" foregroundColor="lemon">
+      <convert type="MSNWeather">temperature_current</convert>
+    </widget>
+    <widget noWrap="1" backgroundColor="background" font="HD_Thin; 24" render="Label" position="240,801" size="400,32" source="session.MSNWeather" zPosition="3" halign="left" transparent="1">
+      <convert type="MSNWeather">temperature_text,current</convert>
+    </widget>
+    <eLabel name="new eLabel" position="335,735" size="80,30" font="HD_Thin; 24" foregroundColor="white" backgroundColor="black" transparent="1" halign="left" text="maks." />
+    <widget noWrap="1" backgroundColor="black" font="HD_Thin; 24" render="Label" position="409,735" size="70,30" source="session.MSNWeather" zPosition="3" halign="left" transparent="1" foregroundColor="yellow">
+      <convert type="MSNWeather">temperature_high,day1</convert>
+    </widget>
+    <eLabel name="new eLabel" position="495,735" size="63,30" font="HD_Thin; 24" foregroundColor="white" backgroundColor="black" transparent="1" halign="left" text="min." />
+    <widget noWrap="1" backgroundColor="black" font="HD_Thin; 24" render="Label" position="553,735" size="70,30" source="session.MSNWeather" zPosition="3" halign="left" transparent="1" foregroundColor="blue">
+      <convert type="MSNWeather">temperature_low,day1</convert>
+    </widget>
+  </screen>
+  <screen name="menu_information" position="70,75" size="710,950" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap position="0,0" zPosition="-10" size="710,950" pixmap="BlackHarmony/bg_design/menubg.png" />
+    <widget source="global.CurrentTime" render="Label" position="55,50" size="80,30" font="Roboto_HD; 27" backgroundColor="black" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="142,50" size="360,30" font="Roboto_HD; 27" foregroundColor="lemon" backgroundColor="black" transparent="1">
+      <convert type="ClockToText">Format:%A %d.%m.%Y</convert>
+    </widget>
+    <widget source="menu" render="Listbox" position="70,227" size="565,450" selectionPixmap="BlackHarmony/menu/menusel.png" scrollbarMode="showNever" enableWrapAround="1" transparent="0">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15,5),size = (565,35),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0) ],
+				"fonts": [gFont("Roboto_HD",31)],
+				"itemHeight": 45
+				}
+			</convert>
+    </widget>
+    <widget source="title" render="Label" position="85,140" size="370,40" font="HD_Thin; 36" halign="left" foregroundColor="light_yellow" backgroundColor="black" transparent="1" />
+    <widget alphatest="blend" render="MSNWeatherPixmap" position="70,723" size="135,135" source="session.MSNWeather" transparent="1" zPosition="5">
+      <convert type="MSNWeather">weathericon,current</convert>
+    </widget>
+    <widget noWrap="1" backgroundColor="background" font="HD_Thin; 24" render="Label" position="215,735" size="110,30" source="session.MSNWeather" zPosition="3" halign="center" transparent="1" foregroundColor="lemon">
+      <convert type="MSNWeather">temperature_current</convert>
+    </widget>
+    <widget noWrap="1" backgroundColor="background" font="HD_Thin; 24" render="Label" position="240,801" size="400,32" source="session.MSNWeather" zPosition="3" halign="left" transparent="1">
+      <convert type="MSNWeather">temperature_text,current</convert>
+    </widget>
+    <eLabel name="new eLabel" position="335,735" size="80,30" font="HD_Thin; 24" foregroundColor="white" backgroundColor="black" transparent="1" halign="left" text="maks." />
+    <widget noWrap="1" backgroundColor="black" font="HD_Thin; 24" render="Label" position="409,735" size="70,30" source="session.MSNWeather" zPosition="3" halign="left" transparent="1" foregroundColor="yellow">
+      <convert type="MSNWeather">temperature_high,day1</convert>
+    </widget>
+    <eLabel name="new eLabel" position="495,735" size="63,30" font="HD_Thin; 24" foregroundColor="white" backgroundColor="black" transparent="1" halign="left" text="min." />
+    <widget noWrap="1" backgroundColor="black" font="HD_Thin; 24" render="Label" position="553,735" size="70,30" source="session.MSNWeather" zPosition="3" halign="left" transparent="1" foregroundColor="blue">
+      <convert type="MSNWeather">temperature_low,day1</convert>
+    </widget>
+  </screen>
+  <screen name="menu_scan" position="70,75" size="710,950" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap position="0,0" zPosition="-10" size="710,950" pixmap="BlackHarmony/bg_design/menubg.png" />
+    <widget source="global.CurrentTime" render="Label" position="55,50" size="80,30" font="Roboto_HD; 27" backgroundColor="black" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="142,50" size="360,30" font="Roboto_HD; 27" foregroundColor="lemon" backgroundColor="black" transparent="1">
+      <convert type="ClockToText">Format:%A %d.%m.%Y</convert>
+    </widget>
+    <widget source="menu" render="Listbox" position="70,227" size="565,450" selectionPixmap="BlackHarmony/menu/menusel.png" scrollbarMode="showNever" enableWrapAround="1" transparent="0">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15,5),size = (565,35),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0) ],
+				"fonts": [gFont("Roboto_HD",31)],
+				"itemHeight": 45
+				}
+			</convert>
+    </widget>
+    <widget source="title" render="Label" position="85,140" size="370,40" font="HD_Thin; 36" halign="left" foregroundColor="light_yellow" backgroundColor="black" transparent="1" />
+    <widget alphatest="blend" render="MSNWeatherPixmap" position="70,723" size="135,135" source="session.MSNWeather" transparent="1" zPosition="5">
+      <convert type="MSNWeather">weathericon,current</convert>
+    </widget>
+    <widget noWrap="1" backgroundColor="background" font="HD_Thin; 24" render="Label" position="215,735" size="110,30" source="session.MSNWeather" zPosition="3" halign="center" transparent="1" foregroundColor="lemon">
+      <convert type="MSNWeather">temperature_current</convert>
+    </widget>
+    <widget noWrap="1" backgroundColor="background" font="HD_Thin; 24" render="Label" position="240,801" size="400,32" source="session.MSNWeather" zPosition="3" halign="left" transparent="1">
+      <convert type="MSNWeather">temperature_text,current</convert>
+    </widget>
+    <eLabel name="new eLabel" position="335,735" size="80,30" font="HD_Thin; 24" foregroundColor="white" backgroundColor="black" transparent="1" halign="left" text="maks." />
+    <widget noWrap="1" backgroundColor="black" font="HD_Thin; 24" render="Label" position="409,735" size="70,30" source="session.MSNWeather" zPosition="3" halign="left" transparent="1" foregroundColor="yellow">
+      <convert type="MSNWeather">temperature_high,day1</convert>
+    </widget>
+    <eLabel name="new eLabel" position="495,735" size="63,30" font="HD_Thin; 24" foregroundColor="white" backgroundColor="black" transparent="1" halign="left" text="min." />
+    <widget noWrap="1" backgroundColor="black" font="HD_Thin; 24" render="Label" position="553,735" size="70,30" source="session.MSNWeather" zPosition="3" halign="left" transparent="1" foregroundColor="blue">
+      <convert type="MSNWeather">temperature_low,day1</convert>
+    </widget>
+  </screen>
+</skin>

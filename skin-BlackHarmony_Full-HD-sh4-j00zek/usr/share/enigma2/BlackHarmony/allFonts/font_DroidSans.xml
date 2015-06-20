@@ -1,0 +1,12 @@
+<skin>
+  <fonts>
+    <font filename="lcd.ttf" name="LCD" scale="100" />
+    <font filename="ae_AlMateen.ttf" name="Replacement" scale="100" replacement="1" />
+    <font filename="tuxtxt.ttf" name="Console" scale="100" />
+    <font filename="nmsbd.ttf" name="Arial" scale="100" />
+    <font filename="/usr/share/enigma2/BlackHarmony/fonts/HandelGotDBol.ttf" name="Bold" scale="100" />
+    <font filename="/usr/share/enigma2/BlackHarmony/fonts/DroidSans.ttf" name="Regular" scale="110" />
+    <font filename="/usr/share/enigma2/BlackHarmony/fonts/DroidSans.ttf" name="Roboto_HD" scale="100" />
+    <font filename="/usr/share/enigma2/BlackHarmony/fonts/hd_thin.ttf" name="HD_Thin" scale="100" />
+  </fonts>
+</skin>

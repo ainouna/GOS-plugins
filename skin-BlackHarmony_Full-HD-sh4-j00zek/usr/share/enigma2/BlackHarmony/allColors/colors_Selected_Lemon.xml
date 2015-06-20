@@ -42,7 +42,7 @@
     <color name="ListboxMarkedBackground" color="black" />
     <color name="ListboxMarkedForeground" color="lemon" />
     <color name="ListboxMarkedAndSelectedBackground" color="black" />
-    <color name="ListboxMarkedAndSelectedForeground" color="lemon" />
+    <color name="ListboxMarkedAndSelectedForeground" color="orange" />
     <color name="WindowTitleForeground" color="white" />
     <color name="WindowTitleBackground" color="dark_grey" />
     <borderset name="bsWindow">
