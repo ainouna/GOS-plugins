@@ -21,16 +21,18 @@ from Components.LanguageGOS import gosgettext as _
 config.plugins.GOS = ConfigSubsection()
 config.plugins.GOS.separator = NoSave(ConfigNothing())
 
+config.plugins.GOS.chlistEnableTunersSynchro = ConfigYesNo(default = False)
 config.plugins.GOS.chlistServerIP = ConfigText(default = "192.168.1.5", fixed_size = False)
 config.plugins.GOS.chlistServerLogin = ConfigText(default = "root", fixed_size = False)
 config.plugins.GOS.chlistServerPass = ConfigText(default = "root", fixed_size = False)
 config.plugins.GOS.chlistServerHidden = ConfigYesNo(default = False)
+config.plugins.GOS.chlistEnableSatSynchro = ConfigYesNo(default = True)
 config.plugins.GOS.j00zekBouquetsID = ConfigSelection(default = "NA", choices = [("NA", _("Not selected")), ("49186", "NC+ HotBird & Astra"), ("49188", "NC+ HotBird")])
 config.plugins.GOS.j00zekBouquetsClearLameDB = ConfigYesNo(default = False)
 if pathExists(resolveFilename(SCOPE_PLUGINS, 'SystemPlugins/AutoBouquetsMaker')) is True:
-    config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "all", choices = [("all", _("Create bouquet with provider order and update ABM CustomLCN")), ("CustomLCN", _("Update ABM CustomLCN definition")), ("1st", _("Refresh 1st bouquet on the list"))])
+    config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "all", choices = [("all", _("Create bouquet with provider order and update ABM CustomLCN")), ("CustomLCN", _("Update ABM CustomLCN definition")), ("1st", _("Refresh 1st bouquet on the list (TBC)"))])
 else:
-    config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "all", choices = [("all", _("Create bouquet with provider order")), ("1st", _("Refresh 1st bouquet on the list"))])
+    config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "all", choices = [("all", _("Create bouquet with provider order")), ("1st", _("Refresh 1st bouquet on the list (TBC)"))])
 
 ##############################################################
 
@@ -65,8 +67,8 @@ class GOSMenuChannels(Screen, ConfigListScreen):
 
         self["key_green"] = Label(_("Save"))
         self["key_red"] = Label(_("Cancel"))
-        self["key_blue"] = Label(_("Synchronize"))
-        self["key_yellow"] = Label(_("Update bouquet"))
+        self["key_blue"] = Label(_("Synchronize from tuner"))
+        self["key_yellow"] = Label(_("Synchronize from sat"))
         
         self.onLayoutFinish.append(self.layoutFinished)
 
@@ -76,11 +78,14 @@ class GOSMenuChannels(Screen, ConfigListScreen):
 
     def runSetup(self):
         self.list = [ ]
-        self.list.append(getConfigListEntry(_("Synchronize in background?"), config.plugins.GOS.chlistServerHidden))
-        self.list.append(getConfigListEntry(_("Get channels list from:"), config.plugins.GOS.chlistServerIP))
+        #self.list.append(getConfigListEntry(_("Synchronize in background?"), config.plugins.GOS.chlistServerHidden))
+        self.list.append(getConfigListEntry(_("--- Local synchronization ---"), config.plugins.GOS.separator))
+        self.list.append(getConfigListEntry(_("Get channels list from tuner:"), config.plugins.GOS.chlistServerIP))
         self.list.append(getConfigListEntry(_("Login as:"), config.plugins.GOS.chlistServerLogin))
         self.list.append(getConfigListEntry(_("Password:"), config.plugins.GOS.chlistServerPass))
-        self.list.append(getConfigListEntry(_("Quickly update bouquet for:"), config.plugins.GOS.j00zekBouquetsID))
+        self.list.append(getConfigListEntry(_(" "), config.plugins.GOS.separator))
+        self.list.append(getConfigListEntry(_("--- Satellite synchronization ---"), config.plugins.GOS.separator))
+        self.list.append(getConfigListEntry(_("Update bouquet for:"), config.plugins.GOS.j00zekBouquetsID))
         self.list.append(getConfigListEntry(_("Clear lamedb:"), config.plugins.GOS.j00zekBouquetsClearLameDB))
         self.list.append(getConfigListEntry(_("Action:"), config.plugins.GOS.j00zekBouquetsAction))
         self["config"].list = self.list
@@ -97,8 +102,15 @@ class GOSMenuChannels(Screen, ConfigListScreen):
                 config.plugins.GOS.j00zekBouquetsID.value, config.plugins.GOS.j00zekBouquetsClearLameDB.value, \
                 config.plugins.GOS.j00zekBouquetsAction.value)
                 
-            self.session.openWithCallback(self.GOSconsoleEndRun ,GOSconsole, title = "j00zekBouquets...", cmdlist = [ ('%s' % j00zekBouquets ) ])
+            self.session.openWithCallback(self.keyYellowEndRun ,GOSconsole, title = "j00zekBouquets...", cmdlist = [ ('%s' % j00zekBouquets ) ])
 
+    def keyYellowEndRun(self, ret =0):
+        from enigma import eDVBDB
+        db = eDVBDB.getInstance()
+        db.reloadServicelist()
+        db.reloadBouquets()
+
+        
     def keyBlue(self):
         self.session.openWithCallback(self.keyBlueYESNO ,MessageBox,_("Synchronize with %s now?") % config.plugins.GOS.chlistServerIP.value, MessageBox.TYPE_YESNO)
         
