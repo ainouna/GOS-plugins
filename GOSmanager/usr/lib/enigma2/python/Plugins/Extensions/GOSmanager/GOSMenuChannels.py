@@ -43,10 +43,10 @@ class GOSMenuChannels(Screen, ConfigListScreen):
     <screen name="GOSMenuChannels" position="center,center" size="640,500" title="GOSMenuChannels" >
 
             <widget name="config" position="10,10" size="620,450" zPosition="1" transparent="0" scrollbarMode="showOnDemand" />
-            <widget name="key_red" position="0,465" zPosition="2" size="140,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="red" />
-            <widget name="key_green" position="160,465" zPosition="2" size="140,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="green" />
-            <widget name="key_yellow" position="320,465" zPosition="2" size="140,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="blue" />
-            <widget name="key_blue" position="500,465" zPosition="2" size="140,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="blue" />
+            <widget name="key_red" position="0,465" zPosition="2" size="100,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="red" />
+            <widget name="key_green" position="105,465" zPosition="2" size="100,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="green" />
+            <widget name="key_yellow" position="210,465" zPosition="2" size="210,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="yellow" />
+            <widget name="key_blue" position="425,465" zPosition="2" size="215,35" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="blue" />
 
     </screen>"""
 
