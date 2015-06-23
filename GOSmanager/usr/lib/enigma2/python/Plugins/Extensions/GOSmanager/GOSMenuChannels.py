@@ -12,7 +12,7 @@ from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.Console import Console
 from Components.Label import Label
 from GOSconsole import GOSconsole
-#from os import symlink as os_symlink, remove as os_remove, fsync as os_fsync, rename as os_rename, walk as os_walk, listdir, mkdir as os_mkdir, chmod as os_chmod
+from os import remove as os_remove #symlink as os_symlink, remove as os_remove, fsync as os_fsync, rename as os_rename, walk as os_walk, listdir, mkdir as os_mkdir, chmod as os_chmod
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Tools.Directories import fileExists, resolveFilename, pathExists, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
@@ -27,12 +27,13 @@ config.plugins.GOS.chlistServerLogin = ConfigText(default = "root", fixed_size =
 config.plugins.GOS.chlistServerPass = ConfigText(default = "root", fixed_size = False)
 config.plugins.GOS.chlistServerHidden = ConfigYesNo(default = False)
 config.plugins.GOS.chlistEnableSatSynchro = ConfigYesNo(default = True)
-config.plugins.GOS.j00zekBouquetsID = ConfigSelection(default = "NA", choices = [("NA", _("Not selected")), ("49186", "NC+ HotBird & Astra"), ("49188", "NC+ HotBird")])
+config.plugins.GOS.j00zekBouquetsID = ConfigSelection(default = "49188PL", choices = [("NA", _("Not selected")), ("49186", "NC+ HotBird & Astra"), ("49188", "NC+ HotBird"), ("49188PL", "NC+ HotBird-PL")])
 config.plugins.GOS.j00zekBouquetsClearLameDB = ConfigYesNo(default = False)
 if pathExists(resolveFilename(SCOPE_PLUGINS, 'SystemPlugins/AutoBouquetsMaker')) is True:
-    config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "all", choices = [("all", _("Create bouquet with provider order and update ABM CustomLCN")), ("CustomLCN", _("Update ABM CustomLCN definition")), ("1st", _("Refresh 1st bouquet on the list (TBC)"))])
+    config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "all", choices = [("all", _("Create bouquet with provider order and update ABM CustomLCN")), ("CustomLCN", _("Update ABM CustomLCN definition")), ("1st", _("Refresh 1st bouquet on the list"))])
 else:
-    config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "all", choices = [("all", _("Create bouquet with provider order")), ("1st", _("Refresh 1st bouquet on the list (TBC)"))])
+    config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "all", choices = [("all", _("Create bouquet with provider order")), ("1st", _("Refresh 1st bouquet on the list"))])
+config.plugins.GOS.j00zekBouquetsAuto =ConfigSelection(default = "manual", choices = [("monthly", _("auto-monthly")), ("daily", _("auto-daily")), ("manual", _("manual"))])
 
 ##############################################################
 
@@ -86,6 +87,7 @@ class GOSMenuChannels(Screen, ConfigListScreen):
         self.list.append(getConfigListEntry(_(" "), config.plugins.GOS.separator))
         self.list.append(getConfigListEntry(_("--- Satellite synchronization ---"), config.plugins.GOS.separator))
         self.list.append(getConfigListEntry(_("Update bouquet for:"), config.plugins.GOS.j00zekBouquetsID))
+        self.list.append(getConfigListEntry(_("Update type:"), config.plugins.GOS.j00zekBouquetsAuto))
         self.list.append(getConfigListEntry(_("Clear lamedb:"), config.plugins.GOS.j00zekBouquetsClearLameDB))
         self.list.append(getConfigListEntry(_("Action:"), config.plugins.GOS.j00zekBouquetsAction))
         self["config"].list = self.list
@@ -128,6 +130,20 @@ class GOSMenuChannels(Screen, ConfigListScreen):
         for x in self["config"].list:
             x[1].save()
         configfile.save()
+        if pathExists('/etc/cron/daily/j00zekBouquets') is True:
+            os_remove('/etc/cron/daily/j00zekBouquets')
+        elif pathExists('/etc/cron/monthly/j00zekBouquets') is True:
+            os_remove('/etc/cron/monthly/j00zekBouquets')
+        if config.plugins.GOS.j00zekBouquetsAuto.value !='manual':
+            if pathExists('/etc/cron/%s/j00zekBouquets' % config.plugins.GOS.j00zekBouquetsAuto.value ) is False:
+                j00zekBouquets = "%s %s %s %s\n" % (resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/j00zekBouquets'), \
+                    config.plugins.GOS.j00zekBouquetsID.value, config.plugins.GOS.j00zekBouquetsClearLameDB.value, \
+                    config.plugins.GOS.j00zekBouquetsAction.value)
+                myfile = open('/etc/cron/%s/j00zekBouquets' % config.plugins.GOS.j00zekBouquetsAuto.value,'w')
+                myfile.write(j00zekBouquets)
+                myfile.close()
+
+              
         self.close()
 
     def keyCancel(self):
