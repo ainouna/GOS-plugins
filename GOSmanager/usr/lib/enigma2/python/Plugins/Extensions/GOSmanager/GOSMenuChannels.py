@@ -30,9 +30,9 @@ config.plugins.GOS.chlistEnableSatSynchro = ConfigYesNo(default = True)
 config.plugins.GOS.j00zekBouquetsID = ConfigSelection(default = "49188PL", choices = [("NA", _("Not selected")), ("49186", "NC+ HotBird & Astra"), ("49188", "NC+ HotBird"), ("49188PL", "NC+ HotBird-PL")])
 config.plugins.GOS.j00zekBouquetsClearLameDB = ConfigYesNo(default = False)
 if pathExists(resolveFilename(SCOPE_PLUGINS, 'SystemPlugins/AutoBouquetsMaker')) is True:
-    config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "all", choices = [("all", _("Create bouquet with provider order and update ABM CustomLCN")), ("CustomLCN", _("Update ABM CustomLCN definition")), ("1st", _("Refresh 1st bouquet on the list"))])
+    config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "prov", choices = [("prov", _("Create bouquet with provider order")), ("CustomLCN", _("Update ABM CustomLCN definition")), ("1st", _("Refresh 1st bouquet on the list"))])
 else:
-    config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "all", choices = [("all", _("Create bouquet with provider order")), ("1st", _("Refresh 1st bouquet on the list"))])
+    config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "prov", choices = [("prov", _("Create bouquet with provider order")), ("1st", _("Refresh 1st bouquet on the list"))])
 config.plugins.GOS.j00zekBouquetsAuto =ConfigSelection(default = "manual", choices = [("monthly", _("auto-monthly")), ("weekly", _("auto-weekly")), ("daily", _("auto-daily")), ("manual", _("manual"))])
 
 ##############################################################
