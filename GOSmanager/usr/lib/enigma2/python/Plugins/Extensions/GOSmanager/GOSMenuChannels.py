@@ -33,7 +33,7 @@ if pathExists(resolveFilename(SCOPE_PLUGINS, 'SystemPlugins/AutoBouquetsMaker'))
     config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "all", choices = [("all", _("Create bouquet with provider order and update ABM CustomLCN")), ("CustomLCN", _("Update ABM CustomLCN definition")), ("1st", _("Refresh 1st bouquet on the list"))])
 else:
     config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "all", choices = [("all", _("Create bouquet with provider order")), ("1st", _("Refresh 1st bouquet on the list"))])
-config.plugins.GOS.j00zekBouquetsAuto =ConfigSelection(default = "manual", choices = [("monthly", _("auto-monthly")), ("daily", _("auto-daily")), ("manual", _("manual"))])
+config.plugins.GOS.j00zekBouquetsAuto =ConfigSelection(default = "manual", choices = [("monthly", _("auto-monthly")), ("weekly", _("auto-weekly")), ("daily", _("auto-daily")), ("manual", _("manual"))])
 
 ##############################################################
 
@@ -71,6 +71,8 @@ class GOSMenuChannels(Screen, ConfigListScreen):
         self["key_blue"] = Label(_("Synchronize from tuner"))
         self["key_yellow"] = Label(_("Synchronize from sat"))
         
+        self.prev_running_service = self.session.nav.getCurrentlyPlayingServiceReference()
+        
         self.onLayoutFinish.append(self.layoutFinished)
 
     def layoutFinished(self):
@@ -99,8 +101,28 @@ class GOSMenuChannels(Screen, ConfigListScreen):
 
     def keyYellow(self):
         if config.plugins.GOS.j00zekBouquetsID.value != 'NA':
+            #collecting info about NIM
+            currentlyPlayingNIM = 0
+            currentService = self.session and self.session.nav.getCurrentService()
+            frontendInfo = currentService and currentService.frontendInfo()
+            frontendData = frontendInfo and frontendInfo.getAll(True)
+            if frontendData is not None:
+                currentlyPlayingNIM = frontendData.get("tuner_number", None)
+            del frontendInfo
+            del currentService
+            #stopping playing service
+            self.session.nav.stopService()
+            #tunning to transponder containing
+            from Components.TuneTest import Tuner
+            activeTuner = Tuner(currentlyPlayingNIM)
+            
+            #if config.plugins.GOS.j00zekBouquetsID.value.startswith('4918'):
+            #    ZapTo=(10719, 27500, 1, 4, 2, 130, 0, 1, 0, 2)
+            
+            #activeTuner.tune(ZapTo)
+
             from GOSconsole import GOSconsole
-            j00zekBouquets = "%s %s %s %s" % (resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/j00zekBouquets'), \
+            j00zekBouquets = "%s %s %s %s" % (resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/j00zekBouquetsNC'), \
                 config.plugins.GOS.j00zekBouquetsID.value, config.plugins.GOS.j00zekBouquetsClearLameDB.value, \
                 config.plugins.GOS.j00zekBouquetsAction.value)
                 
@@ -111,6 +133,8 @@ class GOSMenuChannels(Screen, ConfigListScreen):
         db = eDVBDB.getInstance()
         db.reloadServicelist()
         db.reloadBouquets()
+        if self.prev_running_service:
+            self.session.nav.playService(self.prev_running_service)
 
         
     def keyBlue(self):
@@ -132,6 +156,8 @@ class GOSMenuChannels(Screen, ConfigListScreen):
         configfile.save()
         if pathExists('/etc/cron/daily/j00zekBouquets') is True:
             os_remove('/etc/cron/daily/j00zekBouquets')
+        elif pathExists('/etc/cron/weekly/j00zekBouquets') is True:
+            os_remove('/etc/cron/weekly/j00zekBouquets')
         elif pathExists('/etc/cron/monthly/j00zekBouquets') is True:
             os_remove('/etc/cron/monthly/j00zekBouquets')
         if config.plugins.GOS.j00zekBouquetsAuto.value !='manual':
