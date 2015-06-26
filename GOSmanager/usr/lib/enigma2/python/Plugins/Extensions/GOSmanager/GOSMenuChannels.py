@@ -11,12 +11,13 @@ from Components.config import *
 from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.Console import Console
 from Components.Label import Label
+from Components.LanguageGOS import gosgettext as _
+from enigma import eDVBDB, eServiceReference
 from GOSconsole import GOSconsole
 from os import remove as os_remove #symlink as os_symlink, remove as os_remove, fsync as os_fsync, rename as os_rename, walk as os_walk, listdir, mkdir as os_mkdir, chmod as os_chmod
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Tools.Directories import fileExists, resolveFilename, pathExists, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
-from Components.LanguageGOS import gosgettext as _
 
 config.plugins.GOS = ConfigSubsection()
 config.plugins.GOS.separator = NoSave(ConfigNothing())
@@ -71,8 +72,6 @@ class GOSMenuChannels(Screen, ConfigListScreen):
         self["key_blue"] = Label(_("Synchronize from tuner"))
         self["key_yellow"] = Label(_("Synchronize from sat"))
         
-        self.prev_running_service = self.session.nav.getCurrentlyPlayingServiceReference()
-        
         self.onLayoutFinish.append(self.layoutFinished)
 
     def layoutFinished(self):
@@ -101,26 +100,25 @@ class GOSMenuChannels(Screen, ConfigListScreen):
 
     def keyYellow(self):
         if config.plugins.GOS.j00zekBouquetsID.value != 'NA':
-            #collecting info about NIM
-            currentlyPlayingNIM = 0
-            currentService = self.session and self.session.nav.getCurrentService()
-            frontendInfo = currentService and currentService.frontendInfo()
-            frontendData = frontendInfo and frontendInfo.getAll(True)
-            if frontendData is not None:
-                currentlyPlayingNIM = frontendData.get("tuner_number", None)
-            del frontendInfo
-            del currentService
+            self.prev_running_service = self.session.nav.getCurrentlyPlayingServiceReference()
+            print self.prev_running_service
             #stopping playing service
             self.session.nav.stopService()
-            #tunning to transponder containing
-            from Components.TuneTest import Tuner
-            activeTuner = Tuner(currentlyPlayingNIM)
+            if config.plugins.GOS.j00zekBouquetsClearLameDB.value == True:
+                self.BuildLameDB()
             
-            #if config.plugins.GOS.j00zekBouquetsID.value.startswith('4918'):
-            #    ZapTo=(10719, 27500, 1, 4, 2, 130, 0, 1, 0, 2)
+            if config.plugins.GOS.j00zekBouquetsID.value.startswith('4918'): #cyfra
+                ZapTo=("1:0:1:1136:2AF8:13E:820000:0:0:0:")
             
-            #activeTuner.tune(ZapTo)
-
+            #zap to channel on transponder, we use it as hack to simplify selection of the NIM
+            service = eServiceReference(ZapTo)
+            from Screens.InfoBar import InfoBar
+            servicelist = InfoBar.instance.servicelist
+            #servicelist.clearPath()
+            #servicelist.enterPath(service)
+            servicelist.setCurrentSelection(service)
+            servicelist.zap()
+            #let's go
             from GOSconsole import GOSconsole
             j00zekBouquets = "%s %s %s %s" % (resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/j00zekBouquetsNC'), \
                 config.plugins.GOS.j00zekBouquetsID.value, config.plugins.GOS.j00zekBouquetsClearLameDB.value, \
@@ -128,15 +126,41 @@ class GOSMenuChannels(Screen, ConfigListScreen):
                 
             self.session.openWithCallback(self.keyYellowEndRun ,GOSconsole, title = "j00zekBouquets...", cmdlist = [ ('%s' % j00zekBouquets ) ])
 
-    def keyYellowEndRun(self, ret =0):
-        from enigma import eDVBDB
+    def BuildLameDB(self):
         db = eDVBDB.getInstance()
-        db.reloadServicelist()
-        db.reloadBouquets()
+        db.removeServices(-1, -1, -1, 130)
+        db.removeServices(-1, -1, -1, 192) #ToDo wywalanie w petli
+        with open('/tmp/lamedb', 'w') as LAMEDBFILE:
+            LAMEDBFILE.write("eDVB services /4/\n")
+            LAMEDBFILE.write("transponders\n")
+            #transponder nc+ z ktorego zdejmujemy dane
+            LAMEDBFILE.write("00820000:2af8:013e\n")
+            LAMEDBFILE.write("\ts 10719000:27500000:1:4:130:2:0\n")
+            LAMEDBFILE.write("/\n")
+            LAMEDBFILE.write("end\n")
+            LAMEDBFILE.write("services\n")
+            LAMEDBFILE.write("1163:00820000:2af8:013e:1:0\n")
+            LAMEDBFILE.write("Planete+\n")
+            LAMEDBFILE.write("p:nc+,f:40\n")
+            LAMEDBFILE.write("end\n")
+            LAMEDBFILE.write("Have a lot of bugs!\n")
+            LAMEDBFILE.close()
+        db.loadServicelist('/tmp/lamedb') #e2 de facto dodaje a nie przeladowuje serwisy, wiec w naszej pustej bedziemy mieli, co potrzebujemy. :)
+        os_remove('/tmp/lamedb') #juz nie potrzebne
+        db.saveServicelist()
+        
+    def keyYellowEndRun(self, ret =0):
+        self.reloadLAMEDB()
+        self.ZapToPrevChannel()
+        
+    def reloadLAMEDB(self):
+        eDVBDB.getInstance().reloadServicelist()
+        eDVBDB.getInstance().reloadBouquets()
+
+    def ZapToPrevChannel(self):
         if self.prev_running_service:
             self.session.nav.playService(self.prev_running_service)
-
-        
+    
     def keyBlue(self):
         self.session.openWithCallback(self.keyBlueYESNO ,MessageBox,_("Synchronize with %s now?") % config.plugins.GOS.chlistServerIP.value, MessageBox.TYPE_YESNO)
         
@@ -162,7 +186,7 @@ class GOSMenuChannels(Screen, ConfigListScreen):
             os_remove('/etc/cron/monthly/j00zekBouquets')
         if config.plugins.GOS.j00zekBouquetsAuto.value !='manual':
             if pathExists('/etc/cron/%s/j00zekBouquets' % config.plugins.GOS.j00zekBouquetsAuto.value ) is False:
-                j00zekBouquets = "%s %s %s %s\n" % (resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/j00zekBouquets'), \
+                j00zekBouquets = "%s %s %s %s\n" % (resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/j00zekBouquetsNC'), \
                     config.plugins.GOS.j00zekBouquetsID.value, config.plugins.GOS.j00zekBouquetsClearLameDB.value, \
                     config.plugins.GOS.j00zekBouquetsAction.value)
                 myfile = open('/etc/cron/%s/j00zekBouquets' % config.plugins.GOS.j00zekBouquetsAuto.value,'w')
