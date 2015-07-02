@@ -1,8 +1,8 @@
 ﻿# -*- coding: utf-8 -*-
 #######################################################################
 #
-#    Plugin for GOS
-#    Coded by j00zek (c)2014/2015
+#   Plugin for GOS
+#   Coded by j00zek (c)2014/2015
 #
 #######################################################################
 
@@ -11,32 +11,47 @@ from Components.config import *
 from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.Console import Console
 from Components.Label import Label
-from Components.LanguageGOS import gosgettext as _
 from enigma import eDVBDB, eServiceReference, eTimer
 from GOSconsole import GOSconsole
-from os import remove as os_remove, chmod as os_chmod #symlink as os_symlink, remove as os_remove, fsync as os_fsync, rename as os_rename, walk as os_walk, listdir, mkdir as os_mkdir
+from os import remove as os_remove, chmod as os_chmod, symlink as os_symlink #fsync as os_fsync, rename as os_rename, walk as os_walk, listdir, mkdir as os_mkdir
 from Screens.InfoBar import InfoBar
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Tools.Directories import fileExists, resolveFilename, pathExists, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
 
+try:
+    from Components.LanguageGOS import gosgettext as _
+    print('LanguageGOS detected')
+except:
+    print('LanguageGOS not detected, using local _')
+    import gettext
+    from translate import _ 
+if pathExists(resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager')) is True:
+    PluginPath = resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/')
+    binType=''
+else:
+    PluginPath = resolveFilename(SCOPE_PLUGINS, 'Extensions/ChannelsManager/')
+    binType='-mips'
+
+
 config.plugins.GOS = ConfigSubsection()
 config.plugins.GOS.separator = NoSave(ConfigNothing())
 
-config.plugins.GOS.chlistEnableTunersSynchro = ConfigYesNo(default = False)
 config.plugins.GOS.chlistServerIP = ConfigText(default = "192.168.1.5", fixed_size = False)
 config.plugins.GOS.chlistServerLogin = ConfigText(default = "root", fixed_size = False)
 config.plugins.GOS.chlistServerPass = ConfigText(default = "root", fixed_size = False)
 config.plugins.GOS.chlistServerHidden = ConfigYesNo(default = False)
-config.plugins.GOS.chlistEnableSatSynchro = ConfigYesNo(default = True)
-config.plugins.GOS.j00zekBouquetsID = ConfigSelection(default = "49188PL", choices = [("NA", _("Not selected")),
-                                                                                      ("49186", "NC+ HotBird & Astra"),
-                                                                                      ("49188", "NC+ HotBird"),
-                                                                                      ("49188PL", "NC+ HotBird-PL"),
-                                                                                      ("CP", "Cyfrowy Polsat")#,
-                                                                                      #("BOTH", "NC & CP")
+config.plugins.GOS.j00zekBouquetsNC = ConfigSelection(default = "NA", choices = [("NA", _("Don't update")),
+                                                                                      ("49188PL", "HotBird-PL"),
+                                                                                      ("49188", "HotBird"),
+                                                                                      ("49186", "HotBird & Astra")
+                                                                                      ])
+config.plugins.GOS.j00zekBouquetsCP = ConfigSelection(default = "NA", choices = [("NA", _("Don't update")),
+                                                                                      ("CP", "Hotbird"),
+                                                                                      #("CPPL", "Cyfrowy Polsat-PL")
                                                                                       ])
 config.plugins.GOS.j00zekBouquetsClearLameDB = ConfigYesNo(default = False)
+config.plugins.GOS.j00zekBouquetsExcludeBouquet = ConfigYesNo(default = False)
 if pathExists(resolveFilename(SCOPE_PLUGINS, 'SystemPlugins/AutoBouquetsMaker')) is True:
     config.plugins.GOS.j00zekBouquetsAction = ConfigSelection(default = "prov", choices = [("prov", _("Create bouquet with provider order")), ("CustomLCN", _("Update ABM CustomLCN definition")), ("1st", _("Refresh 1st bouquet on the list"))])
 else:
@@ -80,13 +95,10 @@ class GOSMenuChannels(Screen, ConfigListScreen):
             }, -2)
 
         self["key_green"] = Label()
-        if config.plugins.GOS.j00zekBouquetsAuto.value != 'manual':
-            self["key_green"].setText(_("Schedule & Save"))
-        else:
-            self["key_green"].setText(_("Save"))
+        self["key_green"].setText(_("Save"))
         self["key_red"] = Label(_("Exit"))
-        self["key_blue"] = Label(_("Synchronize from tuner"))
-        self["key_yellow"] = Label(_("Synchronize from sat"))
+        self["key_blue"] = Label(_("Update from tuner"))
+        self["key_yellow"] = Label(_("Update from sat"))
         
         self.timer = eTimer()
         
@@ -98,70 +110,86 @@ class GOSMenuChannels(Screen, ConfigListScreen):
 
     def runSetup(self):
         self.list = [ ]
-        #self.list.append(getConfigListEntry(_("Synchronize in background?"), config.plugins.GOS.chlistServerHidden))
         self.list.append(getConfigListEntry(_("--- Local synchronization ---"), config.plugins.GOS.separator))
         self.list.append(getConfigListEntry(_("Get channels list from tuner:"), config.plugins.GOS.chlistServerIP))
         self.list.append(getConfigListEntry(_("Login as:"), config.plugins.GOS.chlistServerLogin))
         self.list.append(getConfigListEntry(_("Password:"), config.plugins.GOS.chlistServerPass))
         self.list.append(getConfigListEntry(_(" "), config.plugins.GOS.separator))
         self.list.append(getConfigListEntry(_("--- Satellite synchronization ---"), config.plugins.GOS.separator))
-        self.list.append(getConfigListEntry(_("Update bouquet for:"), config.plugins.GOS.j00zekBouquetsID))
-        self.list.append(getConfigListEntry(_("Update type:"), config.plugins.GOS.j00zekBouquetsAuto))
+        self.list.append(getConfigListEntry(_("nc+:"), config.plugins.GOS.j00zekBouquetsNC))
+        self.list.append(getConfigListEntry(_("Cyfrowy Polsat:"), config.plugins.GOS.j00zekBouquetsCP))
         self.list.append(getConfigListEntry(_("Clear lamedb:"), config.plugins.GOS.j00zekBouquetsClearLameDB))
         self.list.append(getConfigListEntry(_("Action:"), config.plugins.GOS.j00zekBouquetsAction))
-        #self.list.append(getConfigListEntry(_(" "), config.plugins.GOS.separator))
-        #self.list.append(getConfigListEntry(_("--- Cleaning ---"), config.plugins.GOS.separator))
+        self.list.append(getConfigListEntry(_("Exclude predefined channels:"), config.plugins.GOS.j00zekBouquetsExcludeBouquet))
         self["config"].list = self.list
         self["config"].setList(self.list)
     
     def changedEntry(self):
-        if config.plugins.GOS.j00zekBouquetsAuto.value != 'manual':
-            self["key_green"].setText(_("Schedule & Save"))
-        else:
-            self["key_green"].setText(_("Save"))
-        
         print "Index: %d" % self["config"].getCurrentIndex()
         for x in self.onChangedEntry:
             x()
-            
-    def configureJB(self):
-        if config.plugins.GOS.j00zekBouquetsID.value.startswith('4918'): #cyfra
-            self.ZapTo=("1:0:1:1163:2AF8:13E:820000:0:0:0:")
-            self.j00zekBouquetsBin='Extensions/GOSmanager/components/j00zekBouquetsNC'
-            self.schedulerBin='j00zekBouquetsNC'
-            self.schedulerWaitTime=1
-        elif config.plugins.GOS.j00zekBouquetsID.value.startswith('CP'): #Cyfrowy Polsat
-            self.ZapTo=("1:0:1:332d:3390:71:820000:0:0:0:")
-            self.j00zekBouquetsBin='Extensions/GOSmanager/components/j00zekBouquetsCP'
-            self.schedulerBin='j00zekBouquetsCP'
-            self.schedulerWaitTime=600
-        elif config.plugins.GOS.j00zekBouquetsID.value.startswith('BOTH'): #NC i Cyfrowy Polsat
-            self.ZapTo=("1:0:1:1163:2AF8:13E:820000:0:0:0:") #najpierw, pozniej zmieni sie przez webif:)
-            self.j00zekBouquetsBin='Extensions/GOSmanager/components/j00zekBouquets'
-            self.schedulerBin='j00zekBouquets'
-            self.schedulerWaitTime=1
-            myfile = open(resolveFilename(SCOPE_PLUGINS, self.j00zekBouquetsBin),'w')
-            myfile.write("%s 49188 %s %s\n" % \
-                        (resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/j00zekBouquets'), \
-                        config.plugins.GOS.j00zekBouquetsAction.value,self.ZapTo))
-            myfile.write("%s CP %s %s\n" % \
-                        (resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/j00zekBouquets'), \
-                        config.plugins.GOS.j00zekBouquetsAction.value,self.ZapTo))
-            myfile.close()
-            os_chmod(resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/j00zekBouquets'),0755)
-    
+
+    def ConfigureJB(self):
+        self.ZapNC=("1:0:1:1163:2AF8:13E:820000:0:0:0:")
+        self.ZapCP=("1:0:1:332d:3390:71:820000:0:0:0:")
+        self.j00zekBouquetsNCBin='%scomponents/j00zekBouquetsNC%s' % (PluginPath,binType)
+        self.j00zekBouquetsCPBin='%scomponents/j00zekBouquetsCP%s' % (PluginPath,binType)
+        self.ExcludedSIDsTemplate='%scomponents/excludedSIDs.template' % PluginPath
+        self.ExcludedSIDsFileName='userbouquet.excludedSIDs.j00zekAutobouquet.tv'
+        self.ExcludedSIDsFile='/etc/enigma2/%s' % self.ExcludedSIDsFileName
+        self.IncludedTranspondersTemplate='%scomponents/transponders.PL' % PluginPath
+        self.IncludedTranspondersFile='/tmp/transponders.PL'
+        self.runlist = []
+        self.ZapTo=""
+        self.ExcludeSIDS=""
+        
+        #tylko polskie transpondery
+        if config.plugins.GOS.j00zekBouquetsNC.value.endswith('PL'):
+            if pathExists(self.IncludedTranspondersFile) is False:
+                os_symlink(self.IncludedTranspondersTemplate,self.IncludedTranspondersFile)
+        else:
+            if pathExists(self.IncludedTranspondersFile) is True:
+                os_remove(self.IncludedTranspondersFile)
+        #kanaly do pominiecia
+        if config.plugins.GOS.j00zekBouquetsExcludeBouquet.value == True:
+            self.ExcludeSIDS="ExcludeSIDS"
+            if pathExists(self.ExcludedSIDsFile) is False:
+                from shutil import copy as shutil_copy
+                shutil_copy(self.ExcludedSIDsTemplate,self.ExcludedSIDsFile)
+            with open("/etc/enigma2/bouquets.tv", "r") as bouquetsTV:
+                needUpdate=1
+                for line in bouquetsTV:
+                    if line.find(self.ExcludedSIDsFileName) > 0:
+                        needUpdate=1
+                        break
+                bouquetsTV.close()
+            with open("/etc/enigma2/bouquets.tv", "a") as bouquetsTV:
+                bouquetsTV.write('#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "%s" ORDER BY bouquet\n' % self.ExcludedSIDsFileName)
+                bouquetsTV.close()
+
+        if config.plugins.GOS.j00zekBouquetsNC.value != 'NA':
+            self.runlist.append("%s %s %s %s %s" % ( self.j00zekBouquetsNCBin, config.plugins.GOS.j00zekBouquetsNC.value, \
+                                config.plugins.GOS.j00zekBouquetsAction.value, self.ZapNC, self.ExcludeSIDS))
+            self.ZapTo=self.ZapNC
+        if config.plugins.GOS.j00zekBouquetsCP.value != 'NA':
+            self.runlist.append("%s %s %s %s %s" % ( self.j00zekBouquetsCPBin, config.plugins.GOS.j00zekBouquetsCP.value, \
+                                config.plugins.GOS.j00zekBouquetsAction.value, self.ZapCP, self.ExcludeSIDS))
+            if self.ZapTo == "":
+                self.ZapTo = self.ZapCP
+
     def keyYellow(self):
-        if config.plugins.GOS.j00zekBouquetsID.value != 'NA':
+        if config.plugins.GOS.j00zekBouquetsNC.value != 'NA' or config.plugins.GOS.j00zekBouquetsCP.value != 'NA':
+            #stopping playing service
             self.prev_root = InfoBar.instance.servicelist.getRoot()
             self.prev_running_service = self.session.nav.getCurrentlyPlayingServiceReference()
-            #stopping playing service
             self.session.nav.stopService()
+            #cleaningLAMEDB
             if config.plugins.GOS.j00zekBouquetsClearLameDB.value == True:
                 self.BuildLameDB()
-            
+            #configuring excluded SIDs
             #zap to channel on transponder, we use it as hack to simplify selection of the NIM
-            self.configureJB()   
-            
+            self.ConfigureJB()
+
             service = eServiceReference(self.ZapTo)
             InfoBar.instance.servicelist.clearPath()
             InfoBar.instance.servicelist.enterPath(service)
@@ -172,12 +200,7 @@ class GOSMenuChannels(Screen, ConfigListScreen):
 
     def keyYellowStep2(self):
         self.timer.callback.remove(self.keyYellowStep2)
-        if self.j00zekBouquetsBin !="":
-            from GOSconsole import GOSconsole
-            j00zekBouquets = "%s %s %s %s" % (resolveFilename(SCOPE_PLUGINS, self.j00zekBouquetsBin), \
-                config.plugins.GOS.j00zekBouquetsID.value, config.plugins.GOS.j00zekBouquetsAction.value, self.ZapTo)
-                
-            self.session.openWithCallback(self.keyYellowEndRun ,GOSconsole, title = "j00zekBouquets...", cmdlist = [ ('%s' % j00zekBouquets ) ])
+        self.session.openWithCallback(self.keyYellowEndRun ,GOSconsole, title = "j00zekBouquets...", cmdlist = self.runlist)
         
     def keyYellowEndRun(self, ret =0):
         self.reloadLAMEDB()
@@ -204,42 +227,21 @@ class GOSMenuChannels(Screen, ConfigListScreen):
             self.session.nav.playService(self.prev_running_service)
     
     def keyBlue(self):
-        self.session.openWithCallback(self.keyBlueYESNO ,MessageBox,_("Synchronize with %s now?") % config.plugins.GOS.chlistServerIP.value, MessageBox.TYPE_YESNO)
+        self.session.openWithCallback(self.keyBlueYESNO ,MessageBox,_("Synchronize with %s now?") % config.plugins.GOS.chlistServerIP.value,\
+                                    MessageBox.TYPE_YESNO)
         
     def keyBlueYESNO(self, ret):
         if ret is True:
-		mySynchroScript="%s %s %s %s" % (resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/CHlistSynchro.sh'),config.plugins.GOS.chlistServerIP.value,config.plugins.GOS.chlistServerLogin.value,config.plugins.GOS.chlistServerPass.value)
-		if config.plugins.GOS.chlistServerHidden.value == False:
-			self.session.openWithCallback(self.GOSconsoleEndRun ,GOSconsole, title = _("Graterlia channels list synchronization"), cmdlist = [ (mySynchroScript)])
-		else:
-			#myConsole = Console()
-			Console().ePopen(mySynchroScript , self.ePopenEndRun )
+            runlist=[("%s %s %s %s" % (resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/CHlistSynchro.sh'),\
+                    config.plugins.GOS.chlistServerIP.value,config.plugins.GOS.chlistServerLogin.value,config.plugins.GOS.chlistServerPass.value))]
+            self.session.openWithCallback(self.GOSconsoleEndRun ,GOSconsole, title = _("Graterlia channels list synchronization"), cmdlist = runlist)
+            self.reloadLAMEDB()
         return
         
     def keySave(self): #openpliPC - F2 emuluje green
         for x in self["config"].list:
             x[1].save()
         configfile.save()
-        self.configureJB()   
-        if pathExists('/etc/cron/daily/%s' % self.schedulerBin) is True:
-            os_remove('/etc/cron/daily/%s' % self.schedulerBin)
-        elif pathExists('/etc/cron/weekly/%s' % self.schedulerBin) is True:
-            os_remove('/etc/cron/weekly/%s' % self.schedulerBin)
-        elif pathExists('/etc/cron/monthly/%s' % self.schedulerBin) is True:
-            os_remove('/etc/cron/monthly/%s' % self.schedulerBin)
-        if config.plugins.GOS.j00zekBouquetsAuto.value !='manual':
-            if pathExists('/etc/cron/%s/j00zekBouquets' % config.plugins.GOS.j00zekBouquetsAuto.value ) is False:
-                j00zekBouquets = "%s %s %s %s" % (resolveFilename(SCOPE_PLUGINS, self.j00zekBouquetsBin), \
-                    config.plugins.GOS.j00zekBouquetsID.value, config.plugins.GOS.j00zekBouquetsAction.value, self.ZapTo)
-                
-                myfile = open('/etc/cron/%s/%s' % (config.plugins.GOS.j00zekBouquetsAuto.value,self.schedulerBin),'w')
-                myfile.write('sleep %d\n' % self.schedulerWaitTime)
-                myfile.write(j00zekBouquets + '\n')
-                myfile.write('touch /tmp/%s\n' % self.schedulerBin)
-                myfile.close()
-                os_chmod('/etc/cron/%s/%s' % (config.plugins.GOS.j00zekBouquetsAuto.value,self.schedulerBin),0755)
-
-              
         self.close()
 
     def keyCancel(self):
@@ -256,9 +258,6 @@ class GOSMenuChannels(Screen, ConfigListScreen):
         ConfigListScreen.keyRight(self)
         #if self["config"].getCurrent()[1] == config.plugins.GOS.opkg:
         #    self.runSetup()
-
-    def ePopenEndRun(self, data,retval,extra_args):
-        pass
 
     def GOSconsoleEndRun(self, ret =0):
         return
