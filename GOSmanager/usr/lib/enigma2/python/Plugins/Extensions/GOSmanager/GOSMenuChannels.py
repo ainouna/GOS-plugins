@@ -30,7 +30,7 @@ if pathExists(resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager')) is True:
     PluginPath = resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/')
     binType=''
 else:
-    PluginPath = resolveFilename(SCOPE_PLUGINS, 'Extensions/ChannelsManager/')
+    PluginPath = resolveFilename(SCOPE_PLUGINS, 'Extensions/J00zekBouquets/')
     binType='-mips'
 
 
