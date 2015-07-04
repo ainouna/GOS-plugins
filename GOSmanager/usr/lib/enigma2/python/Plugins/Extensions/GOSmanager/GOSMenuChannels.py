@@ -156,16 +156,24 @@ class GOSMenuChannels(Screen, ConfigListScreen):
             if pathExists(self.ExcludedSIDsFile) is False:
                 from shutil import copy as shutil_copy
                 shutil_copy(self.ExcludedSIDsTemplate,self.ExcludedSIDsFile)
+            hasNewline=1
+            needUpdate=1
             with open("/etc/enigma2/bouquets.tv", "r") as bouquetsTV:
-                needUpdate=1
                 for line in bouquetsTV:
+                    if line.endswith('\n'):
+                        hasNewline=1
+                    else:
+                        hasNewline=0
                     if line.find(self.ExcludedSIDsFileName) > 0:
-                        needUpdate=1
+                        needUpdate=0
                         break
                 bouquetsTV.close()
-            with open("/etc/enigma2/bouquets.tv", "a") as bouquetsTV:
-                bouquetsTV.write('#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "%s" ORDER BY bouquet\n' % self.ExcludedSIDsFileName)
-                bouquetsTV.close()
+            if needUpdate == 1:
+                with open("/etc/enigma2/bouquets.tv", "a") as bouquetsTV:
+                    if hasNewline == 0:
+                        bouquetsTV.write('\n')
+                    bouquetsTV.write('#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "%s" ORDER BY bouquet\n' % self.ExcludedSIDsFileName)
+                    bouquetsTV.close()
 
         if config.plugins.GOS.j00zekBouquetsNC.value != 'NA':
             self.runlist.append("%s %s %s %s %s" % ( self.j00zekBouquetsNCBin, config.plugins.GOS.j00zekBouquetsNC.value, \
