@@ -211,7 +211,7 @@ msgid "generate main bouquet"
 msgstr "generuj glowny bukiet"
 
 msgid "generate sections bouquets"
-msgstr "generuje bukiety sekcji"
+msgstr "generuje bukiety dla sekcji"
 
 msgid "no"
 msgstr "nie"
@@ -220,7 +220,7 @@ msgid "simple"
 msgstr "prosty"
 
 msgid "swap channels"
-msgstr "zamien kanaly"
+msgstr "zamień kanaly"
 
 msgid "yes"
 msgstr "tak"
