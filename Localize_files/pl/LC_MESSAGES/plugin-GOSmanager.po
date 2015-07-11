@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UserSkin v0.1\n"
 "POT-Creation-Date: 2013-08-16 18:44+0100\n"
-"PO-Revision-Date: 2015-06-21 16:44+0100\n"
+"PO-Revision-Date: 2015-07-06 00:18+0100\n"
 "Last-Translator: pppp\n"
 "Language-Team: j00zek/pppp 4 Graterlia\n"
 "Language: PL\n"
@@ -124,7 +124,7 @@ msgid "Checking /dev/%s"
 msgstr "Sprawdzam /dev/%s"
 
 msgid "Checking file system during boot?"
-msgstr "Sprawdzać system plików przy starcie?"
+msgstr "Sprawdzanie systemu plików przy starcie"
 
 msgid "Checking partition"
 msgstr "Sprawdzanie spójności ..."
@@ -140,6 +140,9 @@ msgstr "Opóźnienie (50-250, standard 20ms)"
 
 msgid "Delete"
 msgstr "Usuń"
+
+msgid "Delete "
+msgstr "Usuń "
 
 msgid "Directory browser"
 msgstr "Wybór katalogu"
@@ -782,74 +785,68 @@ msgstr "Wyłącz testowe repozytorium OScam"
 msgid "Show all Neutrino elements only"
 msgstr "Neutrino"
 
-msgid "Enable skins-HD support"
-msgstr "Wsparcie dla skórek HD"
+msgid "--- Local synchronization ---"
+msgstr "--- Aktualizacja lokalna ---"
+
+msgid "--- Satellite synchronization ---"
+msgstr "--- Aktualizacja z satelity ---"
+
+msgid "Update bouquet for:"
+msgstr "Aktualizuj bukiet:"
+
+msgid "Refresh 1st bouquet on the list"
+msgstr "Odśwież pierwszy bukiet na liście"
+
+msgid "Create bouquet with provider order"
+msgstr "Utwórz bukiet z kolejnością operatora"
+
+msgid "Synchronize from sat"
+msgstr "Synchronizuj z satelity"
+
+msgid "Synchronize from tuner"
+msgstr "Synchronizuj z tunera"
+
+msgid "Synchronize with %s now?"
+msgstr "Synchronizować teraz z %s ?"
+
+msgid "Action:"
+msgstr "Wykonaj:"
+
+msgid "Clear lamedb:"
+msgstr "Wyczyść bazę lamedb:"
 
 msgid "Not selected"
 msgstr "Nie wybrano"
 
-msgid "Create bouquet with provider order and update ABM CustomLCN"
-msgstr "Tworzenie bukietu z układem dostawcy i aktualizacja CustomLCN dla ABM"
+msgid "Get channels list from tuner:"
+msgstr "Pobierz listę kanałów z tunera:"
 
-msgid "Update ABM CustomLCN definition"
-msgstr "Aktualizacja definicji CustomLCN dla ABM"
+msgid "Enable skins-HD support"
+msgstr "Wspiercie skórek HD"
 
-msgid "Refresh 1st bouquet on the list"
-msgstr "Aktualizacja pierwszego bukietu na liście"
+msgid "Update type:"
+msgstr "Typ aktualizacji:"
 
-msgid "Create bouquet with provider order"
-msgstr "Tworzenie bukietu z układem dostawcy"
+msgid "auto-daily"
+msgstr "Auto codziennie"
 
-msgid "Quickly update bouquet for:"
-msgstr "Szybka aktualizacja bukietów dla"
+msgid "auto-weekly"
+msgstr "Auto co tydzień"
 
-msgid "Clear lamedb:"
-msgstr "Czyszczenie lamedb"
+msgid "auto-monthly"
+msgstr "Auto co miesiąc"
 
-msgid "Action:"
-msgstr "Akcja"
+msgid "Exit"
+msgstr "Wyjdź"
 
-msgid "Bouquets reloaded successfully."
-msgstr "Bukiety przeładowane poprawnie."
+msgid "Update from sat"
+msgstr "Aktualizuj z satelity"
 
-msgid "Reloading Bouquets, Please Wait..."
-msgstr "Przeładowywanie bukietów, czekaj..."
+msgid "Update from tuner"
+msgstr "Aktualizuj z tunera"
 
-msgid "Updating 1st bouquet on the list:"
-msgstr "Aktualizacja pierwszego butietu na liście:"
+msgid "Don't update"
+msgstr "Nie aktualizuj"
 
-msgid "Creating files"
-msgstr "Tworzenie plików"
-
-msgid "Creating file"
-msgstr "Tworzenie pliku"
-
-msgid "Syncing services in lamedb..."
-msgstr "Synchronizacja serwisów w lamedb..."
-
-msgid "Reading SDT..."
-msgstr "Czytanie SDT..."
-
-msgid "Syncing transponders in lamedb..."
-msgstr "Synchronizacja transponderów w lamedb"
-
-msgid "Reading Bouquet Association Table..."
-msgstr "Czytanie BAT..."
-
-msgid "Dumping dvb stream, for 15 seconds..."
-msgstr "Pobieranie danych dvb z satelity..."
-
-msgid "Collecting transponders data..."
-msgstr "Zbieranie danych o transponderach"
-
-msgid "lamedb initated properly"
-msgstr "lamedb zainicjowana poprawnie"
-
-msgid "Error during lamedb creation. Exiting"
-msgstr "Błąd tworzenia lamedb!!!"
-
-msgid "System is misconfigured!!!"
-msgstr "System jest rozkonfigurowany!!!"
-
-msgid "j00zekBouquets works in Graterlia only!!!"
-msgstr "j00zekBouquets działa tylko w systemie Graterlia!!!"
+msgid "Exclude predefined channels:"
+msgstr "Pomijaj predefiniowane kanały:"
