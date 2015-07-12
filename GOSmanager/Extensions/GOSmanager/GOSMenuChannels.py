@@ -140,6 +140,9 @@ class GOSMenuChannels(Screen, ConfigListScreen):
         self.IncludedTranspondersTemplate='%scomponents/transponders.PL' % PluginPath
         self.IncludedTranspondersFile='/tmp/transponders.PL'
         self.runlist = []
+        if pathExists('%s/components/CheckType.sh' % PluginPath) is True:
+            self.runlist.append(('%s/components/CheckType.sh' % PluginPath))
+        
         self.ZapTo=""
         self.ExcludeSIDS=""
         
@@ -221,6 +224,8 @@ class GOSMenuChannels(Screen, ConfigListScreen):
             #cleaningLAMEDB
             if config.plugins.GOS.j00zekBouquetsClearLameDB.value == True:
                 self.BuildLameDB()
+            else:
+                eDVBDB.getInstance().loadServicelist('%scomponents/j00zekBouquets.lamedb' % PluginPath)
             #configuring excluded SIDs
             #zap to channel on transponder, we use it as hack to simplify selection of the NIM
             self.ConfigureJB()
@@ -248,7 +253,7 @@ class GOSMenuChannels(Screen, ConfigListScreen):
         for sat in SatPositions:
             db.removeServices(-1, -1, -1, sat)
         # ... teraz dodac to co potrzebujemy :)            
-        db.loadServicelist(resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/j00zekBouquets.lamedb'))
+        db.loadServicelist('%scomponents/j00zekBouquets.lamedb' % PluginPath)
         db.saveServicelist()
 
     def reloadLAMEDB(self):
@@ -267,7 +272,7 @@ class GOSMenuChannels(Screen, ConfigListScreen):
         
     def keyBlueYESNO(self, ret):
         if ret is True:
-            runlist=[("%s %s %s %s" % (resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/components/CHlistSynchro.sh'),\
+            runlist=[("%s/components/CHlistSynchro.sh %s %s %s" % (PluginPath,\
                     config.plugins.GOS.chlistServerIP.value,config.plugins.GOS.chlistServerLogin.value,config.plugins.GOS.chlistServerPass.value))]
             self.session.openWithCallback(self.GOSconsoleEndRun ,GOSconsole, title = _("Graterlia channels list synchronization"), cmdlist = runlist)
             self.reloadLAMEDB()
