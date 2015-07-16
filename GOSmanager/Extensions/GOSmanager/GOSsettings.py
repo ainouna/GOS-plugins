@@ -137,7 +137,12 @@ if GOSHardwareInfo().get_rcstype() == 'SPARK7162':
 ############## DEBUG ################################################
 ##############################################################
 
-config.GOSsettings.opkg = NoSave(ConfigSelection(default = "NA", choices = [("NA", "release"), ("testing", "test")]))
+if not fileExists("/etc/opkg/opkg-ready.conf") and not fileExists("/etc/opkg/opkg-testing.conf"): 
+    config.GOSsettings.opkg = NoSave(ConfigSelection(default = "NA", choices = [("NA", "release"), ("ready", "ready"), ("testing", "test")]))
+elif not fileExists("/etc/opkg/opkg-testing.conf"): 
+    config.GOSsettings.opkg = NoSave(ConfigSelection(default = "NA", choices = [("NA", "ready"), ("testing", "test")]))
+else:
+    config.GOSsettings.opkg = NoSave(ConfigSelection(default = "NA", choices = [("NA", "test")]))
 GOSsettings_list.append((config.GOSsettings.opkg,"opkg","DEF"))
 
 config.GOSsettings.POWERx5 = NoSave(ConfigSelection(default = "NA", choices = [("NA", _("after pressing 5xPOWER quickly")), ("POWERx5", _("after pressing key POWER 5 times"))]))
@@ -185,16 +190,7 @@ class GOSsetupMenu(Screen, ConfigListScreen):
             self.list.append(getConfigListEntry(_("openPLI uses:"), config.GOSsettings.activeOpenPLI))
         #drzewo okpg
         if fileExists("/etc/opkg/opkg.conf"):
-            isRelease=False
-            with open ("/etc/opkg/opkg.conf", "r") as myconfigfile:
-                for line in myconfigfile:
-                    if line[0] == '#' and line.find('graterlia.xunil.pl/repodata/testing') > 0: 
-                        isRelease=True
-                myconfigfile.close()
-            if isRelease:
-                self.list.append(getConfigListEntry(_("OPKG branch:"), config.GOSsettings.opkg))
-            else:
-                self.list.append(getConfigListEntry(_("Active OPKG branch: testing :)"), config.GOSsettings.separator))
+            self.list.append(getConfigListEntry(_("OPKG branch:"), config.GOSsettings.opkg))
         ###################### ustawienia TYLKO dla SPARK7162 #############################
         if GOSHardwareInfo().get_rcstype() == 'SPARK7162':
             self.list.append(getConfigListEntry(" ", config.GOSsettings.separator))
@@ -261,16 +257,20 @@ class GOSsetupMenu(Screen, ConfigListScreen):
     def keyLeft(self):
         ConfigListScreen.keyLeft(self)
         if self["config"].getCurrent()[1] == config.GOSsettings.opkg:
-            if config.GOSsettings.opkg.value != "release":
+            if config.GOSsettings.opkg.value == "testing":
                 self.session.open(MessageBox,_("WARNING: The probability of issues in 'testing' branch is high. It's NOT recommended for unexperienced users!\n\nReturning to release branch only through reinstallation!!!"),  MessageBox.TYPE_INFO)
+            elif config.GOSsettings.opkg.value == "ready":
+                self.session.open(MessageBox,_("WARNING: The probability of issues in 'ready' branch is small, but exists."),  MessageBox.TYPE_INFO)
         elif self["config"].getCurrent()[1] == config.GOSsettings.ModerateShutDown:
             self.runSetup()
 
     def keyRight(self):
         ConfigListScreen.keyRight(self)
         if self["config"].getCurrent()[1] == config.GOSsettings.opkg:
-            if config.GOSsettings.opkg.value != "release":
+            if config.GOSsettings.opkg.value == "testing":
                 self.session.open(MessageBox,_("WARNING: The probability of issues in 'testing' branch is high. It's NOT recommended for unexperienced users!\n\nReturning to release branch only through reinstallation!!!"),  MessageBox.TYPE_INFO)
+            elif config.GOSsettings.opkg.value == "ready":
+                self.session.open(MessageBox,_("WARNING: The probability of issues in 'ready' branch is small, but exists."),  MessageBox.TYPE_INFO)
         elif self["config"].getCurrent()[1] == config.GOSsettings.ModerateShutDown:
             self.runSetup()
 
@@ -321,34 +321,12 @@ class GOSsetupMenu(Screen, ConfigListScreen):
         if decyzja is False:
             return
         #czyli zmieniamy
-        znacznik = "http://graterlia.xunil.pl/repodata/"
-        if fileExists("/etc/opkg/opkg.conf"):
-            with open ("/etc/opkg/opkg.conf.writing", "w") as mywritingfile:
-                with open ("/etc/opkg/opkg.conf", "r") as myreadingfile:
-                    for line in myreadingfile:
-                        if not line: 
-                            continue
-                        if line.find(znacznik) > 0: #interesujące nas wpisy
-                            print line
-                            if line.find("repodata/%s" %config.GOSsettings.opkg.value ) >0: #linia zawera naszą gałąź
-                                if line[0] == "#":
-                                    mywritingfile.write(line[1:]) # opuszczamy #
-                                else:
-                                    mywritingfile.write(line) # brak # - to dobrze, zapisujemy, jak leci
-                            else: #linia zawiera inne gałęzie, musimy je zapłotkować
-                                if line[0] == "#":
-                                    mywritingfile.write(line) #już jest #, nie dodajemy nowego
-                                else:
-                                    #mywritingfile.write("#") podobna mamy nie płotkować... ;)
-                                    mywritingfile.write(line)
-                        else:
-                            mywritingfile.write(line) #zapisujemy wszystko inne co nie dotyczy naszego repo bez zmian
-                    #or line[0] == '#'
-                    myreadingfile.close()
-                mywritingfile.flush()
-                os_fsync(mywritingfile.fileno())
-                mywritingfile.close()
-                os_rename("/etc/opkg/opkg.conf.writing", "/etc/opkg/opkg.conf")
+        if config.GOSsettings.opkg.value == "ready" or config.GOSsettings.opkg.value == "testing":
+            if not fileExists("/etc/opkg/opkg-ready.conf"):
+                os_symlink("/etc/opkg/ready.gos","/etc/opkg/opkg-ready.conf")
+        if config.GOSsettings.opkg.value == "testing":
+            if not fileExists("/etc/opkg/opkg-testing.conf"):
+                os_symlink("/etc/opkg/testing.gos","/etc/opkg/opkg-testing.conf")
       
     def keySave(self): #openpliPC - F2 emuluje green
         myContent = "### Utworzono za pomocą konfiguratora ustawień GOS @j00zek ###\n"

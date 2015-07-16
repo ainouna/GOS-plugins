@@ -24,6 +24,9 @@ if [ -z $1 ]; then
 else
   myPath=$1
 fi
+
+sed -i "1 i\src/gz iptvplayer http://graterlia.xunil.pl/iptvplayer" /etc/opkg/opkg.conf
+
 echo "MENU|OPKG options">$myPath/_MenuItems
 if grep 'repodata/testing' </etc/opkg/opkg.conf | grep '#'; then
 	echo "MENU|OPKG release branch options">$myPath/_MenuItems
@@ -33,17 +36,11 @@ fi
 echo "ITEM|Display complete list of changes|CONSOLE|wget -q http://openpli.xunil.pl/changes/lista_zmian.txt -O -">>$myPath/_MenuItems
 echo "ITEM|List upgradeable packages|CONSOLE|opkg list-upgradable">>$myPath/_MenuItems
 #echo "ITEM|||">>$myPath/_MenuItems
-if grep 'graterlia.xunil.pl/iptvplayer' </etc/opkg/opkg.conf | grep -v '#' ; then
-	echo 'ITEM|Disable IPTV repository|SILENT|sed -i "/src\/gz iptvplayer/d" /etc/opkg/opkg.conf'>>$myPath/_MenuItems
-else
-	echo 'ITEM|Enable IPTV repository|SILENT|sed -i "1 i\src/gz iptvplayer http://graterlia.xunil.pl/iptvplayer" /etc/opkg/opkg.conf'>>$myPath/_MenuItems
-fi
 
-#oscam test, tylko dla drzewa testing
-if ! grep '^.*#.*src/gz[ \t]*graterlia-testing' /etc/opkg/opkg.conf; then 
-	if grep 'graterlia.xunil.pl/oscams' </etc/opkg/opkg.conf | grep -v '#' ; then
-		echo 'ITEM|Disable OsCam test repository|SILENT|sed -i "/src\/gz iptvplayer/d" /etc/opkg/opkg.conf'>>$myPath/_MenuItems
-	else
-		echo 'ITEM|Enable OsCam test repository|SILENT|sed -i "1 i\src/gz oscams http://graterlia.xunil.pl/oscams" /etc/opkg/opkg.conf'>>$myPath/_MenuItems
-	fi
+#oscam test
+if grep 'graterlia.xunil.pl/oscams' </etc/opkg/opkg.conf | grep -v '#' ; then
+	echo 'ITEM|Disable OsCam test repository|SILENT|rm -rf /etc/opkg/oscam.conf'>>$myPath/_MenuItems
+else
+	echo 'ITEM|Enable OsCam test repository|SILENT|echo "src/gz oscams http://graterlia.xunil.pl/oscams" >/etc/opkg/oscam.conf'>>$myPath/_MenuItems
 fi
+i
