@@ -25,7 +25,12 @@ else
   myPath=$1
 fi
 
-sed -i "1 i\src/gz iptvplayer http://graterlia.xunil.pl/iptvplayer" /etc/opkg/opkg.conf
+#porzadki
+sed -i "/iptvplayer/d" /etc/opkg/opkg.conf
+sed -i "/oscams/d" /etc/opkg/opkg.conf
+sed -i "/graterlia-ready/d" /etc/opkg/opkg.conf
+sed -i "/graterlia-testing/d" /etc/opkg/opkg.conf
+sed -i "/graterlia-src/d" /etc/opkg/opkg.conf
 
 echo "MENU|OPKG options">$myPath/_MenuItems
 if grep 'repodata/testing' </etc/opkg/opkg.conf | grep '#'; then
@@ -38,9 +43,25 @@ echo "ITEM|List upgradeable packages|CONSOLE|opkg list-upgradable">>$myPath/_Men
 #echo "ITEM|||">>$myPath/_MenuItems
 
 #oscam test
-if grep 'graterlia.xunil.pl/oscams' </etc/opkg/opkg.conf | grep -v '#' ; then
-	echo 'ITEM|Disable OsCam test repository|SILENT|rm -rf /etc/opkg/oscam.conf'>>$myPath/_MenuItems
+[ -e /etc/opkg/oscam.conf ] && mv -f /etc/opkg/oscam.conf /etc/opkg/xopkg-oscam.conf
+
+if [ -e /etc/opkg/xopkg-oscam.conf ]; then
+	echo 'ITEM|Disable OsCam test repository|SILENT|rm -rf /etc/opkg/*oscam.conf'>>$myPath/_MenuItems
 else
-	echo 'ITEM|Enable OsCam test repository|SILENT|echo "src/gz oscams http://graterlia.xunil.pl/oscams" >/etc/opkg/oscam.conf'>>$myPath/_MenuItems
+	echo 'ITEM|Enable OsCam test repository|SILENT|echo "src/gz oscams http://graterlia.xunil.pl/oscams" >/etc/opkg/xopkg-oscam.conf'>>$myPath/_MenuItems
+fi
+#zrodla
+tunerarch=`cat /etc/opkg/opkg.conf |grep '^arch'|grep -v sh4|awk '{print $2}'`
+echo "src/gz graterlia-src http://graterlia.xunil.pl/repodata/release-src/sh4">$myPath/xopkg-sources.conf
+echo "src/gz graterlia-ready-src http://graterlia.xunil.pl/repodata/ready-src/sh4">>$myPath/xopkg-sources.conf
+echo "src/gz graterlia-testing-src http://graterlia.xunil.pl/repodata/testing-src/sh4">>$myPath/xopkg-sources.conf
+echo "src/gz $tunerarch-src http://graterlia.xunil.pl/repodata/release-src/$tunerarch">>$myPath/xopkg-sources.conf
+echo "src/gz $tunerarch-ready-src http://graterlia.xunil.pl/repodata/ready-src/$tunerarch">>$myPath/xopkg-sources.conf
+echo "src/gz $tunerarch-testing-src http://graterlia.xunil.pl/repodata/testing-src/$tunerarch">>$myPath/xopkg-sources.conf
+
+if [ -e /etc/opkg/xopkg-sources.conf ]; then
+        echo 'ITEM|Disable Sources repository|SILENT|rm -rf /etc/opkg/xopkg-sources.conf'>>$myPath/_MenuItems
+else
+        echo 'ITEM|Enable Sources repository|SILENT|cp -rf $myPath/xopkg-sources.conf /etc/opkg/xopkg-sources.conf'>>$myPath/_MenuItems
 fi
 i
