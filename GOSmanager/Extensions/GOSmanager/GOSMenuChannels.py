@@ -144,7 +144,6 @@ class GOSMenuChannels(Screen, ConfigListScreen):
             self.runlist.append(('%s/components/CheckType.sh' % PluginPath))
         
         self.ZapTo=""
-        self.ExcludeSIDS=""
         
         #tylko polskie transpondery
         if config.plugins.GOS.j00zekBouquetsNC.value.endswith('PL'):
@@ -156,54 +155,62 @@ class GOSMenuChannels(Screen, ConfigListScreen):
         #kanaly do pominiecia
         if config.plugins.GOS.j00zekBouquetsExcludeBouquet.value == True:
             self.ExcludeSIDS="ExcludeSIDS"
+            ExcludedSIDsFileNeedsUpdate=1
             if pathExists(self.ExcludedSIDsFile) is False:
                 from shutil import copy as shutil_copy
                 shutil_copy(self.ExcludedSIDsTemplate,self.ExcludedSIDsFile)
-            hasNewline=1
-            ExcludedSIDsFileNeedsUpdate=1
-            if config.plugins.GOS.j00zekBouquetsNC.value !="NA":
-                ncNeedsUpdate=1
-            else:
-                ncNeedsUpdate=0
-            if config.plugins.GOS.j00zekBouquetsCP.value !="NA":
-                cpNeedsUpdate=1
-            else:
-                cpNeedsUpdate=0
+        else:
+            self.ExcludeSIDS=""
+            ExcludedSIDsFileNeedsUpdate=0
+            
+        #sprawdzamy schemat pliku bouquets.tv
+        hasNewline=1
+        if config.plugins.GOS.j00zekBouquetsNC.value !="NA":
+            ncNeedsUpdate=1
+        else:
+            ncNeedsUpdate=0
+        if config.plugins.GOS.j00zekBouquetsCP.value !="NA":
+            cpNeedsUpdate=1
+        else:
+            cpNeedsUpdate=0
                 
-            windowsEOL=''
-            with open("/etc/enigma2/bouquets.tv", "r") as bouquetsTV:
-                for line in bouquetsTV:
-                    if windowsEOL == '' and line.endswith('\r\n'):
-                        windowsEOL='\r'
-                    if line.endswith('\n'):
-                        hasNewline=1
-                    else:
-                        hasNewline=0
-                    if line.find(self.ExcludedSIDsFileName) > 0:
-                        ExcludedSIDsFileNeedsUpdate=0
-                    if line.find('userbouquet.ncplus.j00zekAutobouquet.tv') > 0:
-                        ncNeedsUpdate=0
-                    if line.find('userbouquet.CP.j00zekAutobouquet.tv') > 0:
-                        cpNeedsUpdate=0
+        windowsEOL=''
+        with open("/etc/enigma2/bouquets.tv", "r") as bouquetsTV:
+            for line in bouquetsTV:
+                if windowsEOL == '' and line.endswith('\r\n'):
+                    windowsEOL='\r'
+                if line.endswith('\n'):
+                    hasNewline=1
+                else:
+                    hasNewline=0
+                if line.find(self.ExcludedSIDsFileName) > 0:
+                    ExcludedSIDsFileNeedsUpdate=0
+                if line.find('userbouquet.ncplus.j00zekAutobouquet.tv') > 0:
+                    ncNeedsUpdate=0
+                if line.find('userbouquet.CP.j00zekAutobouquet.tv') > 0:
+                    cpNeedsUpdate=0
+            bouquetsTV.close()
+        #dopisujemy nasze bukiety
+        if ncNeedsUpdate == 1:
+            with open("/etc/enigma2/bouquets.tv", "a") as bouquetsTV:
+                if hasNewline == 0:
+                    bouquetsTV.write('\n')
+                bouquetsTV.write('#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ncplus.j00zekAutobouquet.tv" ORDER BY bouquet%s\n' % windowsEOL)
                 bouquetsTV.close()
-            if ncNeedsUpdate == 1:
-                with open("/etc/enigma2/bouquets.tv", "a") as bouquetsTV:
-                    if hasNewline == 0:
-                        bouquetsTV.write('\n')
-                    bouquetsTV.write('#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ncplus.j00zekAutobouquet.tv" ORDER BY bouquet%s\n' % windowsEOL)
-                    bouquetsTV.close()
-            if cpNeedsUpdate == 1:
-                with open("/etc/enigma2/bouquets.tv", "a") as bouquetsTV:
-                    if hasNewline == 0:
-                        bouquetsTV.write('\n')
-                    bouquetsTV.write('#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.CP.j00zekAutobouquet.tv" ORDER BY bouquet%s\n' % windowsEOL)
-                    bouquetsTV.close()
-            if ExcludedSIDsFileNeedsUpdate == 1:
-                with open("/etc/enigma2/bouquets.tv", "a") as bouquetsTV:
-                    if hasNewline == 0:
-                        bouquetsTV.write('\n')
-                    bouquetsTV.write('#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "%s" ORDER BY bouquet%s\n' % (self.ExcludedSIDsFileName,windowsEOL))
-                    bouquetsTV.close()
+                hasNewline=1
+        if cpNeedsUpdate == 1:
+            with open("/etc/enigma2/bouquets.tv", "a") as bouquetsTV:
+                if hasNewline == 0:
+                    bouquetsTV.write('\n')
+                bouquetsTV.write('#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.CP.j00zekAutobouquet.tv" ORDER BY bouquet%s\n' % windowsEOL)
+                bouquetsTV.close()
+                hasNewline=1
+        if ExcludedSIDsFileNeedsUpdate == 1:
+            with open("/etc/enigma2/bouquets.tv", "a") as bouquetsTV:
+                if hasNewline == 0:
+                    bouquetsTV.write('\n')
+                bouquetsTV.write('#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "%s" ORDER BY bouquet%s\n' % (self.ExcludedSIDsFileName,windowsEOL))
+                bouquetsTV.close()
 
         if config.plugins.GOS.j00zekBouquetsNC.value != 'NA':
             self.runlist.append("%s %s %s %s %s" % ( self.j00zekBouquetsNCBin, config.plugins.GOS.j00zekBouquetsNC.value, \
@@ -217,6 +224,7 @@ class GOSMenuChannels(Screen, ConfigListScreen):
 
     def keyYellow(self):
         if config.plugins.GOS.j00zekBouquetsNC.value != 'NA' or config.plugins.GOS.j00zekBouquetsCP.value != 'NA':
+            self.SaveSettings()
             #stopping playing service
             self.prev_root = InfoBar.instance.servicelist.getRoot()
             self.prev_running_service = self.session.nav.getCurrentlyPlayingServiceReference()
@@ -277,11 +285,14 @@ class GOSMenuChannels(Screen, ConfigListScreen):
             self.session.openWithCallback(self.GOSconsoleEndRun ,GOSconsole, title = _("Graterlia channels list synchronization"), cmdlist = runlist)
             self.reloadLAMEDB()
         return
-        
-    def keySave(self): #openpliPC - F2 emuluje green
+
+    def SaveSettings(self):
         for x in self["config"].list:
             x[1].save()
         configfile.save()
+    
+    def keySave(self): #openpliPC - F2 emuluje green
+        self.SaveSettings()
         self.close()
 
     def keyCancel(self):
