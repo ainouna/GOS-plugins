@@ -850,3 +850,87 @@ msgstr "Nie aktualizuj"
 
 msgid "Exclude predefined channels:"
 msgstr "Pomijaj predefiniowane kanały:"
+
+msgid "WARNING: The probability of issues in 'ready' branch is small, but exists."
+msgstr "UWAGA: Prawdopodobieństwo problemów w drzewie 'ready' jest male, ale istnieje."
+
+msgid "WARNING: The probability of issues in 'testing' branch is high. It's NOT recommended for unexperienced users!\n\nReturning to release branch only through reinstallation!!!"
+msgstr "UWAGA: Prawdopodobieństwo problemów w drzewie 'test' jest duze. Nie jest rekomendowane dla niedoswiadczonych uzytkownikow!\n\nPowrot do drzewa release tylko poprzez reinstalację!!!"
+
+msgid "Are you sure, you want to switch opkg branch to UNSTABLE %s?"
+msgstr "Na pewno przelaczyc drzewo opkg na NIESTABILNE %s?"
+
+msgid "Don't update"
+msgstr "Nie odświerzaj"
+
+msgid "Exclude predefined channels:"
+msgstr "Pomiń zdefiniowane kanały:"
+
+msgid "Update from tuner"
+msgstr "Pobierz z tunera"
+
+msgid "Update from sat"
+msgstr "Pobierz z satelity"
+
+msgid "A-type kernel found"
+msgstr "Wykryto kernel typu A"
+
+msgid "B-type kernel found"
+msgstr "Wykryto kernel typu B"
+
+msgid "j00zekBouquets works only on"
+msgstr "j00zekBouquets działa jedynie w systemach "
+
+msgid "Tunning..."
+msgstr "Strojenie..."
+
+msgid "Error collecting transponders data!!!"
+msgstr "Błąd pobierania danych o transponderach!!!"
+
+msgid "Configuring system..."
+msgstr "Konfiguracja systemu..."
+
+msgid "Syncing services in lamedb, wait up to 8 minutes..."
+msgstr "Synchronizowanie serwisów w lamedb, czekaj ok 8 minut..."
+
+msgid "Syncing services in lamedb, wait up to 5 minutes..."
+msgstr "Synchronizowanie serwisów w lamedb, czekaj ok 5 minut..."
+
+msgid "Syncing services in lamedb, wait up to 3 minutes..."
+msgstr "Synchronizowanie serwisów w lamedb, czekaj ok 3 minut..."
+
+msgid "Unknown provider. Exiting"
+msgstr "Nieznany operator. Kończę!!!"
+
+msgid "Selected provider:"
+msgstr "Wybrany operator:"
+
+msgid "Dumping dvb stream packets..."
+msgstr "Pobieranie pakietów z satelity..."
+
+msgid "Number of reference Sections:"
+msgstr "Liczba sekcji referencyjnych:"
+
+msgid " Found sections:"
+msgstr " Znalezione sekcje:"
+
+msgid "Excluding unwanted channels"
+msgstr "Usuwanie niepotrzebnych kanałów"
+
+msgid "Finished in"
+msgstr "Zakończono w przeciągu"
+
+msgid "\nUse up/down arrows to scroll text. OK closes window"
+msgstr "\nAby przewinąć tekst użyj strzałek góra/dół. Klawisz OK zamyka okno."
+
+msgid "Graterlia channels list synchronization"
+msgstr "Synchronizacja list kanałów dla Graterlia,VTI,Black Hole"
+
+msgid "Syncing services in lamedb, wait a minute..."
+msgstr "Synchronizowanie serwisów w lamedb, czekaj minutę..."
+
+msgid "Reading Channel Association Table..."
+msgstr "Czytanie tablicy kanałów..."
+
+msgid "Updating bouquet"
+msgstr "Aktualizacja bukietu"
