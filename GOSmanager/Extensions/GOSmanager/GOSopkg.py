@@ -275,7 +275,12 @@ class GOSopkg(Screen):
 
     def doActionFullUpdate(self, ret):
         if ret is True:
-            self.session.openWithCallback(self.post_doAction_check_TMPUPDsh ,GOSconsole, title = _("Upgrading all packages...", "plugin-GOSmanager"), cmdlist = [ 'opkg  --cache %s upgrade' % self.CacheDir , 'rm -f %s/*.ipk' % self.CacheDir ])
+            runlist = []
+            runlist.append('touch /var/opkg/FullUpdate')
+            runlist.append('opkg --cache %s upgrade' % self.CacheDir)
+            runlist.append('rm -f %s/*.ipk' % self.CacheDir)
+            runlist.append('rm -f /var/opkg/FullUpdate')
+            self.session.openWithCallback(self.post_doAction_check_TMPUPDsh ,GOSconsole, title = _("Upgrading all packages...", "plugin-GOSmanager"), cmdlist = runlist)
             self.keyGreenAction = ''
             self.changed = True
         return
