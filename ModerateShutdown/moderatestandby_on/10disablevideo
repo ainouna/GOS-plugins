@@ -16,15 +16,15 @@ if [ -e /etc/sysctl.gos ]; then
 	. /etc/sysctl.gos
 fi
 
-sleep 1
-fp_control -b 0
 echo "OFF" >/dev/vfd
+sleep 1
 
 
 if [ "$rcstype" == "SPARK7162" ];then
 	/bin/fp_control -i 46 0
 	[ -z $iconINmoderate ] || /bin/fp_control -i $iconINmoderate 1
 else
+        fp_control -b 0
 	/bin/vfdctl clearicons
 	[ -z $iconINmoderate ] || /bin/vfdctl "+$iconINmoderate"
 fi
