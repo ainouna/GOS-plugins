@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UserSkin v0.1\n"
 "POT-Creation-Date: 2013-08-16 18:44+0100\n"
-"PO-Revision-Date: 2015-07-06 00:18+0100\n"
+"PO-Revision-Date: 2015-08-16 00:18+0100\n"
 "Last-Translator: pppp\n"
 "Language-Team: j00zek/pppp 4 Graterlia\n"
 "Language: PL\n"
@@ -934,3 +934,12 @@ msgstr "Czytanie tablicy kanałów..."
 
 msgid "Updating bouquet"
 msgstr "Aktualizacja bukietu"
+
+msgid "Show IPTV plugins only"
+msgstr "IPTV"
+
+msgid "Enable Sources repository"
+msgstr "Włącz repozytorium źródeł"
+
+msgid "Diasble Sources repository"
+msgstr "Wyłącz repozytorium źródeł"
