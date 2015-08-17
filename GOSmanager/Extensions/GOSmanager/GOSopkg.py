@@ -275,10 +275,14 @@ class GOSopkg(Screen):
 
     def doActionFullUpdate(self, ret):
         if ret is True:
+            self.prev_running_service = self.session.nav.getCurrentlyPlayingServiceReference()
+            self.session.nav.stopService()
             runlist = []
             runlist.append('touch /var/opkg/FullUpdate')
+            runlist.append('sync')
             runlist.append('opkg --cache %s upgrade' % self.CacheDir)
             runlist.append('rm -f %s/*.ipk' % self.CacheDir)
+            runlist.append('sync')
             runlist.append('rm -f /var/opkg/FullUpdate')
             self.session.openWithCallback(self.post_doAction_check_TMPUPDsh ,GOSconsole, title = _("Upgrading all packages...", "plugin-GOSmanager"), cmdlist = runlist)
             self.keyGreenAction = ''
@@ -286,6 +290,8 @@ class GOSopkg(Screen):
         return
         
     def post_doAction_check_TMPUPDsh(self):
+        if self.prev_running_service:
+            self.session.nav.playService(self.prev_running_service)
         if pathExists("/tmp/upd.sh"):
             printDEBUG( "post_doAction_check_TMPUPDsh" , "pathExists('/tmp/upd.sh')" )
             self.session.openWithCallback(self.refreshLists ,GOSconsole, title = _("Post upgrade cleanup...", "plugin-GOSmanager"), cmdlist = [ "/tmp/upd.sh" ])
@@ -455,6 +461,7 @@ class GOSopkg(Screen):
             self.list.append((_("Show all Neutrino elements only", "plugin-GOSmanager") , '' , '', 'neutrino-', LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/icons/opkg_neutrino.png')), self.divpng))
             self.list.append((_("show oscam packages only", "plugin-GOSmanager") , '' , '', 'oscam', LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/icons/opkg_softcam.png')), self.divpng))
             self.list.append((_("show fonts only", "plugin-GOSmanager") , '' , '', 'font-', LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/icons/opkg_fonts.png')), self.divpng))
+            self.list.append((_("show picons only", "plugin-GOSmanager") , '' , '', 'enigma2-picon-', LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/icons/opkg_picon.png')), self.divpng))
             self.list.append((_("show language packets only", "plugin-GOSmanager") , '' , '', 'enigma2-i18n', LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/icons/opkg_lang.png')), self.divpng))
             self.list.append((_("show system libraries only", "plugin-GOSmanager") , '' , '', 'lib', LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/icons/opkg_system.png')), self.divpng))
             self.list.append((_("show Python modules only", "plugin-GOSmanager") , '' , '', 'python-', LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, 'Extensions/GOSmanager/icons/opkg_python.png')), self.divpng))
