@@ -62,6 +62,7 @@ class GOSopkg(Screen):
         
         self.list = []
         self.SelectedIndex = None
+        self.prev_running_service = None
         self.packages = []
         self.installedpackages = []
         self.upgradeablepackages = []
