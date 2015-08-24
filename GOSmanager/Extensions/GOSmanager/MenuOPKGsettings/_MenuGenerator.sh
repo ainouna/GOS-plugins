@@ -33,10 +33,12 @@ sed -i "/graterlia-testing/d" /etc/opkg/opkg.conf
 sed -i "/graterlia-src/d" /etc/opkg/opkg.conf
 
 echo "MENU|OPKG options">$myPath/_MenuItems
-if grep 'repodata/testing' </etc/opkg/opkg.conf | grep '#'; then
-	echo "MENU|OPKG release branch options">$myPath/_MenuItems
+if [ -f /etc/opkg/opkg-testing.conf ]; then
+	echo "MENU|OPKG-testing branch options">$myPath/_MenuItems
+elif [ -f /etc/opkg/opkg-ready.conf ]; then
+	echo "MENU|OPKG-ready branch options">$myPath/_MenuItems
 else
-	echo "MENU|OPKG test branch options">$myPath/_MenuItems
+	echo "MENU|OPKG-release branch options">$myPath/_MenuItems
 fi
 echo "ITEM|Display complete list of changes|CONSOLE|wget -q http://openpli.xunil.pl/changes/lista_zmian.txt -O -">>$myPath/_MenuItems
 echo "ITEM|List upgradeable packages|CONSOLE|opkg list-upgradable">>$myPath/_MenuItems
@@ -50,18 +52,21 @@ if [ -e /etc/opkg/xopkg-oscam.conf ]; then
 else
 	echo 'ITEM|Enable OsCam test repository|SILENT|echo "src/gz oscams http://graterlia.xunil.pl/oscams" >/etc/opkg/xopkg-oscam.conf'>>$myPath/_MenuItems
 fi
-#zrodla
-tunerarch=`cat /etc/opkg/opkg.conf |grep '^arch'|grep -v sh4|awk '{print $2}'`
-echo "src/gz graterlia-src http://graterlia.xunil.pl/repodata/release-src/sh4">$myPath/xopkg-sources.conf
-echo "src/gz graterlia-ready-src http://graterlia.xunil.pl/repodata/ready-src/sh4">>$myPath/xopkg-sources.conf
-echo "src/gz graterlia-testing-src http://graterlia.xunil.pl/repodata/testing-src/sh4">>$myPath/xopkg-sources.conf
-echo "src/gz $tunerarch-src http://graterlia.xunil.pl/repodata/release-src/$tunerarch">>$myPath/xopkg-sources.conf
-echo "src/gz $tunerarch-ready-src http://graterlia.xunil.pl/repodata/ready-src/$tunerarch">>$myPath/xopkg-sources.conf
-echo "src/gz $tunerarch-testing-src http://graterlia.xunil.pl/repodata/testing-src/$tunerarch">>$myPath/xopkg-sources.conf
-
-if [ -e /etc/opkg/xopkg-sources.conf ]; then
-        echo 'ITEM|Disable Sources repository|SILENT|rm -rf /etc/opkg/xopkg-sources.conf'>>$myPath/_MenuItems
-else
-        echo 'ITEM|Enable Sources repository|SILENT|cp -rf $myPath/xopkg-sources.conf /etc/opkg/xopkg-sources.conf'>>$myPath/_MenuItems
+#obsolete
+if [ -e /etc/opkg/obsolete.gos ]; then
+	if [ -e /etc/opkg/xopkg-obsolete.conf ]; then
+		echo 'ITEM|Disable repository with not supported, old plugins|SILENT|rm -rf /etc/opkg/xopkg-obsolete.conf'>>$myPath/_MenuItems
+	else
+		echo 'ITEM|Enable repository with not supported, old plugins|SILENT|ln -sf /etc/opkg/obsolete.gos /etc/opkg/xopkg-obsolete.conf'>>$myPath/_MenuItems
+	fi
 fi
-i
+#zrodla
+if [ -e /etc/opkg/opkg-testing.conf ]; then #tylko jak ktos ma aktywne drzewo test
+	if [ -e /etc/opkg/xopkg-sources.gos ]; then
+		if [ -e /etc/opkg/xopkg-sources.conf ]; then
+			echo 'ITEM|Disable repository with sources|SILENT|rm -rf /etc/opkg/xopkg-sources.conf'>>$myPath/_MenuItems
+		else
+			echo 'ITEM|Enable repository with sources|SILENT|ln -sf /etc/opkg/xopkg-sources.gos /etc/opkg/xopkg-sources.conf'>>$myPath/_MenuItems
+		fi
+	fi
+fi
