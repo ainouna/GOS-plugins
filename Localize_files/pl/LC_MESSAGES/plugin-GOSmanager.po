@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UserSkin v0.1\n"
 "POT-Creation-Date: 2013-08-16 18:44+0100\n"
-"PO-Revision-Date: 2015-08-16 00:18+0100\n"
+"PO-Revision-Date: 2015-08-26 18:26+0100\n"
 "Last-Translator: pppp\n"
 "Language-Team: j00zek/pppp 4 Graterlia\n"
 "Language: PL\n"
@@ -680,9 +680,6 @@ msgstr "Wersja OScam"
 msgid "EPG file:"
 msgstr "Plik EPG"
 
-msgid "Show IPTV plugins only"
-msgstr "IPTV"
-
 msgid "Display complete list of changes"
 msgstr "Wyświetl listę zmian"
 
@@ -839,32 +836,31 @@ msgstr "Auto co miesiąc"
 msgid "Exit"
 msgstr "Wyjdź"
 
-msgid "Update from sat"
-msgstr "Aktualizuj z satelity"
-
-msgid "Update from tuner"
-msgstr "Aktualizuj z tunera"
-
 msgid "Don't update"
 msgstr "Nie aktualizuj"
 
 msgid "Exclude predefined channels:"
 msgstr "Pomijaj predefiniowane kanały:"
 
-msgid "WARNING: The probability of issues in 'ready' branch is small, but exists."
-msgstr "UWAGA: Prawdopodobieństwo problemów w drzewie 'ready' jest male, ale istnieje."
+msgid ""
+"WARNING: The probability of issues in 'ready' branch is small, but exists."
+msgstr ""
+"UWAGA: Prawdopodobieństwo problemów w drzewie 'ready' jest male, ale "
+"istnieje."
 
-msgid "WARNING: The probability of issues in 'testing' branch is high. It's NOT recommended for unexperienced users!\n\nReturning to release branch only through reinstallation!!!"
-msgstr "UWAGA: Prawdopodobieństwo problemów w drzewie 'test' jest duze. Nie jest rekomendowane dla niedoswiadczonych uzytkownikow!\n\nPowrot do drzewa release tylko poprzez reinstalację!!!"
+msgid ""
+"WARNING: The probability of issues in 'testing' branch is high. It's NOT "
+"recommended for unexperienced users!\n"
+"\n"
+"Returning to release branch only through reinstallation!!!"
+msgstr ""
+"UWAGA: Prawdopodobieństwo problemów w drzewie 'test' jest duze. Nie jest "
+"rekomendowane dla niedoswiadczonych uzytkownikow!\n"
+"\n"
+"Powrot do drzewa release tylko poprzez reinstalację!!!"
 
 msgid "Are you sure, you want to switch opkg branch to UNSTABLE %s?"
 msgstr "Na pewno przelaczyc drzewo opkg na NIESTABILNE %s?"
-
-msgid "Don't update"
-msgstr "Nie odświerzaj"
-
-msgid "Exclude predefined channels:"
-msgstr "Pomiń zdefiniowane kanały:"
 
 msgid "Update from tuner"
 msgstr "Pobierz z tunera"
@@ -920,11 +916,12 @@ msgstr "Usuwanie niepotrzebnych kanałów"
 msgid "Finished in"
 msgstr "Zakończono w przeciągu"
 
-msgid "\nUse up/down arrows to scroll text. OK closes window"
-msgstr "\nAby przewinąć tekst użyj strzałek góra/dół. Klawisz OK zamyka okno."
-
-msgid "Graterlia channels list synchronization"
-msgstr "Synchronizacja list kanałów dla Graterlia,VTI,Black Hole"
+msgid ""
+"\n"
+"Use up/down arrows to scroll text. OK closes window"
+msgstr ""
+"\n"
+"Aby przewinąć tekst użyj strzałek góra/dół. Klawisz OK zamyka okno."
 
 msgid "Syncing services in lamedb, wait a minute..."
 msgstr "Synchronizowanie serwisów w lamedb, czekaj minutę..."
@@ -943,3 +940,9 @@ msgstr "Włącz repozytorium źródeł"
 
 msgid "Diasble Sources repository"
 msgstr "Wyłącz repozytorium źródeł"
+
+msgid "show picons only"
+msgstr "Picony"
+
+msgid "Show DVB-T modules only"
+msgstr "DVB-T"
