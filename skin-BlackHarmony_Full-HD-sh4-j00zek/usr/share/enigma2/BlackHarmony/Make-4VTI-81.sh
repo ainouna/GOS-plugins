@@ -13,14 +13,13 @@ sed -i 's/\(widget name="menu".*\)font="[a-zA-Z_]*; [0-9]*"/\1/' $SkinName
 sed -i 's/\(widget name="SkinList".*\)font="[a-zA-Z_]*; [0-9]*"/\1/' $SkinName
 }
 
-echo "_(Modyfing )$myDir/skin.xml"
 MakeChanges $myDir/skin.xml
 
 myDirs='allScreens allFonts allColors'
 
 for mySubDir in $myDirs; do
 	for skin in `ls $myDir/$mySubDir`; do
-		echo "_(Modyfing )$skin"
+		echo Modyfing $skin
 		MakeChanges $myDir/$mySubDir/$skin
 	done
 done

@@ -1,0 +1,47 @@
+<skin>
+<screen name="SecondInfoBar" backgroundColor="transparent" flags="wfNoBorder" position="-2,50" size="1920,1080">
+  <ePixmap position="10,0" zPosition="-2" size="1920,699" pixmap="BlackHarmony/bg_design/secondinfobar.png" />
+  <eLabel backgroundColor="black" font="HD_Thin; 27" foregroundColor="green" position="75,55" size="90,40" text="Teraz:" transparent="1" />
+  <widget backgroundColor="black" font="HD_Thin; 27" foregroundColor="white" halign="right" position="165,55" render="Label" size="90,40" source="session.Event_Now" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="black" font="HD_Thin; 27" foregroundColor="white" halign="left" position="266,55" render="Label" size="105,40" source="session.Event_Now" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Format:- %H:%M</convert>
+  </widget>
+  <widget backgroundColor="black" font="HD_Thin; 27" foregroundColor="white" halign="right" position="745,55" render="Label" size="180,40" source="session.Event_Now" transparent="1">
+    <convert type="EventTime">Remaining</convert>
+    <convert type="RemainingToText">InMinutes</convert>
+  </widget>
+  <widget backgroundColor="background" font="HD_Thin; 32" foregroundColor="light_yellow" position="75,123" render="Label" size="850,40" source="session.Event_Now" transparent="0">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="black" halign="left" render="MaggyRunningText" options="movetype=running,startpoint=0,direction=top,steptime=90,repeat=2,startdelay=10000,wrap" font="Roboto_HD; 28" foregroundColor="foreground" position="75,190" size="850,360" source="session.Event_Now" transparent="1">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <eLabel backgroundColor="black" font="HD_Thin; 27" foregroundColor="blue" position="997,55" size="100,40" text="Potem:" transparent="1" />
+  <widget backgroundColor="black" font="HD_Thin; 27" halign="right" position="1097,55" render="Label" size="90,40" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="black" font="HD_Thin; 27" halign="left" position="1197,55" render="Label" size="105,40" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Format:- %H:%M</convert>
+  </widget>
+  <widget backgroundColor="black" font="HD_Thin; 27" halign="right" position="1668,55" render="Label" size="180,40" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">Remaining</convert>
+    <convert type="RemainingToText">InMinutes</convert>
+  </widget>
+  <widget backgroundColor="black" font="HD_Thin; 32" foregroundColor="light_yellow" position="997,123" render="Label" size="850,40" source="session.Event_Next" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="black" halign="left" render="MaggyRunningText" options="movetype=running,startpoint=0,direction=top,steptime=90,repeat=2,startdelay=10000,wrap" font="Roboto_HD; 28" foregroundColor="foreground" position="997,190" size="850,360" source="session.Event_Next" transparent="1">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <widget font="Roboto_HD; 24" backgroundColor="black" halign="center" position="730,612" render="Label" size="450,30" source="session.CurrentService" transparent="1" foregroundColor="light_yellow">
+    <convert type="BoxInfo">Uptime</convert>
+  </widget>
+  
+</screen>
+</skin>

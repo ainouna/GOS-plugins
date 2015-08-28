@@ -1,7 +1,11 @@
 ﻿<skin>
 <screen name="InfoBar" position="center,50" size="1920,1362" title="InfoBar" flags="wfNoBorder" backgroundColor="transparent">
-  <ePixmap position="30,721" zPosition="-2" size="1900,300" pixmap="BlackHarmony/bg_design/infobar.png" />
+<ePixmap position="30,721" zPosition="-2" size="1900,300" pixmap="BlackHarmony/bg_design/infobar.png" />
   <ePixmap position="1410,828" zPosition="10" size="450,1" pixmap="BlackHarmony/gfx/linia_IB.png" />
+<widget source="session.CurrentService" render="Pixmap" position="1017,770" zPosition="3" size="20,20" pixmap="BlackHarmony/icons/update.png" alphatest="blend">
+  <convert type="BlackHarmonyVersionConverter">Blink</convert>
+  <convert type="ConditionalShowHide" />
+</widget>
   <ePixmap position="1182,770" size="57,20" zPosition="1" pixmap="BlackHarmony/icons/ico_dolby_off.png" alphatest="blend" />
   <widget source="session.CurrentService" render="Pixmap" position="1182,770" size="57,20" zPosition="2" pixmap="BlackHarmony/icons/ico_dolby_on.png" alphatest="blend">
     <convert type="ServiceInfo">IsMultichannel</convert>
@@ -136,7 +140,7 @@
     <convert type="ValueRange">3,3</convert>
     <convert type="ConditionalShowHide" />
   </widget>
-  <widget source="session.RecordState" render="Pixmap" position="1045,768" size="25,25" zPosition="2" pixmap="BlackHarmony/icons/ico_rec_on.png" alphatest="blend">
+  <widget source="session.RecordState" render="Pixmap" position="1052,770" size="20,20" zPosition="2" pixmap="BlackHarmony/icons/ico_rec_on.png" alphatest="blend">
     <convert type="ConditionalShowHide">Blink</convert>
   </widget>
   <eLabel text="EX" font="Roboto_HD; 22" position="1781,940" size="40,25" halign="center" backgroundColor="black" foregroundColor="white" transparent="1" valign="center" zPosition="1" />

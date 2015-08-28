@@ -1,6 +1,10 @@
 <skin>
 <screen name="InfoBar" position="0,52" size="1920,1080" title="InfoBar" flags="wfNoBorder" backgroundColor="transparent">
-  <ePixmap position="30,721" zPosition="-2" size="1900,300" pixmap="BlackHarmony/bg_design/infobar_zpicon.png" />
+ <ePixmap position="30,721" zPosition="-2" size="1900,300" pixmap="BlackHarmony/bg_design/infobar_zpicon.png" />
+<widget source="session.CurrentService" render="Pixmap" position="919,750" zPosition="3" size="20,20" pixmap="BlackHarmony/icons/update.png" alphatest="blend">
+    <convert type="BlackHarmonyVersionConverter">Blink</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
   <widget source="session.CurrentService" render="Label" position="983,796" size="60,25" font="Roboto_HD; 22" halign="right" backgroundColor="black" transparent="1">
     <convert type="ServiceInfo">VideoWidth</convert>
   </widget>

@@ -1,6 +1,10 @@
 <skin>
 <screen name="InfoBar" position="250,50" size="1920,1362" title="InfoBar" flags="wfNoBorder" backgroundColor="transparent">
-  <ePixmap position="30,721" zPosition="-2" size="1345,300" pixmap="BlackHarmony/bg_design/infobarbasic.png" />
+<ePixmap position="30,721" zPosition="-2" size="1345,300" pixmap="BlackHarmony/bg_design/infobarbasic.png" />
+<widget source="session.CurrentService" render="Pixmap" position="837,770" zPosition="3" size="20,20" pixmap="BlackHarmony/icons/update.png" alphatest="blend">
+    <convert type="BlackHarmonyVersionConverter">Blink</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
   <ePixmap position="1002,770" size="57,20" zPosition="1" pixmap="BlackHarmony/icons/ico_dolby_off.png" alphatest="blend" />
   <widget source="session.CurrentService" render="Pixmap" position="1002,770" size="57,20" zPosition="2" pixmap="BlackHarmony/icons/ico_dolby_on.png" alphatest="blend">
     <convert type="ServiceInfo">IsMultichannel</convert>
@@ -28,7 +32,7 @@
   <widget source="global.CurrentTime" render="Label" position="1205,760" size="140,48" font="HD_Thin; 42" halign="right" backgroundColor="black" transparent="1" valign="center" foregroundColor="light_yellow">
     <convert type="ClockToText">Default</convert>
   </widget>
-  <widget source="session.RecordState" render="Pixmap" position="865,767" size="25,25" zPosition="2" pixmap="BlackHarmony/icons/ico_rec_on.png" alphatest="blend">
+  <widget source="session.RecordState" render="Pixmap" position="872,770" size="20,20" zPosition="2" pixmap="BlackHarmony/icons/ico_rec_on.png" alphatest="blend">
     <convert type="ConditionalShowHide">Blink</convert>
   </widget>
   <widget source="session.Event_Now" render="Progress" position="311,906" zPosition="1" size="1032,6" pixmap="BlackHarmony/gfx/progress_ib.png" transparent="1">

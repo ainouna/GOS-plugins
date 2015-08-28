@@ -1,7 +1,11 @@
 <skin>
 <screen name="InfoBar" position="center,50" size="1920,1362" title="InfoBar" flags="wfNoBorder" backgroundColor="transparent">
-  <ePixmap position="30,721" zPosition="-2" size="1900,300" pixmap="BlackHarmony/bg_design/infobar_medium.png" />
+              <ePixmap position="30,721" zPosition="-2" size="1900,300" pixmap="BlackHarmony/bg_design/infobar_medium.png" />
   <ePixmap position="1410,813" zPosition="10" size="450,1" pixmap="BlackHarmony/gfx/linia_IB.png" />
+<widget source="session.CurrentService" render="Pixmap" position="1052,750" zPosition="3" size="20,20" pixmap="BlackHarmony/icons/update.png" alphatest="blend">
+    <convert type="BlackHarmonyVersionConverter">Blink</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
   <ePixmap position="1182,750" size="57,20" zPosition="1" pixmap="BlackHarmony/icons/ico_dolby_off.png" alphatest="blend" />
   <widget source="session.CurrentService" render="Pixmap" position="1182,750" size="57,20" zPosition="2" pixmap="BlackHarmony/icons/ico_dolby_on.png" alphatest="blend">
     <convert type="ServiceInfo">IsMultichannel</convert>
@@ -294,6 +298,7 @@
   <widget source="session.CurrentService" render="Label" position="1567,955" size="70,25" font="Roboto_HD; 22" halign="left" backgroundColor="black" transparent="1" foregroundColor="white">
     <convert type="ServiceInfo">VideoHeight</convert>
   </widget>
+
 </screen>
 <screen name="SecondInfoBar" backgroundColor="transparent" flags="wfNoBorder" position="-2,50" size="1920,1080">
   <ePixmap position="10,0" zPosition="-2" size="1920,699" pixmap="BlackHarmony/bg_design/secondinfobar.png" />

@@ -316,11 +316,11 @@ class gExtraInfo(Converter, object):
 				ee = 1 # CCcam
 			if x[0] == "ecm time":
 				ecmtime = x[1].strip()
-				ecmtime = ((" EcmTime: ") + ecmtime)
+				ecmtime = ((" TIME: ") + ecmtime)
 				ee = 1 # CCcam
 			if x[0] == "hops":
 				hops = x[1].strip()
-				hops = ((" Hops: ") + hops)
+				hops = ((" HOPS: ") + hops)
 				ee = 1 # CCcam
 			if x[0] == "decode":
 				address = x[1].strip()
@@ -336,8 +336,8 @@ class gExtraInfo(Converter, object):
 				address = x[1].strip()
 			if x[0] == "network":
 				network = x[1].strip()
-			if x[0] == "reader":
-				reader = " Reader: "+x[1].strip()
+			#if x[0] == "reader":
+				#reader = " Reader: "+x[1].strip()
 
 			#spliting for mgcamd only
 			if ecmtime == "":
@@ -345,11 +345,11 @@ class gExtraInfo(Converter, object):
 				msecIndex = x[0].find("msec")
 				if (msecIndex is not -1):
 					ecmtime = x[0].strip()
-					ecmtime = " EcmTime: "+ ecmtime
+					ecmtime = " TIME: "+ ecmtime
 		file.close()
 
 		if(ee == 1):
-			emuExpertString = ((((((" ") + using)  + " " + address)  + " " + network) + reader + " " + ecmtime + " s ") + hops)
+			emuExpertString = ((((((" ") + using)  + " " + address)  + " " + network) + reader + " " + hops + "  ") + ecmtime + " s ")
 		else: 
 			emuExpertString = (((((((" ") + using) + " " + address)  + " " + network) + reader + " " + ecmtime + " ") + (self.getExpertInfo(boxidString)) + " ") + self.isGParameter(boxidString, caIdString))
 		return emuExpertString

@@ -1,7 +1,11 @@
 <skin>
 <screen name="InfoBar" position="0,52" size="1920,1080" title="InfoBar" flags="wfNoBorder" backgroundColor="transparent">
-  <ePixmap position="30,721" zPosition="-2" size="1900,300" pixmap="BlackHarmony/bg_design/infobar_crash.png" />
+<ePixmap position="30,721" zPosition="-2" size="1900,300" pixmap="BlackHarmony/bg_design/infobar_crash.png" />
   <ePixmap position="1373,810" zPosition="10" size="1,165" pixmap="BlackHarmony/gfx/linia_IB_crash.png" />
+  <widget source="session.CurrentService" render="Pixmap" position="899,770" zPosition="3" size="20,20" pixmap="BlackHarmony/icons/update.png" alphatest="blend">
+    <convert type="BlackHarmonyVersionConverter">Blink</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
   <widget source="session.CurrentService" render="Pixmap" pixmap="BlackHarmony/icons/ico_dvb_c.png" position="969,770" size="44,20" zPosition="3" alphatest="blend">
     <convert type="ServiceInfoEX">IsCable</convert>
     <convert type="ConditionalShowHide" />
@@ -280,10 +284,10 @@
   <widget source="session.CurrentService" render="Label" position="1723,890" size="152,25" font="Roboto_HD; 22" halign="left" backgroundColor="black" transparent="1">
     <convert type="Bitrate_BH">VideoBitrateUnits</convert>
   </widget>
-  <widget source="session.CurrentService" render="Label" position="1477,840" size="60,25" font="Roboto_HD; 22" halign="right" backgroundColor="black" transparent="1">
+  <widget source="session.CurrentService" render="Label" position="1473,840" size="60,25" font="Roboto_HD; 22" halign="right" backgroundColor="black" transparent="1">
     <convert type="ServiceInfo">VideoWidth</convert>
   </widget>
-  <eLabel text="x" position="1537,841" size="15,25" font="Roboto_HD; 17" halign="center" backgroundColor="black" transparent="1" foregroundColor="green" />
+  <eLabel text="x" position="1535,841" size="15,25" font="Roboto_HD; 17" halign="center" backgroundColor="black" transparent="1" foregroundColor="white" />
   <widget source="session.CurrentService" render="Label" position="1552,840" size="60,25" font="Roboto_HD; 22" halign="left" backgroundColor="black" transparent="1">
     <convert type="ServiceInfo">VideoHeight</convert>
   </widget>
@@ -340,8 +344,12 @@
   
   
   <!--##########################################-->
-     <ePixmap position="30,721" zPosition="-2" size="1900,300" pixmap="BlackHarmony/bg_design/infobar_crash.png" />
+    <ePixmap position="30,721" zPosition="-2" size="1900,300" pixmap="BlackHarmony/bg_design/infobar_crash.png" />
   <ePixmap position="1373,810" zPosition="10" size="1,165" pixmap="BlackHarmony/gfx/linia_IB_crash.png" />
+  <widget source="session.CurrentService" render="Pixmap" position="899,770" zPosition="3" size="20,20" pixmap="BlackHarmony/icons/update.png" alphatest="blend">
+    <convert type="BlackHarmonyVersionConverter">Blink</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
   <widget source="session.CurrentService" render="Pixmap" pixmap="BlackHarmony/icons/ico_dvb_c.png" position="969,770" size="44,20" zPosition="3" alphatest="blend">
     <convert type="ServiceInfoEX">IsCable</convert>
     <convert type="ConditionalShowHide" />
@@ -620,12 +628,12 @@
   <widget source="session.CurrentService" render="Label" position="1723,890" size="152,25" font="Roboto_HD; 22" halign="left" backgroundColor="black" transparent="1">
     <convert type="Bitrate_BH">VideoBitrateUnits</convert>
   </widget>
-  <widget source="session.CurrentService" render="Label" position="1477,840" size="60,25" font="Roboto_HD; 22" halign="right" backgroundColor="black" transparent="1">
+  <widget source="session.CurrentService" render="Label" position="1473,840" size="60,25" font="Roboto_HD; 22" halign="right" backgroundColor="black" transparent="1">
     <convert type="ServiceInfo">VideoWidth</convert>
   </widget>
-  <eLabel text="x" position="1537,841" size="15,25" font="Roboto_HD; 17" halign="center" backgroundColor="black" transparent="1" foregroundColor="green" />
+  <eLabel text="x" position="1535,841" size="15,25" font="Roboto_HD; 17" halign="center" backgroundColor="black" transparent="1" foregroundColor="white" />
   <widget source="session.CurrentService" render="Label" position="1552,840" size="60,25" font="Roboto_HD; 22" halign="left" backgroundColor="black" transparent="1">
     <convert type="ServiceInfo">VideoHeight</convert>
   </widget>
-</screen>
+  </screen>
 </skin>

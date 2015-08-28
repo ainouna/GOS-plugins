@@ -28,13 +28,13 @@ class GP2ChNameRoller(VariableText, Renderer):
 				self.a = self.c
 				self.c = self.c * 45    # vermenigvuldig de tekst om pixels te krijgen
 				self.x2 = self.c /5     # deelt de totale aantal pixels van de tekst door 8 +/-(helft van font="16") voor als de tekst niet scrolt
-				self.c = ((self.c /4) + (175)) # deelt de lengte ( pixels) tekst door 4 en tel er 175 bij op.
-				self.x = 136            # start pixel x  van de scrollende tekst
-				self.y = 0              # Y positie van de tekst
-				self.instance.move(ePoint(150, self.y)) # reset de tekst naar x 150 (buiten het display)
+				self.c = ((self.c /4) + (60)) # deelt de lengte ( pixels) tekst door 4 en tel er 175 bij op.
+				self.x = 140            # start pixel x  van de scrollende tekst
+				self.y = 7              # Y positie van de tekst
+				self.instance.move(ePoint(140, self.y)) # reset de tekst naar x 150 (buiten het display)
 				self.moveTimerText = eTimer()
 				self.moveTimerText.timeout.get().append(self.moveTimerTextRun)
-				self.moveTimerText.start(200)
+				self.moveTimerText.start(150)
 				      	
 
 	def moveTimerTextRun(self):
