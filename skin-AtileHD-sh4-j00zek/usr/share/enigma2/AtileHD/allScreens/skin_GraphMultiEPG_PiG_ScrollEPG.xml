@@ -15,10 +15,7 @@
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<widget source="session.VideoPicture" render="Pig" position="935,110" zPosition="3" size="284,160" backgroundColor="picture">
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="Title" render="Label" position="70,47" size="880,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
@@ -51,7 +48,7 @@
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget name="timeline_text" position="0,283" size="1280,22" selectionDisabled="1" transparent="1" zPosition="5" backgroundColor="background" foregroundColor="foreground" />
-		<widget name="list" position="65,310" size="1155,300" itemHeight="60" ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="tile_menu0" EntryBorderColor="foreground" EntryBackgroundColor="tile_menu0" EntryBackgroundColorSelected="selectedBG" EntryNowForegroundColorSelected="foreground" EntryNowBackgroundColor="green" EntryNowBackgroundColorSelected="selectedBG" scrollbarMode="showOnDemand" />
+		<widget name="list" position="65,310" size="1155,300" itemHeight="60" ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="tile_menu0" EntryBorderColor="foreground" EntryBackgroundColor="tile_menu0" EntryBackgroundColorSelected="selectedBG" EntryNowForegroundColorSelected="foreground" EntryNowBackgroundColor="green" EntryNowBackgroundColorSelected="selectedBG" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" />
 		<widget name="timeline_now" position="0,310" zPosition="2" size="5,300" pixmap="AtileHD/extensions/timeline-now.png" alphatest="on" />
 		<eLabel position="170,305" size="1,305" zPosition="2" backgroundColor="white" />
 		<widget name="timeline0" pixmap="AtileHD/extensions/timeline.png" position="0,305" size="1,5" zPosition="0" />

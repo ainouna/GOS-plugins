@@ -50,7 +50,6 @@
 			<convert type="ClockToText">Format:%d.%m.%Y</convert>
 		</widget>
 		<!-- Weather Start -->
-		<widget render="VWeatherUpdater" source="global.CurrentTime" position="0,0" size="1,1" backgroundColor="transparent" foregroundColor="transparent" valign="center" halign="center" font="Regular; 1" zPosition="10" />
 		<widget source="session.CurrentService" render="Label" position="0,23" size="60,35" font="Meteo; 35" zPosition="10" halign="center" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" noWrap="1">
 			<convert type="VWeather">currentWeatherCode</convert>
 		</widget>

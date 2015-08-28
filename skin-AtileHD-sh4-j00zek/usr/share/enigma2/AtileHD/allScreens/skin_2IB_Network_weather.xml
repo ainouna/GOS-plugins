@@ -276,7 +276,6 @@
 			<convert type="VNetSpeedInfo">TMWT</convert>
 		</widget>
 		<!-- WLanInfo End -->
-		<widget render="VWeatherUpdater" source="global.CurrentTime" position="33,45" size="10,60" backgroundColor="transparent" foregroundColor="transparent" valign="center" halign="center" font="Regular; 1" zPosition="10" />
 		<widget source="session.CurrentService" render="Label" position="780,73" size="60,35" font="Meteo; 35" zPosition="10" halign="center" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" noWrap="1">
 			<convert type="VWeather">currentWeatherCode</convert>
 		</widget>

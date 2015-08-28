@@ -15,7 +15,7 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<eLabel text="Enhanced Movie Center" position="70,47" size="950,43" font="Regular;35" backgroundColor="backtop" transparent="1" foregroundColor="titletext" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">

@@ -38,9 +38,6 @@
       <convert type="VWeather">forecastTodayTempMin</convert>
     </widget>
     <!-- Weather End -->
-    <widget source="session.CurrentService" render="Picon" position="144,555" zPosition="4" size="220,132" transparent="1" alphatest="blend">
-      <convert type="ServiceName">Reference</convert>
-    </widget>
     <widget source="session.CurrentService" render="Label" position="154,563" size="206,111" font="Regular;30" valign="center" halign="center" backgroundColor="backtop" transparent="1" foregroundColor="foreground">
       <convert type="AlternateServiceName">ConditionalName</convert>
     </widget>
@@ -48,11 +45,14 @@
     <widget source="session.RecordState" render="FixedLabel" text="REC" position="955,556" size="60,60" zPosition="2" font="Regular; 24" valign="center" halign="center" foregroundColor="foreground" backgroundColor="background" transparent="1">
       <convert type="ConditionalShowHide" />
     </widget>
-    <!--widget source="HbbtvApplication" render="Pixmap" pixmap="AtileHD/icons/ico_hbbtv_on.png" position="890,555" size="60,60" zPosition="1" alphatest="blend">
+    <widget source="HbbtvApplication" render="Pixmap" pixmap="AtileHD/icons/ico_hbbtv_on.png" position="890,555" size="60,60" zPosition="1" alphatest="blend">
       <convert type="ConditionalShowHide" />
-    </widget-->
+    </widget>
     <widget source="session.Event_Now" render="Progress" foregroundColor="slider_col_1" position="370,555" size="515,60" zPosition="1" transparent="1">
       <convert type="EventTime">Progress</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Picon" position="144,555" zPosition="4" size="220,132" transparent="1" alphatest="blend">
+      <convert type="ServiceName">Reference</convert>
     </widget>
     <widget source="session.Event_Now" render="Label" position="375,555" size="405,60" font="Regular; 25" halign="left" valign="top" backgroundColor="background" transparent="1" foregroundColor="foreground" zPosition="2">
       <convert type="EventName">Name</convert>

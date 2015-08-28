@@ -306,10 +306,10 @@
 			<convert type="EventName">Name</convert>
 		</widget>
 		<!-- Running Text Start -->
-		<widget source="session.Event_Now" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=90,repeat=2,always=0,startdelay=5000,wrap" position="195,120" size="440,352" font="Regular; 22" zPosition="1" backgroundColor="tile_epg2" transparent="1">
+		<widget source="session.Event_Now" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=90,repeat=2,always=0,startdelay=5000,wrap" position="195,120" size="440,352" font="Regular; 22" zPosition="1" backgroundColor="tile_epg2" transparent="1">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
-		<widget source="session.Event_Next" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=90,repeat=2,always=0,startdelay=5000,wrap" position="780,185" size="440,295" font="Regular; 22" zPosition="1" backgroundColor="tile_epg2" transparent="1">
+		<widget source="session.Event_Next" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=90,repeat=2,always=0,startdelay=5000,wrap" position="780,185" size="440,295" font="Regular; 22" zPosition="1" backgroundColor="tile_epg2" transparent="1">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<!-- Running Text End -->

@@ -14,7 +14,7 @@
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<eLabel text="Cool TV Guide" position="70,47" size="950,43" font="Regular;35" backgroundColor="backtop" foregroundColor="titletext" transparent="1" />
 		<widget name="date" position="1040,103" size="180,30" font="Regular; 20" halign="right" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="Service" render="CoolPico" position="70,585" zPosition="1" size="50,30" alphatest="on" />
@@ -66,7 +66,7 @@
 			<convert type="EventTime">Progress</convert>
 		</widget>
 		<eLabel text="Cool Multi Guide" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="Service" render="CoolPico" position="70,105" zPosition="1" size="50,30" alphatest="on" />
@@ -113,7 +113,7 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<eLabel text="Cool Tiny Guide" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="Service" render="CoolPico" position="70,585" zPosition="1" size="50,30" alphatest="on" />
@@ -166,7 +166,7 @@
 			<convert type="EventTime">Progress</convert>
 		</widget>
 		<eLabel text="Cool Nice Guide" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="Service" render="CoolPico" position="70,105" zPosition="1" size="50,30" alphatest="on" />
@@ -219,7 +219,7 @@
 			<convert type="EventTime">Progress</convert>
 		</widget>
 		<eLabel text="Cool Info Guide" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="Service" render="CoolPico" position="70,250" zPosition="1" size="50,30" alphatest="on" />
@@ -240,7 +240,7 @@
 		</widget>
 		<widget name="CoolSimilar" position="485,105" size="420,190" font="Regular; 20" foregroundColor="titletext" backgroundColor="background" transparent="1" />
 		<widget name="CoolShort" position="70,160" size="400,75" font="Regular; 22" foregroundColor="foreground" backgroundColor="background" transparent="1" />
-		<widget name="CoolEvent" position="71,295" size="1150,120" itemHeight="30" zPosition="5" CoolFont="Regular;22" CoolDayPos="0" CoolTimePos="60" CoolEventPos="250" CoolDurationPos="1010" CoolDaySize="60" CoolTimeSize="190" CoolDurationSize="140" CoolDayColor="titletext" CoolTimeColor="white" CoolEventColor="white" CoolDurationColor="titletext" CoolTunerCol="titletext" CoolRecPreColor="red" CoolRecColor="red" CoolBackColorSel="selectedBG" foregroundColor="foreground" transparent="1" />
+		<widget name="CoolEvent" position="71,295" size="1150,120" itemHeight="30" zPosition="5" CoolFont="Regular;22" CoolDayPos="0" CoolTimePos="60" CoolEventPos="250" CoolDurationPos="1010" CoolDaySize="60" CoolTimeSize="190" CoolDurationSize="140" CoolDayColor="titletext" CoolTimeColor="white" CoolEventColor="white" CoolDurationColor="titletext" CoolTunerCol="titletext" CoolRecColor="red" CoolBackColorSel="selectedBG" foregroundColor="foreground" transparent="1" />
 		<widget name="CoolDescription" position="70,430" size="1150,180" font="Regular; 22" foregroundColor="foreground" backgroundColor="background" transparent="1" />
 		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
 		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
@@ -261,7 +261,7 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<eLabel text="Cool Search" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
@@ -274,7 +274,7 @@
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget name="date" position="670,105" size="220,30" font="Regular; 24" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
-		<widget name="list" position="70,300" size="1150,310" itemHeight="28" zPosition="3" CoolFont="Regular;22" CoolServiceFont="Regular;22" CoolEventFont="Regular;22" CoolDayPos="0" CoolDayHPos="0" CoolDatePos="70" CoolDateHPos="2" CoolTimePos="150" CoolTimeHPos="2" CoolServicePos="230" CoolServiceHPos="2" CoolEventPos="520" CoolEventHPos="2" CoolDaySize="50" CoolDateSize="70" CoolTimeSize="70" CoolServiceSize="280" CoolEventSize="700" CoolServiceColor="titletext" CoolEventColor="white" CoolDateColor="white" CoolTimeColor="white" CoolDayColor="titletext" CoolRecPreColor="red" CoolRecColor="red" foregroundColor="foreground" backgroundColor="dark" scrollbarMode="showOnDemand" transparent="1" />
+		<widget name="list" position="70,300" size="1150,310" itemHeight="28" zPosition="3" CoolFont="Regular;22" CoolServiceFont="Regular;22" CoolEventFont="Regular;22" CoolDayPos="0" CoolDayHPos="0" CoolDatePos="70" CoolDateHPos="2" CoolTimePos="150" CoolTimeHPos="2" CoolServicePos="230" CoolServiceHPos="2" CoolEventPos="520" CoolEventHPos="2" CoolDaySize="50" CoolDateSize="70" CoolTimeSize="70" CoolServiceSize="280" CoolEventSize="700" CoolServiceColor="titletext" CoolEventColor="white" CoolDateColor="white" CoolTimeColor="white" CoolDayColor="titletext" CoolRecColor="red" foregroundColor="foreground" backgroundColor="dark" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" />
 		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
 		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
 		<widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
@@ -297,7 +297,7 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<eLabel text="Cool Single Guide" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
@@ -321,7 +321,7 @@
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget name="date" position="1045,295" size="180,30" font="Regular; 24" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
-		<widget name="list" position="65,110" size="700,505" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolEventFont="Regular;22" CoolDayPos="0" CoolDaySize="50" CoolTimePos="70" CoolTimeSize="70" CoolEventPos="150" CoolDayColor="white" CoolTimeColor="white" CoolEventColor="white" CoolBackColorSel="selectedBG" CoolRecPreColor="red" CoolRecColor="red" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="list" position="65,110" size="700,505" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolEventFont="Regular;22" CoolDayPos="0" CoolDaySize="50" CoolTimePos="70" CoolTimeSize="70" CoolEventPos="150" CoolDayColor="white" CoolTimeColor="white" CoolEventColor="white" CoolBackColorSel="selectedBG" CoolRecColor="red" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" />
 		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
 		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
 		<widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
@@ -340,7 +340,7 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<eLabel text="Cool Single Guide 2" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="Event" render="Label" position="70,110" size="1150,30" font="Regular;24" foregroundColor="labeltext" backgroundColor="background" halign="left" transparent="1">
@@ -356,7 +356,7 @@
 			<convert type="EventTime">Remaining</convert>
 			<convert type="RemainingToText">InMinutes</convert>
 		</widget>
-		<widget name="list" position="70,360" size="1150,250" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolEventFont="Regular;22" CoolDayPos="0" CoolDaySize="50" CoolTimePos="70" CoolTimeSize="70" CoolEventPos="150" CoolEventSize="1040" CoolDayColor="white" CoolTimeColor="white" CoolEventColor="white" CoolRecPreColor="red" CoolRecColor="red" CoolBackColorSel="selectedBG" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="list" position="70,360" size="1150,250" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolEventFont="Regular;22" CoolDayPos="0" CoolDaySize="50" CoolTimePos="70" CoolTimeSize="70" CoolEventPos="150" CoolEventSize="1040" CoolDayColor="white" CoolTimeColor="white" CoolEventColor="white" CoolRecColor="red" CoolBackColorSel="selectedBG" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" />
 		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
 		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
 		<widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
@@ -380,10 +380,10 @@
 		<widget source="session.VideoPicture" render="Pig" position="760,110" zPosition="3" size="445,235" backgroundColor="picture">
 		</widget>
 		<eLabel text="Cool Single Guide 3" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
-		<widget name="list" position="70,center" size="390,490" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolEventFont="Regular;22" CoolDayPos="0" CoolDaySize="50" CoolTimePos="70" CoolTimeSize="70" CoolEventPos="150" CoolEventSize="1040" CoolDayColor="white" CoolTimeColor="white" CoolEventColor="white" CoolRecPreColor="red" CoolRecColor="red" CoolBackColorSel="selectedBG" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="list" position="70,center" size="390,490" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolEventFont="Regular;22" CoolDayPos="0" CoolDaySize="50" CoolTimePos="70" CoolTimeSize="70" CoolEventPos="150" CoolEventSize="1040" CoolDayColor="white" CoolTimeColor="white" CoolEventColor="white" CoolRecColor="red" CoolBackColorSel="selectedBG" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" />
 		<widget source="Event" render="Label" position="520,210" size="80,30" font="Regular;24" foregroundColor="foreground" backgroundColor="tile_menu4" halign="right" transparent="1">
 			<convert type="EventTime">StartTime</convert>
 			<convert type="ClockToText" />
@@ -424,7 +424,7 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<eLabel text="Cool Easy Guide" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
@@ -448,7 +448,7 @@
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget name="date" position="690,105" size="210,30" font="Regular; 24" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
-		<widget name="list" position="70,300" size="1150,310" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolServiceFont="Regular;22" CoolEventFont="Regular;22" CoolServiceSize="230" CoolEventSize="550" CoolServicePos="5" CoolServiceHPos="2" CoolEventPos="410" CoolEventHPos="2" CoolBarPos="230" CoolBarHPos="5" CoolBarSize="150" CoolBarHigh="18" CoolTimePos="230" CoolTimeHPos="2" CoolTimeSize="170" CoolDurationPos="990" CoolDurationSize="150" CoolDurationColor="blue" CoolServiceColor="titletext" CoolBarColor="grey" CoolEventColor="white" CoolCurrentCol="labeltext" CoolBackColorSel="selectedBG" CoolRecPreColor="red" CoolRecColor="red" CoolTunerCol="#606060" foregroundColor="foreground" backgroundColor="dark" transparent="1" />
+		<widget name="list" position="70,300" size="1150,310" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolServiceFont="Regular;22" CoolEventFont="Regular;22" CoolServiceSize="230" CoolEventSize="550" CoolServicePos="5" CoolServiceHPos="2" CoolEventPos="410" CoolEventHPos="2" CoolBarPos="230" CoolBarHPos="5" CoolBarSize="150" CoolBarHigh="18" CoolTimePos="230" CoolTimeHPos="2" CoolTimeSize="170" CoolDurationPos="990" CoolDurationSize="150" CoolDurationColor="blue" CoolServiceColor="titletext" CoolBarColor="grey" CoolEventColor="white" CoolCurrentCol="labeltext" CoolBackColorSel="selectedBG" CoolRecColor="red" CoolTunerCol="#606060" foregroundColor="foreground" backgroundColor="dark" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" />
 		<widget source="Title" render="Label" position="500,55" size="300,30" zPosition="3" font="Regular;20" foregroundColor="labeltext" backgroundColor="background" halign="center" transparent="1" />
 		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
 		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
@@ -468,11 +468,11 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<eLabel text="Cool Easy Guide 2" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget name="date" position="1000,430" size="220,30" font="Regular; 24" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
-		<widget name="list" position="70,105" size="1150,310" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolServiceFont="Regular;22" CoolEventFont="Regular;22" CoolServiceSize="230" CoolEventSize="550" CoolServicePos="5" CoolServiceHPos="2" CoolEventPos="410" CoolEventHPos="2" CoolBarPos="230" CoolBarHPos="5" CoolBarSize="150" CoolBarHigh="18" CoolTimePos="230" CoolTimeHPos="2" CoolTimeSize="170" CoolDurationPos="990" CoolDurationSize="150" CoolDurationColor="blue" CoolServiceColor="titletext" CoolBarColor="grey" CoolEventColor="white" CoolCurrentCol="labeltext" CoolBackColorSel="selectedBG" CoolRecPreColor="red" CoolRecColor="red" CoolTunerCol="#606060" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="list" position="70,105" size="1150,310" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolServiceFont="Regular;22" CoolEventFont="Regular;22" CoolServiceSize="230" CoolEventSize="550" CoolServicePos="5" CoolServiceHPos="2" CoolEventPos="410" CoolEventHPos="2" CoolBarPos="230" CoolBarHPos="5" CoolBarSize="150" CoolBarHigh="18" CoolTimePos="230" CoolTimeHPos="2" CoolTimeSize="170" CoolDurationPos="990" CoolDurationSize="150" CoolDurationColor="blue" CoolServiceColor="titletext" CoolBarColor="grey" CoolEventColor="white" CoolCurrentCol="labeltext" CoolBackColorSel="selectedBG" CoolRecColor="red" CoolTunerCol="#606060" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" />
 		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,460" size="1150,140" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
@@ -507,11 +507,11 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<eLabel text="Cool Easy Guide 3" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget name="date" position="1000,580" size="220,30" font="Regular; 24" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
-		<widget name="list" position="70,105" size="1150,390" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolServiceFont="Regular;22" CoolEventFont="Regular;22" CoolServiceSize="230" CoolEventSize="550" CoolServicePos="5" CoolServiceHPos="2" CoolEventPos="410" CoolEventHPos="2" CoolBarPos="230" CoolBarHPos="5" CoolBarSize="150" CoolBarHigh="18" CoolTimePos="230" CoolTimeHPos="2" CoolTimeSize="170" CoolDurationPos="990" CoolDurationSize="150" CoolDurationColor="blue" CoolServiceColor="titletext" CoolBarColor="grey" CoolEventColor="white" CoolCurrentCol="labeltext" CoolBackColorSel="selectedBG" CoolRecPreColor="red" CoolRecColor="red" CoolTunerCol="#606060" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="list" position="70,105" size="1150,390" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolServiceFont="Regular;22" CoolEventFont="Regular;22" CoolServiceSize="230" CoolEventSize="550" CoolServicePos="5" CoolServiceHPos="2" CoolEventPos="410" CoolEventHPos="2" CoolBarPos="230" CoolBarHPos="5" CoolBarSize="150" CoolBarHigh="18" CoolTimePos="230" CoolTimeHPos="2" CoolTimeSize="170" CoolDurationPos="990" CoolDurationSize="150" CoolDurationColor="blue" CoolServiceColor="titletext" CoolBarColor="grey" CoolEventColor="white" CoolCurrentCol="labeltext" CoolBackColorSel="selectedBG" CoolRecColor="red" CoolTunerCol="#606060" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" />
 		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,510" size="1150,70" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
@@ -556,7 +556,7 @@
 			<convert type="EventTime">Progress</convert>
 		</widget>
 		<eLabel text="Cool Channel Guide" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget name="date" position="715,315" size="220,30" font="Regular; 24" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1" />
@@ -576,7 +576,7 @@
 		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="600,403" size="620,205" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
-		<widget name="list" position="65,111" size="520,500" itemHeight="60" zPosition="5" CoolPico="35" CoolFont="Regular;22" CoolServiceFont="Regular;22" CoolEventFont="Regular;18" CoolServiceSize="305" CoolEventSize="478" CoolServicePos="0" CoolServiceHPos="4" CoolEventPos="0" CoolEventHPos="32" CoolBarPos="320" CoolBarHPos="14" CoolBarSize="100" CoolBarHigh="10" CoolTimePos="350" CoolTimeHPos="9" CoolTimeSize="150" CoolDurationPos="370" CoolDurationSize="100" CoolDurationColor="blue" CoolServiceColor="white" CoolBarColor="white" CoolEventColor="white" CoolBackColorSel="selectedBG" CoolRecPreColor="yellow" CoolRecColor="red" CoolTunerCol="#606060" CoolCurrentCol="labeltext" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="list" position="65,111" size="520,500" itemHeight="60" zPosition="5" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" CoolPico="35" CoolFont="Regular;22" CoolServiceFont="Regular;22" CoolEventFont="Regular;18" CoolServiceSize="305" CoolEventSize="478" CoolServicePos="0" CoolServiceHPos="4" CoolEventPos="0" CoolEventHPos="32" CoolBarPos="320" CoolBarHPos="14" CoolBarSize="100" CoolBarHigh="10" CoolTimePos="350" CoolTimeHPos="9" CoolTimeSize="150" CoolDurationPos="370" CoolDurationSize="100" CoolDurationColor="blue" CoolServiceColor="white" CoolBarColor="white" CoolEventColor="white" CoolBackColorSel="selectedBG" CoolRecColor="red" CoolTunerCol="#606060" CoolCurrentCol="labeltext" foregroundColor="foreground" backgroundColor="background" transparent="1" />
 		<widget source="Service" render="CoolNextEvent" position="600,105" size="305,180" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1">
 		</widget>
 		<widget source="Title" render="Label" position="500,55" size="300,30" zPosition="3" font="Regular;20" foregroundColor="labeltext" backgroundColor="background" halign="center" transparent="1" />
@@ -600,7 +600,7 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<eLabel text="Cool Channel Guide 2" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="65,110" zPosition="3" size="284,160" backgroundColor="picture">
@@ -619,7 +619,7 @@
 		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="60,360" size="485,250" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
-		<widget name="list" position="555,105" size="670,500" itemHeight="28" zPosition="25" CoolPico="28" CoolPicoHPos="1" CoolFont="Regular;22" CoolServiceFont="Regular;21" CoolEventFont="Regular;18" CoolServicePos="1" CoolServiceSize="180" CoolServiceHPos="1" CoolEventPos="190" CoolEventSize="320" CoolEventHPos="3" CoolMarkerPicPos="2" CoolMarkerPicHPos="2" CoolMarkerPos="140" CoolMarkerHPos="1" CoolBar="0" CoolTime="1" CoolTimePos="540" CoolTimeHPos="3" CoolTimeSize="170" CoolDurationPos="630" CoolDurationSize="50" CoolDurationColor="blue" CoolServiceColor="white" CoolBarColor="blue" CoolEventColor="white" CoolBackColorSel="selectedBG" CoolRecPreColor="red" CoolRecColor="red" CoolTunerCol="#606060" CoolCurrentCol="labeltext" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="list" position="555,105" size="670,500" itemHeight="28" zPosition="25" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" CoolPico="28" CoolPicoHPos="1" CoolFont="Regular;22" CoolServiceFont="Regular;21" CoolEventFont="Regular;18" CoolServicePos="1" CoolServiceSize="180" CoolServiceHPos="1" CoolEventPos="190" CoolEventSize="305" CoolEventHPos="3" CoolMarkerPicPos="2" CoolMarkerPicHPos="2" CoolMarkerPos="140" CoolMarkerHPos="1" CoolBar="0" CoolTime="1" CoolTimePos="540" CoolTimeHPos="3" CoolTimeSize="170" CoolDurationPos="610" CoolDurationSize="50" CoolDurationColor="blue" CoolServiceColor="white" CoolBarColor="blue" CoolEventColor="white" CoolBackColorSel="selectedBG" CoolRecColor="red" CoolTunerCol="#606060" CoolCurrentCol="labeltext" foregroundColor="foreground" backgroundColor="background" transparent="1" />
 		<widget source="Service" render="CoolNextEvent" position="370,105" size="170,170" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1">
 		</widget>
 		<widget source="Title" render="Label" position="500,55" size="300,30" zPosition="3" font="Regular;20" foregroundColor="labeltext" backgroundColor="background" halign="center" transparent="1" />
@@ -642,7 +642,7 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<eLabel text="Cool Channel Guide 3" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="Event" render="Label" position="680,505" size="80,30" font="Regular;24" foregroundColor="foreground" backgroundColor="background" halign="right" transparent="1">
@@ -663,7 +663,7 @@
 		<eLabel text="Next Event:" position="70,105" size="140,25" font="Regular;22" foregroundColor="titletext" backgroundColor="background" transparent="1" />
 		<widget source="Service" render="CoolNextEvent" position="210,105" size="1000,80" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1">
 		</widget>
-		<widget name="list" position="70,205" size="1150,275" itemHeight="28" zPosition="25" CoolPico="28" CoolPicoHPos="1" CoolFont="Regular;22" CoolServiceFont="Regular;21" CoolEventFont="Regular;18" CoolServiceSize="320" CoolEventSize="570" CoolServicePos="1" CoolServiceHPos="1" CoolEventPos="330" CoolEventHPos="3" CoolMarkerPicPos="2" CoolMarkerPicHPos="1" CoolMarkerHPos="1" CoolMarkerPos="350" CoolBarPos="900" CoolBarHPos="8" CoolBarSize="150" CoolBarHigh="10" CoolTimePos="900" CoolTimeHPos="3" CoolTimeSize="150" CoolDurationPos="1050" CoolDurationSize="100" CoolDurationColor="blue" CoolServiceColor="white" CoolBarColor="blue" CoolEventColor="white" CoolBackColorSel="selectedBG" CoolRecPreColor="red" CoolRecColor="red" CoolTunerCol="#606060" CoolCurrentCol="labeltext" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="list" position="70,205" size="1150,275" itemHeight="28" zPosition="25" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" CoolPico="28" CoolPicoHPos="1" CoolFont="Regular;22" CoolServiceFont="Regular;21" CoolEventFont="Regular;18" CoolServiceSize="320" CoolEventSize="570" CoolServicePos="1" CoolServiceHPos="1" CoolEventPos="330" CoolEventHPos="3" CoolMarkerPicPos="2" CoolMarkerPicHPos="1" CoolMarkerHPos="1" CoolMarkerPos="350" CoolBarPos="900" CoolBarHPos="8" CoolBarSize="150" CoolBarHigh="10" CoolTimePos="900" CoolTimeHPos="3" CoolTimeSize="150" CoolDurationPos="1030" CoolDurationSize="100" CoolDurationColor="blue" CoolServiceColor="white" CoolBarColor="blue" CoolEventColor="white" CoolBackColorSel="selectedBG" CoolRecColor="red" CoolTunerCol="#606060" CoolCurrentCol="labeltext" foregroundColor="foreground" backgroundColor="background" transparent="1" />
 		<widget source="Title" render="Label" position="500,55" size="300,30" zPosition="3" font="Regular;20" foregroundColor="labeltext" backgroundColor="background" halign="center" transparent="1" />
 		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
 		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
@@ -688,7 +688,7 @@
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
 		</widget>
 		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget name="CoolText1" position="70,500" size="620,26" font="Regular;20" foregroundColor="labeltext" backgroundColor="background" shadowOffset="-2,-2" halign="center" transparent="1" />

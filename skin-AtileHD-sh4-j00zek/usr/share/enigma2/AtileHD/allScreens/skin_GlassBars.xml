@@ -9,10 +9,10 @@
 		<widget source="global.CurrentTime" render="Label" position="1050,46" size="180,60" font="Regular; 50" valign="center"  halign="right" backgroundColor="background" transparent="1" foregroundColor="foreground">
 			<convert type="ClockToText">Default</convert>
 		</widget>
-		<!--widget source="session.CurrentService" render="Picon" position="50,10" zPosition="4" size="220,132" transparent="1" alphatest="blend">
+		<widget source="session.CurrentService" render="Picon" position="50,10" zPosition="4" size="220,132" transparent="1" alphatest="blend">
 			<convert type="MovieBarInfo">Reference</convert>
-		</widget-->
-		<!--widget source="session.CurrentService" render="Cover" position="90,405" zPosition="4" size="135,190" transparent="1" alphatest="blend" /-->
+		</widget>
+		<widget source="session.CurrentService" render="Cover" position="90,405" zPosition="4" size="135,190" transparent="1" alphatest="blend" />
 		<widget source="session.CurrentService" render="Label" position="290,46" size="760,60" font="Regular;50" halign="left" valign="center" noWrap="1" backgroundColor="backtop" transparent="1" foregroundColor="foreground">
 			<convert type="ServiceName">Name</convert>
 		</widget>
@@ -166,9 +166,9 @@
 			<convert type="ValueRange">721,1980</convert>
 			<convert type="ConditionalShowHide" />
 		</widget>
-		<!--widget source="HbbtvApplication" render="Pixmap" pixmap="AtileHD/icons/ico_hbbtv_on.png" position="995,575" size="60,60" zPosition="1" alphatest="blend">
+		<widget source="HbbtvApplication" render="Pixmap" pixmap="AtileHD/icons/ico_hbbtv_on.png" position="995,575" size="60,60" zPosition="1" alphatest="blend">
 			<convert type="ConditionalShowHide" />
-		</widget-->
+		</widget>
 		<widget source="session.CurrentService" render="AudioIcon" path="icons/audio" position="1060,585" size="60,60" zPosition="2" alphatest="blend">
 			<convert type="VAudioInfo">AudioIcon</convert>
 		</widget>

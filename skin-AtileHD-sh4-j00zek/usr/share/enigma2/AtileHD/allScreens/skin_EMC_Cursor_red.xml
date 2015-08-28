@@ -89,14 +89,14 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<eLabel text="Enhanced Movie Center" position="70,47" size="950,43" font="Regular;35" backgroundColor="backtop" transparent="1" foregroundColor="titletext" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
 		</widget>
 		<widget source="Title" render="Label" position="470,60" size="550,30" font="Regular; 24" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
 		<widget name="Cover" position="785,100" size="135,190" zPosition="4" backgroundColor="background" alphatest="blend" transparent="1" />
-		<widget name="list" position="70,115" size="700,480" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="AtileHD/extensions/cursor_red.png" CoolFont="Regular;20" CoolSelectFont="Regular;20" CoolDateFont="Regular;18" CoolMoviePos="35" CoolMovieSize="550" CoolFolderSize="550" CoolTitleColor="0" CoolDatePos="700" CoolDateWidth="170" CoolDateColor="0" CoolHighlightColor="0" CoolProgressPos="1000" CoolBarPos="590" CoolBarHPos="8" CoolBarSize="55,10" CoolBarSizeSa="110,16" DefaultColor="black" UnwatchedColor="white" WatchingColor="blue" FinishedColor="green" foregroundColorSelected="selectedFG" RecordingColor="red" BackColorSel="selectedBG" transparent="1" />
+		<widget name="list" position="70,115" size="700,480" itemHeight="30" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" selectionPixmap="AtileHD/extensions/cursor_red.png" CoolFont="Regular;20" CoolSelectFont="Regular;20" CoolDateFont="Regular;18" CoolMoviePos="35" CoolMovieSize="550" CoolFolderSize="550" CoolTitleColor="0" CoolDatePos="700" CoolDateWidth="170" CoolDateColor="0" CoolHighlightColor="0" CoolProgressPos="1000" CoolBarPos="590" CoolBarHPos="8" CoolBarSize="55,10" CoolBarSizeSa="110,16" DefaultColor="black" UnwatchedColor="white" WatchingColor="blue" FinishedColor="green" foregroundColorSelected="selectedFG" RecordingColor="red" BackColorSel="selectedBG" transparent="1" />
 		<widget name="wait" position="470,30" size="550,30" zPosition="1" font="Regular;24" foregroundColor="labeltext" backgroundColor="backtop" halign="center" valign="center" transparent="1" />
 		<widget source="Service" render="Label" position="1085,305" size="70,24" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1">
 			<convert type="EMCServiceTime">StartTime</convert>
@@ -150,7 +150,7 @@
 		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
@@ -159,7 +159,7 @@
 		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
 		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
 		<widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<widget name="config" position="70,115" size="700,400" scrollbarMode="showOnDemand" transparent="1" />
+		<widget name="config" position="70,115" size="700,400" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" />
 		<widget source="help" render="Label" position="70,520" size="700,90" font="Regular;20" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
 	</screen>
 	<!-- EMC Cover Scan -->
@@ -177,7 +177,7 @@
 		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
@@ -185,7 +185,7 @@
 		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
 		<widget name="info" position="820,446" size="360,24" zPosition="0" font="Regular; 20" halign="center" valign="center" backgroundColor="background" transparent="1" foregroundColor="labeltext" />
 		<widget name="m_info" position="70,115" size="700,30" zPosition="0" font="Regular;24" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget name="menulist" position="70,155" size="700,400" itemHeight="28" scrollbarMode="showOnDemand" transparent="1" enableWrapAround="on" />
+		<widget name="menulist" position="70,155" size="700,400" itemHeight="28" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" enableWrapAround="on" />
 		<widget name="poster" position="785,99" size="135,190" zPosition="4" alphatest="on" />
 		<widget name="download" position="820,400" size="360,24" zPosition="0" font="Regular;21" halign="center" valign="center" transparent="1" foregroundColor="foreground" backgroundColor="background" />
 		<widget name="exist" position="820,320" size="360,24" zPosition="0" font="Regular;21" halign="center" valign="center" transparent="1" foregroundColor="foreground" backgroundColor="background" />
@@ -214,13 +214,13 @@
 		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
 		</widget>
 		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget name="config" position="70,115" size="700,480" scrollbarMode="showOnDemand" transparent="1" />
+		<widget name="config" position="70,115" size="700,480" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" />
 		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
 		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
 	</screen>
@@ -239,14 +239,14 @@
 		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
 		</widget>
 		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
 		<widget name="poster" zPosition="2" position="785,100" size="135,190" alphatest="on" />
-		<widget name="menulist" position="70,115" size="700,480" itemHeight="30" scrollbarMode="showOnDemand" transparent="1" enableWrapAround="on" />
+		<widget name="menulist" position="70,115" size="700,480" itemHeight="30" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" enableWrapAround="on" />
 		<widget name="info" position="785,295" size="445,320" zPosition="0" font="Regular; 20" halign="center" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" />
 	</screen>
 </skin>

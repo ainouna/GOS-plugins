@@ -26,7 +26,7 @@
 		<widget name="timeline4" position="0,150" zPosition="1" size="0,0" pixmap="AtileHD/extensions/timeline.png" />
 		<widget name="timeline5" position="0,150" zPosition="1" size="0,0" pixmap="AtileHD/extensions/timeline.png" />
 		<widget name="timeline_now" position="0,150" zPosition="2" size="19,360" pixmap="AtileHD/extensions/timelineCooltv.png" alphatest="on" />
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,510" size="1150,70" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,510" size="1150,70" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget source="Event" render="Label" position="120,585" size="100,30" font="Regular; 24" foregroundColor="foreground" backgroundColor="background" halign="right" transparent="1">
@@ -59,8 +59,6 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
-			<convert type="ConfigEntryTest">config.usage.use_pig,True,CheckSourceBoolean</convert>
-			<convert type="ConditionalShowHide" />
 		</widget>
 		<widget source="session.Event_Now" render="Progress" position="925,115" size="10,160" zPosition="1" transparent="1" orientation="orBottomToTop">
 			<convert type="EventTime">Progress</convert>
@@ -81,7 +79,7 @@
 		<widget source="Event" render="Label" position="330,105" size="560,30" font="Regular; 24" foregroundColor="labeltext" backgroundColor="background" transparent="1" halign="left">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,140" size="820,140" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,140" size="820,140" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget name="date" position="1050,280" size="180,30" font="Regular; 20" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
@@ -119,8 +117,6 @@
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
-			<convert type="ConfigEntryTest">config.usage.use_pig,True,CheckSourceBoolean</convert>
-			<convert type="ConditionalShowHide" />
 		</widget>
 		<widget source="Service" render="CoolPico" position="795,142" zPosition="1" size="100,60" alphatest="on" />
 		<widget source="Event" render="Label" position="800,205" size="100,30" font="Regular; 20" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1">
@@ -138,7 +134,7 @@
 		<widget source="Event" render="Label" position="800,330" size="430,30" font="Regular; 22" foregroundColor="labeltext" backgroundColor="background" transparent="1" halign="left">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="800,360" size="430,250" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="800,360" size="430,250" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget name="date" position="1050,295" size="180,30" font="Regular; 24" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
@@ -166,7 +162,7 @@
 		<widget source="Event" render="Label" position="70,110" size="1000,30" font="Regular;24" foregroundColor="labeltext" backgroundColor="background" halign="left" transparent="1">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,140" size="100,165" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,140" size="100,165" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget source="Service" render="Label" position="70,315" size="1000,30" zPosition="3" font="Regular; 24" halign="left" foregroundColor="labeltext" backgroundColor="background" transparent="1">
@@ -198,8 +194,6 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<widget source="session.VideoPicture" render="Pig" position="760,110" zPosition="3" size="445,235" backgroundColor="picture">
-			<convert type="ConfigEntryTest">config.usage.use_pig,True,CheckSourceBoolean</convert>
-			<convert type="ConditionalShowHide" />
 		</widget>
 		<eLabel text="Cool Single Guide 3" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
 		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
@@ -224,7 +218,7 @@
 		<widget source="Event" render="Label" position="475,360" size="255,255" font="Regular;24" foregroundColor="foreground" backgroundColor="background" transparent="1" halign="center">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="745,370" size="470,230" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="745,370" size="470,230" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
@@ -245,8 +239,6 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
-			<convert type="ConfigEntryTest">config.usage.use_pig,True,CheckSourceBoolean</convert>
-			<convert type="ConditionalShowHide" />
 		</widget>
 		<widget source="session.Event_Now" render="Progress" position="925,115" size="10,160" zPosition="1" transparent="1" orientation="orBottomToTop">
 			<convert type="EventTime">Progress</convert>
@@ -297,8 +289,6 @@
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
-			<convert type="ConfigEntryTest">config.usage.use_pig,True,CheckSourceBoolean</convert>
-			<convert type="ConditionalShowHide" />
 		</widget>
 		<widget source="session.Event_Now" render="Progress" position="925,115" size="10,160" zPosition="1" transparent="1" orientation="orBottomToTop">
 			<convert type="EventTime">Progress</convert>
@@ -315,7 +305,7 @@
 		<widget source="Event" render="Label" position="335,105" size="420,30" font="Regular; 24" foregroundColor="labeltext" backgroundColor="background" transparent="1" halign="left">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,140" size="820,165" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,140" size="820,165" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget name="date" position="770,105" size="120,30" font="Regular; 24" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
@@ -343,7 +333,7 @@
 		</widget>
 		<widget name="date" position="1099,430" size="120,30" font="Regular; 24" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
 		<widget name="list" position="70,110" size="1150,310" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolServiceFont="Regular;22" CoolEventFont="Regular;22" CoolServiceSize="230" CoolEventSize="550" CoolServicePos="5" CoolServiceHPos="2" CoolEventPos="410" CoolEventHPos="2" CoolBarPos="230" CoolBarHPos="5" CoolBarSize="150" CoolBarHigh="18" CoolTimePos="230" CoolTimeHPos="2" CoolTimeSize="170" CoolDurationPos="990" CoolDurationSize="150" CoolDurationColor="blue" CoolServiceColor="titletext" CoolBarColor="grey" CoolEventColor="white" CoolCurrentCol="labeltext" CoolBackColorSel="background" CoolRecColor="red" CoolTunerCol="#606060" selectionPixmap="AtileHD/extensions/cursor.png" foregroundColor="foreground" backgroundColor="background" transparent="1" />
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,460" size="1150,150" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,460" size="1150,150" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget source="Event" render="Label" position="120,430" size="100,30" font="Regular; 24" foregroundColor="foreground" backgroundColor="background" halign="right" transparent="1">
@@ -381,7 +371,7 @@
 		</widget>
 		<widget name="date" position="1000,595" size="220,30" font="Regular; 24" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
 		<widget name="list" position="70,110" size="1150,395" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolServiceFont="Regular;22" CoolEventFont="Regular;22" CoolServiceSize="230" CoolEventSize="550" CoolServicePos="5" CoolServiceHPos="2" CoolEventPos="410" CoolEventHPos="2" CoolBarPos="230" CoolBarHPos="5" CoolBarSize="150" CoolBarHigh="18" CoolTimePos="230" CoolTimeHPos="2" CoolTimeSize="170" CoolDurationPos="990" CoolDurationSize="150" CoolDurationColor="blue" CoolServiceColor="titletext" CoolBarColor="grey" CoolEventColor="white" CoolCurrentCol="labeltext" CoolBackColorSel="background" CoolRecColor="red" CoolTunerCol="#606060" selectionPixmap="AtileHD/extensions/cursor.png" foregroundColor="foreground" backgroundColor="background" transparent="1" />
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,510" size="1150,70" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,510" size="1150,70" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget source="Event" render="Label" position="120,585" size="100,30" font="Regular; 24" foregroundColor="foreground" backgroundColor="background" halign="right" transparent="1">
@@ -418,14 +408,12 @@
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
-			<convert type="ConfigEntryTest">config.usage.use_pig,True,CheckSourceBoolean</convert>
-			<convert type="ConditionalShowHide" />
 		</widget>
 		<widget source="Service" render="CoolPico" position="70,105" zPosition="1" size="50,28" alphatest="on" />
 		<widget source="Event" render="Label" position="150,105" size="610,30" font="Regular; 24" foregroundColor="labeltext" backgroundColor="background" transparent="1" halign="left">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,140" size="820,160" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,140" size="820,160" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget name="date" position="770,105" size="120,30" font="Regular; 24" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
@@ -461,7 +449,7 @@
 		<widget name="timeline4" position="0,150" zPosition="1" size="0,0" pixmap="AtileHD/extensions/timeline.png" />
 		<widget name="timeline5" position="0,150" zPosition="1" size="0,0" pixmap="AtileHD/extensions/timeline.png" />
 		<widget name="timeline_now" position="0,150" zPosition="2" size="19,360" pixmap="AtileHD/extensions/timelineCooltv.png" alphatest="on" />
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,510" size="1150,70" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,510" size="1150,70" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget source="Event" render="Label" position="120,585" size="100,30" font="Regular; 24" foregroundColor="foreground" backgroundColor="background" halign="right" transparent="1">
@@ -494,8 +482,6 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
-			<convert type="ConfigEntryTest">config.usage.use_pig,True,CheckSourceBoolean</convert>
-			<convert type="ConditionalShowHide" />
 		</widget>
 		<widget source="session.Event_Now" render="Progress" position="925,115" size="10,160" zPosition="1" transparent="1" orientation="orBottomToTop">
 			<convert type="EventTime">Progress</convert>
@@ -516,7 +502,7 @@
 		<widget source="Event" render="Label" position="330,105" size="530,30" font="Regular; 24" foregroundColor="labeltext" backgroundColor="background" transparent="1" halign="left">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,140" size="790,142" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,140" size="790,142" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget name="date" position="1050,280" size="180,30" font="Regular; 20" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
@@ -553,7 +539,7 @@
 		<widget name="date" position="1099,595" size="120,30" font="Regular; 24" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
 		<widget name="list" position="70,110" size="1150,395" itemHeight="28" zPosition="25" CoolFont="Regular;22" CoolServiceFont="Regular;22" CoolEventFont="Regular;22" CoolServiceSize="230" CoolEventSize="550" CoolServicePos="5" CoolServiceHPos="2" CoolEventPos="410" CoolEventHPos="2" CoolBarPos="230" CoolBarHPos="5" CoolBarSize="150" CoolBarHigh="18" CoolTimePos="230" CoolTimeHPos="2" CoolTimeSize="150" CoolDurationPos="990" CoolDurationSize="150" CoolServiceColor="titletext" CoolBarColor="grey" CoolEventColor="white" CoolCurrentCol="green" CoolBackColorSel="white" CoolRecColor="red" CoolTunerCol="#606060" selectionPixmap="AtileHD/extensions/cursor.png" foregroundColor="foreground" backgroundColor="dark" transparent="1" />
 		<widget source="Title" render="Label" position="500,675" size="300,30" zPosition="3" font="Regular;20" foregroundColor="titletext" backgroundColor="background" halign="center" transparent="1" />
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,510" size="1150,70" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,510" size="1150,70" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget source="Event" render="Label" position="120,585" size="100,30" font="Regular; 24" foregroundColor="foreground" backgroundColor="background" halign="right" transparent="1">
@@ -587,8 +573,6 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
-			<convert type="ConfigEntryTest">config.usage.use_pig,True,CheckSourceBoolean</convert>
-			<convert type="ConditionalShowHide" />
 		</widget>
 		<widget source="session.Event_Now" render="Progress" position="925,115" size="10,160" zPosition="1" transparent="1" orientation="orBottomToTop">
 			<convert type="EventTime">Progress</convert>
@@ -614,7 +598,7 @@
 		<widget source="Event" render="Label" position="600,385" size="630,30" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" halign="left">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="600,420" size="630,195" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="600,420" size="630,195" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget name="list" position="70,110" size="490,420" itemHeight="60" zPosition="5" CoolPico="35" CoolFont="Regular;22" CoolServiceFont="Regular;22" CoolEventFont="Regular;18" CoolServiceSize="305" CoolEventSize="478" CoolServicePos="0" CoolServiceHPos="4" CoolEventPos="0" CoolEventHPos="32" CoolBarPos="320" CoolBarHPos="14" CoolBarSize="100" CoolBarHigh="10" CoolTimePos="350" CoolTimeHPos="9" CoolTimeSize="150" CoolDurationPos="370" CoolDurationSize="100" CoolDurationColor="blue" CoolServiceColor="white" CoolBarColor="white" CoolEventColor="white" CoolBackColorSel="background" CoolRecColor="red" CoolTunerCol="#606060" CoolCurrentCol="labeltext" selectionPixmap="AtileHD/extensions/cursor2.png" foregroundColor="foreground" backgroundColor="background" transparent="1" />
@@ -643,8 +627,6 @@
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="65,110" zPosition="3" size="284,160" backgroundColor="picture">
-			<convert type="ConfigEntryTest">config.usage.use_pig,True,CheckSourceBoolean</convert>
-			<convert type="ConditionalShowHide" />
 		</widget>
 		<widget source="Event" render="Label" position="65,315" size="80,30" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="right" transparent="1">
 			<convert type="EventTime">StartTime</convert>
@@ -657,7 +639,7 @@
 		<widget source="Event" render="Label" position="60,345" size="485,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" halign="center">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="60,375" size="485,140" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="60,375" size="485,140" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget name="list" position="545,110" size="680,500" itemHeight="28" zPosition="25" CoolPico="28" CoolPicoHPos="1" CoolFont="Regular;22" CoolServiceFont="Regular;21" CoolEventFont="Regular;18" CoolServicePos="1" CoolServiceSize="180" CoolServiceHPos="1" CoolEventPos="190" CoolEventSize="320" CoolEventHPos="3" CoolMarkerPicPos="2" CoolMarkerPicHPos="2" CoolMarkerPos="140" CoolMarkerHPos="1" CoolBar="0" CoolTime="1" CoolTimePos="540" CoolTimeHPos="3" CoolTimeSize="170" CoolDurationPos="630" CoolDurationSize="50" CoolDurationColor="blue" CoolServiceColor="white" CoolBarColor="blue" CoolEventColor="white" CoolBackColorSel="background" CoolRecColor="red" CoolTunerCol="#606060" CoolCurrentCol="labeltext" selectionPixmap="AtileHD/extensions/cursor.png" foregroundColor="foreground" backgroundColor="background" transparent="1" />
@@ -695,7 +677,7 @@
 		<widget source="Event" render="Label" position="70,505" size="600,30" font="Regular;23" foregroundColor="labeltext" backgroundColor="background" transparent="1">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget source="Event" render="VRunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,536" size="1150,75" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
+		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="70,536" size="1150,75" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<eLabel text="Next Event:" position="70,105" size="140,25" font="Regular;22" foregroundColor="titletext" backgroundColor="background" transparent="1" />

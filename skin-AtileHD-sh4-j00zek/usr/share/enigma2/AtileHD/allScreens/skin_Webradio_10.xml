@@ -19,9 +19,9 @@
 		<widget name="rec_pic" position="70,120" pixmap="AtileHD/buttons/key_red.png" size="25,25" zPosition="2" backgroundColor="background" alphatest="blend" />
 		<widget name="rec_txt" position="70,110" size="700,35" font="Regular;22" halign="center" valign="center" zPosition="2" backgroundColor="background" transparent="1" />
 		<widget name="rec_txt2" position="70,110" size="760,35" font="Regular;22" halign="center" valign="center" foregroundColor="labeltext" zPosition="3" backgroundColor="background" transparent="1" />
-		<widget name="streamlist" zPosition="2" position="70,145" size="760,390" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" transparent="1" enableWrapAround="1" />
+		<widget name="streamlist" zPosition="2" position="70,145" size="760,390" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" enableWrapAround="1" />
 		<widget name="help" zPosition="3" position="70,105" size="760,420" foregroundColor="foreground" backgroundColor="background" font="Regular;18" transparent="1" />
-		<widget name="info" zPosition="3" position="70,105" size="760,420" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" transparent="1" />
+		<widget name="info" zPosition="3" position="70,105" size="760,420" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" />
 		<widget name="playtext" position="70,540" zPosition="2" size="1060,60" font="Regular;20" valign="center" halign="center" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
 		<widget name="titel_fav" position="895,210" zPosition="3" size="67,20" font="Regular;18" valign="top" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />
 		<widget name="fav" position="965,210" zPosition="3" size="260,20" font="Regular;18" valign="top" halign="left" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
@@ -63,9 +63,9 @@
 		<widget name="rec_pic" position="70,120" pixmap="AtileHD/buttons/key_red.png" size="25,25" zPosition="2" backgroundColor="background" alphatest="blend" />
 		<widget name="rec_txt" position="70,110" size="700,35" font="Regular;22" halign="center" valign="center" zPosition="2" backgroundColor="background" transparent="1" />
 		<widget name="rec_txt2" position="70,110" size="760,35" font="Regular;22" halign="center" valign="center" foregroundColor="labeltext" zPosition="3" backgroundColor="background" transparent="1" />
-		<widget name="streamlist" zPosition="2" position="70,145" size="760,390" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" transparent="1" enableWrapAround="1" />
+		<widget name="streamlist" zPosition="2" position="70,145" size="760,390" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" enableWrapAround="1" />
 		<widget name="help" zPosition="3" position="70,105" size="760,420" foregroundColor="foreground" backgroundColor="background" font="Regular;18" transparent="1" />
-		<widget name="info" zPosition="3" position="70,105" size="760,420" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" transparent="1" />
+		<widget name="info" zPosition="3" position="70,105" size="760,420" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" />
 		<widget name="playtext" position="70,540" zPosition="2" size="1060,60" font="Regular;20" valign="center" halign="center" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
 		<widget name="titel_fav" position="895,210" zPosition="3" size="67,20" font="Regular;18" valign="top" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />
 		<widget name="fav" position="965,210" zPosition="3" size="260,20" font="Regular;18" valign="top" halign="left" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
@@ -107,9 +107,9 @@
 		<widget name="rec_pic" position="70,120" pixmap="AtileHD/buttons/key_red.png" size="25,25" zPosition="2" backgroundColor="background" alphatest="blend" />
 		<widget name="rec_txt" position="70,110" size="700,35" font="Regular;22" halign="center" valign="center" zPosition="2" backgroundColor="background" transparent="1" />
 		<widget name="rec_txt2" position="70,110" size="760,35" font="Regular;22" halign="center" valign="center" foregroundColor="labeltext" zPosition="3" backgroundColor="background" transparent="1" />
-		<widget name="streamlist" zPosition="2" position="70,145" size="760,390" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" transparent="1" enableWrapAround="1" />
+		<widget name="streamlist" zPosition="2" position="70,145" size="760,390" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" enableWrapAround="1" />
 		<widget name="help" zPosition="3" position="70,105" size="760,420" foregroundColor="foreground" backgroundColor="background" font="Regular;18" transparent="1" />
-		<widget name="info" zPosition="3" position="70,105" size="760,420" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" transparent="1" />
+		<widget name="info" zPosition="3" position="70,105" size="760,420" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" />
 		<widget name="playtext" position="70,540" zPosition="2" size="1060,60" font="Regular;20" valign="center" halign="center" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
 		<widget name="titel_fav" position="895,210" zPosition="3" size="67,20" font="Regular;18" valign="top" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />
 		<widget name="fav" position="965,210" zPosition="3" size="260,20" font="Regular;18" valign="top" halign="left" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
@@ -149,7 +149,7 @@
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget name="config" position="70,160" zPosition="3" size="700,370" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" transparent="1" enableWrapAround="1" />
+		<widget name="config" position="70,160" zPosition="3" size="700,370" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" enableWrapAround="1" />
 		<widget name="rec_txt" position="70,110" size="700,35" font="Regular;22" halign="center" valign="center" zPosition="2" backgroundColor="background" transparent="1" />
 		<widget name="playtext" position="70,540" zPosition="2" size="1060,60" font="Regular;20" valign="center" halign="center" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
 		<widget name="titel_fav" position="895,210" zPosition="3" size="67,20" font="Regular;18" valign="top" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />
@@ -182,7 +182,7 @@
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget name="config" position="70,160" zPosition="3" size="700,370" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" transparent="1" enableWrapAround="1" />
+		<widget name="config" position="70,160" zPosition="3" size="700,370" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" enableWrapAround="1" />
 		<widget name="rec_txt" position="70,110" size="700,35" font="Regular;22" halign="center" valign="center" zPosition="2" backgroundColor="background" transparent="1" />
 		<widget name="playtext" position="70,540" zPosition="2" size="1060,60" font="Regular;20" valign="center" halign="center" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
 		<widget name="titel_fav" position="895,210" zPosition="3" size="67,20" font="Regular;18" valign="top" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />
@@ -215,7 +215,7 @@
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget name="config" position="70,160" zPosition="3" size="700,370" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" transparent="1" enableWrapAround="1" />
+		<widget name="config" position="70,160" zPosition="3" size="700,370" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" enableWrapAround="1" />
 		<widget name="rec_txt" position="70,110" size="700,35" font="Regular;22" halign="center" valign="center" zPosition="2" backgroundColor="background" transparent="1" />
 		<widget name="playtext" position="70,540" zPosition="2" size="1060,60" font="Regular;20" valign="center" halign="center" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
 		<widget name="titel_fav" position="895,210" zPosition="3" size="67,20" font="Regular;18" valign="top" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />
@@ -248,7 +248,7 @@
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget name="config" position="70,160" zPosition="3" size="700,370" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" transparent="1" enableWrapAround="1" />
+		<widget name="config" position="70,160" zPosition="3" size="700,370" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1" enableWrapAround="1" />
 		<widget name="rec_txt" position="70,110" size="700,35" font="Regular;22" halign="center" valign="center" zPosition="2" backgroundColor="background" transparent="1" />
 		<widget name="playtext" position="70,540" zPosition="2" size="1060,60" font="Regular;20" valign="center" halign="center" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
 		<widget name="titel_fav" position="895,210" zPosition="3" size="67,20" font="Regular;18" valign="top" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />

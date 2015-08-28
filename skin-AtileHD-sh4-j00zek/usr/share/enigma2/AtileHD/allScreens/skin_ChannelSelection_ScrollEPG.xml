@@ -16,7 +16,7 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<eLabel text="Channel Selection" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
@@ -25,7 +25,7 @@
 		<widget source="ServiceEvent" render="Picon" position="805,100" size="100,60" zPosition="2" transparent="1" alphatest="blend">
 			<convert type="ServiceName">Reference</convert>
 		</widget>
-		<widget name="list" position="70,155" size="700,450" scrollbarMode="showOnDemand" colorServiceDescription="labeltext2" colorServiceDescriptionSelected="selectedFG" colorEventProgressbarBorder="progressbar_color" colorEventProgressbarBorderSelected="selectedFG" foregroundColorServiceNotAvail="#777777" colorServiceRecording="red" serviceItemHeight="30" serviceNumberFont="Regular;22" serviceNameFont="Regular;22" serviceInfoFont="Regular;21" transparent="1" />
+		<widget name="list" position="70,155" size="700,450" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" colorServiceDescription="labeltext2" colorServiceDescriptionSelected="selectedFG" colorEventProgressbarBorder="progressbar_color" colorEventProgressbarBorderSelected="selectedFG" foregroundColorServiceNotAvail="#777777" colorServiceRecording="red" serviceItemHeight="30" serviceNumberFont="Regular;22" serviceNameFont="Regular;22" serviceInfoFont="Regular;21" transparent="1" />
 		<widget source="ServiceEvent" render="Label" position="785,165" size="135,60" font="Regular;24" foregroundColor="foreground" backgroundColor="background" transparent="1" valign="center" halign="center">
 			<convert type="EventTime">StartTime</convert>
 			<convert type="ClockToText">

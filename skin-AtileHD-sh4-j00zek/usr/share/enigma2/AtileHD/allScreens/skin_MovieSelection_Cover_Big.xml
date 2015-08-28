@@ -14,13 +14,13 @@
 		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
-		<!--widget source="Service" render="Cover" position="55,100" size="290,370" zPosition="4" transparent="1" alphatest="blend" /-->
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="Service" render="Cover" position="55,100" size="290,370" zPosition="4" transparent="1" alphatest="blend" />
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<eLabel text="Select a movie" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
 		<widget source="Title" render="Label" position="355,100" size="870,55" font="Regular;23" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget name="list" position="355,190" size="870,270" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+		<widget name="list" position="355,190" size="870,270" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" enableWrapAround="1" transparent="1" />
 		<widget name="freeDiskSpace" position="355,155" size="870,25" font="Regular;20" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" />
 		<widget source="Service" render="Label" position="60,480" size="280,75" font="Regular;22" foregroundColor="titletext" backgroundColor="background" transparent="1">
 			<convert type="MovieInfo">ShortDescription</convert>

@@ -15,14 +15,14 @@
 		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
 		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="titletext" backgroundColor="backtop" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
 		<widget source="Service" render="Label" position="70,115" size="700,28" font="Regular;23" backgroundColor="background" transparent="1" foregroundColor="labeltext">
 			<convert type="ServiceName">Name</convert>
 		</widget>
-		<widget name="list" position="70,155" size="700,450" zPosition="3" itemHeight="30" scrollbarMode="showOnDemand" backgroundColor="background" transparent="1" />
+		<widget name="list" position="70,155" size="700,450" zPosition="3" itemHeight="30" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" backgroundColor="background" transparent="1" />
 		<widget source="Event" render="ScrollLabel" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=2,always=0,startdelay=10000,wrap" position="790,305" size="430,300" font="Regular; 20" foregroundColor="foreground" backgroundColor="tile_menu1" transparent="1" valign="top">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>

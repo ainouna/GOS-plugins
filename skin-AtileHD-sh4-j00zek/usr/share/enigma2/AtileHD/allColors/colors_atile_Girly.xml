@@ -18,6 +18,8 @@
 		<color name="red" value="#00b7113d" />
 		<color name="selectedBG" value="#001a1a41" />
 		<color name="selectedFG" value="#00ffffff" />
+		<color name="selectedScrollBG" value="#001a1a41" />
+		<color name="selectedScrollFG" value="#00ffffff" />
 		<color name="shadow" value="#20101010" />
 		<color name="slider" value="#00ff0000" />
 		<color name="slider_col_1" value="#40b81c46" />
