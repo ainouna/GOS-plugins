@@ -64,5 +64,6 @@ done
 
 mv -f $myPath/usr/share/enigma2/BlackHarmony/fonts/* $myPath/usr/share/fonts/
 rm -rf $myPath/usr/share/enigma2/BlackHarmony/fonts
+rm -rf $myPath/usr/lib/enigma2/python/Plugins
 
 sed -i -e 's;filename="/usr/share/enigma2/BlackHarmony/fonts/;filename=";g' $myPath/usr/share/enigma2/BlackHarmony/skin.xml
