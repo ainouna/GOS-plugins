@@ -8,6 +8,7 @@ myPath=`dirname $0`
 
 sed -i -e '/usage.use_pig/{N;d}' $myPath/skin.xml
 sed -i -e 's/render="VRunningText"/render="ScrollLabel"/g' $myPath/skin.xml
+sed -i -e 's;filename="/usr/share/enigma2/.*/fonts/;filename=";g' $myPath/skin.xml
 
 #do wywalenia
 #render="Cover"
