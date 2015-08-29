@@ -9094,4 +9094,4 @@ msgid "Shadow"
 msgstr "Cień"
 
 msgid "Rename name and description for new events"
-msgstr "Zmień nazwię i opis nowych zdarzeń"
+msgstr "Zmień nazwę i opis nowego zdarzenia"
