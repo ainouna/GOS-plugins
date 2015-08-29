@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UserSkin v0.1\n"
 "POT-Creation-Date: 2013-08-16 18:44+0100\n"
-"PO-Revision-Date: 2015-08-26 18:26+0100\n"
+"PO-Revision-Date: 2015-08-29 00:04+0100\n"
 "Last-Translator: pppp\n"
 "Language-Team: j00zek/pppp 4 Graterlia\n"
 "Language: PL\n"
@@ -935,14 +935,20 @@ msgstr "Aktualizacja bukietu"
 msgid "Show IPTV plugins only"
 msgstr "IPTV"
 
-msgid "Enable Sources repository"
+msgid "Enable repository with sources"
 msgstr "Włącz repozytorium źródeł"
 
-msgid "Diasble Sources repository"
+msgid "Disable repository with sources"
 msgstr "Wyłącz repozytorium źródeł"
 
 msgid "show picons only"
-msgstr "Picony"
+msgstr "Pikony"
 
 msgid "Show DVB-T modules only"
 msgstr "DVB-T"
+
+msgid "Enable repository with not supported, old plugins"
+msgstr "Włącz repozytorium niewspieranych wtyczek"
+
+msgid "Disable repository with not supported, old plugins"
+msgstr "Wyłącz repozytorium niewspieranych wtyczek"
