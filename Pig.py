@@ -2,14 +2,11 @@
 ## P(icture)i(n)g(raphics) renderer
 ##
 from Renderer import Renderer
-from enigma import eVideoWidget, eSize, eRect, ePoint, getDesktop, iPlayableService
+from enigma import eVideoWidget, eSize, eRect, ePoint, getDesktop
 from Screens.PictureInPicture import PipPigMode
+from Tools.GOSHardwareInfo import GOSHardwareInfo
 
 class Pig(Renderer):
-   	EventStop = 0
-   	EventStart = 1
-   	EventUpdate = 2
-
     def __init__(self):
         Renderer.__init__(self)
         self.Position = self.Size = None
@@ -28,6 +25,7 @@ class Pig(Renderer):
             if attrib == "hidePip":
                 self.hidePip = value == 1
                 attribs.remove((attrib,value))
+                break
         self.skinAttributes = attribs
         ret = Renderer.applySkin(self, desktop, parent)
         if ret:
@@ -36,7 +34,8 @@ class Pig(Renderer):
         return ret
 
     def onShow(self):
-        if self.instance:
+        if self.instance and GOSHardwareInfo().get_rcstype() != 'ADB5800':
+            print 'AQQ'
             if self.Size:
                 self.instance.resize(self.Size)
             if self.Position:
@@ -44,10 +43,6 @@ class Pig(Renderer):
             self.hidePip and PipPigMode(True)
 
     def onHide(self):
-        if self.instance:
+        if self.instance and GOSHardwareInfo().get_rcstype() != 'ADB5800':
             self.preWidgetRemove(self.instance)
             self.hidePip and PipPigMode(False)
-
-    def __evStart(self):
-        print "[PIG] self.__evStart"
-        #self.onShow()
