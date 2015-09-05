@@ -22,7 +22,6 @@
 
 from Components.Converter.Converter import Converter
 from Components.Element import cached
-from Components.Sensors import sensors
 import os
 from Poll import Poll
 from Tools.HardwareInfoVu import HardwareInfoVu
@@ -106,9 +105,9 @@ class BoxInfo(Poll, Converter, object):
 		if uptime_info is not None:			
 			total_seconds = float(uptime_info[0])
 			MINUTE  = 60
-			HOUR    = MINUTE * 60
-			DAY     = HOUR * 24
-			days    = int( total_seconds / DAY )
+			HOUR	= MINUTE * 60
+			DAY	 = HOUR * 24
+			days	= int( total_seconds / DAY )
 			hours   = int( ( total_seconds % DAY ) / HOUR )
 			minutes = int( ( total_seconds % HOUR ) / MINUTE )
 			seconds = int( total_seconds % MINUTE )
@@ -122,16 +121,19 @@ class BoxInfo(Poll, Converter, object):
 			return "Uptime: %s" % uptime
 
 	def getTempSensor(self):
-	 	if not "dm7020hd" in HardwareInfoVu().get_device_name():	
-			try:
-				sensor_info = sensors.getSensorsList(sensors.TYPE_TEMPERATURE)
-			except:
-				return "Temp: N/A"
-				sensor_info = None
-			if sensor_info is not None:			
-				if len(sensor_info) > 0:
-					return "Temp: %s°C" % sensors.getSensorValue(sensor_info[0])
-		return "Temp: No Sensor"
+		temp = ''
+		unit = ''
+		try:
+			f = open('/proc/stb/sensors/temp0/value', 'rb')
+			temp = f.readline().strip()
+			f.close()
+			f = open('/proc/stb/sensors/temp0/unit', 'rb')
+			unit = f.readline().strip()
+			f.close()
+			tempinfo = str(temp) + ' \xc2\xb0' + str(unit)
+			return tempinfo
+		except:
+			pass
 
 	@cached
 	def getText(self):

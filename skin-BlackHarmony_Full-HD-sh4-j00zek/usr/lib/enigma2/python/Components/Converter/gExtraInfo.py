@@ -29,7 +29,6 @@ from Components.Converter.Converter import Converter
 from enigma import iServiceInformation, iPlayableService, eTimer, eServiceReference, eEPGCache
 from Components.Element import cached
 from Tools.Directories import fileExists
-from Components.Sensors import sensors
 
 import re
 
@@ -194,18 +193,19 @@ class gExtraInfo(Converter, object):
 				return "nieznany"
 
 	def getTemperature(self):
-		maxtemp = 0
+		temp = ''
+		unit = ''
 		try:
-			templist = sensors.getSensorsList(sensors.TYPE_TEMPERATURE)
-			tempcount = len(templist)
-			for count in range(tempcount):
-				id = templist[count]
-				tt = sensors.getSensorValue(id)
-				if tt > maxtemp:
-					maxtemp = tt
+			f = open('/proc/stb/sensors/temp0/value', 'rb')
+			temp = f.readline().strip()
+			f.close()
+			f = open('/proc/stb/sensors/temp0/unit', 'rb')
+			unit = f.readline().strip()
+			f.close()
+			tempinfo = str(temp) + ' \xc2\xb0' + str(unit)
+			return tempinfo
 		except:
 			pass
-		return str(maxtemp) + "°C"
 
 	def getCryptInfo(self):
 		isCrypted = info.getInfo(iServiceInformation.sIsCrypted)
