@@ -4,14 +4,18 @@
 from Renderer import Renderer
 from enigma import eVideoWidget, eSize, eRect, ePoint, getDesktop
 from Screens.PictureInPicture import PipPigMode
-from Tools.GOSHardwareInfo import GOSHardwareInfo
-if GOSHardwareInfo().get_rcstype() == 'ADB5800' or GOSHardwareInfo().get_rcstype() == 'ADB2850':
-    print 'PIG disabled'
-    PIGenabled=False
-else:
-    print 'PIG enabled'
-    PIGenabled=True
-
+PIGenabled=True
+try:
+    from Tools.GOSHardwareInfo import GOSHardwareInfo
+    if GOSHardwareInfo().get_rcstype() == 'ADB5800' or GOSHardwareInfo().get_rcstype() == 'ADB2850':
+        print 'PIG disabled'
+        PIGenabled=False
+except:
+    from Tools.HardwareInfo import HardwareInfo
+    if HardwareInfo().get_device_name() == "adb_box":
+        print 'PIG disabled'
+        PIGenabled=False
+  
 class Pig(Renderer):
     def __init__(self):
         Renderer.__init__(self)
