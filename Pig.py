@@ -5,7 +5,7 @@ from Renderer import Renderer
 from enigma import eVideoWidget, eSize, eRect, ePoint, getDesktop
 from Screens.PictureInPicture import PipPigMode
 from Tools.GOSHardwareInfo import GOSHardwareInfo
-if GOSHardwareInfo().get_rcstype() == 'ADB5800':
+if GOSHardwareInfo().get_rcstype() == 'ADB5800' or GOSHardwareInfo().get_rcstype() == 'ADB2850':
     print 'PIG disabled'
     PIGenabled=False
 else:
