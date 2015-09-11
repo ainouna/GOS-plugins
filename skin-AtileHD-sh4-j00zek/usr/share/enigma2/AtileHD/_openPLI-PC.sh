@@ -12,7 +12,8 @@ sed -i -e 's;filename="/usr/share/enigma2/.*/fonts/;filename=";g' $myPath/skin.x
 #wywalamy widgety na pewno nie dzialajace i niepotrzebne
 xmlstarlet ed --inplace -d "/skin/screen/widget[@source='HbbtvApplication']" $myPath/skin.xml #na sh4 nie dziala
 xmlstarlet ed --inplace -d "/skin/screen/widget[@render='VtiEmuInfo']" $myPath/skin.xml #niepotrzebne info o wersji oscama
-xmlstarlet ed --inplace -d "/skin/screen/widget[@render='AudioIcon']" $myPath/skin.xml #niepotrzebne info o wersji oscama
+xmlstarlet ed --inplace -d "/skin/screen/widget[@render='AudioIcon']" $myPath/skin.xml
+xmlstarlet ed --inplace -d "/skin/screen/widget[@render='VtiImageVersion']" $myPath/skin.xml
 xmlstarlet ed --inplace -d "/skin/screen/widget/convert[@type='VAudioInfo']" $myPath/skin.xml #niepotrzebne info o wersji oscama
 
 #do wywalenia
@@ -29,6 +30,7 @@ do
   xmlstarlet ed --inplace -d "/skin/screen/widget[@render='VtiEmuInfo']" $f
   xmlstarlet ed --inplace -d "/skin/screen/widget[@render='AudioIcon']" $f
   xmlstarlet ed --inplace -d "/skin/screen/widget/convert[@type='VAudioInfo']" $f
+  xmlstarlet ed --inplace -d "/skin/screen/widget[@render='VtiImageVersion']" $f
 #rc_vu_1.png
 done
 

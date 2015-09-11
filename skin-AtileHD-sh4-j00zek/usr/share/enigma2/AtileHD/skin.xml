@@ -1292,7 +1292,6 @@
       <convert type="ClockToText">Default</convert>
     </widget>
     <widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/>
-    <widget source="session.CurrentService" render="VtiImageVersion" position="70,110" size="700, 43" zPosition="3" font="Regular;30" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/>
     <widget source="EnigmaVersion" render="Label" position="70,151" size="700,30" font="Regular;26" backgroundColor="background" transparent="1" foregroundColor="labeltext"/>
     <widget source="ImageVersion" render="Label" position="70,183" size="700,30" font="Regular;26" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
     <widget source="FPVersion" render="Label" position="70,216" size="700,30" font="Regular;26" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
