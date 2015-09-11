@@ -1,177 +1,178 @@
+<?xml version="1.0"?>
 <skin>
-	<!-- Lotto Extended -->
-	<screen name="LottoMain" position="0,0" size="1280,720" title="Lotto.de" flags="wfNoBorder">
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
-		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
-		<ePixmap pixmap="AtileHD/extensions/lotto.png" position="871,335" size="268,240" alphatest="blend" />
-		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+  <!-- Lotto Extended -->
+  <screen name="LottoMain" position="0,0" size="1280,720" title="Lotto.de" flags="wfNoBorder">
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2"/>
+    <eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue"/>
+    <ePixmap pixmap="AtileHD/extensions/lotto.png" position="871,335" size="268,240" alphatest="blend"/>
+    <widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
+    <widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/>
+    <widget name="statuslabel" position="70,105" size="950,43" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget name="details" position="70,160" size="700,420" font="Regular;22" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
+    <widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+  </screen>
+  <screen name="GewinnListScreen" position="0,0" size="1280,720" title="Lotto.de - Gewinnauswertung" flags="wfNoBorder">
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 55,100" size="1175,515" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue"/>
+    <ePixmap pixmap="AtileHD/extensions/lotto.png" position="871,335" size="268,240" alphatest="blend"/>
+    <widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
 		</widget>
-		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget name="statuslabel" position="70,105" size="950,43" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget name="details" position="70,160" size="700,420" font="Regular;22" foregroundColor="foreground" backgroundColor="background" transparent="1" />
-		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-	</screen>
-	<screen name="GewinnListScreen" position="0,0" size="1280,720" title="Lotto.de - Gewinnauswertung" flags="wfNoBorder">
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 55,100" size="1175,515" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
-		<ePixmap pixmap="AtileHD/extensions/lotto.png" position="871,335" size="268,240" alphatest="blend" />
-		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+    <widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/>
+    <widget name="statuslabel" position="70,105" size="800,45" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget name="auslosung" position="70,155" size="780,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1"/>
+    <widget name="text0" position="70,195" size="160,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1"/>
+    <widget name="displotto" position="230,195" size="316,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext"/>
+    <widget name="text1" position="546,195" size="130,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1"/>
+    <widget name="dispzusatz" position="680,195" size="35,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext"/>
+    <widget name="text2" position="70,240" size="150,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1"/>
+    <widget name="dispsuper" position="225,240" size="30,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext"/>
+    <widget name="spiel77" position="320,240" size="120,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext"/>
+    <widget name="super6" position="430,240" size="100,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext"/>
+    <widget name="gewinntxt" position="550,240" size="300,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1"/>
+    <widget name="tipptitle" position="70,300" size="150,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1"/>
+    <widget name="ziehungtitle" position="225,300" size="91,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1"/>
+    <widget name="spiel77title" position="320,300" size="120,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1"/>
+    <widget name="super6title" position="430,300" size="100,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1"/>
+    <widget name="2+" position="530,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1"/>
+    <widget name="3" position="565,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1"/>
+    <widget name="3+" position="605,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1"/>
+    <widget name="4" position="635,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1"/>
+    <widget name="4+" position="675,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1"/>
+    <widget name="5" position="710,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1"/>
+    <widget name="5+" position="745,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1"/>
+    <widget name="6" position="780,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1"/>
+    <widget name="6+" position="830,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1"/>
+    <widget name="tipplist" position="70,335" size="790,265" itemHeight="25" font="Regular;22" backgroundColor="background" transparent="1" scrollbarMode="showNever"/>
+    <widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+  </screen>
+  <screen name="GewinnDetailScreen" position="0,0" size="1280,720" title="Lotto.de - Gewinndetails" flags="wfNoBorder">
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2"/>
+    <eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue"/>
+    <ePixmap pixmap="AtileHD/extensions/lotto.png" position="871,335" size="268,240" alphatest="blend"/>
+    <widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
+    <widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/>
+    <widget name="statuslabel" position="70,105" size="800,45" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget name="auslosung" position="70,155" size="780,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1"/>
+    <widget name="text0" position="70,195" size="160,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1"/>
+    <widget name="displotto" position="230,195" size="316,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext"/>
+    <widget name="text1" position="546,195" size="130,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1"/>
+    <widget name="dispzusatz" position="681,195" size="35,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext"/>
+    <widget name="text2" position="70,240" size="150,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1"/>
+    <widget name="dispsuper" position="225,240" size="30,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext"/>
+    <widget name="text3" position="260,240" size="100,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1"/>
+    <widget name="spiel77" position="365,240" size="133,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext"/>
+    <widget name="text4" position="503,240" size="100,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1"/>
+    <widget name="super6" position="608,240" size="113,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext"/>
+    <widget name="detaillist" position="70,275" size="651,291" itemHeight="25" font="Regular;22" scrollbarMode="showNever" transparent="1"/>
+    <widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+  </screen>
+  <screen name="LottoTippConfigScreen" position="0,0" size="1280,720" title="Lotto.de - Edit Tippschein" flags="wfNoBorder">
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2"/>
+    <eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue"/>
+    <ePixmap pixmap="AtileHD/extensions/lotto.png" position="871,335" size="268,240" alphatest="blend"/>
+    <widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
 		</widget>
-		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget name="statuslabel" position="70,105" size="800,45" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget name="auslosung" position="70,155" size="780,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1" />
-		<widget name="text0" position="70,195" size="160,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1" />
-		<widget name="displotto" position="230,195" size="316,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext" />
-		<widget name="text1" position="546,195" size="130,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1" />
-		<widget name="dispzusatz" position="680,195" size="35,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext" />
-		<widget name="text2" position="70,240" size="150,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1" />
-		<widget name="dispsuper" position="225,240" size="30,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext" />
-		<widget name="spiel77" position="320,240" size="120,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext" />
-		<widget name="super6" position="430,240" size="100,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext" />
-		<widget name="gewinntxt" position="550,240" size="300,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1" />
-		<widget name="tipptitle" position="70,300" size="150,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1" />
-		<widget name="ziehungtitle" position="225,300" size="91,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1" />
-		<widget name="spiel77title" position="320,300" size="120,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1" />
-		<widget name="super6title" position="430,300" size="100,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1" />
-		<widget name="2+" position="530,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1" />
-		<widget name="3" position="565,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1" />
-		<widget name="3+" position="605,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1" />
-		<widget name="4" position="635,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1" />
-		<widget name="4+" position="675,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1" />
-		<widget name="5" position="710,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1" />
-		<widget name="5+" position="745,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1" />
-		<widget name="6" position="780,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1" />
-		<widget name="6+" position="830,300" size="33,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="center" transparent="1" />
-		<widget name="tipplist" position="70,335" size="790,265" itemHeight="25" font="Regular;22" backgroundColor="background" transparent="1" scrollbarMode="showNever" />
-		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-	</screen>
-	<screen name="GewinnDetailScreen" position="0,0" size="1280,720" title="Lotto.de - Gewinndetails" flags="wfNoBorder">
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
-		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
-		<ePixmap pixmap="AtileHD/extensions/lotto.png" position="871,335" size="268,240" alphatest="blend" />
-		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+    <widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/>
+    <widget name="statuslabel" position="70,105" size="950,43" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget name="config" position="70,150" size="635,450" backgroundColor="background" scrollbarMode="showNever" transparent="1"/>
+    <widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+  </screen>
+  <screen name="LottoTippListScreen" position="0,0" size="1280,720" title="Lotto.de - Tippschein Manager" flags="wfNoBorder">
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2"/>
+    <eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue"/>
+    <ePixmap pixmap="AtileHD/extensions/lotto.png" position="871,335" size="268,240" alphatest="blend"/>
+    <widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget name="statuslabel" position="70,105" size="800,45" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget name="auslosung" position="70,155" size="780,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1" />
-		<widget name="text0" position="70,195" size="160,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1" />
-		<widget name="displotto" position="230,195" size="316,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext" />
-		<widget name="text1" position="546,195" size="130,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1" />
-		<widget name="dispzusatz" position="681,195" size="35,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext" />
-		<widget name="text2" position="70,240" size="150,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1" />
-		<widget name="dispsuper" position="225,240" size="30,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext" />
-		<widget name="text3" position="260,240" size="100,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1" />
-		<widget name="spiel77" position="365,240" size="133,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext" />
-		<widget name="text4" position="503,240" size="100,25" font="Regular;22" foregroundColor="foreground" backgroundColor="background" halign="left" transparent="1" />
-		<widget name="super6" position="608,240" size="113,25" font="Regular;22" backgroundColor="background" halign="center" transparent="1" foregroundColor="labeltext" />
-		<widget name="detaillist" position="70,275" size="651,291" itemHeight="25" font="Regular;22" scrollbarMode="showNever" transparent="1" />
-		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-	</screen>
-	<screen name="LottoTippConfigScreen" position="0,0" size="1280,720" title="Lotto.de - Edit Tippschein" flags="wfNoBorder">
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
-		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
-		<ePixmap pixmap="AtileHD/extensions/lotto.png" position="871,335" size="268,240" alphatest="blend" />
-		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
-		</widget>
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget name="statuslabel" position="70,105" size="950,43" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget name="config" position="70,150" size="635,450" backgroundColor="background" scrollbarMode="showNever" transparent="1" />
-		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-	</screen>
-	<screen name="LottoTippListScreen" position="0,0" size="1280,720" title="Lotto.de - Tippschein Manager" flags="wfNoBorder">
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
-		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 55,620" size="290,55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="350,620" size="290,55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="645,620" size="290,55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="940,620" size="290,55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 55,675" size="290, 5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="350,675" size="290, 5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="645,675" size="290, 5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="940,675" size="290, 5" zPosition="-10" backgroundColor="tile_blue" />
-		<ePixmap pixmap="AtileHD/extensions/lotto.png" position="871,335" size="268,240" alphatest="blend" />
-		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
-		</widget>
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget name="tipptitle" position="75,150" size="100,25" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1" />
-		<widget name="datetitle" position="180,150" size="205,25" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1" />
-		<widget name="ziehungtitle" position="390,150" size="100,25" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1" />
-		<widget name="spiel77title" position="495,150" size="60,25" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1" />
-		<widget name="super6title" position="560,150" size="60,25" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1" />
-		<widget name="tipplist" position="70,185" size="574,420" scrollbarMode="showOnDemand" transparent="1" />
-		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-	</screen>
+    <widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/>
+    <widget name="tipptitle" position="75,150" size="100,25" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
+    <widget name="datetitle" position="180,150" size="205,25" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
+    <widget name="ziehungtitle" position="390,150" size="100,25" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
+    <widget name="spiel77title" position="495,150" size="60,25" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
+    <widget name="super6title" position="560,150" size="60,25" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
+    <widget name="tipplist" position="70,185" size="574,420" scrollbarMode="showOnDemand" transparent="1"/>
+    <widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+  </screen>
 </skin>

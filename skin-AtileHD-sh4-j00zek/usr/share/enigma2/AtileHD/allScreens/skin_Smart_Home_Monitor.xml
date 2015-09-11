@@ -1,28 +1,29 @@
+<?xml version="1.0"?>
 <skin>
-	<!-- Smart Home Monitor by Homey(GER)-->
-	<screen name="SmartHomeMonitorMain" position="0,0" size="1280,720" title="Smart Home Monitor" flags="wfNoBorder">
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2" />
-		<eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 55,620" size="290,60" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="350,620" size="290,60" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="645,620" size="290,60" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="940,620" size="290,60" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
+  <!-- Smart Home Monitor by Homey(GER)-->
+  <screen name="SmartHomeMonitorMain" position="0,0" size="1280,720" title="Smart Home Monitor" flags="wfNoBorder">
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 55,100" size="725,515" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="785,295" size="445,320" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="785,100" size="135,190" zPosition="-10" backgroundColor="tile_menu2"/>
+    <eLabel position="925,100" size="305,190" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 55,620" size="290,60" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="350,620" size="290,60" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="645,620" size="290,60" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="940,620" size="290,60" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="session.VideoPicture" render="Pig" position="935,115" zPosition="3" size="284,160" backgroundColor="picture">
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1" />
-		<widget name="adapterlist" position="70,115" zPosition="1" size="430,450" scrollbarMode="showOnDemand" />
-		<widget name="adapterinfo" position="520,115" size="250,350" zPosition="2" font="Regular;20" foregroundColor="foreground" backgroundColor="background" noWrap="1" transparent="1" />
-		<widget name="adapterchart" position="810,335" zPosition="2" size="400,240" alphatest="on" />
-		<widget name="info" position="70,580" size="700,25" zPosition="2" font="Regular; 23" foregroundColor="labeltext" backgroundColor="background" noWrap="1" transparent="1" valign="center" halign="center" />
-		<widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red" transparent="1" />
-		<widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green" transparent="1" />
-		<widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow" transparent="1" />
-		<widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue" transparent="1" />
-	</screen>
+    <widget source="global.CurrentTime" render="Label" position="1020,40" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="Title" render="Label" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/>
+    <widget name="adapterlist" position="70,115" zPosition="1" size="430,450" scrollbarMode="showOnDemand"/>
+    <widget name="adapterinfo" position="520,115" size="250,350" zPosition="2" font="Regular;20" foregroundColor="foreground" backgroundColor="background" noWrap="1" transparent="1"/>
+    <widget name="adapterchart" position="810,335" zPosition="2" size="400,240" alphatest="on"/>
+    <widget name="info" position="70,580" size="700,25" zPosition="2" font="Regular; 23" foregroundColor="labeltext" backgroundColor="background" noWrap="1" transparent="1" valign="center" halign="center"/>
+    <widget name="key_red" position="70,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red" transparent="1"/>
+    <widget name="key_green" position="365,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green" transparent="1"/>
+    <widget name="key_yellow" position="660,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow" transparent="1"/>
+    <widget name="key_blue" position="955,635" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue" transparent="1"/>
+  </screen>
 </skin>

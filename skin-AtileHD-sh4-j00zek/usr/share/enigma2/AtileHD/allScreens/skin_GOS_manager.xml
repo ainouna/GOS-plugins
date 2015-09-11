@@ -1,31 +1,32 @@
+<?xml version="1.0"?>
 <skin>
-	<!-- GOSmanager Screens -->
-	<screen name="ListSelectorWidget" position="0,0" size="1280,720" title="ListSelectorWidget" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-		<widget source="list" render="Listbox" position="60,91" size="690,510" scrollbarMode="showOnDemand">
-			<convert type="TemplatedMultiContent">
+  <!-- GOSmanager Screens -->
+  <screen name="ListSelectorWidget" position="0,0" size="1280,720" title="ListSelectorWidget" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget source="list" render="Listbox" position="60,91" size="690,510" scrollbarMode="showOnDemand">
+      <convert type="TemplatedMultiContent">
             {"template": [
 							MultiContentEntryText(pos = (160, 7), size = (500, 90), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 1),
 							MultiContentEntryPixmapAlphaTest(pos = (5, 2), size = (150, 100), png = 4),
@@ -34,35 +35,35 @@
             "itemHeight": 102
             }
 			</convert>
-        </widget>
-	</screen> 
-	<!-- GOSopkg -->
-	<screen name="GOSopkg" position="0,0" size="1280,720" title="GOSopkg" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-		<widget source="list" render="Listbox" position="60,91" size="690,510" scrollbarMode="showOnDemand">
-            <convert type="TemplatedMultiContent">
+    </widget>
+  </screen>
+  <!-- GOSopkg -->
+  <screen name="GOSopkg" position="0,0" size="1280,720" title="GOSopkg" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget source="list" render="Listbox" position="60,91" size="690,510" scrollbarMode="showOnDemand">
+      <convert type="TemplatedMultiContent">
                 {"template": [
                               MultiContentEntryText(pos = (55, 2), size = (600, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
                               MultiContentEntryText(pos = (55, 26), size = (600, 16), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 2),
@@ -74,447 +75,447 @@
                 "itemHeight": 61
                 }
             </convert>
-        </widget>
-        <widget name="whatUPDATED"  position="60,146" size="690,455" font="Regular;18" transparent="1"/>
-	</screen> 
-	<!-- DirectorySelectorWidget -->
-	<screen name="DirectorySelectorWidget" position="0,0" size="1280,720" title="DirectorySelectorWidget" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="curr_dir" position="60,91"  zPosition="2"  size="690,35" valign="center"  halign="left"   font="Regular;18" transparent="1" foregroundColor="white" />
-        <widget name="filelist" position="60,131"  zPosition="1"  size="690,470" transparent="1" scrollbarMode="showOnDemand" />
-	</screen> 
-	<!-- GOSconsole -->
-	<screen name="GOSconsole" position="0,0" size="1280,720" title="GOSconsole" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="text" position="60,91" size="690,510" font="Console;16" />
-	</screen> 
-	<!-- GOShddmanager -->
-	<screen name="GOShddmanager" position="0,0" size="1280,720" title="GOShddmanager" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="list" position="60,91" size="690,510" scrollbarMode="showOnDemand" />
-	</screen> 
-	<!-- mountONhdd -->
-	<screen name="mountONhdd" position="0,0" size="1280,720" title="mountONhdd" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand" />
-	</screen> 
-	<!-- ADHOCmount -->
-	<screen name="ADHOCmount" position="0,0" size="1280,720" title="ADHOCmount" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand" />
-	</screen> 
-	<!-- doFSCheck -->
-	<screen name="doFSCheck" position="0,0" size="1280,720" title="doFSCheck" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand" />
-	</screen> 
-	<!-- doFormat -->
-	<screen name="doFormat" position="0,0" size="1280,720" title="doFormat" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand" />
-	</screen> 
-	<!-- makePartitions -->
-	<screen name="makePartitions" position="0,0" size="1280,720" title="makePartitions" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand" />
-	</screen> 
-	<!-- GOSkeymapMenu -->
-	<screen name="GOSkeymapMenu" position="0,0" size="1280,720" title="GOSkeymapMenu" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand" />
-	</screen> 
-	<!-- myMenu -->
-	<screen name="myMenu" position="0,0" size="1280,720" title="myMenu" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="text" position="" size="" font="Console;16" />
-        <widget name="list" position="60,91" size="690,510" scrollbarMode="showOnDemand" />
-        <widget name="cover" zPosition="4" position="779,355" size="437,256" transparent="1" alphatest="blend" />
-	</screen> 
-	<!-- GOSMenuChannels -->
-	<screen name="GOSMenuChannels" position="0,0" size="1280,720" title="GOSMenuChannels" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand" />
-	</screen> 
-	<!-- GOSsetupMenu -->
-	<screen name="GOSsetupMenu" position="0,0" size="1280,720" title="GOSsetupMenu" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand" />
-	</screen> 
-	<!-- UserScripts -->
-	<screen name="UserScripts" position="0,0" size="1280,720" title="UserScripts" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="list" position="60,91" size="690,510" scrollbarMode="showOnDemand" />
-	</screen> 
-	<!-- openPLIsetup -->
-	<screen name="openPLIsetup" position="0,0" size="1280,720" title="openPLIsetup" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand" />
-	</screen> 
-	<!-- BoardsReader -->
-	<screen name="ThreadView" position="0,0" size="1280,720" title="ThreadView" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <widget name="text" position="60,91" size="690,510" font="Regular;20" />
-	</screen> 
-	<screen name="BoardReaderWidget" position="0,0" size="1280,720" title="BoardReaderWidget" flags="wfNoBorder"> 
-		<!-- Template -->
-		<eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back" />
-		<eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0" />
-		<eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1" />
-		<eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig" />
-		<eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big" />
-		<eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big" />
-		<eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big" />
-		<eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big" />
-		<eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red" />
-		<eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green" />
-		<eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow" />
-		<eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue" />
-		<widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1" />
-		<widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		<widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture" />
-		<widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1" />
-		<widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1" />
-		<widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1" />
-		<widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1" />
-		<!-- GOS part -->
-        <!-- widget name="text" position="60,91" size="690,510" font="Regular;24" /-->
-        <widget name="statustext" position="60,91" zPosition="1" size="570,40" font="Regular;20" halign="center" valign="center" transparent="1"/>
-        <widget name="headertext" position="60,91" zPosition="1" size="570,40" font="Regular;20" transparent="1"/>
-        <widget name="playerlogo" zPosition="4" position="570,91" size="120,40" alphatest="blend" />
-        <widget name="list" position="60,136" zPosition="2" size="690,465" scrollbarMode="showOnDemand" transparent="0" />
-        <widget name="cover" zPosition="2" position="1093,470" size="122,140" alphatest="blend" />     
-        <widget name="console" position="780,356" zPosition="1" size="435,254" font="Regular;20" transparent="1"/>
-	</screen> 
+    </widget>
+    <widget name="whatUPDATED" position="60,146" size="690,455" font="Regular;18" transparent="1"/>
+  </screen>
+  <!-- DirectorySelectorWidget -->
+  <screen name="DirectorySelectorWidget" position="0,0" size="1280,720" title="DirectorySelectorWidget" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="curr_dir" position="60,91" zPosition="2" size="690,35" valign="center" halign="left" font="Regular;18" transparent="1" foregroundColor="white"/>
+    <widget name="filelist" position="60,131" zPosition="1" size="690,470" transparent="1" scrollbarMode="showOnDemand"/>
+  </screen>
+  <!-- GOSconsole -->
+  <screen name="GOSconsole" position="0,0" size="1280,720" title="GOSconsole" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="text" position="60,91" size="690,510" font="Console;16"/>
+  </screen>
+  <!-- GOShddmanager -->
+  <screen name="GOShddmanager" position="0,0" size="1280,720" title="GOShddmanager" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="list" position="60,91" size="690,510" scrollbarMode="showOnDemand"/>
+  </screen>
+  <!-- mountONhdd -->
+  <screen name="mountONhdd" position="0,0" size="1280,720" title="mountONhdd" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand"/>
+  </screen>
+  <!-- ADHOCmount -->
+  <screen name="ADHOCmount" position="0,0" size="1280,720" title="ADHOCmount" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand"/>
+  </screen>
+  <!-- doFSCheck -->
+  <screen name="doFSCheck" position="0,0" size="1280,720" title="doFSCheck" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand"/>
+  </screen>
+  <!-- doFormat -->
+  <screen name="doFormat" position="0,0" size="1280,720" title="doFormat" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand"/>
+  </screen>
+  <!-- makePartitions -->
+  <screen name="makePartitions" position="0,0" size="1280,720" title="makePartitions" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand"/>
+  </screen>
+  <!-- GOSkeymapMenu -->
+  <screen name="GOSkeymapMenu" position="0,0" size="1280,720" title="GOSkeymapMenu" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand"/>
+  </screen>
+  <!-- myMenu -->
+  <screen name="myMenu" position="0,0" size="1280,720" title="myMenu" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="text" position="" size="" font="Console;16"/>
+    <widget name="list" position="60,91" size="690,510" scrollbarMode="showOnDemand"/>
+    <widget name="cover" zPosition="4" position="779,355" size="437,256" transparent="1" alphatest="blend"/>
+  </screen>
+  <!-- GOSMenuChannels -->
+  <screen name="GOSMenuChannels" position="0,0" size="1280,720" title="GOSMenuChannels" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand"/>
+  </screen>
+  <!-- GOSsetupMenu -->
+  <screen name="GOSsetupMenu" position="0,0" size="1280,720" title="GOSsetupMenu" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand"/>
+  </screen>
+  <!-- UserScripts -->
+  <screen name="UserScripts" position="0,0" size="1280,720" title="UserScripts" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="list" position="60,91" size="690,510" scrollbarMode="showOnDemand"/>
+  </screen>
+  <!-- openPLIsetup -->
+  <screen name="openPLIsetup" position="0,0" size="1280,720" title="openPLIsetup" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="config" position="60,91" size="690,510" zPosition="1" transparent="0" scrollbarMode="showOnDemand"/>
+  </screen>
+  <!-- BoardsReader -->
+  <screen name="ThreadView" position="0,0" size="1280,720" title="ThreadView" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <widget name="text" position="60,91" size="690,510" font="Regular;20"/>
+  </screen>
+  <screen name="BoardReaderWidget" position="0,0" size="1280,720" title="BoardReaderWidget" flags="wfNoBorder">
+    <!-- Template -->
+    <eLabel position="0,0" size="1280,720" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position=" 44, 81" size="725,534" zPosition="-10" backgroundColor="tile_menu0"/>
+    <eLabel position="775,351" size="445,264" zPosition="-10" backgroundColor="tile_menu1"/>
+    <eLabel position="775, 81" size="445,265" zPosition="-10" backgroundColor="tile_menu_pig"/>
+    <eLabel position=" 45,620" size="290, 55" zPosition="-10" backgroundColor="tile_red_big"/>
+    <eLabel position="340,620" size="290, 55" zPosition="-10" backgroundColor="tile_green_big"/>
+    <eLabel position="635,620" size="290, 55" zPosition="-10" backgroundColor="tile_yellow_big"/>
+    <eLabel position="930,620" size="290, 55" zPosition="-10" backgroundColor="tile_blue_big"/>
+    <eLabel position=" 45,675" size="290,  5" zPosition="-10" backgroundColor="tile_red"/>
+    <eLabel position="340,675" size="290,  5" zPosition="-10" backgroundColor="tile_green"/>
+    <eLabel position="635,675" size="290,  5" zPosition="-10" backgroundColor="tile_yellow"/>
+    <eLabel position="930,675" size="290,  5" zPosition="-10" backgroundColor="tile_blue"/>
+    <widget source="Title" render="Label" position="60,39" size="502,28" font="Regular;22" foregroundColor="labeltext" backgroundColor="background" transparent="1"/>
+    <widget source="global.CurrentTime" render="Label" position="1020,26" size="200,50" font="Regular;50" halign="right" foregroundColor="foreground" backgroundColor="backtop" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="session.VideoPicture" render="Pig" position="779,90" zPosition="3" size="435,245" backgroundColor="picture"/>
+    <widget name="key_red" position="60,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_red_big" transparent="1"/>
+    <widget name="key_green" position="365,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_green_big" transparent="1"/>
+    <widget name="key_yellow" position="660,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_yellow_big" transparent="1"/>
+    <widget name="key_blue" position="955,645" size="260,25" zPosition="1" font="Regular;20" halign="left" foregroundColor="foreground" backgroundColor="tile_blue_big" transparent="1"/>
+    <!-- GOS part -->
+    <!-- widget name="text" position="60,91" size="690,510" font="Regular;24" /-->
+    <widget name="statustext" position="60,91" zPosition="1" size="570,40" font="Regular;20" halign="center" valign="center" transparent="1"/>
+    <widget name="headertext" position="60,91" zPosition="1" size="570,40" font="Regular;20" transparent="1"/>
+    <widget name="playerlogo" zPosition="4" position="570,91" size="120,40" alphatest="blend"/>
+    <widget name="list" position="60,136" zPosition="2" size="690,465" scrollbarMode="showOnDemand" transparent="0"/>
+    <widget name="cover" zPosition="2" position="1093,470" size="122,140" alphatest="blend"/>
+    <widget name="console" position="780,356" zPosition="1" size="435,254" font="Regular;20" transparent="1"/>
+  </screen>
 </skin>

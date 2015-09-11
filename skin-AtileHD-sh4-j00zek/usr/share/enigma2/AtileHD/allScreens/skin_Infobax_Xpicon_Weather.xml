@@ -1,24 +1,25 @@
+<?xml version="1.0"?>
 <skin>
   <screen name="InfoBar" position="0,0" size="1280,720" title="Infobar" backgroundColor="transparent" flags="wfNoBorder">
     <!-- Tiles Back -->
-    <eLabel position="135,480" size="1020,210" zPosition="-15" backgroundColor="tile_back" />
-    <eLabel position="145,490" size="60,60" zPosition="-10" backgroundColor="tile_info0" />
-    <eLabel position="210,490" size="155,60" zPosition="-10" backgroundColor="tile_info1" />
-    <eLabel position="370,490" size="450,60" zPosition="-10" backgroundColor="tile_prog" />
-    <eLabel position="825,490" size="60,60" zPosition="-10" backgroundColor="tile_info1" />
-    <eLabel position="890,490" size="60,60" zPosition="-10" backgroundColor="tile_info1" />
-    <eLabel position="955,490" size="60,60" zPosition="-10" backgroundColor="tile_info0" />
-    <eLabel position="1020,490" size="60,60" zPosition="-10" backgroundColor="tile_info0" />
-    <eLabel position="1085,490" size="60,60" zPosition="-10" backgroundColor="tile_info0" />
-    <eLabel position="370,555" size="515,60" zPosition="-10" backgroundColor="tile_epg0" />
-    <eLabel position="890,555" size="60,60" zPosition="-10" backgroundColor="tile_info1" />
-    <eLabel position="955,555" size="60,60" zPosition="-10" backgroundColor="tile_rec" />
-    <eLabel position="1020,555" size="60,60" zPosition="-10" backgroundColor="tile_info0" />
-    <eLabel position="1085,555" size="60,60" zPosition="-10" backgroundColor="tile_info0" />
-    <eLabel position="370,620" size="515,60" zPosition="-10" backgroundColor="tile_epg1" />
-    <eLabel position="890,620" size="255,60" zPosition="-10" backgroundColor="tile_info2" />
+    <eLabel position="135,480" size="1020,210" zPosition="-15" backgroundColor="tile_back"/>
+    <eLabel position="145,490" size="60,60" zPosition="-10" backgroundColor="tile_info0"/>
+    <eLabel position="210,490" size="155,60" zPosition="-10" backgroundColor="tile_info1"/>
+    <eLabel position="370,490" size="450,60" zPosition="-10" backgroundColor="tile_prog"/>
+    <eLabel position="825,490" size="60,60" zPosition="-10" backgroundColor="tile_info1"/>
+    <eLabel position="890,490" size="60,60" zPosition="-10" backgroundColor="tile_info1"/>
+    <eLabel position="955,490" size="60,60" zPosition="-10" backgroundColor="tile_info0"/>
+    <eLabel position="1020,490" size="60,60" zPosition="-10" backgroundColor="tile_info0"/>
+    <eLabel position="1085,490" size="60,60" zPosition="-10" backgroundColor="tile_info0"/>
+    <eLabel position="370,555" size="515,60" zPosition="-10" backgroundColor="tile_epg0"/>
+    <eLabel position="890,555" size="60,60" zPosition="-10" backgroundColor="tile_info1"/>
+    <eLabel position="955,555" size="60,60" zPosition="-10" backgroundColor="tile_rec"/>
+    <eLabel position="1020,555" size="60,60" zPosition="-10" backgroundColor="tile_info0"/>
+    <eLabel position="1085,555" size="60,60" zPosition="-10" backgroundColor="tile_info0"/>
+    <eLabel position="370,620" size="515,60" zPosition="-10" backgroundColor="tile_epg1"/>
+    <eLabel position="890,620" size="255,60" zPosition="-10" backgroundColor="tile_info2"/>
     <!-- Weather Start -->
-    <widget render="VWeatherUpdater" source="global.CurrentTime" position="33,45" size="10,60" backgroundColor="transparent" foregroundColor="transparent" valign="center" halign="center" font="Regular; 1" zPosition="10" />
+    <widget render="VWeatherUpdater" source="global.CurrentTime" position="33,45" size="10,60" backgroundColor="transparent" foregroundColor="transparent" valign="center" halign="center" font="Regular; 1" zPosition="10"/>
     <widget source="session.CurrentService" render="Label" position="890,643" size="60,35" font="Meteo; 35" zPosition="10" halign="center" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" noWrap="1">
       <convert type="VWeather">currentWeatherCode</convert>
     </widget>
@@ -58,28 +59,28 @@
     </widget>
     <!-- Service Info Start -->
     <widget source="session.RecordState" render="FixedLabel" text="REC" position="955,555" size="60,60" zPosition="2" font="Regular; 24" valign="center" halign="center" foregroundColor="foreground" backgroundColor="background" transparent="1">
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
-	<widget source="session.RecordState" render="FixedLabel" position="955,555" size="60,60" zPosition="3" valign="center" halign="center" text=" " backgroundColor="tile_rec">
-		<convert type="ConfigEntryTest">config.usage.blinking_rec_symbol_during_recording,True,CheckSourceBoolean</convert>
-		<convert type="ConditionalShowHide">Blink</convert>
-	</widget>
+    <widget source="session.RecordState" render="FixedLabel" position="955,555" size="60,60" zPosition="3" valign="center" halign="center" text=" " backgroundColor="tile_rec">
+      <convert type="ConfigEntryTest">config.usage.blinking_rec_symbol_during_recording,True,CheckSourceBoolean</convert>
+      <convert type="ConditionalShowHide">Blink</convert>
+    </widget>
     <widget source="session.CurrentService" render="Pixmap" pixmap="AtileHD/icons/ico_format_on.png" position="955,490" size="60,60" zPosition="2" alphatest="blend">
       <convert type="ServiceInfo">IsWidescreen</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <widget source="session.CurrentService" render="Pixmap" pixmap="AtileHD/icons/ico_txt_on.png" position="1020,490" size="60,60" zPosition="2" alphatest="blend">
       <convert type="ServiceInfo">HasTelext</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <widget source="session.CurrentService" render="Pixmap" pixmap="AtileHD/icons/ico_hd_on.png" position="1085,490" size="60,60" zPosition="2" alphatest="blend">
       <convert type="ServiceInfo">VideoWidth</convert>
       <convert type="ValueRange">721,1980</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <widget source="session.CurrentService" render="Pixmap" pixmap="AtileHD/icons/ico_dolby_on.png" position="1020,555" size="60,60" zPosition="2" alphatest="blend">
       <convert type="ServiceInfo">IsMultichannel</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <!--widget source="HbbtvApplication" render="Pixmap" pixmap="AtileHD/icons/ico_hbbtv_on.png" position="1085,555" size="60,60" zPosition="1" alphatest="blend">
       <convert type="ConditionalShowHide" />
@@ -87,57 +88,57 @@
     <widget source="session.FrontendInfo" render="FixedLabel" text="DVB-S" position="825,490" size="60,60" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1" halign="center" valign="center" zPosition="5">
       <convert type="FrontendInfo">TYPE</convert>
       <convert type="ValueRange">0,0</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <widget source="session.FrontendInfo" render="FixedLabel" text="DVB-C" position="825,490" size="60,60" font="Regular; 18" foregroundColor="foreground" backgroundColor="background" transparent="1" halign="center" valign="center" zPosition="5">
       <convert type="FrontendInfo">TYPE</convert>
       <convert type="ValueRange">1,1</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <widget source="session.FrontendInfo" render="FixedLabel" text="DVB-T" position="825,490" size="60,60" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1" halign="center" valign="center" zPosition="5">
       <convert type="FrontendInfo">TYPE</convert>
       <convert type="ValueRange">2,2</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <widget source="session.TunerInfo" zPosition="2" backgroundColor="tile_red" position="825,490" render="FixedLabel" size="30,30">
       <convert type="TunerInfo">TunerUseMask</convert>
       <convert type="ValueBitTest">1</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <widget source="session.TunerInfo" zPosition="2" backgroundColor="tile_red" position="855,490" render="FixedLabel" size="30,30">
       <convert type="TunerInfo">TunerUseMask</convert>
       <convert type="ValueBitTest">2</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <widget source="session.TunerInfo" zPosition="2" backgroundColor="tile_red" position="825,520" render="FixedLabel" size="30,30">
       <convert type="TunerInfo">TunerUseMask</convert>
       <convert type="ValueBitTest">4</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <widget source="session.TunerInfo" zPosition="2" backgroundColor="tile_red" position="855,520" render="FixedLabel" size="30,30">
       <convert type="TunerInfo">TunerUseMask</convert>
       <convert type="ValueBitTest">8</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <widget source="session.FrontendInfo" zPosition="3" backgroundColor="tile_green" position="826,490" render="FixedLabel" size="30,30">
       <convert type="FrontendInfo">NUMBER</convert>
       <convert type="ValueRange">0,0</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <widget source="session.FrontendInfo" zPosition="3" backgroundColor="tile_green" position="855,490" render="FixedLabel" size="30,30">
       <convert type="FrontendInfo">NUMBER</convert>
       <convert type="ValueRange">1,1</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <widget source="session.FrontendInfo" zPosition="3" backgroundColor="tile_green" position="825,520" render="FixedLabel" size="30,30">
       <convert type="FrontendInfo">NUMBER</convert>
       <convert type="ValueRange">2,2</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <widget source="session.FrontendInfo" zPosition="3" backgroundColor="tile_green" position="855,520" render="FixedLabel" size="30,30">
       <convert type="FrontendInfo">NUMBER</convert>
       <convert type="ValueRange">3,3</convert>
-      <convert type="ConditionalShowHide" />
+      <convert type="ConditionalShowHide"/>
     </widget>
     <!-- TunerInfo End -->
     <!-- Event Slider -->

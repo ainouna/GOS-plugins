@@ -1,6 +1,7 @@
+<?xml version="1.0"?>
 <skin>
-	<screen name="RdsInfoDisplay" position="0,0" size="1280,720" zPosition="-2" backgroundColor="transparent" flags="wfNoBorder">
-		<widget name="RadioText" position="0,0" size="1,1" font="Regular;24" noWrap="1" foregroundColor="foreground" backgroundColor="selectedBG" />
-		<widget name="RtpText" position="0,0" size="1,1" font="Regular;24" halign="right" noWrap="1" foregroundColor="foreground" backgroundColor="selectedBG" />
-	</screen>
+  <screen name="RdsInfoDisplay" position="0,0" size="1280,720" zPosition="-2" backgroundColor="transparent" flags="wfNoBorder">
+    <widget name="RadioText" position="0,0" size="1,1" font="Regular;24" noWrap="1" foregroundColor="foreground" backgroundColor="selectedBG"/>
+    <widget name="RtpText" position="0,0" size="1,1" font="Regular;24" halign="right" noWrap="1" foregroundColor="foreground" backgroundColor="selectedBG"/>
+  </screen>
 </skin>
