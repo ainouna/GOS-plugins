@@ -61,9 +61,6 @@
       <convert type="ConfigEntryTest">config.usage.blinking_rec_symbol_during_recording,True,CheckSourceBoolean</convert>
       <convert type="ConditionalShowHide">Blink</convert>
     </widget>
-    <widget source="session.CurrentService" render="AudioIcon" position="1035,555" zPosition="3" path="icons/audio" size="60,60" alphatest="blend">
-      <convert type="VAudioInfo">AudioIcon</convert>
-    </widget>
     <!-- Service Info End -->
     <!-- TunerInfo start -->
     <widget source="session.FrontendInfo" render="FixedLabel" text="DVB-S" position="905,575" size="60,20" font="Regular; 16" foregroundColor="foreground" backgroundColor="background" transparent="1" halign="center" valign="center" zPosition="5">

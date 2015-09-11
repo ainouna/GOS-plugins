@@ -57,9 +57,6 @@
       <convert type="ServiceInfo">IsMultichannel</convert>
       <convert type="ConditionalShowHide"/>
     </widget>
-    <widget source="session.CurrentService" render="AudioIcon" path="icons/audio" position="1135,635" size="60,60" zPosition="2" alphatest="blend">
-      <convert type="VAudioInfo">AudioIcon</convert>
-    </widget>
     <widget source="session.CurrentService" render="Progress" foregroundColor="foreground" position="0,615" size="1280,10" zPosition="5" transparent="1">
       <convert type="ServicePosition">Position</convert>
     </widget>
@@ -121,9 +118,6 @@
       <convert type="ServiceInfo">IsMultichannel</convert>
       <convert type="ConditionalShowHide"/>
     </widget>
-    <widget source="session.CurrentService" render="AudioIcon" path="icons/audio" position="1135,625" size="60,60" zPosition="2" alphatest="blend">
-      <convert type="VAudioInfo">AudioIcon</convert>
-    </widget>
     <widget source="session.CurrentService" render="Progress" foregroundColor="foreground" position="0,605" size="1280,10" zPosition="5" transparent="1">
       <convert type="ServicePosition">Position</convert>
     </widget>
@@ -166,9 +160,6 @@
       <convert type="ServiceInfo">VideoWidth</convert>
       <convert type="ValueRange">721,1980</convert>
       <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget source="session.CurrentService" render="AudioIcon" path="icons/audio" position="1060,585" size="60,60" zPosition="2" alphatest="blend">
-      <convert type="VAudioInfo">AudioIcon</convert>
     </widget>
     <widget source="session.CurrentService" render="Pixmap" pixmap="AtileHD/icons/ico_crypt_on.png" position="1125,575" size="60,60" zPosition="2" alphatest="blend">
       <convert type="ServiceInfo">IsCrypted</convert>
@@ -249,9 +240,7 @@
     <widget source="session.CurrentService" render="Label" position="450,680" size="450,20" zPosition="1" font="Regular; 16" foregroundColor="foreground" backgroundColor="background" transparent="1" halign="right" valign="center" noWrap="1">
       <convert type="VtiInfo">EcmInfo</convert>
     </widget>
-    <widget source="session.CurrentService" render="Label" position="910,680" size="320,20" font="Regular; 16" halign="right" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" text="">
-      <convert type="VAudioInfo">AudioCodec</convert>
-    </widget>
+    <widget source="session.CurrentService" render="Label" position="910,680" size="320,20" font="Regular; 16" halign="right" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" text=""/>
     <!-- Update Info -->
     <widget source="session.CurrentService" position="1250,46" size="20,60" zPosition="-5" render="FixedLabel" backgroundColor="tile_red">
       <convert type="ConfigEntryTest">config.usage.update_available,True,CheckSourceBoolean</convert>

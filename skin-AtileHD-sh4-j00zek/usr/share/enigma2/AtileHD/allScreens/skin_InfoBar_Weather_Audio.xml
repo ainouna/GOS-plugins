@@ -253,9 +253,7 @@
     <widget source="session.CurrentService" render="Label" position="1030,655" size="60,25" font="Regular; 16" zPosition="10" halign="right" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" noWrap="1">
       <convert type="VWeather">forecastTomorrowTempMin</convert>
     </widget>
-    <widget source="session.CurrentService" render="Label" position="400,685" size="500,25" font="Regular; 16" halign="center" foregroundColor="#dddddd" backgroundColor="background" transparent="1" text="deutsch AC3">
-      <convert type="VAudioInfo">AudioCodec</convert>
-    </widget>
+    <widget source="session.CurrentService" render="Label" position="400,685" size="500,25" font="Regular; 16" halign="center" foregroundColor="#dddddd" backgroundColor="background" transparent="1" text="deutsch AC3"/>
     <!-- Weather End -->
     <!-- Update Info -->
     <widget source="session.CurrentService" position="1100,490" size="125,60" zPosition="-5" render="FixedLabel" backgroundColor="tile_red">

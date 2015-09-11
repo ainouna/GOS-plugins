@@ -46,9 +46,6 @@
       <convert type="ConfigEntryTest">config.usage.blinking_rec_symbol_during_recording,True,CheckSourceBoolean</convert>
       <convert type="ConditionalShowHide">Blink</convert>
     </widget>
-    <widget source="session.CurrentService" render="AudioIcon" position="1035,555" zPosition="3" path="icons/audio" size="60,60" alphatest="blend">
-      <convert type="VAudioInfo">AudioIcon</convert>
-    </widget>
     <!-- Service Info End -->
     <!-- TunerInfo start -->
     <widget source="session.FrontendInfo" render="FixedLabel" text="DVB-S" position="905,555" size="60,60" font="Regular;18" foregroundColor="foreground" backgroundColor="background" transparent="1" halign="center" valign="center" zPosition="5">
@@ -275,9 +272,6 @@
       <convert type="ValueRange">721,1980</convert>
       <convert type="ConditionalShowHide"/>
     </widget>
-    <widget source="session.CurrentService" render="AudioIcon" position="970,490" zPosition="3" path="icons/audio" size="60,60" alphatest="blend">
-      <convert type="VAudioInfo">AudioIcon</convert>
-    </widget>
     <widget source="session.CurrentService" render="Pixmap" pixmap="AtileHD/icons/ico_crypt_on.png" position="840,555" size="60,60" zPosition="2" alphatest="blend">
       <convert type="ServiceInfo">IsCrypted</convert>
       <convert type="ConditionalShowHide"/>
@@ -491,13 +485,8 @@
     <widget source="session.CurrentService" render="Label" position="705,620" size="100,30" font="Regular;22" valign="center" halign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" zPosition="5">
       <convert type="ServicePosition">Remaining</convert>
     </widget>
-    <widget source="session.CurrentService" render="Label" position="240,645" size="560,30" font="Regular;22" valign="center" halign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" zPosition="5">
-      <convert type="VAudioInfo">AudioIcon</convert>
-    </widget>
+    <widget source="session.CurrentService" render="Label" position="240,645" size="560,30" font="Regular;22" valign="center" halign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" zPosition="5"/>
     <!-- Service Info Start -->
-    <widget source="session.CurrentService" render="AudioIcon" path="icons/audio" position="1010,555" size="60,60" zPosition="2" alphatest="blend">
-      <convert type="VAudioInfo">AudioIcon</convert>
-    </widget>
     <widget source="session.CurrentService" render="Pixmap" pixmap="AtileHD/icons/ico_format_on.png" position="880,555" size="60,60" zPosition="2" alphatest="blend">
       <convert type="ServiceInfo">IsWidescreen</convert>
       <convert type="ConditionalShowHide"/>
