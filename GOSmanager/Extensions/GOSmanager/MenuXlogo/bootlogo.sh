@@ -34,7 +34,7 @@ natgeo() {
 GOSdebug "Getting NatGeo wallpaper url"
 wget -q http://photography.nationalgeographic.com/photography/photo-of-the-day/ -O /tmp/ngpod.html
 #Getting the URL of the image
-img_location="http:`egrep -o "//images.nationalgeographic.com/[^<]*[^>]*\.jpg" /tmp/ngpod.html|head -n 2|tail -n 1`"
+img_location="http:`egrep -o "//images.nationalgeographic.com/[^<]*[^>]*\.jpg" /tmp/ngpod.html|head -n 1|tail -n 1`"
 rm /tmp/ngpod.html
 
 #Download image
