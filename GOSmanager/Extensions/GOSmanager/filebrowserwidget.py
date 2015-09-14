@@ -85,8 +85,11 @@ class DirectorySelectorWidget(Screen):
 
     def use(self):
         if self.returnFile:
-            print "DirectorySelectorWidget: selected file '%s'" % (self.getCurrentDirectory() + self['filelist'].getCurrent()[0][0])
-            self.close( self.getCurrentDirectory() + self['filelist'].getCurrent()[0][0] )
+            try:
+                print "DirectorySelectorWidget: selected file '%s'" % (self.getCurrentDirectory() + self['filelist'].getCurrent()[0][0])
+                self.close( self.getCurrentDirectory() + self['filelist'].getCurrent()[0][0] )
+            except:
+                print "DirectorySelectorWidget: no file in %s selected!!!" % ( self.getCurrentDirectory() )
         else:
             self.close( self.getCurrentDirectory() )
 
