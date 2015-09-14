@@ -608,7 +608,7 @@ class GOSopkg(Screen):
             #printDEBUG( "selectionChanged" , "selectionChanged.current = %s" % current[3] )
             #print current
             if current[3] == 'installed':
-                self['key_green'].setText(_('Delete'), "enigma2")
+                self['key_green'].setText(_('Delete', "enigma2"))
                 self.actionInfo = _("delete %s", "plugin-GOSmanager")  % current[0]
                 self.keyGreenAction = 'opkg remove --autoremove %s' % current[0]
                 self['key_blue'].setText(_('Reinstall'))
