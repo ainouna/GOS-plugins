@@ -2494,7 +2494,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
       <convert type="ClockToText">Default</convert>
     </widget>
     <eLabel text="help..." position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/>
-    <widget name="rc" position="160,109" size="154,500" pixmaps="skin_default/rc_vu_1.png,skin_default/rc_vu_2.png,skin_default/rc_vu_3.png" zPosition="10" alphatest="blend"/>
+    <widget name="rc" position="160,109" size="154,500" pixmaps="skin_default/rc0.png,skin_default/rc1.png,skin_default/rc2.png" zPosition="10" alphatest="blend"/>
     <widget name="long_key" position="55,632" size="290,30" font="Regular;24" halign="center" foregroundColor="titletext" backgroundColor="background" transparent="1"/>
     <widget name="list" position="490,110" size="720,494" itemHeight="38" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="selectedScrollFG" scrollbarSliderBorderColor="selectedScrollBG" transparent="1"/>
     <widget name="arrowdown" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
@@ -5125,7 +5125,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
       <convert type="ClockToText">Default</convert>
     </widget>
     <eLabel text="CleanupWizard" position="70,47" size="950,43" font="Regular;35" backgroundColor="backtop" transparent="1" foregroundColor="titletext"/>
-    <widget name="rc" position="175,115" size="154,500" pixmaps="skin_default/rc_vu_1.png,skin_default/rc_vu_2.png,skin_default/rc_vu_3.png" zPosition="10" alphatest="on"/>
+    <widget name="rc" position="175,115" size="154,500" pixmaps="skin_default/rc0.png,skin_default/rc1.png,skin_default/rc2.png" zPosition="10" alphatest="on"/>
     <widget name="arrowdown" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
     <widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
     <widget name="arrowup" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowup.png" zPosition="11" alphatest="on"/>
@@ -5284,7 +5284,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
       <convert type="ClockToText">Default</convert>
     </widget>
     <eLabel text="ImageWizard" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/>
-    <widget name="rc" position="175,115" size="154,500" pixmaps="skin_default/rc_vu_1.png,skin_default/rc_vu_2.png,skin_default/rc_vu_3.png" zPosition="10" alphatest="on"/>
+    <widget name="rc" position="175,115" size="154,500" pixmaps="skin_default/rc0.png,skin_default/rc1.png,skin_default/rc2.png" zPosition="10" alphatest="on"/>
     <widget name="arrowdown" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
     <widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
     <widget name="arrowup" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowup.png" zPosition="11" alphatest="on"/>
@@ -5321,7 +5321,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
       <convert type="ClockToText">Default</convert>
     </widget>
     <eLabel text="LanguageWizard" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/>
-    <widget name="rc" position="175,115" size="154,500" pixmaps="skin_default/rc_vu_1.png,skin_default/rc_vu_2.png,skin_default/rc_vu_3.png" zPosition="10" alphatest="on"/>
+    <widget name="rc" position="175,115" size="154,500" pixmaps="skin_default/rc0.png,skin_default/rc1.png,skin_default/rc2.png" zPosition="10" alphatest="on"/>
     <widget name="arrowdown" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
     <widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
     <widget name="arrowup" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowup.png" zPosition="11" alphatest="on"/>
@@ -5357,7 +5357,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
       <convert type="ClockToText">Default</convert>
     </widget>
     <eLabel text="NetworkWizard" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/>
-    <widget name="rc" position="175,115" size="154,500" pixmaps="skin_default/rc_vu_1.png,skin_default/rc_vu_2.png,skin_default/rc_vu_3.png" zPosition="10" alphatest="on"/>
+    <widget name="rc" position="175,115" size="154,500" pixmaps="skin_default/rc0.png,skin_default/rc1.png,skin_default/rc2.png" zPosition="10" alphatest="on"/>
     <widget name="arrowdown" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
     <widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
     <widget name="arrowup" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowup.png" zPosition="11" alphatest="on"/>
@@ -5394,7 +5394,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
       <convert type="ClockToText">Default</convert>
     </widget>
     <eLabel text="StartWizard" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/>
-    <widget name="rc" position="175,115" size="154,500" pixmaps="skin_default/rc_vu_1.png,skin_default/rc_vu_2.png,skin_default/rc_vu_3.png" zPosition="10" alphatest="on"/>
+    <widget name="rc" position="175,115" size="154,500" pixmaps="skin_default/rc0.png,skin_default/rc1.png,skin_default/rc2.png" zPosition="10" alphatest="on"/>
     <widget name="arrowdown" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
     <widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
     <widget name="arrowup" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowup.png" zPosition="11" alphatest="on"/>
@@ -5431,7 +5431,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
       <convert type="ClockToText">Default</convert>
     </widget>
     <eLabel text="VideoWizard" position="70,47" size="950,43" font="Regular;35" foregroundColor="titletext" backgroundColor="backtop" transparent="1"/>
-    <widget name="rc" position="175,115" size="154,500" pixmaps="skin_default/rc_vu_1.png,skin_default/rc_vu_2.png,skin_default/rc_vu_3.png" zPosition="10" alphatest="on"/>
+    <widget name="rc" position="175,115" size="154,500" pixmaps="skin_default/rc0.png,skin_default/rc1.png,skin_default/rc2.png" zPosition="10" alphatest="on"/>
     <widget name="arrowdown" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
     <widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
     <widget name="arrowup" position="-100,-100" size="37,70" pixmap="AtileHD/skin_default/arrowup.png" zPosition="11" alphatest="on"/>

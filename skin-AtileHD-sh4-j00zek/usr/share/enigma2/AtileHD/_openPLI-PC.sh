@@ -9,6 +9,10 @@ myPath=`dirname $0`
 sed -i -e '/usage.use_pig/{N;d}' $myPath/skin.xml
 sed -i -e 's/render="VRunningText"/render="ScrollLabel"/g' $myPath/skin.xml
 sed -i -e 's;filename="/usr/share/enigma2/.*/fonts/;filename=";g' $myPath/skin.xml
+
+sed -i -e 's;rc_vu_1\.png;rc0.png;g' $myPath/skin.xml
+sed -i -e 's;rc_vu_2\.png;rc1.png;g' $myPath/skin.xml
+sed -i -e 's;rc_vu_3\.png;rc2.png;g' $myPath/skin.xml
 #wywalamy widgety na pewno nie dzialajace i niepotrzebne
 xmlstarlet ed --inplace -d "/skin/screen/widget[@source='HbbtvApplication']" $myPath/skin.xml #na sh4 nie dziala
 xmlstarlet ed --inplace -d "/skin/screen/widget[@render='VtiEmuInfo']" $myPath/skin.xml #niepotrzebne info o wersji oscama
@@ -26,6 +30,11 @@ do
   # take action on each file. $f store current file name
   sed -i -e '/usage.use_pig/{N;d}' $f
   sed -i -e 's/render="VRunningText"/render="ScrollLabel"/g' $f
+
+  sed -i -e 's;rc_vu_1\.png;rc0.png;g' $f
+  sed -i -e 's;rc_vu_2\.png;rc1.png;g' $f
+  sed -i -e 's;rc_vu_3\.png;rc2.png;g' $f
+  
   xmlstarlet ed --inplace -d "/skin/screen/widget[@source='HbbtvApplication']" $f
   xmlstarlet ed --inplace -d "/skin/screen/widget[@render='VtiEmuInfo']" $f
   xmlstarlet ed --inplace -d "/skin/screen/widget[@render='AudioIcon']" $f
