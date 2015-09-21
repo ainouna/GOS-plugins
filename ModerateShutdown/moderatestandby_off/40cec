@@ -18,7 +18,7 @@ GOSdebug ">>>>>>>>>> $0"
 
 ##### FUNKCJE #####
 getCONFIG(){
-if grep -lq 'config.plugins.CEC.$1=' /etc/enigma2/settings; then
+if grep -lq "config.plugins.CEC.$1=" /etc/enigma2/settings; then
 	value=`grep "config.plugins.CEC.$1=" /etc/enigma2/settings | cut -d '=' -f2` 
 	case $1 in
 		ActiveSource)
