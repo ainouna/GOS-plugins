@@ -970,18 +970,3 @@ msgstr "Synchronizacja transponderów w lamedb..."
 
 msgid "Creating file"
 msgstr "Tworzenie pliku"
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
