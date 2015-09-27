@@ -955,3 +955,33 @@ msgstr "Włącz repozytorium niewspieranych wtyczek"
 
 msgid "Disable repository with not supported, old plugins"
 msgstr "Wyłącz repozytorium niewspieranych wtyczek"
+
+msgid "Collecting transponders data..."
+msgstr "Pobieranie danych o transponderach..."
+
+msgid "Reading SDT..."
+msgstr "Czytanie tablicy SDT..."
+
+msgid "Reading Bouquet Association Table..."
+msgstr "Czytanie tablicy BAT..."
+
+msgid "Syncing transponders in lamedb..."
+msgstr "Synchronizacja transponderów w lamedb..."
+
+msgid "Creating file"
+msgstr "Tworzenie pliku"
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""

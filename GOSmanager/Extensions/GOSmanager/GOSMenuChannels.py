@@ -198,6 +198,12 @@ class GOSMenuChannels(Screen, ConfigListScreen):
                 bouquetsTV.write('#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ncplus.j00zekAutobouquet.tv" ORDER BY bouquet%s\n' % windowsEOL)
                 bouquetsTV.close()
                 hasNewline=1
+            with open("/etc/enigma2/bouquets.radio", "a") as bouquetsTV:
+                if hasNewline == 0:
+                    bouquetsTV.write('\n')
+                bouquetsTV.write('#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ncplus.j00zekAutobouquet.radio" ORDER BY bouquet%s\n' % windowsEOL)
+                bouquetsTV.close()
+                hasNewline=1
         if cpNeedsUpdate == 1:
             with open("/etc/enigma2/bouquets.tv", "a") as bouquetsTV:
                 if hasNewline == 0:
