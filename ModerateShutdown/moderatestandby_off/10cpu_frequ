@@ -18,5 +18,6 @@ if [ -f /tmp/CurrentSpeed ]; then
 	GOSdebug "Sending '$CurrentSpeed'>/proc/cpu_frequ/pll0_ndiv_mdiv"
 	echo "$CurrentSpeed">/proc/cpu_frequ/pll0_ndiv_mdiv
 	rm -f /tmp/CurrentSpeed
+        [ -f /etc/cron/minutely/ntpdate ] && rm -f /etc/cron/minutely/ntpdate
 fi
 GOSdebug "<<<<<<<<<< $0"

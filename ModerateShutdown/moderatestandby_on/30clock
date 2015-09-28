@@ -9,6 +9,7 @@
 # wersja 2014-12-15
 
 clockINmoderate=0
+clockINmoderateBlinkingDots == 'on'
 
 . /var/grun/grcstype #załadowanie informacji o rodzaju odbiornika
 . /etc/sysctl.gos #ustawienia systemu
@@ -16,6 +17,9 @@ clockINmoderate=0
 [ $clockINmoderate -eq 0 ] && exit 0
 
 DOT=":"
+DontBlink=0
+[ "$clockINmoderateBlinkingDots" == 'off' ] && DontBlink=1
+
 doCLOCK()
 {
 #czekamy na zakonczenie procesu uruchamiania moderate
@@ -26,12 +30,20 @@ do
 	[ -f /var/etc/moderate_standby ] && WaitingTime=0 || WaitingTime=$(( $WaitingTime - 1 ))
 done
 #uruchamiamy zegarek
+if [ DontBlink -eq 1 ];then
+	echo `date "+%H$DOT%M"`>/dev/vfd
+	sleep $(( 60 - `date "+%S"` ))
+fi
 while true
 do
-	sleep 1
 	[ -f /var/etc/moderate_standby ] || exit 0
 	echo `date "+%H$DOT%M"`>/dev/vfd
-	[ $DOT == ":" ] && DOT="." || DOT=":"
+	if [ $DontBlink -eq 1 ];then
+		sleep 60
+	else
+		sleep 1
+		[ $DOT == ":" ] && DOT="." || DOT=":"
+	fi
 done
 }
 
