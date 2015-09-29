@@ -1,0 +1,51 @@
+<skin>
+<screen backgroundColor="transparent" flags="wfNoBorder" name="ChannelSelection" position="fill" title="Channel Selection">
+  <widget backgroundColor="3rdBG" font="PG; 32" foregroundColor="3rdFG" halign="center" position="22,13" render="Label" size="904,73" source="Title" valign="center" transparent="1" zPosition="1" />
+  <widget backgroundColor="black" font="Regular;50" foregroundColor="3rdFG" halign="center" position="931,11" render="Label" size="210,80" source="global.CurrentTime" valign="center" transparent="1" zPosition="1">
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="background" colorEventProgressbar="blue" selectionPixmap="Pingu_FHD/extensions/12.png" colorEventProgressbarBorder="grey" colorEventProgressbarBorderSelected="grey" colorEventProgressbarSelected="red" colorServiceDescription="3rdFG" colorServiceDescriptionSelected="gold" foregroundColor="foreground" foregroundColorServiceNotAvail="dark" name="list" itemHeight="45" position="13,107" scrollbarMode="showNever" serviceItemHeight="54" serviceNameFont="Lite;38" serviceNumberFont="Regular;38" serviceInfoFont="Regular;32" size="1122,706" progressBarWidth="60" progressPercentWidth="80" itemsDistances="12" progressbarHeight="12" transparent="1" />
+  <widget backgroundColor="background" font="Regular;28" position="1170,564" render="ScrollLabel" size="710,235" transparent="1" source="ServiceEvent">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <widget source="ServiceEvent" render="Label" position="1225,26" size="565,49" font="PG; 34" foregroundColor="gold" backgroundColor="transpBlack" transparent="1" halign="center">
+    <convert type="ServiceName">Name</convert>
+  </widget>
+<ePixmap position="0,0" zPosition="-1" size="1920,1080" pixmap="Pingu_FHD/ping/pig.png" />
+  <widget backgroundColor="2ndBG" font="Regular;28" foregroundColor="foreground" halign="left" name="key_red" noWrap="1" position="110,1025" size="315,40" valign="center" transparent="1" zPosition="1" />
+  <widget backgroundColor="2ndBG" font="Regular;28" foregroundColor="foreground" halign="left" name="key_green" noWrap="1" position="498,1025" size="299,40" valign="center" transparent="1" zPosition="1" />
+  <widget backgroundColor="2ndBG" font="Regular;28" foregroundColor="foreground" halign="left" name="key_yellow" noWrap="1" position="878,1025" size="301,40" valign="center" transparent="1" zPosition="1" />
+  <widget backgroundColor="2ndBG" font="Regular;28" foregroundColor="foreground" halign="left" name="key_blue" noWrap="1" position="1257,1025" size="494,40" valign="center" transparent="1" zPosition="1" />
+  <ePixmap alphatest="on" pixmap="Pingu_FHD/buttons/key_red.png" position="41,1025" size="63,43" />
+  <ePixmap alphatest="on" pixmap="Pingu_FHD/buttons/key_green.png" position="426,1025" size="63,43" />
+  <ePixmap alphatest="on" pixmap="Pingu_FHD/buttons/key_yellow.png" position="805,1025" size="63,43" />
+  <ePixmap alphatest="on" pixmap="Pingu_FHD/buttons/key_blue.png" position="1184,1025" size="63,43" />
+  <ePixmap alphatest="on" pixmap="Pingu_FHD/buttons/key_menu.png" position="1792,1025" size="60,30" zPosition="10" />
+  <ePixmap alphatest="on" pixmap="Pingu_FHD/buttons/key_info.png" position="1545,1025" size="60,30" zPosition="10" />
+  <ePixmap alphatest="on" pixmap="Pingu_FHD/buttons/key_leftright.png" position="1670,1025" size="60,30" zPosition="10" />
+  <widget source="ServiceEvent" render="Label" position="1156,519" size="100,35" font="Regular; 30" halign="center" backgroundColor="black" transparent="1" foregroundColor="3rdFG" valign="top">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">
+    </convert>
+  </widget>
+  <widget source="ServiceEvent" render="Label" position="1815,521" size="100,35" font="Regular; 30" halign="center" backgroundColor="black" transparent="1" foregroundColor="3rdFG" valign="top">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">
+    </convert>
+  </widget>
+  <widget source="ServiceEvent" render="Progress" position="1261,534" size="550,8" transparent="1" backgroundColor="red" foregroundColor="gold" zPosition="2" borderWidth="2" borderColor="darkgrey">
+    <convert type="EventTime">Progress</convert>
+  </widget>
+  <widget source="ServiceEvent" render="Label" position="45,821" zPosition="1" size="100,35" font="Regular; 30" halign="left" backgroundColor="black" transparent="1" foregroundColor="gold">
+    <convert type="g16ServiceNameEventNobile">StartTime</convert>
+  </widget>
+  <widget source="ServiceEvent" render="Label" position="157,822" zPosition="1" size="972,35" font="Regular; 26" halign="left" backgroundColor="black" transparent="1" foregroundColor="blue">
+    <convert type="g16ServiceNameEventNobile">NextEvent</convert>
+  </widget>
+  <widget source="ServiceEvent" render="ScrollLabel" position="45,862" zPosition="1" size="1070,136" font="Regular; 28" backgroundColor="background" transparent="1" foregroundColor="2ndFG">
+    <convert type="g16ServiceNameEventNobile">ExtendedDescription</convert>
+  </widget>
+  <widget source="ServiceEvent" render="EGEpgListNobile" position="1170,821" size="724,180" font="Regular;26" foregroundColor="green" backgroundColor="background" noWrap="1" transparent="1" />
+<widget source="session.VideoPicture" render="Pig" position="1170,105" size="720,394" zPosition="1" backgroundColor="transparent" transparent="0" />
+</screen>
+</skin>

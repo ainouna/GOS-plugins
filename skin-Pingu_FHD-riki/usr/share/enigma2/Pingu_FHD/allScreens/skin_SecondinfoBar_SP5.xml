@@ -1,0 +1,245 @@
+<skin>
+<screen backgroundColor="transparent" flags="wfNoBorder" name="SecondInfoBar" position="fill" title="InfoBar">
+  <widget backgroundColor="black" font="Regular; 24" foregroundColor="gold" halign="center" position="20,1036" render="Label" size="400,30" source="session.CurrentService" transparent="1" zPosition="3">
+    <convert type="PGExtraInfo">CryptoBar</convert>
+  </widget>
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Pingu_FHD/picture/seca.png" position="987,985" size="84,50" alphatest="blend" zPosition="2">
+    <convert type="CaidInfo2">SecaEcm</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Pingu_FHD/picture/nagra.png" position="987,985" size="84,50" alphatest="blend" zPosition="2">
+    <convert type="CaidInfo2">NagraEcm</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Pingu_FHD/picture/conax.png" position="987,985" size="84,50" alphatest="blend" zPosition="2">
+    <convert type="CaidInfo2">ConaxEcm</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Pingu_FHD/picture/biss.png" position="987,985" size="84,50" alphatest="blend" zPosition="2">
+    <convert type="CaidInfo2">BissEcm</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Pingu_FHD/picture/betacrypt.png" position="987,985" size="84,50" alphatest="blend" zPosition="2">
+    <convert type="CaidInfo2">BetaEcm</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Pingu_FHD/picture/dreamcrypt.png" position="987,985" size="84,50" alphatest="blend" zPosition="2">
+    <convert type="CaidInfo2">DreamEcm</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Pingu_FHD/picture/irdeto.png" position="987,985" size="84,50" alphatest="blend" zPosition="2">
+    <convert type="CaidInfo2">IrdEcm</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Pingu_FHD/picture/cryptoworks.png" position="987,985" size="84,50" alphatest="blend" zPosition="2">
+    <convert type="CaidInfo2">CrwEcm</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Pingu_FHD/picture/viaccess.png" position="987,985" size="84,50" alphatest="blend" zPosition="2">
+    <convert type="CaidInfo2">ViaEcm</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Pingu_FHD/picture/nds.png" position="987,985" size="84,50" alphatest="blend" zPosition="2">
+    <convert type="CaidInfo2">NdsEcm</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="background" font="Regular; 30" foregroundColor="white" halign="center" position="190,773" render="Label" size="115,32" source="session.FrontendInfo" text="A B C D" transparent="1" zPosition="4">
+    <convert type="FrontendInfo">STRING</convert>
+  </widget>
+  <widget backgroundColor="black" borderColor="black" borderWidth="1" font="Regular; 45" foregroundColor="green" noWrap="1" position="645,765" render="Label" size="728,52" source="session.CurrentService" transparent="1" valign="top" zPosition="1">
+    <convert type="ServiceName">Name</convert>
+  </widget>
+  <widget backgroundColor="black" borderColor="black" borderWidth="1" font="Regular; 42" foregroundColor="gold" halign="center" noWrap="1" position="535,765" render="ChannelNumber" size="100,52" source="session.CurrentService" transparent="1" valign="top" zPosition="1" />
+  <widget backgroundColor="background" pixmap="Pingu_FHD/design/progress.png" position="450,910" render="Progress" size="1430,3" source="session.Event_Now" transparent="1" zPosition="2">
+    <convert type="EventTime">Progress</convert>
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ping/sl.png" position="442,825" size="1460,1" />
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ping/sl.png" position="442,970" size="1460,1" />
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ping/sl.png" position="20,825" size="400,1" />
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ping/slp.png" position="430,835" size="1,230" />
+  <widget backgroundColor="black" font="Regular; 24" foregroundColor="grey" halign="right" position="947,1036" render="Label" size="945,30" source="session.CurrentService" transparent="1" valign="top" zPosition="2">
+    <convert type="EcmInfoLine" />
+  </widget>
+  <widget alphatest="blend" path="piconCam" position="883,985" render="PiconUni" size="100,45" source="session.CurrentService" zPosition="2">
+    <convert type="EmuName" />
+  </widget>
+  <eLabel backgroundColor="black" font="Regular; 20" foregroundColor="blue" halign="left" position="1093,983" size="55,24" text="SNR:" transparent="1" valign="center" />
+  <widget backgroundColor="black" font="Regular; 20" halign="left" position="1460,983" render="Label" size="70,24" source="session.FrontendStatus" transparent="1" valign="center" zPosition="1">
+    <convert type="FrontendInfo">SNR</convert>
+  </widget>
+  <ePixmap pixmap="Pingu_FHD/ping/ping21.png" position="5,721" size="1910,400" zPosition="-2" />
+  <widget alphatest="blend" position="20,862" render="PiconUni" path="picon" size="400,170" source="session.CurrentService" transparent="1">
+    <convert type="ServiceName2">Reference</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 32" foregroundColor="un538eff" halign="right" position="435,855" render="Label" size="100,45" source="session.Event_Now" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel backgroundColor="black" font="Regular; 32" foregroundColor="un538eff" halign="center" position="544,855" size="20,45" text="-" transparent="1" />
+  <widget backgroundColor="black" font="Regular; 32" foregroundColor="un538eff" halign="left" position="564,855" render="Label" size="100,45" source="session.Event_Now" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 40" foregroundColor="un538eff" halign="left" options="movetype=running,startpoint=0,direction=left,steptime=40,repeat=5,startdelay=2000,always=0" position="668,850" render="EGEpg" size="1070,50" source="session.Event_Now" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 32" foregroundColor="un538eff" halign="right" position="1746,855" render="Label" size="135,45" source="session.Event_Now" transparent="1">
+    <convert type="EventTime">Remaining</convert>
+    <convert type="RemainingToText">InMinutes</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 32" foregroundColor="grey" halign="right" position="435,920" render="Label" size="100,46" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ping/sl.png" position="450,911" size="1430,1" />
+  <eLabel backgroundColor="black" font="Regular; 32" foregroundColor="grey" halign="center" position="544,920" size="20,46" text="-" transparent="1" />
+  <widget backgroundColor="black" font="Regular; 32" foregroundColor="grey" halign="left" position="565,920" render="Label" size="100,46" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 32" foregroundColor="grey" halign="left" position="670,920" render="Label" size="1070,46" source="session.Event_Next" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 32" foregroundColor="grey" halign="right" position="1754,920" render="Label" size="125,46" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">Duration</convert>
+    <convert type="ClockToText">InMinutes</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 22" foregroundColor="gold" halign="center" position="14,833" render="Label" size="412,24" source="session.CurrentService" transparent="1" valign="top" zPosition="1">
+    <convert type="PGServiceName">%s / %O / %F %p %Y %f</convert>
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ping/sl.png" position="center,1070" size="1900,1" />
+  <widget backgroundColor="black" font="Regular; 36" foregroundColor="yellow" halign="center" noWrap="1" position="22,770" render="Label" size="95,50" source="session.MSNWeather" transparent="1" zPosition="8">
+    <convert type="MSNWeather">temperature_current</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 20" halign="center" noWrap="1" position="1658,765" render="Label" size="150,26" source="session.MSNWeather" transparent="1" zPosition="3">
+    <convert type="MSNWeather">weekday,day3</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 20" foregroundColor="yellow" halign="center" noWrap="1" position="1679,794" render="Label" size="50,26" source="session.MSNWeather" transparent="1" zPosition="3">
+    <convert type="MSNWeather">temperature_high,day3</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 20" foregroundColor="blue" halign="center" noWrap="1" position="1747,794" render="Label" size="50,26" source="session.MSNWeather" transparent="1" zPosition="3">
+    <convert type="MSNWeather">temperature_low,day3</convert>
+  </widget>
+  <widget alphatest="blend" position="1816,759" render="MSNWeatherPixmap" size="60,60" source="session.MSNWeather" transparent="1" zPosition="5">
+    <convert type="MSNWeather">weathericon,day3,/usr/share/enigma2/Pingu_FHD/msn1/,png</convert>
+  </widget>
+  <widget alphatest="blend" position="1599,760" render="MSNWeatherPixmap" size="60,60" source="session.MSNWeather" transparent="1" zPosition="5">
+    <convert type="MSNWeather">weathericon,day2,/usr/share/enigma2/Pingu_FHD/msn1/,png</convert>
+  </widget>
+  <widget backgroundColor="background" font="Regular; 20" halign="center" noWrap="1" position="1440,765" render="Label" size="150,26" source="session.MSNWeather" transparent="1" zPosition="3">
+    <convert type="MSNWeather">weekday,day2</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 20" foregroundColor="yellow" halign="center" noWrap="1" position="1459,794" render="Label" size="50,26" source="session.MSNWeather" transparent="1" zPosition="3">
+    <convert type="MSNWeather">temperature_high,day2</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 20" foregroundColor="blue" halign="center" noWrap="1" position="1530,794" render="Label" size="50,26" source="session.MSNWeather" transparent="1" zPosition="3">
+    <convert type="MSNWeather">temperature_low,day2</convert>
+  </widget>
+  <widget alphatest="blend" position="123,762" render="MSNWeatherPixmap" size="60,60" source="session.MSNWeather" transparent="1" zPosition="5">
+    <convert type="MSNWeather">weathericon,current,/usr/share/enigma2/Pingu_FHD/msn1/,png</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 36" halign="left" position="1757,986" render="Label" size="137,48" source="global.CurrentTime" transparent="1" valign="top" zPosition="8" foregroundColor="orange">
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 22" halign="left" position="1855,999" render="Label" size="45,22" source="global.CurrentTime" transparent="1" valign="top" zPosition="8" foregroundColor="orange">
+    <convert type="ClockToText">Format::%S</convert>
+  </widget>
+  <widget borderColor="blue" borderWidth="1" pixmap="Pingu_FHD/ping/1progresor.png" position="1150,997" render="Progress" size="300,6" source="session.FrontendStatus" zPosition="5">
+    <convert type="FrontendInfo">SNR</convert>
+  </widget>
+  <widget alphatest="blend" pixmap="Pingu_FHD/ic/ic1/ico_hd_on.png" position="450,985" render="Pixmap" size="34,45" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">721,1980</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ic/ic1/ico_hd_off.png" position="450,985" size="34,45" zPosition="1" />
+  <widget alphatest="blend" pixmap="Pingu_FHD/ic/ic1/ico_format_on.png" position="495,985" render="Pixmap" size="58,45" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsWidescreen</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ic/ic1/ico_format_off.png" position="495,985" size="58,45" zPosition="1" />
+  <widget alphatest="blend" pixmap="Pingu_FHD/ic/ic1/ico_dolby_on.png" position="565,985" render="Pixmap" size="72,45" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsMultichannel</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ic/ic1/ico_dolby_off.png" position="565,985" size="72,45" />
+  <widget alphatest="blend" pixmap="Pingu_FHD/ic/ic1/ico_txt_on.png" position="640,985" render="Pixmap" size="51,45" source="session.CurrentService" zPosition="5">
+    <convert type="ServiceInfo">HasTelext</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ic/ic1/ico_txt_off.png" position="640,985" size="51,45" />
+  <widget alphatest="blend" pixmap="Pingu_FHD/ic/ic1/ico_rec_on.png" position="700,985" render="Pixmap" size="44,45" source="session.RecordState" zPosition="2">
+    <convert type="ConditionalShowHide">Blink</convert>
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ic/ic1/ico_rec_off.png" position="700,985" size="44,45" />
+  <widget alphatest="blend" pixmap="Pingu_FHD/ic/ic1/ico_crypt_on.png" position="755,985" render="Pixmap" size="68,45" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsCrypted</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ic/ic1/ico_crypt_off.png" position="755,985" size="68,45" />
+  <widget backgroundColor="black" font="Regular; 24" foregroundColor="grey" halign="left" position="819,1036" render="Label" size="120,30" source="session.CurrentService" transparent="1" zPosition="3">
+    <convert type="CpuUsage">Total</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 24" foregroundColor="gold" halign="left" position="640,1036" render="Label" size="177,30" source="session.CurrentService" transparent="1">
+    <convert type="PliExtraInfo">ResolutionString</convert>
+  </widget>
+  <widget alphatest="blend" path="piconProv" position="447,765" render="PiconUni" size="84,50" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceName2">Provider</convert>
+  </widget>
+  <widget alphatest="blend" path="piconSat" position="360,767" render="PiconUni" size="84,50" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceName2">OrbitalPos</convert>
+  </widget>
+  <widget backgroundColor="background" font="Regular; 24" foregroundColor="green" halign="left" position="449,1036" render="Label" size="190,30" source="session.CurrentService" transparent="1" valign="center" zPosition="4">
+    <convert type="ServiceInfoEX">avtype</convert>
+  </widget>
+  <widget backgroundColor="background" font="Regular; 26" foregroundColor="foreground" halign="right" position="1512,993" render="Label" size="231,34" source="global.CurrentTime" transparent="1" zPosition="10" valign="center">
+    <convert type="ClockToText">Format:%d. %B</convert>
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ic/ic2/hbbtv_off.png" position="830,985" size="44,45" />
+  <widget source="session.CurrentService" pixmap="Pingu_FHD/ic/ic2/hbbtv_on.png" position="830,985" render="Pixmap" size="44,45" zPosition="5" alphatest="blend">
+    <convert type="ServiceInfo">HasHBBTV</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget borderColor="blue" borderWidth="1" pixmap="Pingu_FHD/ping/1progresor.png" position="1149,1021" render="Progress" size="300,6" source="session.FrontendStatus" zPosition="5">
+    <convert type="FrontendInfo">AGC</convert>
+  </widget>
+  <widget backgroundColor="black" font="Regular; 20" position="1460,1008" render="Label" size="71,24" source="session.FrontendStatus" transparent="1" valign="center">
+    <convert type="FrontendInfo">AGC</convert>
+  </widget>
+  <eLabel backgroundColor="black" font="Regular; 20" foregroundColor="blue" halign="left" position="1093,1008" size="55,24" text="AGC:" transparent="1" valign="center" />
+  <ePixmap position="0,361" zPosition="-2" size="1920,350" pixmap="Pingu_FHD/ping/ses.png" />
+  <ePixmap position="center,5" zPosition="-2" size="1920,350" pixmap="Pingu_FHD/ping/ses.png" />
+  <widget source="session.Event_Now" render="ScrollLabel" zPosition="23" position="13,82" size="1893,265" font="Regular; 30" valign="center" backgroundColor="black" transparent="1" foregroundColor="TitleFG" shadowColor="#000000" shadowOffset="-2,-2" halign="center">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <widget source="session.Event_Next" render="ScrollLabel" zPosition="33" position="9,441" size="1901,265" font="Regular; 30" valign="center" backgroundColor="black" transparent="1" foregroundColor="grey" shadowColor="#000000" shadowOffset="-2,-2" halign="center">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ping/sl.png" position="center,75" size="1900,1" />
+  <ePixmap alphatest="blend" pixmap="Pingu_FHD/ping/sl.png" position="center,435" size="1900,1" />
+  <widget source="session.Event_Now" render="Label" position="15,15" size="937,60" zPosition="23" halign="left" font="PG; 28" backgroundColor="black" transparent="1" valign="center" foregroundColor="3rdFG">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget source="session.Event_Next" render="Label" position="15,374" size="937,60" zPosition="23" halign="left" font="PG; 28" backgroundColor="black" transparent="1" valign="center" foregroundColor="yellow">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Label" position="958,20" size="653,50" font="Regular; 30" halign="left" foregroundColor="green" backgroundColor="black" transparent="1" zPosition="1">
+    <convert type="EventName">Genre</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Label" position="1613,16" size="291,55" font="Regular; 25" halign="right" foregroundColor="orange" backgroundColor="black" transparent="1" zPosition="1">
+    <convert type="EventName">SmallRating</convert>
+  </widget>
+  <widget source="session.Event_Next" render="Label" position="958,380" size="652,50" font="Regular; 30" halign="left" foregroundColor="green" backgroundColor="black" transparent="1" zPosition="1">
+    <convert type="EventName">Genre</convert>
+  </widget>
+  <widget source="session.Event_Next" render="Label" position="1614,380" size="289,50" font="Regular; 25" halign="right" foregroundColor="orange" backgroundColor="black" transparent="1" zPosition="1">
+    <convert type="EventName">SmallRating</convert>
+  </widget>
+  <ePixmap position="313,772" size="36,36" zPosition="1" pixmap="Pingu_FHD/ic/net1_off.png" alphatest="blend" />
+  <widget source="session.CurrentService" render="Pixmap" position="313,772" size="36,36" zPosition="2" pixmap="Pingu_FHD/ic/net1_on.png" alphatest="blend">
+  <convert type="TestConnection">
+  </convert>
+  <convert type="ConditionalShowHide" />
+</widget>
+</screen>
+</skin>
