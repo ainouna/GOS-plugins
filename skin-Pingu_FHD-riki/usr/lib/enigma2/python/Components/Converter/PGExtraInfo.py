@@ -2,7 +2,10 @@ from enigma import iServiceInformation, iPlayableService
 from Components.Converter.Converter import Converter
 from Components.Element import cached
 from Components.config import config
-from Tools.Transponder import ConvertToHumanReadable, getChannelNumber
+try:
+    from Tools.Transponder import ConvertToHumanReadable, getChannelNumber
+except:
+    from Tools.PLITransponder import ConvertToHumanReadable, getChannelNumber
 from Tools.GetEcmInfo import GetEcmInfo
 from Poll import Poll
 
@@ -407,7 +410,7 @@ class PGExtraInfo(Poll, Converter, object):
     def changed(self, what):
         if what[0] == self.CHANGED_SPECIFIC:
             self.updateFEdata = False
-            if what[1] == iPlayableService.evNewProgramInfo:
+            if what[1] == iPlayableService.evUpdatedInfo:
                 self.updateFEdata = True
             if what[1] == iPlayableService.evEnd:
                 self.feraw = self.fedata = None
