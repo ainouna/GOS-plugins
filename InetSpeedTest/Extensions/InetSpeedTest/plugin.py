@@ -15,6 +15,7 @@
 #source code of your modifications.
 
 from Plugins.Plugin import PluginDescriptor
+from os.path import exists
         
 def Plugins(**kwargs):
     return [PluginDescriptor(name=_("InetSpeedTest"), description=_("Check health of your inet connection"), where = PluginDescriptor.WHERE_PLUGINMENU, fnc=main)]
@@ -24,6 +25,14 @@ def main(session, **kwargs):
     from Tools.Directories import resolveFilename, SCOPE_PLUGINS
     runlist = []
     ScriptPath = resolveFilename(SCOPE_PLUGINS, 'Extensions/InetSpeedTest/')
-    runlist.append( ('chmod 755 %s/speedtest_cli.py' % ScriptPath) )
-    runlist.append( ('%s/speedtest_cli.py' % ScriptPath) )
+    runlist.append( ('chmod 755 %s/speedtest_cli.py*' % ScriptPath) )
+    if exists('%s/speedtest_cli.py' % ScriptPath):
+        runlist.append( ('%s/speedtest_cli.py' % ScriptPath) )
+    elif exists('%s/speedtest_cli.pyo' % ScriptPath):
+        runlist.append( ('%s/speedtest_cli.pyo' % ScriptPath) )
+    elif exists('%s/speedtest_cli.pyc' % ScriptPath):
+        runlist.append( ('%s/speedtest_cli.pyc' % ScriptPath) )
+    else:
+        runlist.append( ('echo "missing %s/speedtest_cli.py!!!' % ScriptPath) )
+
     session.open(Console, title = "InetSpeedTest...", cmdlist = runlist)

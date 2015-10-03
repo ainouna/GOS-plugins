@@ -130,8 +130,20 @@ class GOSMenuChannels(Screen, ConfigListScreen):
             x()
 
     def ConfigureJB(self):
-        self.ZapNC=("1:0:1:1163:2AF8:13E:820000:0:0:0:")
-        self.ZapCP=("1:0:1:332d:3390:71:820000:0:0:0:")
+        if pathExists('%scomponents/zapNC.config' % PluginPath) is False:
+            self.ZapNC=("1:0:1:1163:2AF8:13E:820000:0:0:0:")
+        else:
+            with open('%scomponents/zapNC.config' % PluginPath, 'r') as ZAPconfig:
+                tmp=ZAPconfig.readline().split('"')[1]
+                self.ZapNC=(tmp)
+                ZAPconfig.close()
+        if pathExists('%scomponents/zapCP.config' % PluginPath) is False:
+            self.ZapCP=("1:0:1:332d:3390:71:820000:0:0:0:")
+        else:
+            with open('%scomponents/zapCP.config' % PluginPath, 'r') as ZAPconfig:
+                tmp=ZAPconfig.readline().split('"')[1]
+                self.ZapCP=(tmp)
+                ZAPconfig.close()
         self.j00zekBouquetsNCBin='%scomponents/j00zekBouquetsNC%s' % (PluginPath,binType)
         self.j00zekBouquetsCPBin='%scomponents/j00zekBouquetsCP%s' % (PluginPath,binType)
         self.ExcludedSIDsTemplate='%scomponents/excludedSIDs.template' % PluginPath
