@@ -43,3 +43,9 @@ msgstr "Przerwa między powtórzeniami [ms]"
 msgid "Status check after reboot [s]"
 msgstr "Sprawdzanie stanu po restarcie [s]"
 
+msgid "Use alternative mode"
+msgstr "Użyj trybu alternatywnego"
+
+msgid "Use a different set of commands"
+msgstr "Użyj innego zestawu poleceń"
+

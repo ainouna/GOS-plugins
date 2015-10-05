@@ -60,6 +60,7 @@ elif CEC_Module == 'new_cec':
     config.plugins.CEC.ActiveSource = ConfigSelection(default = "Auto", choices = [("Auto","Auto"),("11","HDMI1"),("21","HDMI2"),("31","HDMI3"),("41","HDMI4")])
 
 config.plugins.CEC.MiniEnable = ConfigYesNo(default = False)
+config.plugins.CEC.OptionalCode = ConfigYesNo(default = False)
 
 class CECSetup(ConfigListScreen, Screen):
     skin = """
@@ -92,11 +93,12 @@ class CECSetup(ConfigListScreen, Screen):
         self.list.append(getConfigListEntry(_("Active TV input"), config.plugins.CEC.ActiveSource))
         if CEC_Module == 'new_cec':
             self.list.append(getConfigListEntry(_("Turn off TV only when on active input"), config.plugins.CEC.CheckInput))
-            self.list.append(getConfigListEntry(_("Use alternative mode"), config.plugins.CEC.MiniEnable))
+        self.list.append(getConfigListEntry(_("Use alternative mode"), config.plugins.CEC.MiniEnable))
         self.list.append(getConfigListEntry(_("Data send delay [ms]"), config.plugins.CEC.Delay))
         self.list.append(getConfigListEntry(_("Repeat data sending"), config.plugins.CEC.Counter))
         self.list.append(getConfigListEntry(_("Interval between repetitions [ms]"), config.plugins.CEC.DelayCounter))
         self.list.append(getConfigListEntry(_("Status check after reboot [s]"), config.plugins.CEC.StartDelay))
+        self.list.append(getConfigListEntry(_("Use a different set of commands"), config.plugins.CEC.OptionalCode))
         ConfigListScreen.__init__(self, self.list, session)
         self.setTitle(_("HDMI CEC Configuration"))
 
@@ -133,7 +135,7 @@ class CECControl():
 
         self.licz = 0
         self.standby = 1
-        self.timelock=False
+        self.timelock = False
 
         self.timer2 = eTimer()
         self.timer2.stop()
@@ -157,11 +159,16 @@ class CECControl():
         self.CEC_Counter = config.plugins.CEC.Counter.getValue()
         self.CEC_DelayCounter = config.plugins.CEC.DelayCounter.getValue()
         self.CEC_StartDelay = 1000*config.plugins.CEC.StartDelay.getValue()
+        self.CEC_OptionalCode = config.plugins.CEC.OptionalCodes.getValue()
 
         if CEC_Module == 'old_cec':
             self.CEC_send='/proc/stb/hdmi/cec'
-            self.CEC_Wakeup='3004'
-            self.CEC_goStandby='3036'
+            if self.CEC_OptionalCode:
+                self.CEC_Wakeup='3f04'
+                self.CEC_goStandby='3f36'
+            else:
+                self.CEC_Wakeup='3004'
+                self.CEC_goStandby='3036'
             self.CEC_ActiveHDMI = "3f82%s00" % self.CEC_ActiveHDMI
             #porzadki, jak ktos powachlowal sterownikami
             if config.plugins.CEC.CheckInput.value == True:
@@ -169,8 +176,12 @@ class CECControl():
                 config.plugins.CEC.CheckInput.save()
         elif CEC_Module == 'new_cec':
             self.CEC_send="/proc/stb/cec/send"
-            self.CEC_Wakeup='30 04 '
-            self.CEC_goStandby='30 36 '
+            if self.CEC_OptionalCode:
+                self.CEC_Wakeup='3f 04 '
+                self.CEC_goStandby='3f 36 '
+            else:
+                self.CEC_Wakeup='30 04 '
+                self.CEC_goStandby='30 36 '
             if (self.CEC_ActiveHDMI != "Auto"):
                 self.CEC_ActiveHDMI = "3f 82 %s 00 " % self.CEC_ActiveHDMI
         
