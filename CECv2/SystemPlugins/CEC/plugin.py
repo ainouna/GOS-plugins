@@ -159,7 +159,7 @@ class CECControl():
         self.CEC_Counter = config.plugins.CEC.Counter.getValue()
         self.CEC_DelayCounter = config.plugins.CEC.DelayCounter.getValue()
         self.CEC_StartDelay = 1000*config.plugins.CEC.StartDelay.getValue()
-        self.CEC_OptionalCode = config.plugins.CEC.OptionalCodes.getValue()
+        self.CEC_OptionalCode = config.plugins.CEC.OptionalCode.getValue()
 
         if CEC_Module == 'old_cec':
             self.CEC_send='/proc/stb/hdmi/cec'
