@@ -19,6 +19,7 @@ from Tools.HardwareInfo import HardwareInfo
 from Tools.GOSHardwareInfo import GOSHardwareInfo
 from Tools.Directories import fileExists, resolveFilename, pathExists, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
 from Components.LanguageGOS import gosgettext as _
+from os import path as os_path, listdir as os_listdir, system as os_system
 
 GOSsettings_list = [ ]
 ################## Zmienne GOS #########################################################
