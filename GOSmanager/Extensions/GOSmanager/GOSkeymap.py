@@ -19,6 +19,7 @@ from Tools.HardwareInfo import HardwareInfo
 from Tools.Directories import fileExists, resolveFilename, pathExists, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
 import xml.etree.cElementTree as ET
 from Components.LanguageGOS import gosgettext as _
+from os import path as os_path, listdir as os_listdir, system as os_system
 
 KEYMAPsettings_list = [ ]
 ################## Zmienne GOS #########################################################
